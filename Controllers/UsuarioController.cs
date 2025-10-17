@@ -13,12 +13,21 @@ namespace Culturi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string contraseña)
+        public IActionResult Login(string nombre, string contrasena)
         {
-            // Lógica para validar usuario (buscar en BD)
-            // Si es válido -> redirige a Perfil
-            // Si no -> mensaje de error
-            return RedirectToAction("Perfil");
+            Usuario UsuarioPerfil = BD.LevantarUsuario(nombre);
+
+            if (UsuarioPerfil != null && UsuarioPerfil.InicioSesion(contrasena))
+            {
+                HttpContext.Session.SetString("user", Objeto.ObjectToString<Usuario>(UsuarioPerfil));
+                ViewBag.Usuario = UsuarioPerfil;
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Mensaje = "Usuario o contraseña incorrectos";
+                return View("Login");
+            }
         }
 
         // Página de registro
@@ -30,8 +39,18 @@ namespace Culturi.Controllers
         [HttpPost]
         public IActionResult Registro(Usuario nuevoUsuario)
         {
-            // Guardar usuario nuevo en la BD
-            return RedirectToAction("Login");
+            ViewBag.Mensaje = "";
+            if (BD.LevantarUsuario(NombreUsuario) == null)
+            {
+                BD.AgregarUsuario(NombreUsuarioIngresado, contrasena);
+                ViewBag.Mensaje = "Usuario creado correctamente";
+                return View("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Mensaje = "El nombre de usuario ya está en uso";
+                return RedirectToAction("Registro");
+            }
         }
 
         // Página del perfil del usuario
@@ -42,7 +61,7 @@ namespace Culturi.Controllers
 
         public IActionResult CerrarSesion()
         {
-            // Lógica para cerrar sesión (limpiar datos)
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
     }

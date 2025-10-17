@@ -18,8 +18,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = z:\Culturi
 build_property._RazorSourceGeneratorDebug = 
 
-[z:/Culturi/Views/ChatBot/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxJbmRleC5jc2h0bWw=
+[z:/Culturi/Views/ChatBot/ChatBot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxDaGF0Qm90LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [z:/Culturi/Views/Home/Index.cshtml]

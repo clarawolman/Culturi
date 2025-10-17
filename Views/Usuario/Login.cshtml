@@ -1,0 +1,25 @@
+@{
+   
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<div class="login-container">
+    <div class="login-card">
+        <h2>Iniciar Sesión</h2>
+
+        @if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+        {
+            <p class="message">@ViewBag.Mensaje</p>
+        }
+
+        <form method="post" asp-action="Login">
+            <label for="NombreUsuario">Nombre de usuario</label>
+            <input type="text" id="NombreUsuario" name="NombreUsuario" placeholder="Ingresa tu usuario" required />
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required />
+
+            <button type="submit" class="btn-primary">Iniciar Sesión</button>
+        </form>
+    </div>
+</div>
