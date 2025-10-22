@@ -12,5 +12,4 @@ public static  T? StringToObject<T> (string txt){
     else
     return JsonConvert.DeserializeObject<T>(txt);
 }
-
 }

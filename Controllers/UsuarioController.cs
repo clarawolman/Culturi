@@ -1,62 +1,84 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using PrimerProyecto.Models;
+using Newtonsoft.Json;
 
 namespace Culturi.Controllers
 {
     public class UsuarioController : Controller
     {
-        // Página de inicio de sesión
+       
         public IActionResult Login()
         {
+            if (HttpContext.Session.GetString("usuarioLogueado") != null)
+                return RedirectToAction("Index", "Home");
+
             return View();
         }
 
         [HttpPost]
         public IActionResult Login(string nombre, string contrasena)
         {
-            Usuario UsuarioPerfil = BD.LevantarUsuario(nombre);
+            Usuario usuario = BD.LevantarUsuario(nombre);
 
-            if (UsuarioPerfil != null && UsuarioPerfil.InicioSesion(contrasena))
+            if (usuario != null && usuario.InicioSesion(contrasena))
             {
-                HttpContext.Session.SetString("user", Objeto.ObjectToString<Usuario>(UsuarioPerfil));
-                ViewBag.Usuario = UsuarioPerfil;
+                string usuarioJson = JsonConvert.SerializeObject(usuario);
+                HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
+
+                ViewBag.Usuario = usuario;
                 return RedirectToAction("Index", "Home");
             }
             else
             {
                 ViewBag.Mensaje = "Usuario o contraseña incorrectos";
-                return View("Login");
+                return View();
             }
         }
 
-        // Página de registro
         public IActionResult Registro()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Registro(Usuario nuevoUsuario)
+        public IActionResult Registro(string nombre, string apellido, string email, string contrasena, int idPais)
         {
-            ViewBag.Mensaje = "";
-            if (BD.LevantarUsuario(NombreUsuario) == null)
-            {
-                BD.AgregarUsuario(NombreUsuarioIngresado, contrasena);
-                ViewBag.Mensaje = "Usuario creado correctamente";
-                return View("Index", "Home");
-            }
-            else
+            Usuario existente = BD.LevantarUsuario(nombre);
+            if (existente != null)
             {
                 ViewBag.Mensaje = "El nombre de usuario ya está en uso";
-                return RedirectToAction("Registro");
+                return View();
             }
+
+            Usuario nuevoUsuario = new Usuario
+            {
+                Nombre = nombre,
+                Apellido = apellido,
+                Email = email,
+                Contrasena = contrasena,
+                IdPais = idPais,
+                FechaRegistro = DateTime.Now
+            };
+
+            BD.AgregarUsuario(nuevoUsuario);
+
+            string usuarioJson = JsonConvert.SerializeObject(nuevoUsuario);
+            HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
+
+            ViewBag.Mensaje = "Usuario creado correctamente";
+            return RedirectToAction("Index", "Home");
         }
 
-        // Página del perfil del usuario
         public IActionResult Perfil()
         {
-            return View();
+            string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
+            if (usuarioJson == null)
+                return RedirectToAction("Login");
+
+            Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+            return View(usuario);
         }
 
         public IActionResult CerrarSesion()

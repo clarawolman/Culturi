@@ -1,29 +1,66 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PrimerProyecto.Models;
+using Newtonsoft.Json;
 
 namespace Culturi.Controllers
 {
     public class TramiteController : Controller
     {
-        // Muestra todos los trámites
         public IActionResult Index()
         {
-            // Aquí traerías una lista de trámites desde la BD
-            return View();
+            List<Tramite> listaTramites = BD.ObtenerTramites();
+            return View(listaTramites);
         }
 
-        // Muestra el detalle de un trámite y sus pasos
         public IActionResult Detalle(int id)
         {
-            // Buscar trámite por id y mostrar pasos
+            Tramite tramite = BD.ObtenerTramitePorId(id);
+            if (tramite == null) return NotFound();
+
+            tramite.Pasos = BD.ObtenerPasosDelTramite(id);
+            return View(tramite);
+        }
+
+        [HttpGet]
+        public IActionResult AgregarTramite()
+        {
             return View();
         }
 
-        // (Opcional) Lista de trámites del usuario o favoritos
-        public IActionResult MisTramites()
+        [HttpPost]
+        public IActionResult AgregarTramite(Tramite nuevo)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                BD.AgregarTramite(nuevo);
+                return RedirectToAction("Index");
+            }
+            return View(nuevo);
+        }
+
+        [HttpPost]
+        public IActionResult EliminarTramite(int id)
+        {
+            bool eliminado = BD.EliminarTramite(id);
+            if (!eliminado)
+                return NotFound();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult FinalizarPaso(int idPaso)
+        {
+            BD.MarcarPasoComoCompletado(idPaso);
+            int idTramite = BD.ObtenerIdTramitePorPaso(idPaso);
+            return RedirectToAction("Detalle", new { id = idTramite });
+        }
+
+        [HttpPost]
+        public IActionResult FinalizarTramite(int idTramite)
+        {
+            BD.FinalizarTramite(idTramite);
+            return RedirectToAction("Index");
         }
     }
 }
