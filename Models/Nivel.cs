@@ -7,5 +7,4 @@ public class Nivel
     public string Dificultad { get; set; } // básico / intermedio / avanzado
 
     public Juego Juego { get; set; }
-    public List<PreguntaJuego> Preguntas { get; set; }
 }

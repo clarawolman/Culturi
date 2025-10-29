@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\Culturi\\PrimerProyecto.csproj": {}
+    "C:\\Users\\49359853\\Culturi\\PrimerProyecto.csproj": {}
   },
   "projects": {
-    "Z:\\Culturi\\PrimerProyecto.csproj": {
+    "C:\\Users\\49359853\\Culturi\\PrimerProyecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\Culturi\\PrimerProyecto.csproj",
+        "projectUniqueName": "C:\\Users\\49359853\\Culturi\\PrimerProyecto.csproj",
         "projectName": "PrimerProyecto",
-        "projectPath": "Z:\\Culturi\\PrimerProyecto.csproj",
-        "packagesPath": "C:\\Users\\48860067\\.nuget\\packages\\",
-        "outputPath": "Z:\\Culturi\\obj\\",
+        "projectPath": "C:\\Users\\49359853\\Culturi\\PrimerProyecto.csproj",
+        "packagesPath": "C:\\Users\\49359853\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\49359853\\Culturi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\48860067\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\49359853\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -49,9 +49,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
               "version": "[2.3.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.1.2, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

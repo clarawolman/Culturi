@@ -62,7 +62,7 @@ namespace Culturi.Controllers
                 FechaRegistro = DateTime.Now
             };
 
-            BD.AgregarUsuario(nuevoUsuario);
+            BD.AgregarUsuario(nuevoUsuario, contrasena);
 
             string usuarioJson = JsonConvert.SerializeObject(nuevoUsuario);
             HttpContext.Session.SetString("usuarioLogueado", usuarioJson);

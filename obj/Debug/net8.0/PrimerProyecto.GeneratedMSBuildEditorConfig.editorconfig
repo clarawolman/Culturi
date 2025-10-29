@@ -9,75 +9,91 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PrimerProyecto
 build_property.RootNamespace = PrimerProyecto
-build_property.ProjectDir = z:\Culturi\
+build_property.ProjectDir = C:\Users\49359853\Culturi\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = z:\Culturi
+build_property.MSBuildProjectDirectory = C:\Users\49359853\Culturi
 build_property._RazorSourceGeneratorDebug = 
 
-[z:/Culturi/Views/ChatBot/ChatBot.cshtml]
+[C:/Users/49359853/Culturi/Views/ChatBot/ChatBot.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxDaGF0Qm90LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/49359853/Culturi/Views/Grupos/Grupo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cG9zXEdydXBvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Home/QuienesSomos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWllbmVzU29tb3MuY3NodG1s
+[C:/Users/49359853/Culturi/Views/Grupos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Juego/Index.cshtml]
+[C:/Users/49359853/Culturi/Views/Home/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49359853/Culturi/Views/Home/Landing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMYW5kaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49359853/Culturi/Views/Home/menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW51LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49359853/Culturi/Views/Juego/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVlZ29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Juego/Jugar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVlZ29cSnVnYXIuY3NodG1s
+[C:/Users/49359853/Culturi/Views/Juego/Memotest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVlZ29cTWVtb3Rlc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Juego/Pregunta.cshtml]
+[C:/Users/49359853/Culturi/Views/Juego/Pregunta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVlZ29cUHJlZ3VudGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Juego/Resultado.cshtml]
+[C:/Users/49359853/Culturi/Views/Juego/Resultado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVlZ29cUmVzdWx0YWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Shared/_Layout.cshtml]
+[C:/Users/49359853/Culturi/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/49359853/Culturi/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Tramite/Detalle.cshtml]
+[C:/Users/49359853/Culturi/Views/Tramite/Detalle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbWl0ZVxEZXRhbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Tramite/Index.cshtml]
+[C:/Users/49359853/Culturi/Views/Tramite/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbWl0ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Usuario/Login.cshtml]
+[C:/Users/49359853/Culturi/Views/Usuario/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Usuario/Perfil.cshtml]
+[C:/Users/49359853/Culturi/Views/Usuario/Noti.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xOb3RpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49359853/Culturi/Views/Usuario/Perfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xQZXJmaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/Usuario/Registro.cshtml]
+[C:/Users/49359853/Culturi/Views/Usuario/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xSZWdpc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/_ViewImports.cshtml]
+[C:/Users/49359853/Culturi/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[z:/Culturi/Views/_ViewStart.cshtml]
+[C:/Users/49359853/Culturi/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

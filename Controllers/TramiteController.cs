@@ -51,7 +51,7 @@ namespace Culturi.Controllers
         [HttpPost]
         public IActionResult FinalizarPaso(int idPaso)
         {
-            BD.MarcarPasoComoCompletado(idPaso);
+            BD.MarcarPasoCompletado(idPaso);
             int idTramite = BD.ObtenerIdTramitePorPaso(idPaso);
             return RedirectToAction("Detalle", new { id = idTramite });
         }
@@ -59,7 +59,7 @@ namespace Culturi.Controllers
         [HttpPost]
         public IActionResult FinalizarTramite(int idTramite)
         {
-            BD.FinalizarTramite(idTramite);
+            BD.FinalizarTramite(idTramite, idUsuario);
             return RedirectToAction("Index");
         }
     }
