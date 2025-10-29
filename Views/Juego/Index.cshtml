@@ -1,0 +1,93 @@
+<header>
+    <nav>
+        <ul>
+          <li><a href = "/Home/menu.cshtml"><img src="/wwwroot/img/Boton menu.png" alt="menu"></a></li>
+          <li><a href = "/Usuario/Perfil.cshtml"><h2><img src="/wwwroot/img/perfil.png" alt="noti"></a></li>
+          <li><a href = "/Home/Landing.cshtml"><h2>¿Quiénes somos?</h2></a></li>
+          <li><a href = "/Usuario/Noti.cshtml"><h2><img src="/wwwroot/img/noti.png" alt="noti"></a></li>
+        </ul>
+      </nav>
+</header>
+<main>
+  <div class="container mt-4">
+    <h2>Juegos</h2>
+
+    <!-- Campo de búsqueda -->
+    <input type="text" id="buscador" class="form-control mb-3" placeholder="Buscar por nombre, género o plataforma..." />
+
+    <!-- Tabla de juegos -->
+    <table class="table table-striped" id="tablaJuegos">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Género</th>
+                <th>Plataforma</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var juego in Model)
+            {
+                <tr>
+                    <td>@juego.Nombre</td>
+                    <td>@juego.Genero</td>
+                    <td>@juego.Plataforma</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts {
+    <script>
+        // Filtra la tabla al escribir
+        document.getElementById("buscador").addEventListener("keyup", function () {
+            const filtro = this.value.toLowerCase();
+            const filas = document.querySelectorAll("#tablaJuegos tbody tr");
+
+            filas.forEach(fila => {
+                const textoFila = fila.textContent.toLowerCase();
+                fila.style.display = textoFila.includes(filtro) ? "" : "none";
+            });
+        });
+    </script>
+
+
+<section>
+  <a href="Memotest.cshtml">
+  <div>
+    <img src="/wwwroot/img/juego/cabeza.png" alt="">
+    <h5>Memotest</h5>
+  </div>
+  </a>
+  <a href="Memotest.cshtml">
+    <div>
+      <img src="/wwwroot/img/juego/idioma2.png" alt="">
+      <h5>Memotest</h5>
+    </div>
+    </a>
+    <a href="Memotest.cshtml">
+      <div>
+        <img src="/wwwroot/img/juego/libroConLetras.png" alt="">
+        <h5>Memotest</h5>
+      </div>
+      </a>
+      <a href="Memotest.cshtml">
+        <div>
+          <img src="/wwwroot/img/juego/planeta.png" alt="">
+    <h5>Memotest</h5>
+        </div>
+        </a>
+        <a href="Memotest.cshtml">
+          <div>
+            <img src="/wwwroot/img/juego/Valija.png" alt="">
+    <h5>Memotest</h5>
+          </div>
+          </a>
+          <a href="Memotest.cshtml">
+            <div>
+              <img src="/wwwroot/img/juego/salaEscape.png" alt="">
+              <h5>Memotest</h5>    
+            </div>
+            </a>
+</section>
+</main>
