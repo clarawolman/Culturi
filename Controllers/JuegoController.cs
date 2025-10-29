@@ -1,35 +1,72 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PrimerProyecto.Models;
+using Microsoft.AspNetCore.Http;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Culturi.Controllers
 {
     public class JuegoController : Controller
     {
-        // Muestra lista de juegos (Idioma, Cultura)
-        public IActionResult Index()
+        public IActionResult Memotest()
         {
+            // Lista de imágenes (pares)
+            var cartas = new List<string>
+            {
+                "apple1.jpg", "apple2.jpg",
+                "dog1.jpg", "dog2.jpg",
+                "bus1.jpg", "bus2.jpg",
+                "mate1.jpg", "mate2.jpg"
+            };
+
+            // Mezclamos solo la primera vez
+            if (HttpContext.Session.GetString("CartasMezcladas") == null)
+            {
+                var random = new Random();
+                var cartasMezcladas = cartas.OrderBy(x => random.Next()).ToList();
+                HttpContext.Session.SetString("CartasMezcladas", string.Join(',', cartasMezcladas));
+                HttpContext.Session.SetString("Volteadas", "");
+                HttpContext.Session.SetString("Encontradas", "");
+            }
+
             return View();
         }
 
-        // Muestra niveles o preguntas del juego elegido
-        public IActionResult Jugar(int id)
+        [HttpPost]
+        public IActionResult TocarCarta(int index)
         {
-            // Buscar juego por ID y mostrar contenido
-            return View();
+            var cartas = HttpContext.Session.GetString("CartasMezcladas")?.Split(',') ?? new string[0];
+            var volteadas = HttpContext.Session.GetString("Volteadas")?.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList() ?? new List<int>();
+            var encontradas = HttpContext.Session.GetString("Encontradas")?.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList() ?? new List<int>();
+
+            if (!volteadas.Contains(index))
+                volteadas.Add(index);
+
+            if (volteadas.Count == 2)
+            {
+                var primera = cartas[volteadas[0]].Substring(0, cartas[volteadas[0]].Length - 5);
+                var segunda = cartas[volteadas[1]].Substring(0, cartas[volteadas[1]].Length - 5);
+
+                if (primera == segunda)
+                {
+                    encontradas.AddRange(volteadas);
+                }
+                volteadas.Clear();
+            }
+
+            HttpContext.Session.SetString("Volteadas", string.Join(',', volteadas));
+            HttpContext.Session.SetString("Encontradas", string.Join(',', encontradas));
+
+            return RedirectToAction("Memotest");
         }
 
-        // Muestra una pregunta del nivel actual
-        public IActionResult Pregunta(int idNivel)
+        [HttpPost]
+        public IActionResult ReiniciarMemotest()
         {
-            return View();
-        }
-
-        // Muestra resultado final del juego
-        public IActionResult Resultado(int puntaje)
-        {
-            ViewBag.Puntaje = puntaje;
-            return View();
+            HttpContext.Session.Remove("CartasMezcladas");
+            HttpContext.Session.Remove("Volteadas");
+            HttpContext.Session.Remove("Encontradas");
+            return RedirectToAction("Memotest");
         }
     }
 }

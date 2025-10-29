@@ -1,36 +1,58 @@
 <header>
     <nav>
         <ul>
-          <li><img src="/wwwroot/img/Boton menu.png" alt="menu"></li>
-          <li><h2>¿Quiénes somos?</h2></li>
-          <li><h2><img src="/wwwroot/img/noti.png" alt="noti"></h2></li>
+          <li><a href = "/Home/menu.cshtml"><img src="/wwwroot/img/Boton menu.png" alt="menu"></a></li>
+          <li><a href = "/Usuario/Perdil.cshtml"><h2><img src="/wwwroot/img/perfil.png" alt="noti"></a></li>
+          <li><a href = "/Home/Landing.cshtml"><h2>¿Quiénes somos?</h2></a></li>
+          <li><a href = "/Usuario/Noti.cshtml"><h2><img src="/wwwroot/img/noti.png" alt="noti"></a></li>
         </ul>
       </nav>
 </header>
 <main>
 <img src="/wwwroot/img/Culturi Logo.png" alt = "logo">
-<div <a href="Inde">
+<a href="/Tramite/Index">
+<div class = "tramitesHome">
     <h2>Tramites en proceso</h2>
-    @for(int i; i<=Viewbag.CantDeTramites; i=0;)
+   @foreach (Tramite tramite in ViewBag.Tramites)
     {
-        <h5>@Viewbag.Tramite.NumeroDeTramite . @Viewbag.Tramite.NombreDelTramite</h5>
+        <h5>@tramite.NumeroDeTramite - @tramite.NombreDelTramite</h5>
     }
 </div>
-<section>
-<div>
+</a>
 
-</div>
+  <a href = "/Juego/Index">
 <div>
-
+  <img src="/wwwroot/img/juegos.png" alt = "juegos">
+  <h3>Juegos</h3>
 </div>
+  </a>
+  <a href = "/Grupos/Index">
 <div>
-
+  <img src="/wwwroot/img/grupos.png" alt = "grupos">
+  <h3>Grupos</h3>
 </div>
+  </a>
+  <a href = "">
 <div>
-
+  <img src="/wwwroot/img/Mapa.png" alt = "mapa">
+  <h3>Mapa</h3>
 </div>
+  </a>
+  <a href = "">
+<div>
+  <img src="/wwwroot/img/info.png" alt = "info">
+  <h3>Noticias</h3>
+</div>
+  </a>
 
 </section>
+
+  <a href = "/Noticias/Index">
+<div class = "NoticiasHome">
+  <img src="/wwwroot/img/NoticiasHome.png" alt = "noticias">
+  <h3>En Argentina se cambian las condiciones para la visa </h3>
+</div>
+</a>
 </main>
 
 
