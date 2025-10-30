@@ -10,8 +10,9 @@
 </header>
 <main>
 <img src="/wwwroot/img/Culturi Logo.png" alt = "logo">
-<a href="/Tramite/Index">
 <div class = "tramitesHome">
+<a href="/Tramite/Index" >
+<div>
     <h2>Tramites en proceso</h2>
    @foreach (Tramite tramite in ViewBag.Tramites)
     {
@@ -19,8 +20,10 @@
     }
 </div>
 </a>
+</div>
 
-  <a href = "/Juego/Index">
+<section class = "opcionesHome">  
+  <a href = "/Juego/Index" >
 <div>
   <img src="/wwwroot/img/juegos.png" alt = "juegos">
   <h3>Juegos</h3>
@@ -47,12 +50,14 @@
 
 </section>
 
-  <a href = "/Noticias/Index">
 <div class = "NoticiasHome">
+  <a href = "/Noticias/Index">
+<div>
   <img src="/wwwroot/img/NoticiasHome.png" alt = "noticias">
   <h3>En Argentina se cambian las condiciones para la visa </h3>
 </div>
 </a>
+</div>
 </main>
 
 
