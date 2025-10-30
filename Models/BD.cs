@@ -24,14 +24,27 @@ public static class BD
         return miUsuario;
     }
 
-    public static void AgregarUsuario(string NombreUsuarioIngresado, string Contrasena)
+    public static void AgregarUsuario(Usuario usuario)
+{
+    string query = @"INSERT INTO Usuario 
+                        (nombre, apellido, email, contrasena, idPais, fechaRegistro)
+                     VALUES 
+                        (@pNombre, @pApellido, @pEmail, @pContrasena, @pIdPais, @pFechaRegistro)";
+    
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = "INSERT INTO Usuario (nombre, contrasena) VALUES (@pNombreUsuarioIngresado, @pContrasena)";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        connection.Execute(query, new
         {
-            connection.Execute(query, new { pNombreUsuarioIngresado = NombreUsuarioIngresado, pContrasena = Contrasena });
-        }
+            pNombre = usuario.Nombre,
+            pApellido = usuario.Apellido,
+            pEmail = usuario.Email,
+            pContrasena = usuario.Contrasena,
+            pIdPais = usuario.IdPais,
+            pFechaRegistro = usuario.FechaRegistro
+        });
     }
+}
+
 
     public static List<Tramite> ObtenerTramites()
     {

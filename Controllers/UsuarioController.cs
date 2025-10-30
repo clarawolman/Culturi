@@ -8,11 +8,14 @@ namespace Culturi.Controllers
 {
     public class UsuarioController : Controller
     {
-       
+       public IActionResult Landing()
+        {
+            return View();
+        }
         public IActionResult Login()
         {
             if (HttpContext.Session.GetString("usuarioLogueado") != null)
-                return RedirectToAction("Index", "Home");
+               return View("Landing");
 
             return View();
         }
@@ -28,7 +31,7 @@ namespace Culturi.Controllers
                 HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
 
                 ViewBag.Usuario = usuario;
-                return RedirectToAction("Index", "Home");
+               return View("Landing");
             }
             else
             {
@@ -64,10 +67,11 @@ namespace Culturi.Controllers
 
             string usuarioJson = JsonConvert.SerializeObject(nuevoUsuario);
             HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
-            BD.AgregarUsuario(nuevoUsuario, contrasena);
+            BD.AgregarUsuario(nuevoUsuario);
+
 
             ViewBag.Mensaje = "Usuario creado correctamente";
-            return RedirectToAction("Index", "Home");
+            return View("Landing");
         }
 
         public IActionResult Perfil()
@@ -83,7 +87,7 @@ namespace Culturi.Controllers
         public IActionResult CerrarSesion()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Index", "Home");
+            return View("Landing");
         }
     }
 }
