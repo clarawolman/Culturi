@@ -4,7 +4,7 @@ namespace Culturi;
 public static class BD
 {
 
-    private static string _connectionString = @"Server=localhost;DataBase=BD_TP08_PreguntadORT_Stock_Kampel_Pita;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
     public static Usuario LevantarUsuario(string nombre)
     {
         Usuario miUsuario = null;

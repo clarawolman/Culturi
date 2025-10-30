@@ -2,13 +2,15 @@
     ViewData["Title"] = "Menú";
 }
 
-<div class="menu-page">
-    <h1>📋 Menú principal</h1>
-    <p>Esta es una vista de prueba para verificar que el redireccionamiento funciona correctamente.</p>
+<div class="menu-container">
+    <div class="menu-header">
+        <button class="back-btn" onclick="location.href='@Url.Action("Index", "Home")'">←</button>
+        <h1>MENÚ</h1>
+    </div>
 
     <div class="menu-links">
-        <a href="@Url.Action("Index", "Home")">🏠 Volver al inicio</a>
-        <a href="@Url.Action("Home", "Juego")">🎮 Ir a Juegos</a>
-        <a href="@Url.Action("Index", "Tramite")">📄 Tramites</a>
+        <a href="@Url.Action("Login", "Usuario")">Iniciar sesión</a>
+        <a href="@Url.Action("Registro", "Usuario")">Registrarse</a>
     </div>
 </div>
+

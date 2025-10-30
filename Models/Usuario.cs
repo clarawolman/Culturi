@@ -6,7 +6,7 @@ public class Usuario
     [JsonProperty]
     public string Nombre { get; set; }
     [JsonProperty]
-    public string Apellido { get; set; }
+    public string usuario { get; set; }
     [JsonProperty]
     public string Email { get; set; }
     [JsonProperty]

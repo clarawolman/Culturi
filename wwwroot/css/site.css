@@ -216,41 +216,140 @@ body {
 .header-center h2 {
   font-size: 20px;
 }
-.menu-page {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #EAF6F8;
-  min-height: 100vh;
+.menu-container {
+  background-color: #4EB2C3;
+  width: 250px;
+  height: 100vh;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   font-family: 'Poppins', sans-serif;
 }
 
-.menu-page h1 {
-  font-size: 36px;
-  color: #222;
-  margin-bottom: 20px;
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
-.menu-page p {
-  color: #555;
-  margin-bottom: 40px;
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: black;
+}
+
+.menu-header h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: black;
+  margin: 0;
 }
 
 .menu-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
 }
 
 .menu-links a {
-  background-color: #4EB2C3;
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  transition: 0.2s;
+  font-weight: 700;
+  color: black;
+  text-decoration: underline;
+  transition: color 0.2s ease;
 }
 
 .menu-links a:hover {
+  color: #1d1d1d;
+}
+
+.registro-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 30px 40px;
+  background-color: #e0f5f7;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.registro-container h2 {
+  text-align: center;
+  color: #000;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.message {
+  background-color: #4eb2c3;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.registro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.registro-form label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.registro-form input[type="text"],
+.registro-form input[type="email"],
+.registro-form input[type="password"],
+.registro-form input[type="date"],
+.registro-form select {
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.registro-form input:focus,
+.registro-form select:focus {
+  border-color: #4eb2c3;
+}
+
+/* Radios en fila */
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-left: 5px;
+}
+
+.radio-row label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  background-color: #4eb2c3;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
   background-color: #3a91a1;
 }
+

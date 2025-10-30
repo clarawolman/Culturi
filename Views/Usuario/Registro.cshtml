@@ -2,41 +2,58 @@
     ViewData["Title"] = "Registro";
 }
 
-<h2>Registrarse</h2>
+<link rel="stylesheet" href="~/css/registro.css" />
 
-@if (ViewBag.Mensaje != "")
-{
-    <p><p class="message">@ViewBag.Mensaje</p>
-</p>
-}
-<form method="post" asp-action="Registro">
-    <p>Nombre:</p>
-    <input type="text" name="Nombre" required />
-    <p>Nombre de Usuario:</p>
-    <input type="text" name="NombreUsuarioIngresado" required />
-    <p>Idioma de preferencia:
-    <select name = "Idioma">
-    <option selected> </option>
-    <option>Español</option>
-    <option>Inglés</option>
-    <option>Portugués</option>
-    </p>
-    <p>Fecha de nacimiento:</p>
-    <input type="calendar" name="FechaNacimiento" required />
-    <p>Ingrese país de origen:
-    <input type="ratio" name="PaisOrigen" value =""/>
-    <input type="ratio" name="PaisOrigen" value =""/>
-    <input type="ratio" name="PaisOrigen" value =""/>
-    </p>
-    <p>Ingrese país de llegada:</p>
-    <input type="ratio" name="PaisLlegada"/>
-    <p>Fecha de emigración:</p>
-    <input type="calendar" name="FechaEmigracion" required />
-    <p>Email de contacto:</p>
-    <input type="email" name="Email" required />
-    <p>Contraseña:</p>
-    <input type="password" name="Contrasena" required />
-    <br />
-    <button type="submit">Crear cuenta</button>
-</form>
-<br />
+<div class="registro-container">
+    <h2>Registrarse</h2>
+
+    @if (!string.IsNullOrEmpty(ViewBag.Mensaje))
+    {
+        <p class="message">@ViewBag.Mensaje</p>
+    }
+
+    <form method="post" asp-action="Registro" class="registro-form">
+        <label>Nombre:</label>
+        <input type="text" name="Nombre" required />
+
+        <label>Nombre de usuario:</label>
+        <input type="text" name="NombreUsuarioIngresado" required />
+
+        <label>Idioma de preferencia:</label>
+        <select name="Idioma" required>
+            <option value="">Seleccione un idioma</option>
+            <option>Español</option>
+            <option>Inglés</option>
+            <option>Portugués</option>
+        </select>
+
+        <label>Fecha de nacimiento:</label>
+        <input type="date" name="FechaNacimiento" required />
+
+        <label>País de origen:</label>
+        <div class="radio-row">
+            <label><input type="radio" name="PaisOrigen" value="Argentina" required /> Argentina</label>
+            <label><input type="radio" name="PaisOrigen" value="Chile" /> Chile</label>
+            <label><input type="radio" name="PaisOrigen" value="Uruguay" /> Uruguay</label>
+        </div>
+
+        <label>País de llegada:</label>
+        <div class="radio-row">
+            <label><input type="radio" name="PaisLlegada" value="Argentina" required /> Argentina</label>
+            <label><input type="radio" name="PaisLlegada" value="Chile" /> Chile</label>
+            <label><input type="radio" name="PaisLlegada" value="Uruguay" /> Uruguay</label>
+        </div>
+
+        <label>Fecha de emigración:</label>
+        <input type="date" name="FechaEmigracion" required />
+
+        <label>Email de contacto:</label>
+        <input type="email" name="Email" required />
+
+        <label>Contraseña:</label>
+        <input type="password" name="Contrasena" required />
+
+        <button type="submit">Crear cuenta</button>
+    </form>
+</div>
+
