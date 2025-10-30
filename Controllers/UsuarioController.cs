@@ -46,7 +46,7 @@ namespace Culturi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Registro(string nombre, string apellido, string email, string contrasena, int idPais)
+        public IActionResult Registro(string nombre, string user, string email, string contrasena, int idPais)
         {
             Usuario existente = BD.LevantarUsuario(nombre);
             if (existente != null)
@@ -58,7 +58,7 @@ namespace Culturi.Controllers
             Usuario nuevoUsuario = new Usuario
             {
                 Nombre = nombre,
-                Apellido = apellido,
+                usuario = user,
                 Email = email,
                 Contrasena = contrasena,
                 IdPais = idPais,

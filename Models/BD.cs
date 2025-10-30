@@ -4,7 +4,7 @@ namespace Culturi;
 public static class BD
 {
 
-    private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Culturi33;Integrated Security=True;TrustServerCertificate=True;";
     public static Usuario LevantarUsuario(string nombre)
     {
         Usuario miUsuario = null;
@@ -27,16 +27,16 @@ public static class BD
     public static void AgregarUsuario(Usuario usuario)
 {
     string query = @"INSERT INTO Usuario 
-                        (nombre, apellido, email, contrasena, idPais, fechaRegistro)
+                        (nombre, usuario, email, contrasena, idPais, fechaRegistro)
                      VALUES 
-                        (@pNombre, @pApellido, @pEmail, @pContrasena, @pIdPais, @pFechaRegistro)";
+                        (@pNombre, @pusuario, @pEmail, @pContrasena, @pIdPais, @pFechaRegistro)";
     
     using (SqlConnection connection = new SqlConnection(_connectionString))
     {
         connection.Execute(query, new
         {
             pNombre = usuario.Nombre,
-            pApellido = usuario.Apellido,
+            pusuario = usuario.usuario,
             pEmail = usuario.Email,
             pContrasena = usuario.Contrasena,
             pIdPais = usuario.IdPais,

@@ -353,3 +353,28 @@ button[type="submit"]:hover {
   background-color: #3a91a1;
 }
 
+.tramitesHome {
+  text-decoration: none;
+
+}
+.opcionesHome {
+  text-decoration: none;
+}
+.opcionesHome div {
+  background-color: #56C797;
+  border-radius: 40px;
+  padding: 3px;
+}
+.noticiasHome {
+  text-decoration: none;
+
+}
+.noticiasHome h3 {
+  background-color: #000000;
+  opacity: 0.64;
+
+}
+.noticiasHome img {
+border-radius: 23.5px;
+}
+
