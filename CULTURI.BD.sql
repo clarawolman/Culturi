@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Culturi]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Database [Culturi]    Script Date: 30/10/2025 13:45:47 ******/
 CREATE DATABASE [Culturi]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -79,10 +79,10 @@ ALTER DATABASE [Culturi] SET QUERY_STORE = OFF
 GO
 USE [Culturi]
 GO
-/****** Object:  User [alumno]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  User [alumno]    Script Date: 30/10/2025 13:45:47 ******/
 CREATE USER [alumno] FOR LOGIN [alumno] WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  Table [dbo].[ChatPrivado]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[ChatPrivado]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,7 +98,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Grupo]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Grupo]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -114,7 +114,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Juego]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Juego]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -130,7 +130,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MensajeChatPrivado]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[MensajeChatPrivado]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -147,7 +147,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Mensajes]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Mensajes]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -164,7 +164,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Nivel]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Nivel]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,7 +181,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Notificacion]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Notificacion]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -199,7 +199,7 @@ CREATE TABLE [dbo].[Notificacion](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pais]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Pais]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -214,7 +214,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PasoDelTramite]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[PasoDelTramite]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -231,7 +231,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PreguntaJuego]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[PreguntaJuego]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -251,7 +251,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ProgresoTramites]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[ProgresoTramites]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -268,7 +268,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tramite]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Tramite]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -277,15 +277,15 @@ CREATE TABLE [dbo].[Tramite](
 	[id_tramite] [int] IDENTITY(1,1) NOT NULL,
 	[titulo] [varchar](150) NOT NULL,
 	[descripcion] [text] NULL,
-	[id_pais] [int] NOT NULL,
-	[tipo] [varchar](50) NULL,
-PRIMARY KEY CLUSTERED 
+	[id_paisOrigen] [int] NULL,
+	[id_paisDestino] [int] NOT NULL,
+ CONSTRAINT [PK__Tramite__DC2729AEB522D0ED] PRIMARY KEY CLUSTERED 
 (
 	[id_tramite] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -293,18 +293,21 @@ GO
 CREATE TABLE [dbo].[Usuario](
 	[id_usuario] [int] IDENTITY(1,1) NOT NULL,
 	[nombre] [varchar](50) NOT NULL,
-	[apellido] [varchar](50) NOT NULL,
+	[usuario] [varchar](50) NOT NULL,
+	[idiomaPreferencia] [nchar](10) NULL,
 	[email] [varchar](100) NOT NULL,
 	[contrasena] [varchar](255) NOT NULL,
-	[id_pais] [int] NOT NULL,
-	[fecha_registro] [date] NOT NULL,
-PRIMARY KEY CLUSTERED 
+	[id_paisOrigen] [nchar](10) NULL,
+	[id_paisDestino] [int] NOT NULL,
+	[fechaMigracion] [nchar](10) NULL,
+	[fechaNacimiento] [date] NOT NULL,
+ CONSTRAINT [PK__Usuario__4E3E04ADC125FD2A] PRIMARY KEY CLUSTERED 
 (
 	[id_usuario] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UsuarioJuego]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[UsuarioJuego]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -316,7 +319,7 @@ CREATE TABLE [dbo].[UsuarioJuego](
 	[fecha] [date] NOT NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UsuarioXGrupo]    Script Date: 30/10/2025 13:28:09 ******/
+/****** Object:  Table [dbo].[UsuarioXGrupo]    Script Date: 30/10/2025 13:45:47 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -335,8 +338,8 @@ PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Usuario__AB6E61643C473938]    Script Date: 30/10/2025 13:28:09 ******/
-ALTER TABLE [dbo].[Usuario] ADD UNIQUE NONCLUSTERED 
+/****** Object:  Index [UQ__Usuario__AB6E61643C473938]    Script Date: 30/10/2025 13:45:47 ******/
+ALTER TABLE [dbo].[Usuario] ADD  CONSTRAINT [UQ__Usuario__AB6E61643C473938] UNIQUE NONCLUSTERED 
 (
 	[email] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -349,7 +352,7 @@ ALTER TABLE [dbo].[Mensajes] ADD  DEFAULT (getdate()) FOR [fecha_envio]
 GO
 ALTER TABLE [dbo].[ProgresoTramites] ADD  DEFAULT (getdate()) FOR [fecha_actualizacion]
 GO
-ALTER TABLE [dbo].[Usuario] ADD  DEFAULT (getdate()) FOR [fecha_registro]
+ALTER TABLE [dbo].[Usuario] ADD  CONSTRAINT [DF__Usuario__fecha_r__5535A963]  DEFAULT (getdate()) FOR [fechaNacimiento]
 GO
 ALTER TABLE [dbo].[UsuarioXGrupo] ADD  DEFAULT (getdate()) FOR [fecha_union]
 GO
@@ -359,35 +362,49 @@ GO
 ALTER TABLE [dbo].[MensajeChatPrivado]  WITH CHECK ADD FOREIGN KEY([id_chat])
 REFERENCES [dbo].[ChatPrivado] ([id_chat])
 GO
-ALTER TABLE [dbo].[Mensajes]  WITH CHECK ADD FOREIGN KEY([id_grupo])
-REFERENCES [dbo].[Grupo] ([id_grupo])
-GO
-ALTER TABLE [dbo].[Mensajes]  WITH CHECK ADD FOREIGN KEY([id_usuario])
+ALTER TABLE [dbo].[Mensajes]  WITH CHECK ADD  CONSTRAINT [FK__Mensajes__id_usu__59FA5E80] FOREIGN KEY([id_usuario])
 REFERENCES [dbo].[Usuario] ([id_usuario])
+GO
+ALTER TABLE [dbo].[Mensajes] CHECK CONSTRAINT [FK__Mensajes__id_usu__59FA5E80]
 GO
 ALTER TABLE [dbo].[Nivel]  WITH CHECK ADD FOREIGN KEY([id_juego])
 REFERENCES [dbo].[Juego] ([id_juego])
 GO
-ALTER TABLE [dbo].[PasoDelTramite]  WITH CHECK ADD FOREIGN KEY([id_tramite])
+ALTER TABLE [dbo].[PasoDelTramite]  WITH CHECK ADD  CONSTRAINT [FK_PasoDelTramite_Tramite] FOREIGN KEY([id_tramite])
 REFERENCES [dbo].[Tramite] ([id_tramite])
+GO
+ALTER TABLE [dbo].[PasoDelTramite] CHECK CONSTRAINT [FK_PasoDelTramite_Tramite]
 GO
 ALTER TABLE [dbo].[PreguntaJuego]  WITH CHECK ADD FOREIGN KEY([id_nivel])
 REFERENCES [dbo].[Nivel] ([id_nivel])
 GO
-ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD FOREIGN KEY([id_tramite])
+ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD  CONSTRAINT [FK_ProgresoTramites_Tramite] FOREIGN KEY([id_tramite])
 REFERENCES [dbo].[Tramite] ([id_tramite])
 GO
-ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD FOREIGN KEY([id_usuario])
+ALTER TABLE [dbo].[ProgresoTramites] CHECK CONSTRAINT [FK_ProgresoTramites_Tramite]
+GO
+ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD  CONSTRAINT [FK_ProgresoTramites_Usuario] FOREIGN KEY([id_usuario])
 REFERENCES [dbo].[Usuario] ([id_usuario])
 GO
-ALTER TABLE [dbo].[Tramite]  WITH CHECK ADD FOREIGN KEY([id_pais])
+ALTER TABLE [dbo].[ProgresoTramites] CHECK CONSTRAINT [FK_ProgresoTramites_Usuario]
+GO
+ALTER TABLE [dbo].[Tramite]  WITH CHECK ADD  CONSTRAINT [FK_Tramite_Pais] FOREIGN KEY([id_paisOrigen])
 REFERENCES [dbo].[Pais] ([id_pais])
+GO
+ALTER TABLE [dbo].[Tramite] CHECK CONSTRAINT [FK_Tramite_Pais]
+GO
+ALTER TABLE [dbo].[Tramite]  WITH CHECK ADD  CONSTRAINT [FK_Tramite_Pais1] FOREIGN KEY([id_paisDestino])
+REFERENCES [dbo].[Pais] ([id_pais])
+GO
+ALTER TABLE [dbo].[Tramite] CHECK CONSTRAINT [FK_Tramite_Pais1]
 GO
 ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD FOREIGN KEY([id_grupo])
 REFERENCES [dbo].[Grupo] ([id_grupo])
 GO
-ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD FOREIGN KEY([id_usuario])
+ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD  CONSTRAINT [FK__UsuarioXG__id_us__619B8048] FOREIGN KEY([id_usuario])
 REFERENCES [dbo].[Usuario] ([id_usuario])
+GO
+ALTER TABLE [dbo].[UsuarioXGrupo] CHECK CONSTRAINT [FK__UsuarioXG__id_us__619B8048]
 GO
 ALTER TABLE [dbo].[Juego]  WITH CHECK ADD CHECK  (([tipo]='idioma' OR [tipo]='cultura'))
 GO
@@ -403,3 +420,4 @@ USE [master]
 GO
 ALTER DATABASE [Culturi] SET  READ_WRITE 
 GO
+
