@@ -13,10 +13,10 @@ namespace Culturi.Controllers
             // Lista de imágenes (pares)
             var cartas = new List<string>
             {
-                "apple1.jpg", "apple2.jpg",
-                "dog1.jpg", "dog2.jpg",
-                "bus1.jpg", "bus2.jpg",
-                "mate1.jpg", "mate2.jpg"
+                "mate.jpg", "mateTexto.jpg",
+                "tango.jpg", "tangoTexto.jpg",
+                "pibe.jpg", "pibeTexto.jpg",
+                "joda.jpg", "mate2.jpg"
             };
 
             // Mezclamos solo la primera vez
