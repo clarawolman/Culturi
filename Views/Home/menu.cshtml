@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Menú";
+}
+
+<div class="menu-page">
+    <h1>📋 Menú principal</h1>
+    <p>Esta es una vista de prueba para verificar que el redireccionamiento funciona correctamente.</p>
+
+    <div class="menu-links">
+        <a href="@Url.Action("Index", "Home")">🏠 Volver al inicio</a>
+        <a href="@Url.Action("Home", "Juego")">🎮 Ir a Juegos</a>
+        <a href="@Url.Action("Index", "Tramite")">📄 Tramites</a>
+    </div>
+</div>

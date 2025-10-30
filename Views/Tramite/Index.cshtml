@@ -2,20 +2,18 @@
     <nav>
         <ul>
           <li><a href = "/Home/menu.cshtml"><img src="/wwwroot/img/Boton menu.png" alt="menu"></a></li>
-          <li><a href = "/Usuario/Perdil.cshtml"><h2><img src="/wwwroot/img/perfil.png" alt="noti"></a></li>
+          <li><a href = "/Usuario/Perfil.cshtml"><h2><img src="/wwwroot/img/perfil.png" alt="noti"></a></li>
           <li><a href = "/Home/Landing.cshtml"><h2>¿Quiénes somos?</h2></a></li>
           <li><a href = "/Usuario/Noti.cshtml"><h2><img src="/wwwroot/img/noti.png" alt="noti"></a></li>
         </ul>
       </nav>
 </header>
 
+<!--
 <h1>Guia de Tramite</h1>
 
-<div>
-<h3>Tramites para vos</h3>
-</div>
-
 <section>
+<h3>Tramites para vos</h3>
 @for(int i=0;i<= ViewBag.CantDeTramites;i++)
 {
 <div>
@@ -27,8 +25,63 @@
 }
 </section>
 
+<section>
+<h3>Mis Tramites</h3>
+@for(int i=0;i<= ViewBag.CantDeTramites;i++)
+{
 <div>
-    <h3>Mis Tramites</h3>
-
-    
+    <button type="button"></button>
+    <button type="button"></button>
+    <h6>@ViewBag.Tramite.Titulo</h6>
+    <button type="button"></button>
+    <button type="button"></button>
 </div>
+}
+</section>
+-->
+
+@model List<Tramite>
+
+<h1>Guía de Trámites</h1>
+
+<section>
+    <h3>Trámites para vos</h3>
+
+    @foreach (var t in Model)
+    {
+        <div>
+            <button type="button">✔</button>
+            <button type="button">✖</button>
+
+            <span>@t.Titulo</span>  
+
+            <form asp-action="AgregarTramite" method="post" style="display:inline;">
+                <input type="hidden" name="IdTramite" value="@t.IdTramite" />
+                <button type="submit">Agregar</button>
+            </form>
+
+            <button type="button">?</button> 
+        </div>
+    }
+</section>
+
+<section>
+    <h3>Mis trámites</h3>
+
+    @foreach (var t in Model)
+    {
+        <div>
+            <button type="button">✔</button>
+            <button type="button">✖</button>
+
+            <a asp-action="Detalle" asp-route-id="@t.IdTramite">
+                <h6>@t.Titulo</h6> 
+            </a>
+
+            <button type="button">?</button>
+            <button type="button">noti</button>
+        </div>
+    }
+</section>
+
+

@@ -3,56 +3,91 @@
 }
 
 <link rel="stylesheet" href="~/css/landing.css" />
+<header class="custom-header">
+    <div class="menu-icon" onclick="location.href='@Url.Action("Menu", "Home")'">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+    <div class="header-center">
+        <h1><strong>culturi</strong></h1>
+        <h2>¿Quiénes somos?</h2>
+    </div>
+</header>
 
 <div class="landing-container">
     <section class="hero">
-        <img src="~/images/landing-hero.jpg" alt="Culturi comunidad viajera" class="hero-img">
+        <img src="/img/Landing/fotogrupo.png" alt="Culturi comunidad viajera" class="hero-img">
         <div class="hero-text">
             <h1>¿Qué es Culturi?</h1>
-            <p>Culturi es una plataforma que conecta viajeros y locales para compartir experiencias auténticas.</p>
+            <p>Culturi está para que todos inmigrantes puedan adaptarse y formar comodamente una nueva vida en su nuevo destino.</p>
             <a href="/Usuario/Registro" class="btn-primary">¡Únete a la comunidad!</a>
         </div>
     </section>
 
     <section class="features">
-        <h2>Una plataforma pensada para los viajeros</h2>
+        <h2>Una plataforma pensada para la adaptacion de los inmigrantes</h2>
         <div class="feature-grid">
             <div class="feature">
                 <img src="~/images/icon-comunidad.png" alt="Comunidad">
-                <h3>Comunidad mundial</h3>
-                <p>Conecta con personas de todo el mundo que comparten tus intereses.</p>
+                <h3>Atención personalizada</h3>
+                <p>En esta web la las diferentes herramientas estan pensadas para cumplir especificamente tus necesidades</p>
             </div>
             <div class="feature">
                 <img src="~/images/icon-experiencias.png" alt="Experiencias">
-                <h3>Experiencias únicas</h3>
-                <p>Participa en actividades creadas por locales en cada destino.</p>
+                <h3>Totalmente gratuita</h3>
+                <p>Queremos que todos aquellos que quieran puedan acceder a Culturi, nadie debería pasar por esto solo</p>
             </div>
             <div class="feature">
                 <img src="~/images/icon-cultura.png" alt="Cultura">
-                <h3>Aprende de la cultura</h3>
-                <p>Vive la cultura de cada lugar desde adentro, no como turista.</p>
+                <h3>Con implementación de IA</h3>
+                <p>Culturi se suma a las nuevas tecnologias para mejorar suus servicios</p>
             </div>
         </div>
     </section>
+    <section class="que-encontrar">
+    <h2>¿Qué podrás encontrar en Culturi?</h2>
+
+    <div class="contenedor-linea">
+        
+
+        <div class="item">
+            <img src="~/images/icon-comunidades.png" alt="Comunidades" class="icono" />
+            <p class="etiqueta">Comunidades</p>
+        </div>
+
+        <div class="item">
+            <img src="~/images/icon-tramites.png" alt="Guía de trámites" class="icono" />
+            <p class="etiqueta">Guía de trámites</p>
+        </div>
+
+        <div class="item">
+            <img src="~/images/icon-juegos.png" alt="Juegos" class="icono" />
+            <p class="etiqueta">Juegos</p>
+        </div>
+    </div>
+</section>
 
     <section class="steps">
-        <h2>¿Por dónde empezar?</h2>
+        <h2>Sigue los siguientes pasos para comenzar tu camino con nosotros</h2>
         <div class="step-list">
             <div class="step">
                 <span class="step-number">1</span>
-                <p>Registrate en Culturi</p>
+                <p>Crea una cuenta ingresando tus datos</p>
             </div>
             <div class="step">
                 <span class="step-number">2</span>
-                <p>Elegí tu destino o experiencia</p>
+                <p>Realiza los trámites necesarios con nuestra guía</p>
             </div>
             <div class="step">
                 <span class="step-number">3</span>
-                <p>Conectá con personas reales</p>
+                <p>Unite a nuestros grupos y crea nuevas amistades</p>
             </div>
             <div class="step">
                 <span class="step-number">4</span>
-                <p>Viví la experiencia</p>
+                <p>Sube  fotos a tu feed y seguí aprendiendo</p>
             </div>
         </div>
     </section>

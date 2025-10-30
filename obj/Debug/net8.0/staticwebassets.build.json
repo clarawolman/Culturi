@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fI/gcT3p9v7gefCbbMy+RAfHPbjakcEUtw0cJP4+wXs=",
+  "Hash": "pqFwDFuy10vYyBk+/AzlzOoyYctd9jQTCXAOFoKEUjo=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -112,12 +112,12 @@
       "OriginalItemSpec": "wwwroot\\img\\header\\perfil.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\Culturi Logo.png",
+      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\Culturi Logo.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Index/Culturi Logo.png",
+      "RelativePath": "img/Home/Culturi Logo.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,15 +128,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Index\\Culturi Logo.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\Culturi Logo.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\grupos.png",
+      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\grupos.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Index/grupos.png",
+      "RelativePath": "img/Home/grupos.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,15 +147,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Index\\grupos.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\grupos.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\info.png",
+      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\info.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Index/info.png",
+      "RelativePath": "img/Home/info.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -166,15 +166,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Index\\info.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\info.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\juegos.png",
+      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\juegos.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Index/juegos.png",
+      "RelativePath": "img/Home/juegos.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,15 +185,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Index\\juegos.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\juegos.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\Mapa.png",
+      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Index/Mapa.png",
+      "RelativePath": "img/Home/Mapa.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -204,15 +204,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Index\\Mapa.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\Mapa.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\NoticiasHome.png",
+      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\NoticiasHome.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Index/NoticiasHome.png",
+      "RelativePath": "img/Home/NoticiasHome.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -223,7 +223,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Index\\NoticiasHome.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\NoticiasHome.png"
     },
     {
       "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\cabeza.png",
@@ -338,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\juego\\Valija.png"
+    },
+    {
+      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
+      "SourceId": "PrimerProyecto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "BasePath": "_content/PrimerProyecto",
+      "RelativePath": "img/Landing/fotogrupo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Landing\\fotogrupo.png"
     },
     {
       "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\joda.jpg",

@@ -1,23 +1,256 @@
-html {
-  font-size: 14px;
-  min-height: 100%;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
+/* --- General --- */
 body {
-  margin: 10px;
-  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+.landing-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* --- Hero Section --- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #d5ebe7;
+  padding: 3rem 1rem;
+}
+
+.hero-img {
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 1.5rem;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  color: #003c3c;
+}
+
+.hero-text p {
+  max-width: 600px;
+  margin: 1rem auto;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #00897b;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #00695c;
+}
+
+/* --- Features Section --- */
+.features {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.features h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #004d40;
+}
+
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.feature {
+  width: 250px;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.feature img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+/* --- Steps Section --- */
+.steps {
+  background-color: #f0f8f7;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.steps h2 {
+  color: #004d40;
+  margin-bottom: 2rem;
+}
+
+.step-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.step {
+  width: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  display: inline-block;
+  background-color: #00897b;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 0.5rem;
+}
+.que-encontrar {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.que-encontrar h2 {
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.contenedor-linea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
 }
 
 
-footer {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e9ecef;
+
+.item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.icono {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.etiqueta {
+  background-color: #a3dbe3;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #000;
+}
+.custom-header {
+  background-color: #4EB2C3; /* mismo color que en tu imagen */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  height: 200px;
+}
+
+/* Icono de menú (las tres rayas) */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+}
+
+/* Centro del header */
+.header-center {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.header-center h1, 
+.header-center h2 {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  margin: 0;
+  font-weight: 700;
+}
+
+.header-center h1 {
+  font-size: 24px;
+}
+
+.header-center h2 {
+  font-size: 20px;
+}
+.menu-page {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #EAF6F8;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.menu-page h1 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.menu-page p {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-links a {
+  background-color: #4EB2C3;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.menu-links a:hover {
+  background-color: #3a91a1;
 }

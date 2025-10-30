@@ -9,28 +9,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\Culturi Logo.png",
-      "PackagePath": "staticwebassets\\img\\Index\\Culturi Logo.png"
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\Culturi Logo.png",
+      "PackagePath": "staticwebassets\\img\\Home\\Culturi Logo.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\Mapa.png",
-      "PackagePath": "staticwebassets\\img\\Index\\Mapa.png"
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
+      "PackagePath": "staticwebassets\\img\\Home\\Mapa.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\NoticiasHome.png",
-      "PackagePath": "staticwebassets\\img\\Index\\NoticiasHome.png"
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\NoticiasHome.png",
+      "PackagePath": "staticwebassets\\img\\Home\\NoticiasHome.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\grupos.png",
-      "PackagePath": "staticwebassets\\img\\Index\\grupos.png"
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\grupos.png",
+      "PackagePath": "staticwebassets\\img\\Home\\grupos.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\info.png",
-      "PackagePath": "staticwebassets\\img\\Index\\info.png"
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\info.png",
+      "PackagePath": "staticwebassets\\img\\Home\\info.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Index\\juegos.png",
-      "PackagePath": "staticwebassets\\img\\Index\\juegos.png"
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\juegos.png",
+      "PackagePath": "staticwebassets\\img\\Home\\juegos.png"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
+      "PackagePath": "staticwebassets\\img\\Landing\\fotogrupo.png"
     },
     {
       "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Valores.png",

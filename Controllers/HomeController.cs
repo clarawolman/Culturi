@@ -15,7 +15,10 @@ public class HomeController : Controller
     {
         return View();
     }
-    
+    public IActionResult Menu()
+{
+    return View();
+}
 }
 
 
