@@ -2,20 +2,32 @@
     ViewData["Title"] = "Culturi - Landing";
 }
 
-<link rel="stylesheet" href="~/css/landing.css" />
-<header class="custom-header">
-    <div class="menu-icon" onclick="location.href='@Url.Action("Menu", "Home")'">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-
+<<header class="custom-header">
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <div class="header-center">
         <h1><strong>culturi</strong></h1>
         <h2>¿Quiénes somos?</h2>
     </div>
 </header>
+
+<!-- Menú lateral -->
+<div id="sidebar-menu" class="menu-container sidebar-closed">
+    <div class="menu-header">
+        <button class="back-btn" onclick="toggleMenu()">←</button>
+        <h1>MENÚ</h1>
+    </div>
+
+    <div class="menu-links">
+        <a href="@Url.Action("Login", "Usuario")">Iniciar sesión</a>
+        <a href="@Url.Action("Registro", "Usuario")">Registrarse</a>
+    </div>
+</div>
+
 
 <div class="landing-container">
     <section class="hero">
