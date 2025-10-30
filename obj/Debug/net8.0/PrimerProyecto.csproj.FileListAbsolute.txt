@@ -7,3 +7,12 @@ C:\Users\49359853\Culturi\obj\Debug\net8.0\PrimerProyecto.MvcApplicationPartsAss
 C:\Users\49359853\Culturi\obj\Debug\net8.0\PrimerProyecto.RazorAssemblyInfo.cache
 C:\Users\49359853\Culturi\obj\Debug\net8.0\PrimerProyecto.RazorAssemblyInfo.cs
 C:\Users\49359853\Culturi\obj\Debug\net8.0\PrimerProyecto.sourcelink.json
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.csproj.AssemblyReference.cache
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.AssemblyInfoInputs.cache
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.AssemblyInfo.cs
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.csproj.CoreCompileInputs.cache
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.RazorAssemblyInfo.cache
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.RazorAssemblyInfo.cs
+C:\Users\49261291\Culturi\obj\Debug\net8.0\PrimerProyecto.sourcelink.json

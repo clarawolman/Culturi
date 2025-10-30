@@ -16,7 +16,7 @@ namespace Culturi.Controllers
                 "mate.jpg", "mateTexto.jpg",
                 "tango.jpg", "tangoTexto.jpg",
                 "pibe.jpg", "pibeTexto.jpg",
-                "joda.jpg", "mate2.jpg"
+                "joda.jpg", "jodaTexto.jpg"
             };
 
             // Mezclamos solo la primera vez

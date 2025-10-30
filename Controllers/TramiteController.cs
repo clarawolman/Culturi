@@ -56,11 +56,11 @@ namespace Culturi.Controllers
             return RedirectToAction("Detalle", new { id = idTramite });
         }
 
-        [HttpPost]
-        public IActionResult FinalizarTramite(int idTramite)
-        {
-            BD.FinalizarTramite(idTramite, idUsuario);
-            return RedirectToAction("Index");
-        }
+       [HttpPost]
+public IActionResult FinalizarTramite(int idTramite, int idUsuario)
+{
+    BD.FinalizarTramite(idTramite, idUsuario);
+    return RedirectToAction("Index");
+}
     }
 }
