@@ -8,14 +8,15 @@ namespace Culturi.Controllers
 {
     public class UsuarioController : Controller
     {
-       public IActionResult Landing()
+        public IActionResult Landing()
         {
             return View();
         }
-        public IActionResult Login()
+        /*public IActionResult Login()
         {
+            // Si ya hay un usuario logueado, lo mando al Home
             if (HttpContext.Session.GetString("usuarioLogueado") != null)
-               return View("Landing");
+                return RedirectToAction("Index", "Home");
 
             return View();
         }
@@ -27,11 +28,37 @@ namespace Culturi.Controllers
 
             if (usuario != null && usuario.InicioSesion(contrasena))
             {
+                // Guardamos el usuario en la sesión
                 string usuarioJson = JsonConvert.SerializeObject(usuario);
                 HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
 
-                ViewBag.Usuario = usuario;
-               return View("Landing");
+                // Redirigimos al Home una vez logueado
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Mensaje = "Usuario o contraseña incorrectos";
+                return View();
+            }
+        }*/
+        public IActionResult Login(string nombre, string contrasena)
+        {
+            // Si ya hay sesión activa, redirige al Home
+            if (HttpContext.Session.GetString("usuarioLogueado") != null)
+                return RedirectToAction("Index", "Home");
+
+            // Si no mandó nada todavía, mostrar el formulario
+            if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(contrasena))
+                return View();
+
+            // Si llegó hasta acá, significa que envió usuario y contraseña
+            Usuario usuario = BD.LevantarUsuario(nombre);
+
+            if (usuario != null && usuario.InicioSesion(contrasena))
+            {
+                string usuarioJson = JsonConvert.SerializeObject(usuario);
+                HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -45,34 +72,40 @@ namespace Culturi.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Registro(string nombre, string user, string email, string contrasena, int idPais)
-        {
-            Usuario existente = BD.LevantarUsuario(nombre);
-            if (existente != null)
-            {
-                ViewBag.Mensaje = "El nombre de usuario ya está en uso";
-                return View();
-            }
 
+        [HttpPost]
+        public IActionResult Registro(string nombre, string nombreUsuarioIngresado, string email, string contrasena, string idioma, string paisOrigen, string paisLlegada, DateTime fechaEmigracion, DateTime fechaNacimiento)
+        {
             Usuario nuevoUsuario = new Usuario
             {
                 Nombre = nombre,
-                usuario = user,
+                usuario = nombreUsuarioIngresado,
                 Email = email,
                 Contrasena = contrasena,
-                IdPais = idPais,
-                FechaRegistro = DateTime.Now
+                idiomaPreferencia = idioma,
+                id_paisOrigen = ObtenerIdPais(paisOrigen),
+                id_paisDestino = ObtenerIdPais(paisLlegada),
+                fechaMigracion = fechaEmigracion,
+                fechaNacimiento = fechaNacimiento
             };
 
-            string usuarioJson = JsonConvert.SerializeObject(nuevoUsuario);
-            HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
             BD.AgregarUsuario(nuevoUsuario);
 
-
             ViewBag.Mensaje = "Usuario creado correctamente";
-            return View("Landing");
+            return View("~/Views/Home/Index.cshtml");
         }
+        private int ObtenerIdPais(string nombrePais)
+        {
+            return nombrePais switch
+            {
+                "Argentina" => 1,
+                "Chile" => 2,
+                "Uruguay" => 3,
+                _ => 0
+            };
+        }
+
+
 
         public IActionResult Perfil()
         {
@@ -87,7 +120,7 @@ namespace Culturi.Controllers
         public IActionResult CerrarSesion()
         {
             HttpContext.Session.Clear();
-            return View("Landing");
+            return View("~/Views/Home/Index.cshtml");
         }
     }
 }

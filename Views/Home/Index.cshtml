@@ -2,7 +2,7 @@
     ViewData["Title"] = "Culturi - Landing";
 }
 
-<<header class="custom-header">
+<header class="custom-header">
     <div class="menu-icon" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -14,6 +14,9 @@
         <h2>¿Quiénes somos?</h2>
     </div>
 </header>
+
+<!-- Overlay -->
+<div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
 
 <!-- Menú lateral -->
 <div id="sidebar-menu" class="menu-container sidebar-closed">
@@ -27,7 +30,6 @@
         <a href="@Url.Action("Registro", "Usuario")">Registrarse</a>
     </div>
 </div>
-
 
 <div class="landing-container">
     <section class="hero">

@@ -4,7 +4,7 @@ namespace Culturi;
 public static class BD
 {
 
-    private static string _connectionString = @"Server=localhost;DataBase=Culturi33;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
     public static Usuario LevantarUsuario(string nombre)
     {
         Usuario miUsuario = null;
@@ -27,9 +27,9 @@ public static class BD
     public static void AgregarUsuario(Usuario usuario)
 {
     string query = @"INSERT INTO Usuario 
-                        (nombre, usuario, email, contrasena, idPais, fechaRegistro)
+                        (nombre, usuario, email, contrasena, idiomaPreferencia, id_paisOrigen, id_paisDestino, fechaMigracion, fechaNacimiento)
                      VALUES 
-                        (@pNombre, @pusuario, @pEmail, @pContrasena, @pIdPais, @pFechaRegistro)";
+                        (@pNombre, @pusuario, @pEmail, @pContrasena, @pidiomaPreferencia, @pid_paisOrigen, @pid_paisDestino, @pfechaMigracion, @pfechaNacimiento)";
     
     using (SqlConnection connection = new SqlConnection(_connectionString))
     {
@@ -39,8 +39,12 @@ public static class BD
             pusuario = usuario.usuario,
             pEmail = usuario.Email,
             pContrasena = usuario.Contrasena,
-            pIdPais = usuario.IdPais,
-            pFechaRegistro = usuario.FechaRegistro
+            pidiomaPreferencia = usuario.idiomaPreferencia,
+            pid_paisOrigen = usuario.id_paisOrigen,
+            pid_paisDestino = usuario.id_paisDestino,
+            pfechaMigracion =usuario.fechaMigracion,
+            pfechaNacimiento = usuario.fechaNacimiento
+            
         });
     }
 }

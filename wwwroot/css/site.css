@@ -377,4 +377,102 @@ button[type="submit"]:hover {
 .noticiasHome img {
 border-radius: 23.5px;
 }
+/* ===== MENU LATERAL ===== */
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70%;
+  max-width: 280px;
+  height: 100vh;
 
+  /* COLOR DEL MENU (cambiar aquí) */
+  background: #c7e8ff; /* Celeste — Cambiá este valor para otro color */
+
+  z-index: 999;
+  transform: translateX(-100%);
+  transition: transform .3s ease-in-out;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+}
+
+.menu-open {
+  transform: translateX(0);
+}
+
+/* Overlay oscuro atrás */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  z-index: 998;
+  display: none;
+}
+
+.menu-overlay.active {
+  display: block;
+}
+
+/* ===== BOTÓN HAMBURGUESA ===== */
+.menu-icon {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 2000;
+  background: transparent;
+}
+
+.menu-icon span {
+  width: 28px;
+  height: 3px;
+  background: #000; /* barras negras */
+  border-radius: 3px;
+  display: block;
+}
+
+/* ===== Para que no bloquee clicks cuando está cerrado ===== */
+.menu-container.sidebar-closed {
+  pointer-events: none;
+}
+
+.menu-container.menu-open {
+  pointer-events: all;
+}
+.menu-overlay {
+  pointer-events: none;
+}
+
+.menu-overlay.active {
+  pointer-events: all;
+}
+/* Ocultar icono hamburguesa cuando el menú está abierto */
+.menu-icon.hidden {
+  display: none;
+}
+
+/* Botón hamburguesa */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.menu-icon span {
+  width: 26px;
+  height: 3px;
+  background: black; /* ✅ barras negras */
+  border-radius: 2px;
+}

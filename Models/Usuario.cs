@@ -12,11 +12,15 @@ public class Usuario
     [JsonProperty]
     public string Contrasena { get; set; }
     [JsonProperty]
-    public int IdPais { get; set; }
+    public string idiomaPreferencia { get; set; }
     [JsonProperty]
-    public DateTime FechaRegistro { get; set; }
+    public int id_paisOrigen { get; set; }
     [JsonProperty]
-    public Pais Pais { get; set; }
+    public int id_paisDestino { get; set; }
+    [JsonProperty]
+    public DateTime fechaMigracion { get; set; }
+    [JsonProperty]
+    public DateTime fechaNacimiento { get; set; }
 
     public bool InicioSesion(string ContrasenaIngresada)
     {
