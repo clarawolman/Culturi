@@ -1,69 +1,99 @@
-<header>
+<header class="custom-header">
     <nav>
         <ul>
-          <li><a href = "/Home/menu.cshtml"><img src="/wwwroot/img/Boton menu.png" alt="menu"></a></li>
-          <li><a href = "/Usuario/Perdil.cshtml"><h2><img src="/wwwroot/img/perfil.png" alt="noti"></a></li>
-          <li><a href = "/Home/Landing.cshtml"><h2>¿Quiénes somos?</h2></a></li>
-          <li><a href = "/Usuario/Noti.cshtml"><h2><img src="/wwwroot/img/noti.png" alt="noti"></a></li>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/wwwroot/img/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Home/Landing">
+                    <h2>¿Quiénes somos?</h2>
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/wwwroot/img/noti.png" alt="notificaciones">
+                </a>
+            </li>
         </ul>
-      </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+  
 </header>
+<!-- Overlay -->
+<div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+<!-- Menú lateral -->
+<div id="sidebar-menu" class="menu-container sidebar-closed">
+    <div class="menu-header">
+        <button class="back-btn" onclick="toggleMenu()">←</button>
+        <h1>MENÚ</h1>
+    </div>
+
+    <div class="menu-links">
+        <a href="@Url.Action("Home", "Home")">Home</a>
+        <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
+        <a href="@Url.Action("Index", "Grupos")">Grupos</a>
+        <a href="@Url.Action("Index", "Tramite")">Tramites</a>
+        <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
+        <a href="@Url.Action("Index", "Juego")">Juegos</a>
+        <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
+
+    </div>
+</div>
 <main>
+    <section>
+        <img src="/wwwroot/img/Culturi Logo.png" alt="logo">
 
-<section>
-<img src="/wwwroot/img/Culturi Logo.png" alt = "logo">
+        <div class="tramitesHome">
+            
+        </div>
+    </section>
 
-<div class = "tramitesHome">
+    <section class="opcionesHome">
+        <a href="/Juego/Index">
+            <div>
+                <img src="/wwwroot/img/Home/juegos.png" alt="juegos">
+                <h3>Juegos</h3>
+            </div>
+        </a>
+        <a href="/Grupos/Index">
+            <div>
+                <img src="/wwwroot/img/grupos.png" alt="grupos">
+                <h3>Grupos</h3>
+            </div>
+        </a>
+        <a href="#">
+            <div>
+                <img src="/wwwroot/img/Mapa.png" alt="mapa">
+                <h3>Mapa</h3>
+            </div>
+        </a>
+        <a href="#">
+            <div>
+                <img src="/wwwroot/img/info.png" alt="info">
+                <h3>Noticias</h3>
+            </div>
+        </a>
+    </section>
 
-<a href="/Tramite/Index" >
-<div>
-    <h2>Tramites en proceso</h2>
-   @foreach (Tramite tramite in ViewBag.Tramites)
-    {
-        <h5>@tramite.IdTramite - @tramite.Titulo</h5>
-    }
-</div>
-</a>
-
-</div>
-
-<section class = "opcionesHome">  
-  <a href = "/Juego/Index" >
-<div>
-  <img src="/wwwroot/img/juegos.png" alt = "juegos">
-  <h3>Juegos</h3>
-</div>
-  </a>
-  <a href = "/Grupos/Index">
-<div>
-  <img src="/wwwroot/img/grupos.png" alt = "grupos">
-  <h3>Grupos</h3>
-</div>
-  </a>
-  <a href = "">
-<div>
-  <img src="/wwwroot/img/Mapa.png" alt = "mapa">
-  <h3>Mapa</h3>
-</div>
-  </a>
-  <a href = "">
-<div>
-  <img src="/wwwroot/img/info.png" alt = "info">
-  <h3>Noticias</h3>
-</div>
-  </a>
-
-</section>
-
-<div class = "NoticiasHome">
-  <a href = "/Noticias/Index">
-<div>
-  <img src="/wwwroot/img/NoticiasHome.png" alt = "noticias">
-  <h3>En Argentina se cambian las condiciones para la visa </h3>
-</div>
-</a>
-</div>
+    <div class="NoticiasHome">
+        <a href="/Noticias/Index">
+            <div>
+                <img src="/wwwroot/img/NoticiasHome.png" alt="noticias">
+                <h3>En Argentina se cambian las condiciones para la visa</h3>
+            </div>
+        </a>
+    </div>
 </main>
+
 
 
 

@@ -5,49 +5,57 @@ public static class BD
 {
 
     private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
-    public static Usuario LevantarUsuario(string nombre)
+    public static Usuario LevantarUsuario(string nombreUsuario)
     {
         Usuario miUsuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = @"SELECT 
-                    nombre, 
-                    contrasena 
-                FROM Usuario 
-                WHERE nombre = @pnombreUsuario";
-
+                            id_usuario AS IdUsuario,   -- 👈 usa el nombre real de tu columna
+                            nombre,
+                            usuario,
+                            email,
+                            contrasena,
+                            idiomaPreferencia,
+                            id_paisOrigen,
+                            id_paisDestino,
+                            fechaMigracion,
+                            fechaNacimiento
+                         FROM Usuario 
+                         WHERE usuario = @pnombreUsuario";
 
             miUsuario = connection.QueryFirstOrDefault<Usuario>(
-         query, new { pnombreUsuario = nombre });
-
+                query, new { pnombreUsuario = nombreUsuario });
         }
         return miUsuario;
     }
 
+
+
     public static void AgregarUsuario(Usuario usuario)
-{
-    string query = @"INSERT INTO Usuario 
+    {
+        string query = @"INSERT INTO Usuario 
                         (nombre, usuario, email, contrasena, idiomaPreferencia, id_paisOrigen, id_paisDestino, fechaMigracion, fechaNacimiento)
                      VALUES 
                         (@pNombre, @pusuario, @pEmail, @pContrasena, @pidiomaPreferencia, @pid_paisOrigen, @pid_paisDestino, @pfechaMigracion, @pfechaNacimiento)";
-    
-    using (SqlConnection connection = new SqlConnection(_connectionString))
-    {
-        connection.Execute(query, new
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            pNombre = usuario.Nombre,
-            pusuario = usuario.usuario,
-            pEmail = usuario.Email,
-            pContrasena = usuario.Contrasena,
-            pidiomaPreferencia = usuario.idiomaPreferencia,
-            pid_paisOrigen = usuario.id_paisOrigen,
-            pid_paisDestino = usuario.id_paisDestino,
-            pfechaMigracion =usuario.fechaMigracion,
-            pfechaNacimiento = usuario.fechaNacimiento
-            
-        });
+            connection.Execute(query, new
+            {
+                pNombre = usuario.Nombre,
+                pusuario = usuario.usuario,
+                pEmail = usuario.Email,
+                pContrasena = usuario.Contrasena,
+                pidiomaPreferencia = usuario.idiomaPreferencia,
+                pid_paisOrigen = usuario.id_paisOrigen,
+                pid_paisDestino = usuario.id_paisDestino,
+                pfechaMigracion = usuario.fechaMigracion,
+                pfechaNacimiento = usuario.fechaNacimiento
+
+            });
+        }
     }
-}
 
 
     public static List<Tramite> ObtenerTramites()

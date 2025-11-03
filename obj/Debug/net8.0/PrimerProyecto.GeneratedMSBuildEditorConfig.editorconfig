@@ -38,8 +38,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49261291/Culturi/Views/Home/menu.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxtZW51LmNzaHRtbA==
+[C:/Users/49261291/Culturi/Views/Home/Menu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNZW51LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/49261291/Culturi/Views/Juego/Index.cshtml]
@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/49261291/Culturi/Views/Juego/Resultado.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSnVlZ29cUmVzdWx0YWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49261291/Culturi/Views/Mapa/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/49261291/Culturi/Views/Shared/_Layout.cshtml]

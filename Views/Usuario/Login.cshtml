@@ -12,9 +12,9 @@
             <p class="message">@ViewBag.Mensaje</p>
         }
 
-        <form method="post" asp-action="Login">
+        <form method="post" asp-action="Login" asp-controller="Usuario">
             <label for="NombreUsuario">Nombre de usuario</label>
-            <input type="text" id="NombreUsuario" name="NombreUsuario" placeholder="Ingresa tu usuario" required />
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu usuario" required />
 
             <label for="contrasena">Contraseña</label>
             <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required />
@@ -23,3 +23,5 @@
         </form>
     </div>
 </div>
+
+

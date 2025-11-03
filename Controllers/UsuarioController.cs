@@ -42,30 +42,29 @@ namespace Culturi.Controllers
             }
         }*/
         public IActionResult Login(string nombre, string contrasena)
-        {
-            // Si ya hay sesión activa, redirige al Home
-            if (HttpContext.Session.GetString("usuarioLogueado") != null)
-                return RedirectToAction("Index", "Home");
+{
+    if (HttpContext.Session.GetString("usuarioLogueado") != null)
+        return RedirectToAction("Index", "Home");
 
-            // Si no mandó nada todavía, mostrar el formulario
-            if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(contrasena))
-                return View();
+    if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(contrasena))
+        return View();
 
-            // Si llegó hasta acá, significa que envió usuario y contraseña
-            Usuario usuario = BD.LevantarUsuario(nombre);
+    // Ahora 'nombre' representa el nombre de usuario (no el nombre real)
+    Usuario usuario = BD.LevantarUsuario(nombre);
 
-            if (usuario != null && usuario.InicioSesion(contrasena))
-            {
-                string usuarioJson = JsonConvert.SerializeObject(usuario);
-                HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ViewBag.Mensaje = "Usuario o contraseña incorrectos";
-                return View();
-            }
-        }
+    if (usuario != null && usuario.InicioSesion(contrasena))
+    {
+        string usuarioJson = JsonConvert.SerializeObject(usuario);
+        HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
+        return RedirectToAction("Home", "Home");
+    }
+    else
+    {
+        ViewBag.Mensaje = "Usuario o contraseña incorrectos";
+        return View();
+    }
+}
+
 
         public IActionResult Registro()
         {
