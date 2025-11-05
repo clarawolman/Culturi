@@ -42,28 +42,28 @@ namespace Culturi.Controllers
             }
         }*/
         public IActionResult Login(string nombre, string contrasena)
-{
-    if (HttpContext.Session.GetString("usuarioLogueado") != null)
-        return RedirectToAction("Index", "Home");
+        {
+            if (HttpContext.Session.GetString("usuarioLogueado") != null)
+                return RedirectToAction("Index", "Home");
 
-    if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(contrasena))
-        return View();
+            if (string.IsNullOrEmpty(nombre) && string.IsNullOrEmpty(contrasena))
+                return View();
 
-    // Ahora 'nombre' representa el nombre de usuario (no el nombre real)
-    Usuario usuario = BD.LevantarUsuario(nombre);
+            // Ahora 'nombre' representa el nombre de usuario (no el nombre real)
+            Usuario usuario = BD.LevantarUsuario(nombre);
 
-    if (usuario != null && usuario.InicioSesion(contrasena))
-    {
-        string usuarioJson = JsonConvert.SerializeObject(usuario);
-        HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
-        return RedirectToAction("Home", "Home");
-    }
-    else
-    {
-        ViewBag.Mensaje = "Usuario o contraseña incorrectos";
-        return View();
-    }
-}
+            if (usuario != null && usuario.InicioSesion(contrasena))
+            {
+                string usuarioJson = JsonConvert.SerializeObject(usuario);
+                HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
+                return RedirectToAction("Home", "Home");
+            }
+            else
+            {
+                ViewBag.Mensaje = "Usuario o contraseña incorrectos";
+                return View();
+            }
+        }
 
 
         public IActionResult Registro()
@@ -75,6 +75,11 @@ namespace Culturi.Controllers
         [HttpPost]
         public IActionResult Registro(string nombre, string nombreUsuarioIngresado, string email, string contrasena, string idioma, string paisOrigen, string paisLlegada, DateTime fechaEmigracion, DateTime fechaNacimiento)
         {
+            if (BD.ExisteEmail(email))
+            {
+                ViewBag.Mensaje = "El email ya está registrado, por favor iniciá sesión.";
+                return View();
+            }
             Usuario nuevoUsuario = new Usuario
             {
                 Nombre = nombre,
@@ -91,7 +96,7 @@ namespace Culturi.Controllers
             BD.AgregarUsuario(nuevoUsuario);
 
             ViewBag.Mensaje = "Usuario creado correctamente";
-            return View("~/Views/Home/Index.cshtml");
+            return View("~/Views/Home/Home.cshtml");
         }
         private int ObtenerIdPais(string nombrePais)
         {

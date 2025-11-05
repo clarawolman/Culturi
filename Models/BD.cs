@@ -150,4 +150,14 @@ public static class BD
             connection.Execute(query, new { pIdUsuario = idUsuario, pIdTramite = idTramite });
         }
     }
+    public static bool ExisteEmail(string email)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT COUNT(*) FROM Usuario WHERE email = @pEmail";
+            int count = connection.ExecuteScalar<int>(query, new { pEmail = email });
+            return count > 0;
+        }
+    }
+
 }

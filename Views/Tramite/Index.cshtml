@@ -9,41 +9,9 @@
       </nav>
 </header>
 
-<!--
+
 <h1>Guia de Tramite</h1>
-
-<section>
-<h3>Tramites para vos</h3>
-@for(int i=0;i<= ViewBag.CantDeTramites;i++)
-{
-<div>
-    <button type="button"></button>
-    <button type="button"></button>
-    <h6>@ViewBag.Tramite.Titulo</h6>
-    <button type="button"></button>
-</div>
-}
-</section>
-
-<section>
-<h3>Mis Tramites</h3>
-@for(int i=0;i<= ViewBag.CantDeTramites;i++)
-{
-<div>
-    <button type="button"></button>
-    <button type="button"></button>
-    <h6>@ViewBag.Tramite.Titulo</h6>
-    <button type="button"></button>
-    <button type="button"></button>
-</div>
-}
-</section>
--->
-
 @model List<Tramite>
-
-<h1>Guía de Trámites</h1>
-
 <section>
     <h3>Trámites para vos</h3>
 
@@ -79,7 +47,7 @@
             </a>
 
             <button type="button">?</button>
-            <button type="button">noti</button>
+            <button type="button">noti</button> 
         </div>
     }
 </section>

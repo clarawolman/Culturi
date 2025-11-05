@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pqFwDFuy10vYyBk+/AzlzOoyYctd9jQTCXAOFoKEUjo=",
+  "Hash": "8/mP1lc65Oip57DZ10eYF7GLYegufCUSKwPlvrdQOQc=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "PrimerProyecto\\wwwroot",
       "Source": "PrimerProyecto",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\css\\site.css",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\favicon.ico",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\header\\Boton menu.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\header\\Boton menu.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/header/Boton menu.png",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\img\\header\\Boton menu.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\header\\noti.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\header\\noti.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/header/noti.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\img\\header\\noti.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\header\\perfil.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\header\\perfil.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/header/perfil.png",
       "AssetKind": "All",
@@ -112,12 +112,12 @@
       "OriginalItemSpec": "wwwroot\\img\\header\\perfil.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\Culturi Logo.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\FOTONOTICIA.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Home/Culturi Logo.png",
+      "RelativePath": "img/Home/FOTONOTICIA.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Home\\Culturi Logo.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\FOTONOTICIA.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\grupos.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\grupos.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/grupos.png",
       "AssetKind": "All",
@@ -150,29 +150,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\grupos.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\info.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\juegos.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
-      "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Home/info.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Home\\info.png"
-    },
-    {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\juegos.png",
-      "SourceId": "PrimerProyecto",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/juegos.png",
       "AssetKind": "All",
@@ -188,12 +169,12 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\juegos.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\LOGO.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Home/Mapa.png",
+      "RelativePath": "img/Home/LOGO.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -204,15 +185,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Home\\Mapa.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\LOGO.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\NoticiasHome.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\mapa.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Home/NoticiasHome.png",
+      "RelativePath": "img/Home/mapa.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -223,13 +204,70 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Home\\NoticiasHome.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\mapa.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\cabeza.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\noti.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
+      "BasePath": "_content/PrimerProyecto",
+      "RelativePath": "img/Home/noti.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Home\\noti.png"
+    },
+    {
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\noticiass.png",
+      "SourceId": "PrimerProyecto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
+      "BasePath": "_content/PrimerProyecto",
+      "RelativePath": "img/Home/noticiass.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Home\\noticiass.png"
+    },
+    {
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Home\\perfil.png",
+      "SourceId": "PrimerProyecto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
+      "BasePath": "_content/PrimerProyecto",
+      "RelativePath": "img/Home/perfil.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Home\\perfil.png"
+    },
+    {
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\juego\\cabeza.png",
+      "SourceId": "PrimerProyecto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/cabeza.png",
       "AssetKind": "All",
@@ -245,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\cabeza.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\idioma2.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\juego\\idioma2.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/idioma2.png",
       "AssetKind": "All",
@@ -264,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\idioma2.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\libroConLetras.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\juego\\libroConLetras.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/libroConLetras.png",
       "AssetKind": "All",
@@ -283,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\libroConLetras.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\planeta.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\juego\\planeta.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/planeta.png",
       "AssetKind": "All",
@@ -302,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\planeta.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\salaEscape.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\juego\\salaEscape.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/salaEscape.png",
       "AssetKind": "All",
@@ -321,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\salaEscape.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\Valija.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\juego\\Valija.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/Valija.png",
       "AssetKind": "All",
@@ -340,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\Valija.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/fotogrupo.png",
       "AssetKind": "All",
@@ -359,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\fotogrupo.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\joda.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\joda.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/joda.jpg",
       "AssetKind": "All",
@@ -378,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\joda.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\jodaTexto.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\jodaTexto.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/jodaTexto.jpg",
       "AssetKind": "All",
@@ -397,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\jodaTexto.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\mate.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\mate.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/mate.jpg",
       "AssetKind": "All",
@@ -416,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\mate.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\mateTexto.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\mateTexto.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/mateTexto.jpg",
       "AssetKind": "All",
@@ -435,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\mateTexto.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\pibe.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\pibe.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/pibe.jpg",
       "AssetKind": "All",
@@ -454,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\pibe.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\pibeTexto.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\pibeTexto.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/pibeTexto.jpg",
       "AssetKind": "All",
@@ -473,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\pibeTexto.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\tango.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\tango.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/tango.jpg",
       "AssetKind": "All",
@@ -492,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\tango.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\tangoTexto.jpg",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\memotest\\tangoTexto.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/tangoTexto.jpg",
       "AssetKind": "All",
@@ -511,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\tangoTexto.jpg"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Valores.png",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\Valores.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Valores.png",
       "AssetKind": "All",
@@ -530,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Valores.png"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\js\\site.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -549,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -568,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -587,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -606,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -625,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -644,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -663,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -682,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -701,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -720,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -739,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -758,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\49359853\\Culturi\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\49261291\\Culturi\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\49359853\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

@@ -1,4 +1,7 @@
 /* --- General --- */
+* {
+  font-style: none;
+}
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #fdfdfd;
@@ -11,6 +14,73 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
+/* HEADER */
+.custom-header {
+  width: 100%;
+  background: #37A6BA; /* tu color */
+  padding: 10px 40px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  top: 0;
+  z-index: 1000;
+}
+
+.custom-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* UL general (izquierda + centro + derecha) */
+.custom-header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Imágenes del header */
+.custom-header nav ul img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+/* Texto ¿Quiénes somos? */
+.custom-header nav ul h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+/* HOVER */
+.custom-header nav a:hover h2 {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* MENU ICON */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: .3s;
+}
+
+.menu-icon:hover span {
+  width: 32px;
+}
+
 
 /* --- Hero Section --- */
 .hero {
@@ -144,7 +214,6 @@ body {
   align-items: center;
   gap: 60px;
 }
-
 
 
 .item {
@@ -478,92 +547,344 @@ border-radius: 23.5px;
 }
 
 /*Home*/
-main > section:first-child img {
-  width: 100px;
-  margin-top: 20px;
+/* Home Desktop Full Width */
+
+/* Contenedor principal */
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
+/* LOGO */
+main > section:first-child img {
+  width: 130px;
+  margin-top: 25px;
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.logo img {
+  width: 10%;
+}
+
+/* TRAMITES - ancho grande estilo dashboard */
 .tramitesHome {
   border: 3px solid #66c5cb;
   border-radius: 15px;
-  width: 80%;
-  margin: 20px auto;
-  padding: 10px 0;
+  width: 60%;
+  margin: 30px auto;
+  padding: 20px;
   background-color: #f9f9f9;
 }
 
 .tramitesHome h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
+/* OPCIONES */
 .opcionesHome {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
-  margin: 30px auto;
-  width: 90%;
-}
-
-.opcionesHome a {
-  text-decoration: none;
-  color: inherit;
+  gap: 70px;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .opcionesHome div {
   background-color: #66c5cb;
-  border-radius: 20px;
-  width: 120px;
-  height: 120px;
+  border-radius: 25px;
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: transform 0.2s ease;
+  cursor: pointer;
+  font-size: 20px;
+  font-style: none;
+
 }
 
 .opcionesHome div:nth-child(odd) {
-  background-color: #6fd0a8; 
+  background-color: #6fd0a8;
 }
 
 .opcionesHome div:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .opcionesHome img {
-  width: 50px;
-  margin-bottom: 8px;
+  width: 80px;
+  margin-bottom: 12px;
 }
 
-.opcionesHome h3 {
-  font-size: 15px;
-  margin: 0;
-}
-
-
+/* NOTICIAS */
 .NoticiasHome {
-  width: 90%;
-  margin: 20px auto 60px auto;
-  border-radius: 15px;
+  width: 60%;
+  margin: 60px auto 100px auto;
+  border-radius: 18px;
   overflow: hidden;
 }
 
 .NoticiasHome img {
   width: 100%;
-  height: auto;
   display: block;
-  border-radius: 15px;
 }
 
 .NoticiasHome h3 {
   position: relative;
-  bottom: 30px;
+  bottom: 45px;
   color: white;
   background: rgba(0, 0, 0, 0.6);
-  padding: 8px;
-  font-size: 13px;
-  border-radius: 0 0 15px 15px;
+  padding: 12px;
+  font-size: 18px;
   margin: 0;
 }
+
+
+/*login*/ 
+.login-container {
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 30px 40px;
+  background-color: #e0f5f7;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #000;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.message {
+  background-color: #4eb2c3;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+form label {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  padding: 8px 10px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+form input:focus {
+  border-color: #4eb2c3;
+}
+
+.btn-primary {
+  background-color: #4eb2c3;
+  color: white;
+  border: none;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3aa1b2;
+}
+
+/* CSS PERFIL 
+/* ======== CONTENEDOR PRINCIPAL ======== */
+.perfil-container {
+  max-width: 900px;               /* mucho más ancho */
+  margin: 40px auto;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ======== HEADER SUPERIOR ======== */
+.perfil-header {
+  background-color: #4eb2c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  color: white;
+  font-size: 22px;
+}
+
+.btn-volver,
+.btn-menu {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ======== SECCIÓN PRINCIPAL ======== */
+.perfil-principal {
+  background-color: #fff;
+  padding: 40px 60px;
+  text-align: center;
+}
+
+/* FOTO DE PERFIL */
+.perfil-foto {
+  margin-top: -70px;
+}
+
+.perfil-foto img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  object-fit: cover;
+}
+
+/* NOMBRE Y USUARIO */
+.perfil-nombre {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 12px 0 4px;
+}
+
+.perfil-usuario {
+  font-size: 18px;
+  color: #555;
+}
+
+/* BOTÓN EDITAR PERFIL */
+.btn-editar {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 40px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 25px 0 35px;
+  font-size: 18px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-editar:hover {
+  background-color: #43a047;
+}
+
+/* ======== BLOQUES DE INFORMACIÓN ======== */
+.perfil-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.info-bloque {
+  background-color: #b8e5eb;
+  border-radius: 12px;
+  padding: 20px 25px;
+  width: 250px;
+  text-align: left;
+  font-size: 17px;
+}
+
+.info-bloque strong {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 6px;
+  color: #000;
+}
+
+/* ======== PUBLICACIONES ======== */
+.perfil-publicaciones {
+  background-color: #b8e5eb;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: left;
+}
+
+.publicaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.publicaciones-grid img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* BOTÓN VER MÁS */
+.btn-vermas {
+  display: block;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 20px auto 0;
+  font-size: 17px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-vermas:hover {
+  background-color: #43a047;
+}
+
+/* ======== BOTÓN FLOTANTE ABAJO ======== */
+.boton-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
