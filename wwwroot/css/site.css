@@ -1,6 +1,7 @@
-/* --- General --- */
+
 * {
   font-style: none;
+  text-decoration: none;
 }
 body {
   font-family: 'Poppins', sans-serif;
@@ -22,6 +23,14 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   top: 0;
   z-index: 1000;
+}
+header nav ul li {
+  align-items: center;
+}
+header nav ul li a {
+  text-decoration: none;
+  font-style: none;
+  color: #3a91a1;
 }
 
 .custom-header nav {
@@ -57,7 +66,7 @@ body {
 
 /* HOVER */
 .custom-header nav a:hover h2 {
-  text-decoration: underline;
+  text-decoration: none;
   opacity: 0.85;
 }
 
@@ -117,6 +126,7 @@ body {
   padding: 0.8rem 1.6rem;
   border-radius: 8px;
   text-decoration: none;
+  font-style: none;
   font-weight: 600;
   transition: background-color 0.3s;
 }
@@ -327,7 +337,8 @@ body {
 .menu-links a {
   font-weight: 700;
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
+  font-style: none;
   transition: color 0.2s ease;
 }
 
@@ -428,6 +439,7 @@ button[type="submit"]:hover {
 }
 .opcionesHome {
   text-decoration: none;
+  color: #000;
 }
 .opcionesHome div {
   background-color: #56C797;

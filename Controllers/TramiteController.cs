@@ -62,5 +62,12 @@ namespace Culturi.Controllers
             BD.FinalizarTramite(idTramite, idUsuario);
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public IActionResult ObtenerPasoDelTramite()
+        {
+            ViewBag.Pasos=BD.ObtenerPasoDelTramite();
+            return View("Detalle");
+        } 
     }
 }

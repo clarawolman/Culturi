@@ -1,19 +1,20 @@
 <header>
     <nav>
         <ul>
-          <li><a href = "/Home/menu.cshtml"><img src="/wwwroot/img/Boton menu.png" alt="menu"></a></li>
-          <li><a href = "/Usuario/Perfil.cshtml"><h2><img src="/wwwroot/img/perfil.png" alt="noti"></a></li>
-          <li><a href = "/Home/Landing.cshtml"><h2>¿Quiénes somos?</h2></a></li>
-          <li><a href = "/Usuario/Noti.cshtml"><h2><img src="/wwwroot/img/noti.png" alt="noti"></a></li>
+          <li><a href = "/Home/menu.cshtml"><img src="/img/header/Boton menu.png" alt="menu"></a></li>
+          <li><a href = "/Usuario/Perfil.cshtml"><h2><img src="/img/header/perfil.png" alt="noti"></a></li>
+          <li><a href = "/Usuario/Noti.cshtml"><h2><img src="/img/header/noti.png" alt="noti"></a></li>
         </ul>
       </nav>
 </header>
 
-<h1>Residencia permanente</h1>
-
-@foreach(PasoDelTramite pasos in Pasos )
-{
+<h1>@ViewBag.Titulo</h1>
+@model List<Tramite>
+@foreach (var t in Model)
+    {
     <div> 
-    <h3>@ViewBag.Descripcion</h3>
+    <img src="" alt="cuadradito">
+    <h3>@ViewBag.Pasos</h3>
+    <img src="" alt="calendario">
     </div>
-}
+    }
