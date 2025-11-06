@@ -64,9 +64,9 @@ namespace Culturi.Controllers
         }
 
         [HttpPost]
-        public IActionResult ObtenerPasoDelTramite()
+        public IActionResult ObtenerPasosDelTramite(int idTramite)
         {
-            ViewBag.Pasos=BD.ObtenerPasoDelTramite();
+            ViewBag.Pasos= BD.ObtenerPasosDelTramite(idTramite);
             return View("Detalle");
         } 
     }

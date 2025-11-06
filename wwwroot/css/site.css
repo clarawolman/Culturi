@@ -453,6 +453,7 @@ button[type="submit"]:hover {
 .noticiasHome h3 {
   background-color: #000000;
   opacity: 0.64;
+  border-radius: 10px;
 
 }
 .noticiasHome img {
@@ -638,6 +639,11 @@ main > section:first-child img {
 .opcionesHome img {
   width: 80px;
   margin-bottom: 12px;
+}
+.opcionesHome h3 {
+  text-decoration: none;
+  color: #000000;
+  border-radius: 15px;
 }
 
 /* NOTICIAS */
