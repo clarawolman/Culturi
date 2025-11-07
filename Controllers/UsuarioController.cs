@@ -73,7 +73,7 @@ namespace Culturi.Controllers
 
 
         [HttpPost]
-        public IActionResult Registro(string nombre, string nombreUsuarioIngresado, string email, string contrasena, string idioma, string paisOrigen, string paisLlegada, DateTime fechaEmigracion, DateTime fechaNacimiento)
+        public IActionResult Registro(string nombre, string nombreUsuarioIngresado, string email, string contrasena, string idioma, string paisOrigen, string paisLlegada, DateTime fechaMigracion, DateTime fechaNacimiento)
         {
             if (BD.ExisteEmail(email))
             {
@@ -89,7 +89,7 @@ namespace Culturi.Controllers
                 idiomaPreferencia = idioma,
                 id_paisOrigen = ObtenerIdPais(paisOrigen),
                 id_paisDestino = ObtenerIdPais(paisLlegada),
-                fechaMigracion = fechaEmigracion,
+                fechaMigracion = fechaMigracion,
                 fechaNacimiento = fechaNacimiento
             };
 
@@ -111,15 +111,24 @@ namespace Culturi.Controllers
 
 
 
-        public IActionResult Perfil()
-        {
-            string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
-            if (usuarioJson == null)
-                return RedirectToAction("Login");
+     public IActionResult Perfil()
+{
+    string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
+    if (usuarioJson == null)
+        return RedirectToAction("Login");
 
-            Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
-            return View(usuario);
-        }
+    Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+
+    // 👇 Debug para ver qué trae realmente
+    Debug.WriteLine($"Origen: {usuario.id_paisOrigen}  Destino: {usuario.id_paisDestino}  Fecha: {usuario.fechaMigracion}");
+
+    ViewBag.PaisOrigen = BD.ObtenerNombrePais(usuario.id_paisOrigen);
+    ViewBag.PaisDestino = BD.ObtenerNombrePais(usuario.id_paisDestino);
+
+    return View(usuario);
+}
+
+
 
         public IActionResult CerrarSesion()
         {

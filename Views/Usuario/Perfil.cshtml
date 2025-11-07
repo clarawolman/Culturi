@@ -1,7 +1,9 @@
+@model Usuario
+
 <div class="perfil-container">
     <!-- HEADER -->
     <header class="perfil-header">
-        <button class="btn-volver">⬅</button>
+        <button class="btn-volver" onclick="location.href='@Url.Action("Index", "Home")'">⬅</button>
         <h2>Tu perfil</h2>
         <button class="btn-menu">☰</button>
     </header>
@@ -11,8 +13,9 @@
         <div class="perfil-foto">
             <img src="/img/perfil.png" alt="foto de perfil">
         </div>
-        <h1 class="perfil-nombre">Rama</h1>
-        <p class="perfil-usuario">Ramiro Pita</p>
+
+        <h1 class="perfil-nombre">@Model.Nombre</h1>
+        <p class="perfil-usuario">@Model.usuario</p>
 
         <button class="btn-editar">Editar Perfil</button>
 
@@ -20,15 +23,15 @@
         <div class="perfil-info">
             <div class="info-bloque">
                 <strong>Nacido en...</strong>
-                <p>México 🇲🇽</p>
+                <p>@ViewBag.PaisOrigen</p>
             </div>
             <div class="info-bloque">
                 <strong>Viviendo en...</strong>
-                <p>Argentina 🇦🇷</p>
+                <p>@ViewBag.PaisDestino</p>
             </div>
             <div class="info-bloque">
                 <strong>Emigró en...</strong>
-                <p>08/03/1999</p>
+                <p>@Model.fechaMigracion.ToShortDateString()</p>
             </div>
         </div>
 

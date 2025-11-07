@@ -159,5 +159,14 @@ public static class BD
             return count > 0;
         }
     }
+    public static string ObtenerNombrePais(int idPais)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
+    {
+        string query = "SELECT nombre FROM Pais WHERE id_pais = @pid";
+        return connection.QueryFirstOrDefault<string>(query, new { pid = idPais });
+    }
+}
+
 
 }

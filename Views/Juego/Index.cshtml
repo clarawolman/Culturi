@@ -1,11 +1,46 @@
-<header>
+<header class="custom-header">
     <nav>
         <ul>
-          <li><a href = "/Home/menu.cshtml"><img src="/img/header/Boton menu.png" alt="menu"></a></li>
-          <li><a href = "/Usuario/Perfil.cshtml"><h2><img src="/img/header/perfil.png" alt="noti"></a></li>
-          <li><a href = "/Usuario/Noti.cshtml"><h2><img src="/img/header/noti.png" alt="noti"></a></li>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/wwwroot/img/header/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/wwwroot/img/header/noti.png" alt="notificaciones">
+                </a>
+            </li>
         </ul>
-      </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+
+<div id="sidebar-menu" class="menu-container sidebar-closed">
+    <div class="menu-header">
+        <button class="back-btn" onclick="toggleMenu()">←</button>
+        <h1>MENÚ</h1>
+    </div>
+
+    <div class="menu-links">
+        <a href="@Url.Action("Home", "Home")">Home</a>
+        <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
+        <a href="@Url.Action("Index", "Grupos")">Grupos</a>
+        <a href="@Url.Action("Index", "Tramite")">Tramites</a>
+        <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
+        <a href="@Url.Action("Index", "Juego")">Juegos</a>
+        <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
+
+    </div>
+</div>
+  
 </header>
 <main>
   <div class="container mt-4">
