@@ -8,8 +8,30 @@ namespace Culturi.Controllers
     {
         public IActionResult Index()
         {
-            List<Tramite> listaTramites = BD.ObtenerTramites();
-            return View(listaTramites);
+            // Obtener usuario logueado (lo mismo que usás en el resto de la app)
+            Usuario u = BD.ObtenerUsuarioPorSession(HttpContext);
+
+            if (u == null)
+                return RedirectToAction("Login", "Usuario");
+
+            // Trámites sugeridos según país origen/destino
+            List<Tramite> sugeridos = BD.ObtenerTramites().
+                Where(t =>
+                    t.id_paisDestino == u.id_paisDestino &&
+                    (t.id_paisOrigen == u.id_paisOrigen || t.id_paisOrigen == null)
+                ).ToList();
+
+            // Trámites que el usuario ya agregó (desde ProgresoTramites)
+            List<Tramite> misTramites = BD.ObtenerMisTramites(u.IdUsuario);
+
+            // Crear viewmodel
+            TramitesVM vm = new TramitesVM
+            {
+                TramitesParaVos = sugeridos,
+                MisTramites = misTramites
+            };
+
+            return View(vm);
         }
 
         public IActionResult Detalle(int id)
@@ -66,8 +88,8 @@ namespace Culturi.Controllers
         [HttpPost]
         public IActionResult ObtenerPasosDelTramite(int idTramite)
         {
-            ViewBag.Pasos= BD.ObtenerPasosDelTramite(idTramite);
+            ViewBag.Pasos = BD.ObtenerPasosDelTramite(idTramite);
             return View("Detalle");
-        } 
+        }
     }
 }

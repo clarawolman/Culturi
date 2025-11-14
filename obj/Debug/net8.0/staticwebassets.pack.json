@@ -1,171 +1,195 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\FOTONOTICIA.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\FOTONOTICIA.png",
       "PackagePath": "staticwebassets\\img\\Home\\FOTONOTICIA.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\LOGO.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\LOGO.png",
       "PackagePath": "staticwebassets\\img\\Home\\LOGO.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
       "PackagePath": "staticwebassets\\img\\Home\\Mapa.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\grupos.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\grupos.png",
       "PackagePath": "staticwebassets\\img\\Home\\grupos.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\juegos.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\juegos.png",
       "PackagePath": "staticwebassets\\img\\Home\\juegos.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\noti.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\noti.png",
       "PackagePath": "staticwebassets\\img\\Home\\noti.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\noticiass.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\noticiass.png",
       "PackagePath": "staticwebassets\\img\\Home\\noticiass.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Home\\perfil.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\perfil.png",
       "PackagePath": "staticwebassets\\img\\Home\\perfil.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Landing\\Comunidad.png",
+      "PackagePath": "staticwebassets\\img\\Landing\\Comunidad.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Landing\\Gratuita.png",
+      "PackagePath": "staticwebassets\\img\\Landing\\Gratuita.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Landing\\IA.png",
+      "PackagePath": "staticwebassets\\img\\Landing\\IA.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Landing\\Juegos.png",
+      "PackagePath": "staticwebassets\\img\\Landing\\Juegos.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Landing\\Personalizada.png",
+      "PackagePath": "staticwebassets\\img\\Landing\\Personalizada.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Landing\\Tramites.png",
+      "PackagePath": "staticwebassets\\img\\Landing\\Tramites.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
       "PackagePath": "staticwebassets\\img\\Landing\\fotogrupo.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\Valores.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Valores.png",
       "PackagePath": "staticwebassets\\img\\Valores.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\header\\Boton menu.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\header\\Boton menu.png",
       "PackagePath": "staticwebassets\\img\\header\\Boton menu.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\header\\noti.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\header\\noti.png",
       "PackagePath": "staticwebassets\\img\\header\\noti.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\header\\perfil.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\header\\perfil.png",
       "PackagePath": "staticwebassets\\img\\header\\perfil.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\Valija.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\juego\\Valija.png",
       "PackagePath": "staticwebassets\\img\\juego\\Valija.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\cabeza.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\juego\\cabeza.png",
       "PackagePath": "staticwebassets\\img\\juego\\cabeza.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\idioma2.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\juego\\idioma2.png",
       "PackagePath": "staticwebassets\\img\\juego\\idioma2.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\libroConLetras.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\juego\\libroConLetras.png",
       "PackagePath": "staticwebassets\\img\\juego\\libroConLetras.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\planeta.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\juego\\planeta.png",
       "PackagePath": "staticwebassets\\img\\juego\\planeta.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\juego\\salaEscape.png",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\juego\\salaEscape.png",
       "PackagePath": "staticwebassets\\img\\juego\\salaEscape.png"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\joda.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\joda.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\joda.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\jodaTexto.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\jodaTexto.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\jodaTexto.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\mate.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\mate.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\mate.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\mateTexto.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\mateTexto.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\mateTexto.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\pibe.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\pibe.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\pibe.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\pibeTexto.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\pibeTexto.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\pibeTexto.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\tango.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\tango.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\tango.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\tangoTexto.jpg",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\tangoTexto.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\tangoTexto.jpg"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

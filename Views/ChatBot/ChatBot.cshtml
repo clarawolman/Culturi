@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "ChatBot";
+}
+
+<h2>ChatBot con Semantic Kernel + Gemini</h2>
+
+<form method="post">
+    <div>
+        <label>Tu mensaje:</label>
+        <textarea name="userMessage" class="form-control" rows="3"></textarea>
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+@if (ViewBag.Reply != null)
+{
+    <div class="mt-4 p-3 border rounded" style="background:#f8f8f8;">
+        <strong>Respuesta del bot:</strong>
+        <p>@ViewBag.Reply</p>
+    </div>
+}
+

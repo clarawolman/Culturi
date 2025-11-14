@@ -89,19 +89,19 @@ public static class BD
             return lista;
         }
     }
-
     public static void AgregarTramite(Tramite tramite)
     {
-        string query = @"INSERT INTO Tramite (titulo, descripcion, id_paisSalida, id_paisLlegada)
-                             VALUES (@pTitulo, @pDescripcion, @pSalida, @pLlegada)";
+        string query = @"INSERT INTO Tramite (titulo, descripcion, id_paisOrigen, id_paisDestino)
+                     VALUES (@pTitulo, @pDescripcion, @pOrigen, @pDestino)";
+
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             connection.Execute(query, new
             {
                 pTitulo = tramite.Titulo,
                 pDescripcion = tramite.Descripcion,
-                pSalida = tramite.id_paisSalida,
-                pLlegada = tramite.id_paisLlegada
+                pOrigen = tramite.id_paisOrigen,       // propiedad correcta en tu model
+                pDestino = tramite.id_paisDestino
             });
         }
     }
@@ -160,13 +160,61 @@ public static class BD
         }
     }
     public static string ObtenerNombrePais(int idPais)
-{
-    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = "SELECT nombre FROM Pais WHERE id_pais = @pid";
-        return connection.QueryFirstOrDefault<string>(query, new { pid = idPais });
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = "SELECT nombre FROM Pais WHERE id_pais = @pid";
+            return connection.QueryFirstOrDefault<string>(query, new { pid = idPais });
+        }
     }
-}
+    public static Usuario ObtenerUsuarioPorSession(HttpContext context)
+    {
+        int? id = context.Session.GetInt32("IdUsuario");
 
+        if (id == null)
+            return null;
+
+        return ObtenerUsuarioPorId(id.Value);
+    }
+    public static List<Tramite> ObtenerMisTramites(int idUsuario)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = @"
+            SELECT t.*
+            FROM ProgresoTramites p
+            INNER JOIN Tramite t ON t.id_tramite = p.id_tramite
+            WHERE p.id_usuario = @pid";
+
+            return connection.Query<Tramite>(query, new { pid = idUsuario }).ToList();
+        }
+    }
+    public static void AgregarTramiteAUsuario(int idUsuario, int idTramite)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = @"INSERT INTO ProgresoTramites (id_usuario, id_tramite, estado, fecha_actualizacion)
+                         VALUES (@u, @t, 'pendiente', GETDATE())";
+
+            connection.Execute(query, new { u = idUsuario, t = idTramite });
+        }
+    }
+    public static List<Tramite> ObtenerTramitesParaUsuario(Usuario u)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = @"
+            SELECT * 
+            FROM Tramite
+            WHERE id_paisDestino = @destino
+              AND (id_paisOrigen = @origen OR id_paisOrigen IS NULL)";
+
+            return connection.Query<Tramite>(query, new
+            {
+                destino = u.id_paisDestino,
+                origen = u.id_paisOrigen
+            }).ToList();
+        }
+    }
 
 }

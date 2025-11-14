@@ -3,12 +3,12 @@
         <ul>
             <li>
                 <a href="/Usuario/Perfil">
-                    <img src="/wwwroot/img/header/perfil.png" alt="perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
                 </a>
             </li>
             <li>
                 <a href="/Usuario/Noti">
-                    <img src="/wwwroot/img/header/noti.png" alt="notificaciones">
+                    <img src="/img/header/noti.png" alt="notificaciones">
                 </a>
             </li>
         </ul>
@@ -47,12 +47,35 @@
 <main>
     <div class = "logo">
         <img src="/img/Home/LOGO.png" alt="logo">
-
-
+        <h1>culturi</h1>
     </div>
-            <div class="tramitesHome">
-            
-        </div>
+
+    <div class="tramitesHome">
+    <h3>Trámites en proceso</h3>
+
+    @model List<Tramite>
+    @{
+        int i = 0;
+    }
+
+    <div class="tramites-lista">
+        @foreach (var t in Model.Take(3))
+        {
+            <div class="tramite-item">
+                <div class="tramite-nombre">
+                    <span class="numero">@i+1.</span>
+                    <span class="titulo">@t.Titulo</span>
+                </div>
+
+                <div class="barra-progreso">
+                    <div class="progreso"></div>
+                </div>
+            </div>
+            i++;
+        }
+    </div>
+
+    
 
     <section class="opcionesHome">
         <a href="/Juego/Index">
@@ -90,6 +113,10 @@
         </a>
     </div>
 </main>
+
+
+
+
 
 
 

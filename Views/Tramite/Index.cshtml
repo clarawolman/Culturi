@@ -42,47 +42,70 @@
 </div>
   
 </header>
+<input type="text" class="search-box" placeholder="Buscar trámite ..." />
+
 
 <h1>Guia de Tramite</h1>
-@model List<Tramite>
+@model TramitesVM
 <section>
     <h3>Trámites para vos</h3>
 
-    @foreach (var t in Model)
+    @foreach (var t in Model.TramitesParaVos)
     {
-        <div>
-            <button type="button">✔</button>
-            <button type="button">✖</button>
+        <div class="tramite-card">
+            <div class="tramite-info">
+                <button class="btn-circle btn-green">✔</button>
+                <button class="btn-circle btn-red">✖</button>
 
-            <span>@t.Titulo</span>  
+                <span>@t.Titulo</span>
 
-            <form asp-action="AgregarTramite" method="post" style="display:inline;">
-                <input type="hidden" name="IdTramite" value="@t.IdTramite" />
-                <button type="submit">Agregar</button>
-            </form>
+                <form asp-action="AgregarTramite" method="post">
+                    <input type="hidden" name="IdTramite" value="@t.IdTramite" />
+                    <button type="submit" class="btn-circle btn-help">+</button>
+                </form>
+            </div>
 
-            <button type="button">?</button> 
+            <button class="btn-circle btn-help">?</button>
         </div>
     }
 </section>
-
 <section>
     <h3>Mis trámites</h3>
 
-    @foreach (var t in Model)
+    @foreach (var t in Model.MisTramites)
     {
-        <div>
-            <button type="button">✔</button>
-            <button type="button">✖</button>
+        <div class="tramite-card">
+            <div class="tramite-info">
+                <button class="btn-circle btn-green">✔</button>
+                <button class="btn-circle btn-red">✖</button>
 
-            <a asp-action="Detalle" asp-route-id="@t.IdTramite">
-                <h6>@t.Titulo</h6> 
-            </a>
+                <a asp-action="Detalle" asp-route-id="@t.IdTramite">
+                    <h6>@t.Titulo</h6>
+                </a>
 
-            <button type="button">?</button>
-            <button type="button">noti</button> 
+                <div class="tramite-progress">
+                    <span style="width: 60%;"></span>
+                </div>
+            </div>
+
+            <button class="btn-circle btn-help">?</button>
         </div>
     }
 </section>
 
+<footer class="footer-culturi">
+  <div class="footer-logo">
+    <img src="img/logo.png" alt="Culturí" />
+  </div>
+
+  <nav class="footer-links">
+    <a href="#">Términos</a>
+    <a href="#">Privacidad</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <div class="footer-copy">
+    Buenos Aires, Argentina · © 2025 Culturí
+  </div>
+</footer>
 

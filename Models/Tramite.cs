@@ -9,9 +9,9 @@ public class Tramite
     [JsonProperty]
     public string Descripcion { get; set; }
      [JsonProperty]
-    public int id_paisLlegada { get; set; }
+    public int id_paisOrigen { get; set; }
      [JsonProperty]
-    public int id_paisSalida { get; set; }
+    public int id_paisDestino { get; set; }
      [JsonProperty]
     public List<PasoDelTramite> Pasos { get; set; }
 }
