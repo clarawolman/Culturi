@@ -33,29 +33,31 @@ public static class BD
 
 
     public static void AgregarUsuario(Usuario usuario)
+{
+    string query = @"INSERT INTO Usuario 
+                    (nombre, usuario, email, contrasena, idiomaPreferencia, 
+                     id_paisOrigen, id_paisDestino, fechaMigracion, fechaNacimiento)
+                 VALUES 
+                    (@Nombre, @Usuario, @Email, @Contrasena, @IdiomaPreferencia,
+                     @IdPaisOrigen, @IdPaisDestino, @FechaMigracion, @FechaNacimiento)";
+
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = @"INSERT INTO Usuario 
-                        (nombre, usuario, email, contrasena, idiomaPreferencia, id_paisOrigen, id_paisDestino, fechaMigracion, fechaNacimiento)
-                     VALUES 
-                        (@pNombre, @pusuario, @pEmail, @pContrasena, @pidiomaPreferencia, @pid_paisOrigen, @pid_paisDestino, @pfechaMigracion, @pfechaNacimiento)";
-
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        connection.Execute(query, new
         {
-            connection.Execute(query, new
-            {
-                pNombre = usuario.Nombre,
-                pusuario = usuario.usuario,
-                pEmail = usuario.Email,
-                pContrasena = usuario.Contrasena,
-                pidiomaPreferencia = usuario.idiomaPreferencia,
-                pid_paisOrigen = usuario.id_paisOrigen,
-                pid_paisDestino = usuario.id_paisDestino,
-                pfechaMigracion = usuario.fechaMigracion,
-                pfechaNacimiento = usuario.fechaNacimiento
-
-            });
-        }
+            Nombre = usuario.Nombre,
+            Usuario = usuario.usuario,
+            Email = usuario.Email,
+            Contrasena = usuario.Contrasena,
+            IdiomaPreferencia = usuario.idiomaPreferencia,
+            IdPaisOrigen = usuario.id_paisOrigen,
+            IdPaisDestino = usuario.id_paisDestino,
+            FechaMigracion = usuario.fechaMigracion,
+            FechaNacimiento = usuario.fechaNacimiento
+        });
     }
+}
+
 
 
     public static List<Tramite> ObtenerTramites()
@@ -176,6 +178,29 @@ public static class BD
 
         return ObtenerUsuarioPorId(id.Value);
     }
+
+public static Usuario ObtenerUsuarioPorId(int idUsuario)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
+    {
+        string query = @"SELECT 
+                            id_usuario AS IdUsuario,
+                            nombre,
+                            usuario,
+                            email,
+                            contrasena,
+                            idiomaPreferencia,
+                            id_paisOrigen,
+                            id_paisDestino,
+                            fechaMigracion,
+                            fechaNacimiento
+                         FROM Usuario 
+                         WHERE id_usuario = @pid";
+
+        return connection.QueryFirstOrDefault<Usuario>(query, new { pid = idUsuario });
+    }
+}
+
     public static List<Tramite> ObtenerMisTramites(int idUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))

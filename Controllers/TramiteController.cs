@@ -10,7 +10,7 @@ namespace Culturi.Controllers
         {
             // Obtener usuario logueado (lo mismo que usás en el resto de la app)
             Usuario u = BD.ObtenerUsuarioPorSession(HttpContext);
-
+            Console.WriteLine(u.Nombre);
             if (u == null)
                 return RedirectToAction("Login", "Usuario");
 

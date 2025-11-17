@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PrimerProyecto.Models;
+using Newtonsoft.Json;
+
 
 namespace Culturi.Controllers;
 
@@ -20,9 +22,20 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult Home()
-    {
-        return View();
-    }
+{
+    string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
+
+    if (usuarioJson == null)
+        return RedirectToAction("Login", "Usuario");
+
+    Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+
+    // Si querés mostrar trámites:
+    var tramites = BD.ObtenerMisTramites(usuario.IdUsuario);
+
+    return View(tramites);
+}
+
 
 }
 

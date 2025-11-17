@@ -18,7 +18,7 @@ body {
 /* HEADER */
 .custom-header {
   width: 100%;
-  background: #37A6BA; /* tu color */
+  background: #37A6BA;
   padding: 10px 40px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   top: 0;
@@ -39,7 +39,7 @@ header nav ul li a {
   align-items: center;
 }
 
-/* UL general (izquierda + centro + derecha) */
+
 .custom-header nav ul {
   list-style: none;
   display: flex;
@@ -49,14 +49,14 @@ header nav ul li a {
   padding: 0;
 }
 
-/* Imágenes del header */
+
 .custom-header nav ul img {
   width: 32px;
   height: 32px;
   cursor: pointer;
 }
 
-/* Texto ¿Quiénes somos? */
+
 .custom-header nav ul h2 {
   font-size: 20px;
   font-weight: 600;
@@ -91,44 +91,164 @@ header nav ul li a {
 }
 
 /*footer*/
-footer {
-  background-color: #34B7C3;
-}
-.footer-culturi{
-  width:100%;
-  max-width:420px;
-  margin:0 auto;
-  padding:20px 0 35px;
-  background:#fff;
-  text-align:center;
-  color:#2b2b2b;
-  font-family:Inter,Arial;
+.footer-full {
+  background: linear-gradient(135deg, #1bb3c4, #34B7C3, #4cd6e2);
+  background-size: 300% 300%;
+  animation: bgMove 12s ease-in-out infinite;
+  padding: 70px 0 40px;
+  width: 100%;
+  color: #fff;
+  font-family: Inter, Arial;
 }
 
-.footer-logo img{
-  width:45px;
-  height:auto;
-  margin-bottom:10px;
+/* ANIMACIÓN DEL GRADIENTE */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.footer-links{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  margin-bottom:12px;
+/* CONTENEDOR CENTRAL */
+.footer-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
-.footer-links a{
-  text-decoration:none;
-  color:#221c57;
-  font-size:14px;
-  font-weight:500;
+/*  SECCIONES  */
+.footer-sections {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 45px;
 }
 
-.footer-copy{
-  font-size:12px;
-  color:#666;
+.footer-column h4 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  animation: fadeUp 1s ease forwards;
 }
+
+/* Subrayado con animación */
+.footer-column h4::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
+.footer-column:hover h4::after {
+  width: 60%;
+}
+
+.footer-column a {
+  display: block;
+  color: #eefefe;
+  margin-bottom: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.25s ease;
+  opacity: 0.9;
+}
+
+/* Hover en links con desplazamiento */
+.footer-column a:hover {
+  color: #003c45;
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+/*REDES SOCIALES */
+.footer-redes .red-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.25s ease;
+  opacity: 0.95;
+}
+
+/* Movimiento suave hacia la derecha */
+.footer-redes .red-item:hover {
+  transform: translateX(8px);
+  opacity: 1;
+}
+
+/* Íconos con efecto glow */
+.footer-redes .red-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+  transition: 0.25s ease;
+}
+
+.footer-redes .red-item:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
+}
+
+/*DIVISOR*/
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.45);
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease forwards;
+}
+
+/*PARTE INFERIOR*/
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.footer-bottom p {
+  font-size: 15px;
+  color: #e6ffff;
+}
+
+/* Links inferiores con animación */
+.footer-bottom-links a {
+  margin-left: 22px;
+  color: #e6ffff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #002e32;
+  transform: translateY(-2px);
+}
+
+/*ANIMACIONES DE ENTRADA*/
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 
 
 /* --- Hero Section --- */
@@ -175,7 +295,7 @@ footer {
   background-color: #00695c;
 }
 
-/* --- Features Section --- */
+
 .features {
   text-align: center;
   padding: 3rem 1rem;
@@ -207,7 +327,7 @@ footer {
   margin-bottom: 1rem;
 }
 
-/* --- Steps Section --- */
+/*Steps Section*/
 .steps {
   background-color: #f0f8f7;
   text-align: center;
@@ -288,7 +408,7 @@ footer {
   color: #000;
 }
 .custom-header {
-  background-color: #4EB2C3; /* mismo color que en tu imagen */
+  background-color: #4EB2C3;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -390,8 +510,8 @@ footer {
 
 /* HOVER */
 .menu-links a:hover {
-    background-color: rgba(0, 0, 0, 0.08); /* oscurece un toque */
-    transform: scale(1.03); /* se agranda suavemente */
+    background-color: rgba(0, 0, 0, 0.08); 
+    transform: scale(1.03); 
 }
 
 }
@@ -520,9 +640,7 @@ border-radius: 23.5px;
   width: 70%;
   max-width: 280px;
   height: 100vh;
-
-  /* COLOR DEL MENU (cambiar aquí) */
-  background: #c7e8ff; /* Celeste — Cambiá este valor para otro color */
+  background: #c7e8ff; 
 
   z-index: 999;
   transform: translateX(-100%);
@@ -550,7 +668,7 @@ border-radius: 23.5px;
   display: block;
 }
 
-/* ===== BOTÓN HAMBURGUESA ===== */
+/*BOTÓN HAMBURGUESA*/
 .menu-icon {
   position: fixed;
   top: 12px;
@@ -567,12 +685,12 @@ border-radius: 23.5px;
 .menu-icon span {
   width: 28px;
   height: 3px;
-  background: #000; /* barras negras */
+  background: #000;
   border-radius: 3px;
   display: block;
 }
 
-/* ===== Para que no bloquee clicks cuando está cerrado ===== */
+/*Para que no bloquee clicks cuando está cerrado*/
 .menu-container.sidebar-closed {
   pointer-events: none;
 }
@@ -608,12 +726,11 @@ border-radius: 23.5px;
 .menu-icon span {
   width: 26px;
   height: 3px;
-  background: black; /* ✅ barras negras */
+  background: black;
   border-radius: 2px;
 }
 
 /*Home*/
-/* Home Desktop Full Width */
 
 /* Contenedor principal */
 main {
@@ -793,9 +910,9 @@ form input:focus {
 }
 
 /* CSS PERFIL 
-/* ======== CONTENEDOR PRINCIPAL ======== */
+/*CONTENEDOR PRINCIPAL*/
 .perfil-container {
-  max-width: 900px;               /* mucho más ancho */
+  max-width: 900px;
   margin: 40px auto;
   background-color: #f6f6f6;
   border-radius: 20px;
@@ -805,7 +922,7 @@ form input:focus {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ======== HEADER SUPERIOR ======== */
+/*HEADER SUPERIOR*/
 .perfil-header {
   background-color: #4eb2c3;
   display: flex;
@@ -825,7 +942,7 @@ form input:focus {
   color: #fff;
 }
 
-/* ======== SECCIÓN PRINCIPAL ======== */
+/*SECCIÓN PRINCIPAL*/
 .perfil-principal {
   background-color: #fff;
   padding: 40px 60px;
@@ -875,7 +992,7 @@ form input:focus {
   background-color: #43a047;
 }
 
-/* ======== BLOQUES DE INFORMACIÓN ======== */
+/*BLOQUES DE INFORMACIÓN*/
 .perfil-info {
   display: flex;
   justify-content: space-around;
@@ -900,7 +1017,7 @@ form input:focus {
   color: #000;
 }
 
-/* ======== PUBLICACIONES ======== */
+/*PUBLICACIONES*/
 .perfil-publicaciones {
   background-color: #b8e5eb;
   border-radius: 12px;
@@ -941,7 +1058,7 @@ form input:focus {
   background-color: #43a047;
 }
 
-/* ======== BOTÓN FLOTANTE ABAJO ======== */
+/*BOTÓN FLOTANTE ABAJO*/
 .boton-flotante {
   position: fixed;
   bottom: 30px;
@@ -994,12 +1111,6 @@ form input:focus {
   color: white;
 }
 
-/* ================================
-   Trámites
-=================================== */
-
-
-
 /* Buscador */
 .search-box {
   display: block;
@@ -1031,11 +1142,6 @@ section h3 {
   margin-top: 40px;
   margin-bottom: 20px;
 }
-
-/* ================================
- TARJETAS DE TRÁMITES (CARDS)
-=================================== */
-
 .tramite-card {
   background: #ffffff;
   padding: 15px 20px;

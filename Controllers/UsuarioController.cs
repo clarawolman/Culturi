@@ -56,6 +56,8 @@ namespace Culturi.Controllers
             {
                 string usuarioJson = JsonConvert.SerializeObject(usuario);
                 HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
+                HttpContext.Session.SetInt32("IdUsuario", usuario.IdUsuario);
+
                 return RedirectToAction("Home", "Home");
             }
             else
@@ -64,6 +66,11 @@ namespace Culturi.Controllers
                 return View();
             }
         }
+         public IActionResult Noti()
+    {
+        return View();
+    }
+
 
 
         public IActionResult Registro()
@@ -73,31 +80,42 @@ namespace Culturi.Controllers
 
 
         [HttpPost]
-        public IActionResult Registro(string nombre, string nombreUsuarioIngresado, string email, string contrasena, string idioma, string paisOrigen, string paisLlegada, DateTime fechaMigracion, DateTime fechaNacimiento)
-        {
-            if (BD.ExisteEmail(email))
-            {
-                ViewBag.Mensaje = "El email ya está registrado, por favor iniciá sesión.";
-                return View();
-            }
-            Usuario nuevoUsuario = new Usuario
-            {
-                Nombre = nombre,
-                usuario = nombreUsuarioIngresado,
-                Email = email,
-                Contrasena = contrasena,
-                idiomaPreferencia = idioma,
-                id_paisOrigen = ObtenerIdPais(paisOrigen),
-                id_paisDestino = ObtenerIdPais(paisLlegada),
-                fechaMigracion = fechaMigracion,
-                fechaNacimiento = fechaNacimiento
-            };
+public IActionResult Registro(
+    string nombre,
+    string nombreUsuarioIngresado,
+    string email,
+    string contrasena,
+    string idioma,
+    int id_paisOrigen,
+    int id_paisDestino,
+    DateTime fechaMigracion,
+    DateTime fechaNacimiento)
+{
+    if (BD.ExisteEmail(email))
+    {
+        ViewBag.Mensaje = "El email ya está registrado, por favor iniciá sesión.";
+        return View();
+    }
 
-            BD.AgregarUsuario(nuevoUsuario);
+    Usuario nuevoUsuario = new Usuario
+    {
+        Nombre = nombre,
+        usuario = nombreUsuarioIngresado,
+        Email = email,
+        Contrasena = contrasena,
+        idiomaPreferencia = idioma,
+        id_paisOrigen = id_paisOrigen,
+        id_paisDestino = id_paisDestino,
+        fechaMigracion = fechaMigracion,
+        fechaNacimiento = fechaNacimiento
+    };
 
-            ViewBag.Mensaje = "Usuario creado correctamente";
-            return View("~/Views/Home/Home.cshtml");
-        }
+    BD.AgregarUsuario(nuevoUsuario);
+
+    ViewBag.Mensaje = "Usuario creado correctamente";
+    return View("~/Views/Home/Home.cshtml");
+}
+
         private int ObtenerIdPais(string nombrePais)
         {
             return nombrePais switch

@@ -1,4 +1,8 @@
+@using System.Linq
+@model List<Tramite>
+
 <header class="custom-header">
+
     <nav>
         <ul>
             <li>
@@ -30,10 +34,10 @@
     </div>
 
     <div class="menu-links">
-        <a href="@Url.Action("Home", "Home")">Home</a>
+        <a href='@Url.Action("Home", "Home")''>Home</a>
         <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
         <a href="@Url.Action("Index", "Grupos")">Grupos</a>
-        <a href="@Url.Action("Index", "Tramite")">Tramites</a>
+        <a href='@Url.Action("Index", "Tramite")"''>Trámites</a>
         <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
         <a href="@Url.Action("Index", "Juego")">Juegos</a>
         <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
@@ -50,32 +54,40 @@
         <h1>culturi</h1>
     </div>
 
-    <div class="tramitesHome">
+ <div class="tramitesHome">
     <h3>Trámites en proceso</h3>
 
-    @model List<Tramite>
     @{
         int i = 0;
     }
 
     <div class="tramites-lista">
-        @foreach (var t in Model.Take(3))
+
+        @if (Model != null && Model.Any())
         {
-            <div class="tramite-item">
-                <div class="tramite-nombre">
-                    <span class="numero">@i+1.</span>
-                    <span class="titulo">@t.Titulo</span>
-                </div>
+            foreach (var t in Model.Take(3))
+            {
+                <div class="tramite-item">
+                    <div class="tramite-nombre">
+                        <span class="numero">@(++i).</span>
+                        <span class="titulo">@t.Titulo</span>
+                    </div>
 
-                <div class="barra-progreso">
-                    <div class="progreso"></div>
+                    <div class="barra-progreso">
+                        <div class="progreso"></div>
+                    </div>
                 </div>
-            </div>
-            i++;
+            }
         }
-    </div>
+        else
+        {
+            <p>No tenés trámites en proceso.</p>
+        }
 
-    
+    </div>
+</div>
+
+
 
     <section class="opcionesHome">
         <a href="/Juego/Index">
