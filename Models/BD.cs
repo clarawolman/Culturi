@@ -64,7 +64,15 @@ public static class BD
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = @"SELECT * FROM Tramite";
+           string query = @"
+    SELECT 
+        id_tramite AS IdTramite,
+        titulo,
+        descripcion,
+        id_paisOrigen,
+        id_paisDestino
+    FROM Tramite";
+
             List<Tramite> lista = connection.Query<Tramite>(query).ToList();
             return lista;
         }
@@ -73,7 +81,15 @@ public static class BD
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = @"SELECT * FROM Tramite WHERE id_tramite = @pid";
+            string query = @"
+    SELECT 
+        id_tramite AS IdTramite,
+        titulo,
+        descripcion,
+        id_paisOrigen,
+        id_paisDestino
+    FROM Tramite";
+
             Tramite tramite = connection.QueryFirstOrDefault<Tramite>(query, new { pid = id });
 
             if (tramite != null)
@@ -228,11 +244,14 @@ public static Usuario ObtenerUsuarioPorId(int idUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = @"
-            SELECT * 
-            FROM Tramite
-            WHERE id_paisDestino = @destino
-              AND (id_paisOrigen = @origen OR id_paisOrigen IS NULL)";
+           string query = @"
+    SELECT 
+        id_tramite AS IdTramite,
+        titulo,
+        descripcion,
+        id_paisOrigen,
+        id_paisDestino
+    FROM Tramite";
 
             return connection.Query<Tramite>(query, new
             {

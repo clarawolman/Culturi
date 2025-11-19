@@ -36,7 +36,7 @@ namespace Culturi.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult ChatBot()
         {
             return View();
         }

@@ -4,6 +4,7 @@ public class Tramite
 {
      [JsonProperty]
     public int IdTramite { get; set; }
+
      [JsonProperty]
     public string Titulo { get; set; }
     [JsonProperty]

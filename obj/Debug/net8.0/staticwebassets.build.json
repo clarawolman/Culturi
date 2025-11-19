@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GpSuuznd1n9udNd5bQufCYKj5VwkMfoTcWUVu3+5Vec=",
+  "Hash": "zb9Kl7DrC1tbjfuQUuAaCCCaeHQvLG3mtpHqhUpEsK4=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -169,12 +169,12 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\juegos.png"
     },
     {
-      "Identity": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\LOGO.png",
+      "Identity": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\logoSVG.svg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\48860067\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "img/Home/LOGO.png",
+      "RelativePath": "img/Home/logoSVG.svg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -185,7 +185,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Home\\LOGO.png"
+      "OriginalItemSpec": "wwwroot\\img\\Home\\logoSVG.svg"
     },
     {
       "Identity": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\Mapa.png",

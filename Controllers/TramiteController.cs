@@ -43,22 +43,22 @@ namespace Culturi.Controllers
             return View(tramite);
         }
 
-        [HttpGet]
-        public IActionResult AgregarTramite()
-        {
-            return View();
-        }
+        
 
-        [HttpPost]
-        public IActionResult AgregarTramite(Tramite nuevo)
-        {
-            if (ModelState.IsValid)
-            {
-                BD.AgregarTramite(nuevo);
-                return RedirectToAction("Index");
-            }
-            return View(nuevo);
-        }
+    [HttpPost]
+public IActionResult AgregarTramite(int IdTramite)
+{
+    Console.WriteLine("============================");
+    Console.WriteLine("ID QUE LLEGA AL POST: " + IdTramite);
+    Console.WriteLine("============================");
+
+    Usuario u = BD.ObtenerUsuarioPorSession(HttpContext);
+    BD.AgregarTramiteAUsuario(u.IdUsuario, IdTramite);
+
+    return RedirectToAction("Index");
+}
+
+
 
         [HttpPost]
         public IActionResult EliminarTramite(int id)

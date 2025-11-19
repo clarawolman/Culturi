@@ -34,13 +34,13 @@
     </div>
 
     <div class="menu-links">
-        <a href='@Url.Action("Home", "Home")''>Home</a>
-        <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
-        <a href="@Url.Action("Index", "Grupos")">Grupos</a>
-        <a href='@Url.Action("Index", "Tramite")"''>Trámites</a>
-        <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
-        <a href="@Url.Action("Index", "Juego")">Juegos</a>
-        <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
+        <a href='@Url.Action("Home", "Home")'>Home</a>
+        <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
+        <a href='@Url.Action("Index", "Grupos")'>Grupos</a>
+        <a href='@Url.Action("Index", "Tramite")'>Trámites</a>
+        <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
+        <a href='@Url.Action("Index", "Juego")'>Juegos</a>
+        <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
 
     </div>
 </div>
@@ -50,7 +50,7 @@
 
 <main>
     <div class = "logo">
-        <img src="/img/Home/LOGO.png" alt="logo">
+        <img src="/img/Home/logoSVG.svg" alt="logo">
         <h1>culturi</h1>
     </div>
 
@@ -89,32 +89,36 @@
 
 
 
-    <section class="opcionesHome">
-        <a href="/Juego/Index">
-            <div>
-                <img src="/img/Home/juegos.png" alt="juegos">
-                <h3>Juegos</h3>
-            </div> 
-        </a>
-        <a href="/Grupos/Index">
-            <div>
-                <img src="/img/Home/grupos.png" alt="grupos">
-                <h3>Grupos</h3>
-            </div>
-        </a>
-        <a href="#">
-            <div>
-                <img src="/img/Home/mapa.png" alt="mapa">
-                <h3>Mapa</h3>
-            </div>
-        </a>
-        <a href="#">
-            <div>
-                <img src="/img/Home/noticiass.png" alt="info">
-                <h3>Noticias</h3>
-            </div>
-        </a>
-    </section>
+<section class="opcionesHome">
+    <a href="@Url.Action("Index", "Juego")">
+        <div>
+            <img src="/img/Home/juegos.png" alt="juegos">
+            <h3>Juegos</h3>
+        </div> 
+    </a>
+
+    <a href="@Url.Action("Index", "Grupos")">
+        <div>
+            <img src="/img/Home/grupos.png" alt="grupos">
+            <h3>Grupos</h3>
+        </div>
+    </a>
+
+    <a href="@Url.Action("Index", "Mapa")">
+        <div>
+            <img src="/img/Home/mapa.png" alt="mapa">
+            <h3>Mapa</h3>
+        </div>
+    </a>
+
+    <a href="@Url.Action("Index", "Noticias")">
+        <div>
+            <img src="/img/Home/noticiass.png" alt="info">
+            <h3>Noticias</h3>
+        </div>
+    </a>
+</section>
+
 
     <div class="NoticiasHome">
         <a href="/Noticias/Index">
@@ -124,6 +128,9 @@
             </div>
         </a>
     </div>
+
+    <a href="/ChatBot/ChatBot" class="floating-bot">
+    <img src="/img/ChatBot" alt="ChatBot">
 </main>
 
 

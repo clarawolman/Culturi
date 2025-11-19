@@ -13,10 +13,6 @@
       "PackagePath": "staticwebassets\\img\\Home\\FOTONOTICIA.png"
     },
     {
-      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\LOGO.png",
-      "PackagePath": "staticwebassets\\img\\Home\\LOGO.png"
-    },
-    {
       "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
       "PackagePath": "staticwebassets\\img\\Home\\Mapa.png"
     },
@@ -27,6 +23,10 @@
     {
       "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\juegos.png",
       "PackagePath": "staticwebassets\\img\\Home\\juegos.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\logoSVG.svg",
+      "PackagePath": "staticwebassets\\img\\Home\\logoSVG.svg"
     },
     {
       "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\noti.png",

@@ -3,12 +3,12 @@
         <ul>
             <li>
                 <a href="/Usuario/Perfil">
-                    <img src="/wwwroot/img/header/perfil.png" alt="perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
                 </a>
             </li>
             <li>
                 <a href="/Usuario/Noti">
-                    <img src="/wwwroot/img/header/noti.png" alt="notificaciones">
+                    <img src="/img/header/noti.png" alt="notificaciones">
                 </a>
             </li>
         </ul>
@@ -46,10 +46,8 @@
   <div class="container mt-4">
     <h2>Juegos</h2>
 
-    <!-- Campo de búsqueda -->
     <input type="text" id="buscador" class="form-control mb-3" placeholder="Buscar por nombre..." />
 
-    <!-- Tabla de juegos -->
     <table class="table table-striped" id="tablaJuegos">
         <thead>
             <tr>
@@ -72,7 +70,6 @@
 
 @section Scripts {
     <script>
-        // Filtra la tabla al escribir
         document.getElementById("buscador").addEventListener("keyup", function () {
             const filtro = this.value.toLowerCase();
             const filas = document.querySelectorAll("#tablaJuegos tbody tr");
