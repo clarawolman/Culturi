@@ -1,4 +1,3 @@
-
 * {
   font-style: none;
   text-decoration: none;
@@ -17,12 +16,14 @@ body {
 }
 /* HEADER */
 .custom-header {
-  width: 100%;
+  width: 95.5%;
   background: #37A6BA;
   padding: 10px 40px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   top: 0;
   z-index: 1000;
+
+
 }
 header nav ul li {
   align-items: center;
@@ -445,9 +446,17 @@ header nav ul li a {
   margin: 0;
   font-weight: 700;
 }
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/fonts/FontCulturi.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .header-center h1 {
   font-size: 24px;
+  font-family: 'MiFuente', sans-serif;
+
 }
 
 .header-center h2 {
@@ -493,7 +502,6 @@ header nav ul li a {
 }
 
 .menu-links a {
-  .menu-links a {
     display: block;
     padding: 12px 18px;
     margin: 4px 0;
@@ -512,7 +520,7 @@ header nav ul li a {
     transform: scale(1.03); 
 }
 
-}
+
 .menu-links a:focus {
   background-color: rgba(0, 0, 0, 0.12);
   transform: scale(1.03);
@@ -662,7 +670,7 @@ border-radius: 23.5px;
   display: none;
 }
 
-.menu-overlay.active {
+menu-overlay.active {
   display: block;
 }
 
@@ -906,174 +914,146 @@ form input:focus {
 .btn-primary:hover {
   background-color: #3aa1b2;
 }
+/*PERFIL*/
 
-/* CSS PERFIL 
-/*CONTENEDOR PRINCIPAL*/
+
 .perfil-container {
-  max-width: 900px;
-  margin: 40px auto;
-  background-color: #f6f6f6;
-  border-radius: 20px;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  color: #222;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 1100px;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
-/*HEADER SUPERIOR*/
-.perfil-header {
-  background-color: #4eb2c3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 30px;
-  color: white;
-  font-size: 22px;
-}
-
-.btn-volver,
-.btn-menu {
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: #fff;
-}
-
-/*SECCIÓN PRINCIPAL*/
 .perfil-principal {
-  background-color: #fff;
-  padding: 40px 60px;
-  text-align: center;
+    width: 100%;
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    padding: 40px 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    text-align: center;
 }
 
-/* FOTO DE PERFIL */
-.perfil-foto {
-  margin-top: -70px;
-}
-
+/* FOTO */
 .perfil-foto img {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  object-fit: cover;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 18px rgba(255,255,255,0.6);
 }
 
 /* NOMBRE Y USUARIO */
 .perfil-nombre {
-  font-size: 30px;
-  font-weight: 800;
-  margin: 12px 0 4px;
+    font-size: 34px;
+    font-weight: 700;
+    margin-top: 18px;
+    color: white;
+    text-shadow: 0 0 8px rgba(255,255,255,0.8);
 }
 
 .perfil-usuario {
-  font-size: 18px;
-  color: #555;
+    font-size: 20px;
+    color: #EFFFFF;
+    opacity: 0.85;
 }
 
-/* BOTÓN EDITAR PERFIL */
+/* BOTÓN EDITAR */
 .btn-editar {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 12px 40px;
-  font-weight: 600;
-  cursor: pointer;
-  margin: 25px 0 35px;
-  font-size: 18px;
-  transition: background-color 0.2s ease;
+    margin-top: 26px;
+    padding: 14px 26px;
+    border-radius: 14px;
+    border: none;
+    background: white;
+    color: #37A6BA;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.18s;
+    box-shadow: 0 4px 14px rgba(255,255,255,0.4);
 }
 
 .btn-editar:hover {
-  background-color: #43a047;
+    background: #EFFFFF;
+    transform: translateY(-2px);
 }
 
-/*BLOQUES DE INFORMACIÓN*/
+/* INFO BLOQUES */
 .perfil-info {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 30px;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .info-bloque {
-  background-color: #b8e5eb;
-  border-radius: 12px;
-  padding: 20px 25px;
-  width: 250px;
-  text-align: left;
-  font-size: 17px;
+    min-width: 180px;
+    background: rgba(255,255,255,0.25);
+    padding: 18px;
+    border-radius: 14px;
+    color: white;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
 }
 
-.info-bloque strong {
-  font-weight: 700;
-  display: block;
-  margin-bottom: 6px;
-  color: #000;
-}
-
-/*PUBLICACIONES*/
+/* PUBLICACIONES */
 .perfil-publicaciones {
-  background-color: #b8e5eb;
-  border-radius: 12px;
-  padding: 25px;
-  text-align: left;
+    margin-top: 42px;
+    text-align: left;
+    color: white;
 }
 
 .publicaciones-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 15px;
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px,1fr));
+    gap: 12px;
 }
 
 .publicaciones-grid img {
-  width: 100%;
-  height: 150px;
-  border-radius: 10px;
-  object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
-/* BOTÓN VER MÁS */
+/* VER MÁS */
 .btn-vermas {
-  display: block;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 25px;
-  font-weight: 600;
-  cursor: pointer;
-  margin: 20px auto 0;
-  font-size: 17px;
-  transition: background-color 0.2s ease;
+    margin-top: 16px;
+    display: inline-block;
+    background: white;
+    color: #4EB2C3;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
 }
 
 .btn-vermas:hover {
-  background-color: #43a047;
+    background: #EFFFFF;
 }
 
-/*BOTÓN FLOTANTE ABAJO*/
+/* BOTÓN FLOTANTE */
 .boton-flotante {
-  position: fixed;
-  bottom: 30px;
-  right: 40px;
-  background-color: #000;
-  color: white;
-  border-radius: 50%;
-  width: 65px;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 30px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    background: white;
+    color: #37A6BA;
+    font-size: 28px;
+    padding: 16px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: 0.2s;
 }
 
+.boton-flotante:hover {
+    transform: scale(1.12);
+}
+
+/*FIN PERFIL*/
 /*DETALLE NO TERMINADO*/
 .step {
   display: flex;
@@ -1256,3 +1236,139 @@ section h3 {
   transform: scale(1.05);
   opacity: 0.9;
 }
+/*MAPA*/
+#iframe-container, #inlineFrameExample {
+  display: block;
+  max-width: 100%;
+  width: 600px; 
+  height: 400px; 
+  margin: 40px auto;
+  border: 4px solid #34B7C3;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+#iframe-container:hover, #inlineFrameExample:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+
+@media (max-width: 768px) {
+  #iframe-container, #inlineFrameExample {
+      width: 90%;
+      height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  #iframe-container, #inlineFrameExample {
+      width: 100%;
+      height: 250px;
+  }
+}
+.titulo-mapa h1
+{
+  text-align: center;
+  font-weight: bold;
+  margin: 1%;
+}
+.foto-perfil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+/*EDITAR OERFIL*/
+/* CONTENEDOR DEL FORMULARIO */
+form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TITULO */
+
+.titulo-editarPerfil h2 {
+  text-align: center;
+  color: #34B7C3;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* LABELS */
+.form-edicion label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* INPUTS */
+.form-edicion input[type="text"],
+input[type="email"],
+input[type="file"],
+input[asp-for] {
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* FOCUS EN INPUTS */
+.form-edicion input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus,
+input[asp-for]:focus {
+  border-color: #34B7C3;
+  box-shadow: 0 0 8px rgba(52,183,195,0.4);
+}
+
+/* BOTÓN */
+.form-edicion button[type="submit"] {
+  padding: 12px;
+  background: #34B7C3;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-edicion button[type="submit"]:hover {
+  background: #1a8a9d;
+  transform: translateY(-2px);
+}
+
+/* IMAGEN DE PERFIL */
+.form-edicion img {
+  display: block;
+  margin: 10px auto;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #34B7C3;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+
+.form-edicion input[type="file"] {
+  padding: 5px 0;
+}
+
+
+
+

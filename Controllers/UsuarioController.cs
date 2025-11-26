@@ -135,15 +135,61 @@ public IActionResult Registro(
     if (usuarioJson == null)
         return RedirectToAction("Login");
 
-    Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+    Usuario usuarioSesion = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
 
-    // 👇 Debug para ver qué trae realmente
-    Debug.WriteLine($"Origen: {usuario.id_paisOrigen}  Destino: {usuario.id_paisDestino}  Fecha: {usuario.fechaMigracion}");
+    // 🔥 Recuperar el usuario REAL desde la BD (este sí tiene IdUsuario)
+    Usuario usuario = BD.ObtenerUsuarioPorId(usuarioSesion.IdUsuario);
 
     ViewBag.PaisOrigen = BD.ObtenerNombrePais(usuario.id_paisOrigen);
     ViewBag.PaisDestino = BD.ObtenerNombrePais(usuario.id_paisDestino);
 
     return View(usuario);
+}
+[HttpPost]
+public IActionResult EditarPerfil(Usuario usuario, IFormFile FotoPerfil)
+{
+    // 1️⃣ Levantar el usuario original desde la BD
+    Usuario original = BD.ObtenerUsuarioPorId(usuario.IdUsuario);
+
+    if (original == null)
+        return NotFound();
+
+    // 2️⃣ Actualizar solo los campos que modificó
+    original.Nombre = usuario.Nombre;
+    original.usuario = usuario.usuario;
+    original.Email = usuario.Email;
+
+    // 3️⃣ Guardar la foto si se sube
+    if (FotoPerfil != null && FotoPerfil.Length > 0)
+    {
+        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(FotoPerfil.FileName);
+        string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/perfiles", fileName);
+
+        if (!Directory.Exists(Path.GetDirectoryName(path)))
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+
+        using (var stream = new FileStream(path, FileMode.Create))
+        {
+            FotoPerfil.CopyTo(stream);
+        }
+
+        original.FotoPerfil = fileName;
+    }
+
+    // 4️⃣ Guardar cambios finales
+    BD.ActualizarUsuario(original);
+
+    return RedirectToAction("Perfil");
+}
+[HttpGet]
+public IActionResult EditarPerfil(int id)
+{
+    Usuario u = BD.ObtenerUsuarioPorId(id);
+
+    if (u == null)
+        return NotFound();
+
+    return View(u);
 }
 
 

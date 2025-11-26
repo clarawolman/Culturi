@@ -21,6 +21,9 @@ public class Usuario
     public DateTime fechaMigracion { get; set; }
     [JsonProperty]
     public DateTime fechaNacimiento { get; set; }
+       [JsonProperty]
+       public string FotoPerfil { get; set; }
+
 
     public bool InicioSesion(string ContrasenaIngresada)
     {

@@ -1,18 +1,20 @@
-using Newtonsoft.Json;  
+using Newtonsoft.Json;
 
 public class Tramite
 {
-     [JsonProperty]
+    [JsonProperty]
     public int IdTramite { get; set; }
-
-     [JsonProperty]
+    [JsonProperty]
     public string Titulo { get; set; }
     [JsonProperty]
     public string Descripcion { get; set; }
-     [JsonProperty]
+    [JsonProperty]
     public int id_paisOrigen { get; set; }
-     [JsonProperty]
+    [JsonProperty]
     public int id_paisDestino { get; set; }
-     [JsonProperty]
+    [JsonProperty]
     public List<PasoDelTramite> Pasos { get; set; }
+    [JsonIgnore]
+    public int ProgresoPorcentaje { get; set; }
+
 }

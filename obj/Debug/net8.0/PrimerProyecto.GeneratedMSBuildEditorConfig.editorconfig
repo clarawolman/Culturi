@@ -70,12 +70,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48860067/Culturi/Views/Tramite/Detalle.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbWl0ZVxEZXRhbGxlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/48860067/Culturi/Views/Tramite/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbWl0ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/48860067/Culturi/Views/Tramite/PasosDelTramite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbWl0ZVxQYXNvc0RlbFRyYW1pdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/48860067/Culturi/Views/Usuario/EditarPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xFZGl0YXJQZXJmaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/48860067/Culturi/Views/Usuario/Login.cshtml]

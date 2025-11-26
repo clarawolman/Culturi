@@ -21,20 +21,34 @@ public class HomeController : Controller
     {
         return View();
     }
+
     public IActionResult Home()
-{
-    string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
+    {
+        // Recupera usuario desde sesión
+        string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
 
-    if (usuarioJson == null)
-        return RedirectToAction("Login", "Usuario");
+        if (usuarioJson == null)
+            return RedirectToAction("Login", "Usuario");
 
-    Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+        Usuario usuario = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
 
-    // Si querés mostrar trámites:
-    var tramites = BD.ObtenerMisTramites(usuario.IdUsuario);
+        // Conseguir los trámites del usuario
+        List<Tramite> misTramites = BD.ObtenerMisTramites(usuario.IdUsuario);
 
-    return View(tramites);
-}
+        // Calcular progreso para cada trámite
+        foreach (var t in misTramites)
+        {
+            var pasos = BD.ObtenerPasosDelTramite(t.IdTramite);
+
+            int total = pasos.Count;
+            int completos = pasos.Count(p => p.completado == true);
+
+            t.ProgresoPorcentaje = total == 0 ? 0 : (int)((double)completos / total * 100);
+        }
+
+        // Devolver a la vista EXACTAMENTE lo que espera
+        return View(misTramites);
+    }
 
 
 }

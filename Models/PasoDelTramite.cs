@@ -13,5 +13,5 @@ public class PasoDelTramite
      [JsonProperty]
     public string DocumentoRequerido { get; set; }
     [JsonProperty]
-    public bool Completado { get; set; }
+    public bool completado { get; set; }
 }

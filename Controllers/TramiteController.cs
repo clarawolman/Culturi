@@ -8,23 +8,33 @@ namespace Culturi.Controllers
     {
         public IActionResult Index()
         {
-            // Obtener usuario logueado (lo mismo que usás en el resto de la app)
+            // Obtener usuario logueado
             Usuario u = BD.ObtenerUsuarioPorSession(HttpContext);
-            Console.WriteLine(u.Nombre);
             if (u == null)
                 return RedirectToAction("Login", "Usuario");
 
-            // Trámites sugeridos según país origen/destino
-            List<Tramite> sugeridos = BD.ObtenerTramites().
-                Where(t =>
+            // Tramites sugeridos segun pais origen/destino
+            List<Tramite> sugeridos = BD.ObtenerTramites()
+                .Where(t =>
                     t.id_paisDestino == u.id_paisDestino &&
                     (t.id_paisOrigen == u.id_paisOrigen || t.id_paisOrigen == null)
                 ).ToList();
 
-            // Trámites que el usuario ya agregó (desde ProgresoTramites)
+            // Tramites que el usuario ya agrego
             List<Tramite> misTramites = BD.ObtenerMisTramites(u.IdUsuario);
 
-            // Crear viewmodel
+            // Sacar de sugeridos los trámites que el usuario ya agregó
+            sugeridos = sugeridos
+                .Where(t => !misTramites.Any(mt => mt.IdTramite == t.IdTramite))
+                .ToList();
+
+            // Cargar los pasos de cada trámite sugerido (para el tooltip)
+            foreach (var t in sugeridos)
+            {
+                t.Pasos = BD.ObtenerPasosDelTramite(t.IdTramite);
+            }
+
+            // Crear viewmodel (YA CON TODO CORRECTO)
             TramitesVM vm = new TramitesVM
             {
                 TramitesParaVos = sugeridos,
@@ -34,38 +44,46 @@ namespace Culturi.Controllers
             return View(vm);
         }
 
-        public IActionResult Detalle(int id)
+        [HttpGet]
+        public IActionResult PasosDelTramite(int id)
         {
             Tramite tramite = BD.ObtenerTramitePorId(id);
-            if (tramite == null) return NotFound();
 
-            tramite.Pasos = BD.ObtenerPasosDelTramite(id);
-            return View(tramite);
+            if (tramite == null)
+                return NotFound();
+
+            // Levantar los pasos del trámite
+            var pasos = BD.ObtenerPasosDelTramite(id);
+
+            // Pasar título y pasos
+            ViewBag.Titulo = tramite.Titulo;
+            return View(pasos); // la view recibe una lista de pasos
         }
 
-        
-
-    [HttpPost]
-public IActionResult AgregarTramite(int IdTramite)
-{
-    Console.WriteLine("============================");
-    Console.WriteLine("ID QUE LLEGA AL POST: " + IdTramite);
-    Console.WriteLine("============================");
-
-    Usuario u = BD.ObtenerUsuarioPorSession(HttpContext);
-    BD.AgregarTramiteAUsuario(u.IdUsuario, IdTramite);
-
-    return RedirectToAction("Index");
-}
 
 
 
         [HttpPost]
+        public IActionResult AgregarTramite(int IdTramite)
+        {
+            Console.WriteLine("============================");
+            Console.WriteLine("ID QUE LLEGA AL POST: " + IdTramite);
+            Console.WriteLine("============================");
+
+            Usuario u = BD.ObtenerUsuarioPorSession(HttpContext);
+            BD.AgregarTramiteAUsuario(u.IdUsuario, IdTramite);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public IActionResult EliminarTramite(int id)
         {
-            bool eliminado = BD.EliminarTramite(id);
-            if (!eliminado)
-                return NotFound();
+            Usuario u = BD.ObtenerUsuarioPorSession(HttpContext);
+            if (u == null)
+                return RedirectToAction("Login", "Usuario");
+
+            BD.EliminarTramiteDeUsuario(u.IdUsuario, id);
 
             return RedirectToAction("Index");
         }

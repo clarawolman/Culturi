@@ -1,3 +1,5 @@
+@model List<PasoDelTramite>
+
 <header class="custom-header">
     <nav>
         <ul>
@@ -39,33 +41,45 @@
         <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
 
     </div>
-</div>
   
 </header>
-<h1>@ViewBag.Titulo</h1>
-@model List<Tramite>
-@foreach (var t in Model)
-    {
-    <div class="checkbox"></div>
-    <div> 
-    <img src="" alt="cuadradito">
-    <h3>@ViewBag.Pasos</h3>
-    <img src="" alt="calendario">
+
+<h1>Pasos del Trámite</h1>
+
+@foreach (var p in Model)
+{
+    <div class="paso-card">
+
+        <!-- Estado del paso -->
+        <div class="paso-estado">
+            @if (p.completado)
+            {
+                <span class="check-green">✔</span>
+            }
+            else
+            {
+                <span class="check-gray">◻</span>
+            }
+        </div>
+
+        <!-- Información del paso -->
+        <div class="paso-info">
+            <h3>Paso @p.NumeroOrden</h3>
+            <p>@p.Descripcion</p>
+
+            @if (!string.IsNullOrEmpty(p.DocumentoRequerido))
+            {
+                <p><strong>Documento requerido:</strong> @p.DocumentoRequerido</p>
+            }
+        </div>
+
+        <!-- Botón completar -->
+        <form asp-action="FinalizarPaso" method="post">
+            <input type="hidden" name="idPaso" value="@p.IdPaso" />
+            @if (!p.completado)
+            {
+                <button type="submit" class="btn-completar">Completar</button>
+            }
+        </form>
     </div>
-    }
-
-    <footer class="footer-culturi">
-  <div class="footer-logo">
-    <img src="img/logo.png" alt="Culturí" />
-  </div>
-
-  <nav class="footer-links">
-    <a href="#">Términos</a>
-    <a href="#">Privacidad</a>
-    <a href="#">Contacto</a>
-  </nav>
-
-  <div class="footer-copy">
-    Buenos Aires, Argentina · © 2025 Culturí
-  </div>
-</footer>
+}

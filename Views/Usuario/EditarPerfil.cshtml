@@ -1,0 +1,76 @@
+@model Usuario
+
+<header class="custom-header">
+    <nav>
+        <ul>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/img/header/noti.png" alt="notificaciones">
+                </a>
+            </li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <div id="sidebar-menu" class="menu-container sidebar-closed">
+        <div class="menu-header">
+            <button class="back-btn" onclick="toggleMenu()">←</button>
+            <h1>MENÚ</h1>
+        </div>
+
+        <div class="menu-links">
+            <a href="@Url.Action("Home", "Home")">Home</a>
+            <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
+            <a href="@Url.Action("Index", "Grupos")">Grupos</a>
+            <a href="@Url.Action("Index", "Tramite")">Tramites</a>
+            <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
+            <a href="@Url.Action("Index", "Juego")">Juegos</a>
+            <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
+        </div>
+    </div>
+</header>
+
+<div class="titulo-editarPerfil">
+    <h2>Editar Perfil</h2>
+</div>
+
+<div class="form-edicion">
+    <form method="post" enctype="multipart/form-data" asp-action="EditarPerfil" asp-controller="Usuario">
+
+        <!-- El hidden correcto -->
+       <input type="hidden" asp-for="IdUsuario" />
+
+
+        <label>Nombre:</label>
+        <input asp-for="Nombre" />
+
+        <label>Usuario:</label>
+        <input asp-for="usuario" />
+
+        <label>Email:</label>
+        <input asp-for="Email" />
+
+        <label>Foto de perfil:</label>
+        <input type="file" name="FotoPerfil" accept="image/*" />
+
+        @if (!string.IsNullOrEmpty(Model.FotoPerfil))
+        {
+            <img src="/img/perfiles/@Model.FotoPerfil"
+                 style="width:120px; border-radius:50%; margin-top:10px;" />
+        }
+
+        <button type="submit" class="btn-guardar">Guardar</button>
+    </form>
+</div>

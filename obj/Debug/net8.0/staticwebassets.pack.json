@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\fonts\\BagelFatOne-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\BagelFatOne-Regular.ttf"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\ChatBot.png",
+      "PackagePath": "staticwebassets\\img\\Home\\ChatBot.png"
+    },
+    {
       "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\Home\\FOTONOTICIA.png",
       "PackagePath": "staticwebassets\\img\\Home\\FOTONOTICIA.png"
     },
@@ -139,6 +147,22 @@
     {
       "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\memotest\\tangoTexto.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\tangoTexto.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\redes\\X.png",
+      "PackagePath": "staticwebassets\\img\\redes\\X.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\redes\\Youtube_logo.png",
+      "PackagePath": "staticwebassets\\img\\redes\\Youtube_logo.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\redes\\facebook.png",
+      "PackagePath": "staticwebassets\\img\\redes\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\img\\redes\\instagram.svg",
+      "PackagePath": "staticwebassets\\img\\redes\\instagram.svg"
     },
     {
       "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\js\\site.js",

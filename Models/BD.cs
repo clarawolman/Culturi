@@ -33,51 +33,34 @@ public static class BD
 
 
     public static void AgregarUsuario(Usuario usuario)
-{
-    string query = @"INSERT INTO Usuario 
+    {
+        string query = @"INSERT INTO Usuario 
                     (nombre, usuario, email, contrasena, idiomaPreferencia, 
                      id_paisOrigen, id_paisDestino, fechaMigracion, fechaNacimiento)
                  VALUES 
                     (@Nombre, @Usuario, @Email, @Contrasena, @IdiomaPreferencia,
                      @IdPaisOrigen, @IdPaisDestino, @FechaMigracion, @FechaNacimiento)";
 
-    using (SqlConnection connection = new SqlConnection(_connectionString))
-    {
-        connection.Execute(query, new
+        using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            Nombre = usuario.Nombre,
-            Usuario = usuario.usuario,
-            Email = usuario.Email,
-            Contrasena = usuario.Contrasena,
-            IdiomaPreferencia = usuario.idiomaPreferencia,
-            IdPaisOrigen = usuario.id_paisOrigen,
-            IdPaisDestino = usuario.id_paisDestino,
-            FechaMigracion = usuario.fechaMigracion,
-            FechaNacimiento = usuario.fechaNacimiento
-        });
+            connection.Execute(query, new
+            {
+                Nombre = usuario.Nombre,
+                Usuario = usuario.usuario,
+                Email = usuario.Email,
+                Contrasena = usuario.Contrasena,
+                IdiomaPreferencia = usuario.idiomaPreferencia,
+                IdPaisOrigen = usuario.id_paisOrigen,
+                IdPaisDestino = usuario.id_paisDestino,
+                FechaMigracion = usuario.fechaMigracion,
+                FechaNacimiento = usuario.fechaNacimiento
+            });
+        }
     }
-}
 
 
 
     public static List<Tramite> ObtenerTramites()
-    {
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-           string query = @"
-    SELECT 
-        id_tramite AS IdTramite,
-        titulo,
-        descripcion,
-        id_paisOrigen,
-        id_paisDestino
-    FROM Tramite";
-
-            List<Tramite> lista = connection.Query<Tramite>(query).ToList();
-            return lista;
-        }
-    }
-    public static Tramite ObtenerTramitePorId(int id)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
@@ -90,6 +73,25 @@ public static class BD
         id_paisDestino
     FROM Tramite";
 
+            List<Tramite> lista = connection.Query<Tramite>(query).ToList();
+            return lista;
+        }
+    }
+
+    public static Tramite ObtenerTramitePorId(int id)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = @"
+        SELECT 
+            id_tramite AS IdTramite,
+            titulo,
+            descripcion,
+            id_paisOrigen,
+            id_paisDestino
+        FROM Tramite
+        WHERE id_tramite = @pid";
+
             Tramite tramite = connection.QueryFirstOrDefault<Tramite>(query, new { pid = id });
 
             if (tramite != null)
@@ -98,6 +100,7 @@ public static class BD
             return tramite;
         }
     }
+
     public static List<PasoDelTramite> ObtenerPasosDelTramite(int idTramite)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -195,11 +198,11 @@ public static class BD
         return ObtenerUsuarioPorId(id.Value);
     }
 
-public static Usuario ObtenerUsuarioPorId(int idUsuario)
-{
-    using (SqlConnection connection = new SqlConnection(_connectionString))
+    public static Usuario ObtenerUsuarioPorId(int idUsuario)
     {
-        string query = @"SELECT 
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = @"SELECT 
                             id_usuario AS IdUsuario,
                             nombre,
                             usuario,
@@ -213,16 +216,21 @@ public static Usuario ObtenerUsuarioPorId(int idUsuario)
                          FROM Usuario 
                          WHERE id_usuario = @pid";
 
-        return connection.QueryFirstOrDefault<Usuario>(query, new { pid = idUsuario });
+            return connection.QueryFirstOrDefault<Usuario>(query, new { pid = idUsuario });
+        }
     }
-}
 
     public static List<Tramite> ObtenerMisTramites(int idUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = @"
-            SELECT t.*
+            SELECT 
+                t.id_tramite AS IdTramite,
+                t.titulo,
+                t.descripcion,
+                t.id_paisOrigen,
+                t.id_paisDestino
             FROM ProgresoTramites p
             INNER JOIN Tramite t ON t.id_tramite = p.id_tramite
             WHERE p.id_usuario = @pid";
@@ -230,21 +238,33 @@ public static Usuario ObtenerUsuarioPorId(int idUsuario)
             return connection.Query<Tramite>(query, new { pid = idUsuario }).ToList();
         }
     }
+
     public static void AgregarTramiteAUsuario(int idUsuario, int idTramite)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = @"INSERT INTO ProgresoTramites (id_usuario, id_tramite, estado, fecha_actualizacion)
-                         VALUES (@u, @t, 'pendiente', GETDATE())";
+            string check = @"SELECT COUNT(*) 
+                         FROM ProgresoTramites 
+                         WHERE id_usuario = @u AND id_tramite = @t";
 
-            connection.Execute(query, new { u = idUsuario, t = idTramite });
+            int existe = connection.ExecuteScalar<int>(check, new { u = idUsuario, t = idTramite });
+
+            if (existe > 0)
+                return;
+
+            string insert = @"INSERT INTO ProgresoTramites 
+                          (id_usuario, id_tramite, estado, fecha_actualizacion)
+                          VALUES (@u, @t, 'pendiente', GETDATE())";
+
+            connection.Execute(insert, new { u = idUsuario, t = idTramite });
         }
     }
+
     public static List<Tramite> ObtenerTramitesParaUsuario(Usuario u)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-           string query = @"
+            string query = @"
     SELECT 
         id_tramite AS IdTramite,
         titulo,
@@ -260,5 +280,39 @@ public static Usuario ObtenerUsuarioPorId(int idUsuario)
             }).ToList();
         }
     }
+    public static void ActualizarUsuario(Usuario usuario)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = @"
+            UPDATE Usuario
+            SET 
+                nombre = @Nombre,
+                usuario = @usuario,
+                email = @Email,
+                contrasena = @Contrasena,
+                idiomaPreferencia = @idiomaPreferencia,
+                id_paisOrigen = @id_paisOrigen,
+                id_paisDestino = @id_paisDestino,
+                fechaMigracion = @fechaMigracion,
+                fechaNacimiento = @fechaNacimiento,
+                fotoPerfil = @FotoPerfil
+            WHERE id_usuario = @IdUsuario";
+
+            connection.Execute(query, usuario);
+        }
+    }
+    public static void EliminarTramiteDeUsuario(int idUsuario, int idTramite)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = @"DELETE FROM ProgresoTramites 
+                         WHERE id_usuario = @u AND id_tramite = @t";
+
+            connection.Execute(query, new { u = idUsuario, t = idTramite });
+        }
+    }
+    
+
 
 }

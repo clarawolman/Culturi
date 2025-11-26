@@ -1,57 +1,96 @@
 @model Usuario
 
-<div class="perfil-container">
-    <!-- HEADER -->
-    <header class="perfil-header">
-        <button class="btn-volver" onclick="location.href='@Url.Action("Index", "Home")'">⬅</button>
-        <h2>Tu perfil</h2>
-        <button class="btn-menu">☰</button>
-    </header>
+<header class="custom-header">
 
-    <!-- PRINCIPAL -->
-    <section class="perfil-principal">
-        <div class="perfil-foto">
-            <img src="/img/perfil.png" alt="foto de perfil">
+    <nav>
+        <ul>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/img/header/noti.png" alt="notificaciones">
+                </a>
+            </li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+    </nav>
 
-        <h1 class="perfil-nombre">@Model.Nombre</h1>
-        <p class="perfil-usuario">@Model.usuario</p>
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
 
-        <button class="btn-editar">Editar Perfil</button>
 
-        <!-- INFO -->
-        <div class="perfil-info">
-            <div class="info-bloque">
-                <strong>Nacido en...</strong>
-                <p>@ViewBag.PaisOrigen</p>
-            </div>
-            <div class="info-bloque">
-                <strong>Viviendo en...</strong>
-                <p>@ViewBag.PaisDestino</p>
-            </div>
-            <div class="info-bloque">
-                <strong>Emigró en...</strong>
-                <p>@Model.fechaMigracion.ToShortDateString()</p>
-            </div>
-        </div>
+<div id="sidebar-menu" class="menu-container sidebar-closed">
+    <div class="menu-header">
+        <button class="back-btn" onclick="toggleMenu()">←</button>
+        <h1>MENÚ</h1>
+    </div>
 
-        <!-- PUBLICACIONES -->
-        <div class="perfil-publicaciones">
-            <strong>Publicaciones:</strong>
-            <div class="publicaciones-grid">
-                <img src="/img/p1.jpg" alt="Publicación 1">
-                <img src="/img/p2.jpg" alt="Publicación 2">
-                <img src="/img/p3.jpg" alt="Publicación 3">
-                <img src="/img/p4.jpg" alt="Publicación 4">
-            </div>
-            <button class="btn-vermas">Ver más</button>
-        </div>
-    </section>
+    <div class="menu-links">
+        <a href='@Url.Action("Home", "Home")'>Home</a>
+        <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
+        <a href='@Url.Action("Index", "Grupos")'>Grupos</a>
+        <a href='@Url.Action("Index", "Tramite")'>Trámites</a>
+        <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
+        <a href='@Url.Action("Index", "Juego")'>Juegos</a>
+        <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
 
-    <!-- BOTÓN FLOTANTE -->
-    <div class="boton-flotante">⚙</div>
+    </div>
 </div>
+  
+</header>
+
+<main>
+    <div class="perfil-container">
 
 
+        <section class="perfil-principal">
+            <div class="perfil-foto">
+                <img src="/img/perfil.png" alt="foto de perfil">
+            </div>
 
+            <h1 class="perfil-nombre">@Model.Nombre</h1>
+            <p class="perfil-usuario">@Model.usuario</p>
 
+            <button class="btn-editar"
+                    onclick="location.href='@Url.Action("EditarPerfil", "Usuario", new { id = Model.IdUsuario })'">
+                Editar Perfil
+            </button>
+
+            <div class="perfil-info">
+                <div class="info-bloque">
+                    <strong>Nacido en...</strong>
+                    <p>@ViewBag.PaisOrigen</p>
+                </div>
+                <div class="info-bloque">
+                    <strong>Viviendo en...</strong>
+                    <p>@ViewBag.PaisDestino</p>
+                </div>
+                <div class="info-bloque">
+                    <strong>Emigró en...</strong>
+                    <p>@Model.fechaMigracion.ToShortDateString()</p>
+                </div>
+            </div>
+
+            <div class="perfil-publicaciones">
+                <strong>Publicaciones:</strong>
+                <div class="publicaciones-grid">
+                    <img src="/img/p1.jpg" alt="Publicación 1">
+                    <img src="/img/p2.jpg" alt="Publicación 2">
+                    <img src="/img/p3.jpg" alt="Publicación 3">
+                    <img src="/img/p4.jpg" alt="Publicación 4">
+                </div>
+                <button class="btn-vermas">Ver más</button>
+            </div>
+        </section>
+
+        <div class="boton-flotante">⚙</div>
+
+    </div>
+</main>
