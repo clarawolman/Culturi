@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\img\\Valores.png"
     },
     {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\grupoIcon.png",
+      "PackagePath": "staticwebassets\\img\\grupoIcon.png"
+    },
+    {
       "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\header\\Boton menu.png",
       "PackagePath": "staticwebassets\\img\\header\\Boton menu.png"
     },
@@ -147,6 +151,34 @@
     {
       "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\memotest\\tangoTexto.jpg",
       "PackagePath": "staticwebassets\\img\\memotest\\tangoTexto.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\noticias\\cruce.jpg",
+      "PackagePath": "staticwebassets\\img\\noticias\\cruce.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\noticias\\emigrar.jpg",
+      "PackagePath": "staticwebassets\\img\\noticias\\emigrar.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\noticias\\migrantes.jpg",
+      "PackagePath": "staticwebassets\\img\\noticias\\migrantes.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\noticias\\trabajo.jpg",
+      "PackagePath": "staticwebassets\\img\\noticias\\trabajo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\noticias\\visa1.jpg",
+      "PackagePath": "staticwebassets\\img\\noticias\\visa1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\noticias\\visa2.jpg",
+      "PackagePath": "staticwebassets\\img\\noticias\\visa2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\noticias\\voluntariado.jpg",
+      "PackagePath": "staticwebassets\\img\\noticias\\voluntariado.jpg"
     },
     {
       "Id": "C:\\Users\\49261291\\Culturi\\wwwroot\\img\\redes\\X.png",

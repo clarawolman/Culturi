@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Noticias</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ESPACIOS PARA TU HEADER Y FOOTER REALES */
+        .header-space {
+            height: 80px;
+        }
+
+        .footer-space {
+            height: 100px;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        /* BUSCADOR */
+        .search-container {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px 14px;
+            border-radius: 20px;
+            border: 2px solid #27b4a1;
+            font-size: 15px;
+            outline: none;
+        }
+
+        /* TÍTULO */
+        h2 {
+            text-align: center;
+            margin: 10px 0 25px 0;
+            font-size: 24px;
+        }
+
+        /* GRID DE NOTICIAS */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            padding-bottom: 40px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .news-card:hover {
+            transform: scale(1.02);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .news-card .title {
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* BOT FLOTANTE */
+        .floating-bot img {
+            width: 120px;
+            display: block;
+            margin: 30px auto;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<header class="custom-header">
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/img/header/noti.png" alt="notificaciones">
+                </a>
+            </li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <div id="sidebar-menu" class="menu-container sidebar-closed">
+        <div class="menu-header">
+            <button class="back-btn" onclick="toggleMenu()">←</button>
+            <h1>MENÚ</h1>
+        </div>
+
+        <div class="menu-links">
+            <a href='@Url.Action("Home", "Home")'>Home</a>
+            <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
+            <a href='@Url.Action("Grupos", "Comunidades")'>Grupos</a>
+            <a href='@Url.Action("Index", "Tramite")'>Trámites</a>
+            <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
+            <a href='@Url.Action("Index", "Juego")'>Juegos</a>
+            <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
+        </div>
+    </div>
+
+</header>
+
+<div class="container">
+
+    <!-- BUSCADOR -->
+    <div class="search-container">
+        <input class="search-box" type="text" placeholder="Buscar noticia ..." />
+    </div>
+
+    <!-- TÍTULO -->
+    <h2>Noticias</h2>
+
+    <!-- GRID DE NOTICIAS -->
+    <div class="news-grid">
+
+        <div class="news-card">
+            <img src="/img/noticias/visa1.jpg">
+            <div class="title">Cambian las condiciones de la visa</div>
+        </div>
+
+        <div class="news-card">
+            <img src="/img/noticias/visa2.jpg">
+            <div class="title">Problemas con la visa</div>
+        </div>
+
+        <div class="news-card">
+            <img src="/img/noticias/migrantes.jpg">
+            <div class="title">Inmigrantes a lo largo de los años</div>
+        </div>
+
+        <div class="news-card">
+            <img src="/img/noticias/cruce.jpg">
+            <div class="title">Los peligros del cruce ilegal</div>
+        </div>
+
+        <div class="news-card">
+            <img src="/img/noticias/trabajo.jpg">
+            <div class="title">¿Cómo consigo trabajo?</div>
+        </div>
+
+        <div class="news-card">
+            <img src="/img/noticias/voluntariado.jpg">
+            <div class="title">Sumate al voluntariado</div>
+        </div>
+
+        <div class="news-card">
+            <img src="/img/noticias/emigrar.jpg">
+            <div class="title">¿Qué se debe llevar al emigrar?</div>
+        </div>
+
+     </div> <!-- cierre de news-grid -->
+     
+
+    <a href="/ChatBot/ChatBot" class="floating-bot">
+        <img src="/img/Home/ChatBot.png" alt="ChatBot">
+    </a>
+
+</div> <!-- cierre de container -->
+
+</body>
+</html>
+
+
+

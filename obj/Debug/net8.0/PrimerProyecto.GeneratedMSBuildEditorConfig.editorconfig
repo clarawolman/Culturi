@@ -22,12 +22,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdEJvdFxDaGF0Qm90LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49261291/Culturi/Views/Grupos/Grupo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cG9zXEdydXBvLmNzaHRtbA==
+[C:/Users/49261291/Culturi/Views/Comunidades/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tdW5pZGFkZXNcQ2hhdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/49261291/Culturi/Views/Grupos/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3J1cG9zXEluZGV4LmNzaHRtbA==
+[C:/Users/49261291/Culturi/Views/Comunidades/Grupos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tdW5pZGFkZXNcR3J1cG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/49261291/Culturi/Views/Home/Home.cshtml]
@@ -60,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/49261291/Culturi/Views/Mapa/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwYVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/49261291/Culturi/Views/Noticias/Noticias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90aWNpYXNcTm90aWNpYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/49261291/Culturi/Views/Shared/_Layout.cshtml]

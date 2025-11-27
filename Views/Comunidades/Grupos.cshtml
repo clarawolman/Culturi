@@ -1,0 +1,244 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Grupos</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        /* ESPACIOS RESERVADOS */
+        .header-space {
+            height: 80px; /* Ajustá según tu header real */
+        }
+
+        .footer-space {
+            height: 90px; /* Ajustá según tu footer real */
+        }
+
+        /* CONTENIDO CENTRAL */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* BUSCADOR */
+        .search-container {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 10px 14px;
+            border: 2px solid #2bb9a9;
+            border-radius: 20px;
+            font-size: 15px;
+        }
+
+        /* TABS */
+        .tabs {
+            background: white;
+            display: flex;
+            gap: 25px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+
+        /* GRUPO */
+        .group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 25px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .group-item:hover {
+            background: #f5fffd;
+        }
+
+        .group-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+        }
+
+        .group-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #d3d3d3;
+        }
+
+        .group-right {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .notif {
+            background: #2bb9a9;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        /* BOTONES */
+        .buttons {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .boton {
+            display: block;
+            width: 230px;
+            margin: 10px auto;
+            padding: 12px 0;
+            background: #2bb9a9;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* MASCOTA */
+        .mascot {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .mascot img {
+            width: 120px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="custom-header">
+
+
+
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/img/header/noti.png" alt="notificaciones">
+                </a>
+            </li>
+        </ul>
+
+
+
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+
+
+
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+
+
+<div id="sidebar-menu" class="menu-container sidebar-closed">
+    <div class="menu-header">
+        <button class="back-btn" onclick="toggleMenu()">←</button>
+        <h1>MENÚ</h1>
+    </div>
+
+
+
+
+    <div class="menu-links">
+        <a href='@Url.Action("Home", "Home")'>Home</a>
+        <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
+        <a href='@Url.Action("Grupos", "Comunidades")'>Grupos</a>
+        <a href='@Url.Action("Index", "Tramite")'>Trámites</a>
+        <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
+        <a href='@Url.Action("Index", "Juego")'>Juegos</a>
+        <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
+
+
+
+
+    </div>
+</div>
+ 
+</header>
+
+    <div class="container">
+
+        <!-- BUSCADOR -->
+        <div class="search-container">
+            <input class="search-box" type="text" placeholder="Buscar grupos..." />
+        </div>
+
+        <!-- TABS -->
+        <div class="tabs">
+            <div>🟢 Favoritos</div>
+            <div>📄 Estados</div>
+        </div>
+
+        <!-- GRUPO HARDCODEADO -->
+        <div class="group-item" onclick="location.href='@Url.Action("Chat","Comunidades")'">
+            <div class="group-left">
+                <div class="group-img"></div>
+                <strong>Grupo México</strong> 🇲🇽
+            </div>
+
+            <div class="group-right">
+                15:25 <span class="notif">1</span>
+            </div>
+        </div>
+
+        <!-- BOTONES -->
+        <div class="buttons">
+            <div class="boton">Crear Grupo</div>
+            <div class="boton">Explorar Grupos</div>
+        </div>
+
+        <a href="/ChatBot/ChatBot" class="floating-bot">
+    <img src="/img/Home/ChatBot.png" alt="ChatBot">
+
+    </div>
+
+  
+    
+
+</body>
+</html>
+

@@ -1,0 +1,216 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chat</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        /* HEADER DEL CHAT */
+        .chat-header {
+            width: 100%;
+            height: 70px;
+            background: #51acb8; /* color exacto del mockup */
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            box-sizing: border-box;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .back-btn {
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .group-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .group-title {
+            font-size: 19px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .join-btn {
+            background: #8af971;
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu-dots {
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* CONTENEDOR CENTRAL */
+        .chat-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-bottom: 120px; 
+        }
+
+        /* MENSAJES */
+        .message-block {
+            margin-bottom: 25px;
+        }
+
+        .user-name {
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        .bubble {
+            background: #ffffff;
+            border: 3px solid #0f331d;
+            border-radius: 15px;
+            padding: 12px 15px;
+            max-width: 480px;
+            font-size: 15px;
+            line-height: 1.35;
+        }
+
+        .bubble.me {
+            margin-left: auto;
+            background: #d5ffd7;
+            border-color: #4b7d4f;
+        }
+
+        .message-block.me {
+            text-align: right;
+        }
+
+        /* INPUT ABAJO */
+        .input-area {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #2bb9a9;
+            padding: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .input-box {
+            width: 70%;
+            max-width: 600px;
+            padding: 10px 14px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .icon-btn {
+            font-size: 22px;
+            cursor: pointer;
+            color: white;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-header">
+        
+    <div class="header-left">
+        <span class="back-btn" onclick="location.href='@Url.Action("Grupos", "Comunidades")'">⭠</span>
+
+        <img src="/img/grupoIcon.png" class="group-icon" alt="Grupo">
+        <span class="group-title">Grupo</span>
+    </div>
+
+    <div class="header-right">
+        <button class="join-btn">Unirse</button>
+        <span class="menu-dots">⋮</span>
+    </div>
+
+</div>
+
+
+    <!-- MENSAJES -->
+    <div class="chat-container">
+
+        <div class="message-block">
+            <div class="user-name">👱‍♀️ AnaMex_89:</div>
+            <div class="bubble">
+                ¡Bienvenido Juan! 😊  
+                Yo estoy yendo a clases  
+                en la biblioteca pública de  
+                Houston.
+            </div>
+        </div>
+
+        <div class="message-block">
+            <div class="user-name">🧔 CarlosVenez:</div>
+            <div class="bubble">
+                Confirmo lo que dice Ana, empecé  
+                hace 2 meses y me ayudó un montón.  
+                También hacen grupos de  
+                conversación los sábados
+            </div>
+        </div>
+
+        <div class="message-block">
+            <div class="user-name">👩‍🦱 Lucia_Honduras:</div>
+            <div class="bubble">
+                Si alguien necesita ayuda  
+                llenando formularios en línea,  
+                yo puedo ayudar en las tardes.  
+                Lo he hecho varias veces.
+            </div>
+        </div>
+
+        <div class="message-block me">
+            <div class="bubble me">
+                Gracias a todos por la info. De verdad  
+                que este grupo es una bendición 🙏
+            </div>
+        </div>
+
+    </div>
+
+    <!-- INPUT -->
+    <div class="input-area">
+        <input class="input-box" type="text" placeholder="Escribir..." />
+        <span class="icon-btn">➕</span>
+        <span class="icon-btn">📎</span>
+        <span class="icon-btn">📷</span>
+    </div>
+
+</body>
+</html>

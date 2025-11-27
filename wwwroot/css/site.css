@@ -15,6 +15,11 @@ body {
   margin: 0;
   padding: 0;
 }
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
 
 
 .landing-container {
@@ -283,88 +288,151 @@ header nav ul li a {
 }
 
 
-/* ===========================
-   📱 Tablet (≤ 992px)
-=========================== */
+/* ============================================
+                MEDIA QUERIES
+   Adaptado al estilo futurista del footer
+============================================ */
+
+
+/* TABLET GRANDE – 1200px */
+@media (max-width: 1200px) {
+  .footer-sections {
+    gap: 40px;
+  }
+
+  .footer-container {
+    padding: 0 25px;
+  }
+}
+
+
+/* TABLET – 992px */
 @media (max-width: 992px) {
 
-
   .footer-sections {
-      grid-template-columns: repeat(2, 1fr);
-      text-align: center;
+    justify-content: space-evenly;
+    gap: 35px;
   }
 
-
-  .red-item {
-      justify-content: center;
+  .footer-column {
+    width: 40%;
   }
-
 
   .footer-bottom {
-      flex-direction: column;
-      gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-bottom-links a {
+    margin-left: 14px;
   }
 }
 
 
-/* ===========================
- 📱 Móvil grande (≤ 768px)
-=========================== */
+/* CELULAR GRANDE – 768px */
 @media (max-width: 768px) {
 
-
-  .footer-full {
-      padding: 40px 15px;
-  }
-
-
   .footer-sections {
-      grid-template-columns: 1fr 1fr;
-      gap: 25px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
   }
 
-
-  .footer-column h4 {
-      font-size: 1rem;
+  .footer-column {
+    width: 100%;
   }
 
-
-  .footer-column a {
-      font-size: 0.9rem;
+  .footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
+  .footer-column:hover h4::after {
+    width: 45%;
+  }
+
+  .footer-redes .red-item {
+    justify-content: center;
+  }
+
+  .footer-divider {
+    margin-top: 10px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
 
   .footer-bottom-links {
-      gap: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
 
 
-/* ===========================
- 📱 Móvil pequeño (≤ 520px)
-=========================== */
-@media (max-width: 520px) {
-
-
-  .footer-sections {
-      grid-template-columns: 1fr;
-      gap: 20px;
+/* CELULAR MEDIO – 576px */
+@media (max-width: 576px) {
+  
+  .footer-full {
+    padding: 55px 0 35px;
   }
 
-
-  .footer-redes {
-      align-items: center;
+  .footer-container {
+    padding: 0 18px;
   }
 
-
-  .footer-bottom {
-      text-align: center;
+  .footer-column a {
+    font-size: 15px;
   }
 
+  .footer-redes .red-item img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .footer-bottom p {
+    font-size: 14px;
+  }
+}
+
+
+/* CELULAR CHICO – 420px */
+@media (max-width: 420px) {
+
+  .footer-full {
+    padding: 45px 0 30px;
+  }
+
+  .footer-column h4 {
+    font-size: 18px;
+  }
+
+  .footer-column a {
+    font-size: 14px;
+  }
+
+  .footer-bottom p,
+  .footer-bottom-links a {
+    font-size: 13px;
+  }
+}
+
+
+/* ULTRA SMALL – 360px */
+@media (max-width: 360px) {
+
+  .footer-redes .red-item img {
+    width: 22px;
+    height: 22px;
+  }
 
   .footer-bottom-links {
-      flex-direction: column;
-      gap: 6px;
+    gap: 5px;
   }
 }
 
