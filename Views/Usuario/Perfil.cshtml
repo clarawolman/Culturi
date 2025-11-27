@@ -1,6 +1,8 @@
 @model Usuario
 
+
 <header class="custom-header">
+
 
     <nav>
         <ul>
@@ -16,6 +18,7 @@
             </li>
         </ul>
 
+
         <div class="menu-icon" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -23,7 +26,10 @@
         </div>
     </nav>
 
+
     <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+
 
 
 <div id="sidebar-menu" class="menu-container sidebar-closed">
@@ -31,6 +37,7 @@
         <button class="back-btn" onclick="toggleMenu()">←</button>
         <h1>MENÚ</h1>
     </div>
+
 
     <div class="menu-links">
         <a href='@Url.Action("Home", "Home")'>Home</a>
@@ -41,13 +48,17 @@
         <a href='@Url.Action("Index", "Juego")'>Juegos</a>
         <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
 
+
     </div>
 </div>
-  
+ 
 </header>
+
 
 <main>
     <div class="perfil-container">
+
+
 
 
         <section class="perfil-principal">
@@ -55,13 +66,16 @@
                 <img src="/img/perfil.png" alt="foto de perfil">
             </div>
 
+
             <h1 class="perfil-nombre">@Model.Nombre</h1>
             <p class="perfil-usuario">@Model.usuario</p>
+
 
             <button class="btn-editar"
                     onclick="location.href='@Url.Action("EditarPerfil", "Usuario", new { id = Model.IdUsuario })'">
                 Editar Perfil
             </button>
+
 
             <div class="perfil-info">
                 <div class="info-bloque">
@@ -78,6 +92,7 @@
                 </div>
             </div>
 
+
             <div class="perfil-publicaciones">
                 <strong>Publicaciones:</strong>
                 <div class="publicaciones-grid">
@@ -89,8 +104,7 @@
                 <button class="btn-vermas">Ver más</button>
             </div>
         </section>
-
-        <div class="boton-flotante">⚙</div>
-
     </div>
+        <a href="/ChatBot/ChatBot" class="floating-bot">
+    <img src="/img/Home/ChatBot.png" alt="ChatBot">
 </main>

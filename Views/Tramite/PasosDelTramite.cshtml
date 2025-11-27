@@ -1,5 +1,6 @@
 @model List<PasoDelTramite>
 
+
 <header class="custom-header">
     <nav>
         <ul>
@@ -15,6 +16,7 @@
             </li>
         </ul>
 
+
         <div class="menu-icon" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -22,7 +24,10 @@
         </div>
     </nav>
 
+
     <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+
 
 
 <div id="sidebar-menu" class="menu-container sidebar-closed">
@@ -30,6 +35,7 @@
         <button class="back-btn" onclick="toggleMenu()">←</button>
         <h1>MENÚ</h1>
     </div>
+
 
     <div class="menu-links">
         <a href="@Url.Action("Home", "Home")">Home</a>
@@ -40,46 +46,59 @@
         <a href="@Url.Action("Index", "Juego")">Juegos</a>
         <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
 
+
     </div>
-  
+ 
 </header>
 
-<h1>Pasos del Trámite</h1>
+<main>
+    <h1>Pasos del Trámite</h1>
 
-@foreach (var p in Model)
-{
-    <div class="paso-card">
 
-        <!-- Estado del paso -->
-        <div class="paso-estado">
-            @if (p.completado)
-            {
-                <span class="check-green">✔</span>
-            }
-            else
-            {
-                <span class="check-gray">◻</span>
-            }
+    @foreach (var p in Model)
+    {
+        <div class="paso-card">
+
+
+            <!-- Estado del paso -->
+            <div class="paso-estado">
+                @if (p.completado)
+                {
+                    <span class="check-green">✔</span>
+                }
+                else
+                {
+                    <span class="check-gray">◻</span>
+                }
+            </div>
+
+
+            <!-- Información del paso -->
+            <div class="paso-info">
+                <h3>Paso @p.NumeroOrden</h3>
+                <p>@p.Descripcion</p>
+
+
+                @if (!string.IsNullOrEmpty(p.DocumentoRequerido))
+                {
+                    <p><strong>Documento requerido:</strong> @p.DocumentoRequerido</p>
+                }
+            </div>
+
+
+            <!-- Botón completar -->
+            <form asp-action="FinalizarPaso" method="post">
+                <input type="hidden" name="idPaso" value="@p.IdPaso" />
+                @if (!p.completado)
+                {
+                    <button type="submit" class="btn-completar">Completar</button>
+                }
+            </form>
         </div>
 
-        <!-- Información del paso -->
-        <div class="paso-info">
-            <h3>Paso @p.NumeroOrden</h3>
-            <p>@p.Descripcion</p>
-
-            @if (!string.IsNullOrEmpty(p.DocumentoRequerido))
-            {
-                <p><strong>Documento requerido:</strong> @p.DocumentoRequerido</p>
-            }
-        </div>
-
-        <!-- Botón completar -->
-        <form asp-action="FinalizarPaso" method="post">
-            <input type="hidden" name="idPaso" value="@p.IdPaso" />
-            @if (!p.completado)
-            {
-                <button type="submit" class="btn-completar">Completar</button>
-            }
-        </form>
-    </div>
-}
+    }
+        <a href="/ChatBot/ChatBot" class="floating-bot">
+    <img src="/img/Home/ChatBot.png" alt="ChatBot">
+    
+</main>
+    

@@ -1,7 +1,11 @@
 @using System.Linq
 @model List<Tramite>
 
+
 <header class="custom-header">
+
+
+
 
     <nav>
         <ul>
@@ -17,6 +21,9 @@
             </li>
         </ul>
 
+
+
+
         <div class="menu-icon" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -24,7 +31,11 @@
         </div>
     </nav>
 
+
+
+
     <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
 
 
 <div id="sidebar-menu" class="menu-container sidebar-closed">
@@ -32,6 +43,9 @@
         <button class="back-btn" onclick="toggleMenu()">←</button>
         <h1>MENÚ</h1>
     </div>
+
+
+
 
     <div class="menu-links">
         <a href='@Url.Action("Home", "Home")'>Home</a>
@@ -42,26 +56,41 @@
         <a href='@Url.Action("Index", "Juego")'>Juegos</a>
         <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
 
+
+
+
     </div>
 </div>
-  
+ 
 </header>
-
 
 <main>
     <div class = "logo">
         <img src="/img/Home/logoSVG.svg" alt="logo">
-        <h1>culturi</h1>
+        <h1>Culturi</h1>
     </div>
 
+
+
+
  <div class="tramitesHome">
+ <a href='@Url.Action("Index", "Tramite")'>
     <h3>Trámites en proceso</h3>
+
+
+
 
     @{
         int i = 0;
     }
 
+
+
+
     <div class="tramites-lista">
+
+
+
 
         @if (Model != null && Model.Any())
         {
@@ -73,6 +102,9 @@
                         <span class="titulo">@t.Titulo</span>
                     </div>
 
+
+
+
                     <div class="barra-progreso" style="width: @t.ProgresoPorcentaje%;"></div>
                 </div>
             }
@@ -82,9 +114,12 @@
             <p>No tenés trámites en proceso.</p>
         }
 
-    </div>
-</div>
 
+
+
+    </div>
+    </a>
+</div>
 
 
 <section class="opcionesHome">
@@ -92,8 +127,11 @@
         <div>
             <img src="/img/Home/juegos.png" alt="juegos">
             <h3>Juegos</h3>
-        </div> 
+        </div>
     </a>
+
+
+
 
     <a href="@Url.Action("Index", "Grupos")">
         <div>
@@ -102,12 +140,18 @@
         </div>
     </a>
 
+
+
+
     <a href="@Url.Action("Index", "Mapa")">
         <div>
             <img src="/img/Home/mapa.png" alt="mapa">
             <h3>Mapa</h3>
         </div>
     </a>
+
+
+
 
     <a href="@Url.Action("Index", "Noticias")">
         <div>
@@ -116,6 +160,12 @@
         </div>
     </a>
 </section>
+
+
+
+
+
+
 
 
     <div class="NoticiasHome">
@@ -127,6 +177,11 @@
         </a>
     </div>
 
+
+
+
     <a href="/ChatBot/ChatBot" class="floating-bot">
     <img src="/img/Home/ChatBot.png" alt="ChatBot">
 </main>
+
+

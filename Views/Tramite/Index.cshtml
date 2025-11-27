@@ -13,6 +13,9 @@
             </li>
         </ul>
 
+
+
+
         <div class="menu-icon" onclick="toggleMenu()">
             <span></span>
             <span></span>
@@ -20,7 +23,16 @@
         </div>
     </nav>
 
+
+
+
     <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+
+
+
+
+
 
 
 <div id="sidebar-menu" class="menu-container sidebar-closed">
@@ -28,6 +40,9 @@
         <button class="back-btn" onclick="toggleMenu()">←</button>
         <h1>MENÚ</h1>
     </div>
+
+
+
 
     <div class="menu-links">
         <a href="@Url.Action("Home", "Home")">Home</a>
@@ -38,11 +53,20 @@
         <a href="@Url.Action("Index", "Juego")">Juegos</a>
         <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
 
+
+
+
     </div>
 </div>
-  
+ 
 </header>
 <input type="text" class="search-box" placeholder="Buscar trámite ..." />
+
+
+
+
+
+
 
 
 <h1>Guia de Tramite</h1>
@@ -50,11 +74,17 @@
 <section>
     <h3>Trámites para vos</h3>
 
+
+
+
     @foreach (var t in Model.TramitesParaVos)
     {
         <div class="tramite-card">
             <div class="tramite-info">
                 <span>@t.Titulo</span>
+
+
+
 
                 <form asp-action="AgregarTramite" method="post" style="display:inline;">
                     <input type="hidden" name="IdTramite" value="@t.IdTramite" />
@@ -74,9 +104,15 @@
     }
 </section>
 
+
+
+
 </section>
 <section>
     <h3>Mis trámites</h3>
+
+
+
 
     @foreach (var t in Model.MisTramites)
     {
@@ -84,26 +120,42 @@
             <div class="tramite-info">
                 <button class="btn-circle btn-green">✔</button>
 
+
+
+
                 <form asp-action="EliminarTramite" method="post" style="display:inline;">
                     <input type="hidden" name="id" value="@t.IdTramite" />
                     <button type="submit" class="btn-circle btn-red">✖</button>
                 </form>
 
+
+
+
                 <a asp-action="PasosDelTramite" asp-route-id="@t.IdTramite">
                     <h6>@t.Titulo</h6>
                 </a>
+
+
+
 
                 <div class="tramite-progress">
                     <span style="width: @t.ProgresoPorcentaje%;"></span>
                 </div>
             </div>
 
+
+
+
             <button class="btn-circle btn-help">?</button>
         </div>
     }
 </section>
 
+
+    <a href="/ChatBot/ChatBot" class="floating-bot">
+    <img src="/img/Home/ChatBot.png" alt="ChatBot">
+
+
+
+
 </section>
-
-
-
