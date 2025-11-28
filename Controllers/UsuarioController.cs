@@ -68,7 +68,14 @@ namespace Culturi.Controllers
         }
          public IActionResult Noti()
     {
-        return View();
+        string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
+        if (usuarioJson == null)
+            return RedirectToAction("Login");
+
+        Usuario usuarioSesion = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+        Usuario usuario = BD.ObtenerUsuarioPorId(usuarioSesion.IdUsuario);
+        
+        return View(usuario);
     }
 
 
@@ -147,19 +154,19 @@ public IActionResult Registro(
 
     return View(usuario);
 }
-[HttpPost]
-public IActionResult EditarPerfil(Usuario usuario, IFormFile FotoPerfil)
+[HttpPost("Usuario/EditarPerfil")]
+public IActionResult EditarPerfilPost([Bind("IdUsuario,Nombre,usuario,Email")] Usuario model, IFormFile FotoPerfil)
 {
     // 1️⃣ Levantar el usuario original desde la BD
-    Usuario original = BD.ObtenerUsuarioPorId(usuario.IdUsuario);
+    Usuario original = BD.ObtenerUsuarioPorId(model.IdUsuario);
 
     if (original == null)
         return NotFound();
 
     // 2️⃣ Actualizar solo los campos que modificó
-    original.Nombre = usuario.Nombre;
-    original.usuario = usuario.usuario;
-    original.Email = usuario.Email;
+    original.Nombre = model.Nombre;
+    original.usuario = model.usuario;
+    original.Email = model.Email;
 
     // 3️⃣ Guardar la foto si se sube
     if (FotoPerfil != null && FotoPerfil.Length > 0)

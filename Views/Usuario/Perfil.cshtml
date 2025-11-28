@@ -63,7 +63,14 @@
 
         <section class="perfil-principal">
             <div class="perfil-foto">
-                <img src="/img/perfil.png" alt="foto de perfil">
+                @if (!string.IsNullOrEmpty(Model.FotoPerfil))
+                {
+                    <img src="/img/perfiles/@Model.FotoPerfil" alt="foto de perfil">
+                }
+                else
+                {
+                    <img src="/img/perfil.png" alt="foto de perfil">
+                }
             </div>
 
 

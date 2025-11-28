@@ -1,3 +1,7 @@
+
+
+@model Usuario
+
 <header class="custom-header">
     <nav>
         <ul>
@@ -47,19 +51,35 @@
     <h3>Últimos 7 días</h3>
 <div>
     <a href="/Tramite/Index" class="notificacion link">
-        <img src="/img/noti/Calendario.png" alt="perfil">
+        @if (!string.IsNullOrEmpty(Model.FotoPerfil))
+        {
+            <img src="/img/perfiles/@Model.FotoPerfil" alt="perfil" class="noti-foto-perfil">
+        }
+        else
+        {
+            <img src="/img/perfil.png" alt="perfil" class="noti-foto-perfil">
+        }
         <p>Tienes un trámite que vence en <strong>72hs</strong></p>
     </a>
 </div>
 <h4>Ultimos 30 dias</h4>
 <div>
     <a href="/Tramite/Index" class="notificacion link">
-        <img src="/img/noti/Calendario.png" alt="perfil">
+        @if (!string.IsNullOrEmpty(Model.FotoPerfil))
+        {
+            <img src="/img/perfiles/@Model.FotoPerfil" alt="perfil" class="noti-foto-perfil">
+        }
+        else
+        {
+            <img src="/img/perfil.png" alt="perfil" class="noti-foto-perfil">
+        }
         <p>Tienes un trámite que vence en <strong>72hs</strong></p>
     </a>
 </div>
-
+<a href="/ChatBot/ChatBot" class="floating-bot">
+    <img src="/img/Home/ChatBot.png" alt="ChatBot">
 </body>
+
 
 
 

@@ -20,7 +20,8 @@ public static class BD
                             id_paisOrigen,
                             id_paisDestino,
                             fechaMigracion,
-                            fechaNacimiento
+                            fechaNacimiento,
+                            fotoPerfil
                          FROM Usuario 
                          WHERE usuario = @pnombreUsuario";
 
@@ -198,7 +199,7 @@ public static class BD
         return ObtenerUsuarioPorId(id.Value);
     }
 
-    public static Usuario ObtenerUsuarioPorId(int idUsuario)
+       public static Usuario ObtenerUsuarioPorId(int idUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
@@ -212,7 +213,8 @@ public static class BD
                             id_paisOrigen,
                             id_paisDestino,
                             fechaMigracion,
-                            fechaNacimiento
+                            fechaNacimiento,
+                            fotoPerfil
                          FROM Usuario 
                          WHERE id_usuario = @pid";
 

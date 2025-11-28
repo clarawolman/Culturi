@@ -47,7 +47,8 @@
 </div>
 
 <div class="form-edicion">
-    <form method="post" enctype="multipart/form-data" asp-action="EditarPerfil" asp-controller="Usuario">
+        <form method="post" enctype="multipart/form-data" action="/Usuario/EditarPerfil">
+
 
         <!-- El hidden correcto -->
        <input type="hidden" asp-for="IdUsuario" />
@@ -74,3 +75,5 @@
         <button type="submit" class="btn-guardar">Guardar</button>
     </form>
 </div>
+<a href="/ChatBot/ChatBot" class="floating-bot">
+    <img src="/img/Home/ChatBot.png" alt="ChatBot">

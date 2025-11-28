@@ -1,23 +1,116 @@
 @{
     ViewData["Title"] = "ChatBot";
 }
-
-<h2>ChatBot con Semantic Kernel + Gemini</h2>
-
-<form method="post">
-    <div>
-        <label>Tu mensaje:</label>
-        <textarea name="userMessage" class="form-control" rows="3"></textarea>
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Enviar</button>
-</form>
-
-@if (ViewBag.Reply != null)
-{
-    <div class="mt-4 p-3 border rounded" style="background:#f8f8f8;">
-        <strong>Respuesta del bot:</strong>
-        <p>@ViewBag.Reply</p>
-    </div>
+@{
+    Layout = null;
 }
 
+<header class="custom-header">
+    <nav>
+        <img class="icon-back" src="/img/icons/back.png" alt="volver">
+        <img class="icon-menu" src="/img/icons/menu.png" alt="menu">
+        <h1 class="chat-title">CHAT BOT - Culturi</h1>
+        <img class="icon-bell" src="/img/icons/bell.png" alt="notificaciones">
+    </nav>
+</header>
+
+<div class="chat-container">
+
+    <h2 class="hidden-title">ChatBot con Semantic Kernel + Gemini</h2>
+
+    <form method="post" action="/ChatBot/ChatBot" class="chat-form">
+        <div class="input-wrapper">
+            <textarea name="userMessage" class="input-message"></textarea>
+        </div>
+        <button type="submit" class="send-btn">Enviar</button>
+    </form>
+
+    @if (ViewBag.Reply != null)
+    {
+        <div class="message-bot">
+            <p>@ViewBag.Reply</p>
+        </div>
+    }
+</div>
+
+
+
+
+<style>
+
+.chat-container {
+    flex: 1;
+    margin-top: 65px;    /* deja espacio para el header */
+    margin-bottom: 85px; /* deja espacio para la barra de enviar */
+    padding: 15px;
+    overflow-y: auto;    /* scroll solo acá */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* === MENSAJE DEL BOT === */
+.message-bot {
+    align-self: flex-start;
+    background-color: #e6f5e6;
+    border: 2px solid #092b00;
+    border-radius: 15px 15px 15px 0;
+    padding: 12px 15px;
+    max-width: 75%;
+    font-size: 15px;
+}
+
+/* === MENSAJE DEL USUARIO === */
+.message-user {
+    align-self: flex-end;
+    background-color: #b8dce7;
+    border: 2px solid #003049;
+    border-radius: 15px 15px 0 15px;
+    padding: 12px 15px;
+    max-width: 75%;
+    font-size: 15px;
+}
+
+/* === BARRA PARA ENVIAR (FIJA ABAJO) === */
+.chat-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #4BA6B8;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 2px solid white;
+}
+
+/* === TEXTAREA === */
+.input-message {
+    flex: 1;
+    padding: 14px;
+    border-radius: 20px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 15px;
+    max-height: 80px; /* evita que se expanda demasiado */
+}
+
+/* === BOTÓN ENVIAR === */
+.send-btn {
+    padding: 10px 18px;
+    background-color: #003049;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.send-btn:hover {
+    background-color: #001f33;
+}
+
+
+</style>

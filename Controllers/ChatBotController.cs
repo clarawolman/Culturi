@@ -3,6 +3,7 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.Google;
 using Microsoft.Extensions.Configuration;
+
 namespace Culturi.Controllers
 {
     public class ChatBotController : Controller
@@ -12,10 +13,8 @@ namespace Culturi.Controllers
 
         public ChatBotController(IConfiguration config)
         {
-            // 1. Obtener la API key de Google Gemini desde appsettings.json
             string apiKey = config["GoogleAI:ApiKey"];
 
-            // 2. Crear el kernel
             var builder = Kernel.CreateBuilder();
 
             builder.AddGoogleAIGeminiChatCompletion(
@@ -25,42 +24,38 @@ namespace Culturi.Controllers
 
             var kernel = builder.Build();
 
-            // 3. Setear el servicio de chat
             _chatService = kernel.GetRequiredService<IChatCompletionService>();
 
-            // 4. Inicializar un historial de conversación
             _history = new ChatHistory();
             _history.AddSystemMessage(
                 "Sos un asistente en español. Respondé de forma breve, clara y amable."
             );
         }
 
+        // GET: ChatBot
         [HttpGet]
         public IActionResult ChatBot()
         {
             return View();
         }
 
+        // POST: ChatBot
         [HttpPost]
-        public async Task<IActionResult> Index(string userMessage)
+        public async Task<IActionResult> ChatBot(string userMessage)
         {
             if (!string.IsNullOrEmpty(userMessage))
             {
-                // Guardar mensaje del usuario
                 _history.AddUserMessage(userMessage);
 
-                // Obtener respuesta del modelo
-                var reply = await _chatService.GetChatMessageContentAsync(
-                    _history
-                );
+                var reply = await _chatService.GetChatMessageContentAsync(_history);
 
-                // Guardar mensaje del asistente
                 _history.AddAssistantMessage(reply.ToString());
 
                 ViewBag.Reply = reply.ToString();
             }
 
-            return View();
+            return View(); // ahora sí vuelve a ChatBot.cshtml
         }
     }
 }
+

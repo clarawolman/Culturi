@@ -27,86 +27,131 @@ html, body {
   overflow-x: hidden;
 }
 /* HEADER */
+/* Header */
 .custom-header {
-  width: 95.5%;
-  background: #37A6BA;
-  padding: 10px 40px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
-header nav ul li {
-  align-items: center;
-}
-header nav ul li a {
-  text-decoration: none;
-  font-style: none;
-  color: #3a91a1;
+
+/* NAV color igual que tu header */
+.custom-nav {
+  background: #1bb3c4;
+  padding: 12px 25px;
 }
 
+/* Links */
+.navbar-nav .nav-link {
+  color: white !important;
+  font-weight: 500;
+}
 
-.custom-header nav {
+.navbar-nav .nav-link:hover {
+  opacity: .8;
+}
+
+/* DROPDOWNS */
+.dropdown-menu {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 34px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* MENU LATERAL */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: #1bb3c4;
+  color: white;
+  padding: 20px;
+  box-shadow: -4px 0 10px rgba(0,0,0,0.25);
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+/* HEADER DEL MENU */
+.side-menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-
-.custom-header nav ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 40px;
+.side-menu-header h2 {
   margin: 0;
-  padding: 0;
+  font-size: 22px;
 }
 
-
-.custom-header nav ul img {
-  width: 32px;
-  height: 32px;
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: white;
   cursor: pointer;
 }
 
-
-
-
-.custom-header nav ul h2 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0;
-}
-
-
-/* HOVER */
-.custom-header nav a:hover h2 {
-  text-decoration: none;
-  opacity: 0.85;
-}
-
-
-/* MENU ICON */
-.menu-icon {
+/* LINKS DEL MENU */
+.side-menu-links {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
 }
 
+.side-menu-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 12px 0;
+}
 
-.menu-icon span {
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 3px;
+.side-menu-links a:hover {
+  opacity: .8;
+  padding-left: 6px;
+  transition: .2s;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  visibility: hidden;
+  opacity: 0;
   transition: .3s;
+  z-index: 1500;
 }
 
-
-.menu-icon:hover span {
-  width: 32px;
+.overlay.show {
+  visibility: visible;
+  opacity: 1;
 }
+/* Botón hamburguesa fijo a la derecha de la pantalla */
+.fixed-btn {
+  position: fixed;
+  right: 20px;    /* pegado a la derecha */
+  top: 18px;      /* bajalo o subilo a gusto */
+  z-index: 3000;  /* por encima de todo */
+}
+
 
 
 /*footer*/
@@ -853,8 +898,11 @@ button[type="submit"]:hover {
 
 .tramitesHome {
   text-decoration: none;
-
-
+}
+.tramitesHome h3
+{
+  text-decoration: none;
+  list-style: none;
 }
 .opcionesHome {
   text-decoration: none;
@@ -874,7 +922,6 @@ button[type="submit"]:hover {
   background-color: #000000;
   opacity: 0.64;
   border-radius: 10px;
-
 
 }
 .noticiasHome img {
@@ -1910,7 +1957,6 @@ input[asp-for]:focus {
 
 
 /*  PASO DEL TRAMITE*/
-/* TARJETA DEL PASO */
 .paso-card {
   display: grid;
   grid-template-columns: 50px 1fr auto;
@@ -2011,3 +2057,164 @@ input[asp-for]:focus {
       font-size: 22px;
   }
 }
+
+/*MEDIA QUERY PERFIL*/
+
+
+/*MEDIA QUERY MAPA*/
+@media (max-width: 768px) {
+  .custom-header {
+      background-color: #4BA6B8;
+      padding: 10px;
+  }
+
+  .custom-header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+  }
+  .custom-header nav ul {
+      display: none;
+  }
+  .menu-icon {
+      display: block;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+  }
+  .custom-header nav::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url('/img/header/perfil.png');
+      background-size: cover;
+      width: 28px;
+      height: 28px;
+  }
+  .custom-header nav a[href="/Usuario/Noti"] img {
+      width: 28px;
+      height: 28px;
+  }
+  .custom-header nav a[href="/Usuario/Noti"] {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+  }
+  .titulo-mapa h1 {
+      font-size: 20px;
+      text-align: center;
+      margin-top: 10px;
+      color: #333;
+  }
+  iframe {
+      width: 95vw;
+      height: 65vh;
+      display: block;
+      margin: 10px auto;
+      border-radius: 10px;
+      border: none;
+  }
+}
+
+/*MEDIA QUERY PASOS DEL TRAMITE*/ 
+@media (max-width: 768px) {
+  .custom-header {
+      background-color: #4BA6B8;
+      padding: 10px 15px;
+      position: relative;
+  }
+
+  .custom-header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+  }
+  .custom-header nav ul {
+      display: none;
+  }
+
+  .custom-header::before {
+      content: "←";
+      font-size: 24px;
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      cursor: pointer;
+  }
+  .menu-icon {
+      display: block;
+      position: absolute;
+      left: 40px;
+      top: 12px;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+  }
+
+  .menu-icon span {
+      background-color: black;
+  }
+  .custom-header nav img[alt="notificaciones"] {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 28px;
+  }
+  main h1 {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 22px;
+      color: #333;
+  }
+  .paso-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 12px auto;
+      padding: 12px 18px;
+      border: 2px solid black;
+      border-radius: 30px;
+      width: 90%;
+      background-color: white;
+  }
+  .paso-estado span {
+      font-size: 22px;
+  }
+  .paso-info {
+      flex: 1;
+      margin-left: 10px;
+  }
+
+  .paso-info h3 {
+      font-size: 16px;
+      margin-bottom: 5px;
+  }
+
+  .paso-info p {
+      font-size: 14px;
+      margin: 0;
+  }
+  .btn-completar {
+      display: none;
+  }
+  .paso-card::after {
+      content: "🗓️";
+      font-size: 22px;
+      margin-left: 10px;
+  }
+  .floating-bot {
+      position: fixed;
+      bottom: 20px;
+      right: 15px;
+      width: 70px;
+  }
+
+  .floating-bot img {
+      width: 100%;
+  }
+}
+
+/*CHATBOT*/
