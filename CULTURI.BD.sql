@@ -1,4 +1,4 @@
-﻿USE [master]
+USE [master]
 GO
 /****** Object:  Database [Culturi]    Script Date: 26/11/2025 09:06:39 ******/
 CREATE DATABASE [Culturi]
@@ -114,22 +114,6 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Juego]    Script Date: 26/11/2025 09:06:39 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Juego](
-	[id_juego] [int] IDENTITY(1,1) NOT NULL,
-	[nombre] [varchar](100) NOT NULL,
-	[tipo] [varchar](50) NULL,
-	[descripcion] [text] NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id_juego] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
 /****** Object:  Table [dbo].[MensajeChatPrivado]    Script Date: 26/11/2025 09:06:39 ******/
 SET ANSI_NULLS ON
 GO
@@ -161,23 +145,6 @@ CREATE TABLE [dbo].[Mensajes](
 PRIMARY KEY CLUSTERED 
 (
 	[id_mensaje] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[Nivel]    Script Date: 26/11/2025 09:06:39 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[Nivel](
-	[id_nivel] [int] IDENTITY(1,1) NOT NULL,
-	[id_juego] [int] NOT NULL,
-	[numero_nivel] [int] NOT NULL,
-	[descripcion] [text] NULL,
-	[dificultad] [varchar](20) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id_nivel] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
@@ -231,26 +198,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PreguntaJuego]    Script Date: 26/11/2025 09:06:39 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[PreguntaJuego](
-	[id_pregunta] [int] IDENTITY(1,1) NOT NULL,
-	[id_nivel] [int] NOT NULL,
-	[enunciado] [text] NOT NULL,
-	[opcion_a] [varchar](255) NOT NULL,
-	[opcion_b] [varchar](255) NOT NULL,
-	[opcion_c] [varchar](255) NOT NULL,
-	[opcion_d] [varchar](255) NOT NULL,
-	[respuesta_correcta] [char](1) NULL,
-PRIMARY KEY CLUSTERED 
-(
-	[id_pregunta] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-GO
+
 /****** Object:  Table [dbo].[ProgresoTramites]    Script Date: 26/11/2025 09:06:39 ******/
 SET ANSI_NULLS ON
 GO
@@ -306,18 +254,6 @@ CREATE TABLE [dbo].[Usuario](
 (
 	[id_usuario] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[UsuarioJuego]    Script Date: 26/11/2025 09:06:39 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[UsuarioJuego](
-	[id_usuario] [int] NOT NULL,
-	[id_juego] [int] NOT NULL,
-	[puntaje] [int] NOT NULL,
-	[fecha] [date] NOT NULL
 ) ON [PRIMARY]
 GO
 /****** Object:  Table [dbo].[UsuarioXGrupo]    Script Date: 26/11/2025 09:06:39 ******/
@@ -422,20 +358,11 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[Mensajes] CHECK CONSTRAINT [FK__Mensajes__id_usu__59FA5E80]
 GO
-ALTER TABLE [dbo].[Nivel]  WITH CHECK ADD  CONSTRAINT [FK__Nivel__id_juego__59FA5E80] FOREIGN KEY([id_juego])
-REFERENCES [dbo].[Juego] ([id_juego])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[Nivel] CHECK CONSTRAINT [FK__Nivel__id_juego__59FA5E80]
-GO
 ALTER TABLE [dbo].[PasoDelTramite]  WITH CHECK ADD  CONSTRAINT [FK_PasoDelTramite_Tramite] FOREIGN KEY([id_tramite])
 REFERENCES [dbo].[Tramite] ([id_tramite])
 ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[PasoDelTramite] CHECK CONSTRAINT [FK_PasoDelTramite_Tramite]
-GO
-ALTER TABLE [dbo].[PreguntaJuego]  WITH CHECK ADD FOREIGN KEY([id_nivel])
-REFERENCES [dbo].[Nivel] ([id_nivel])
 GO
 ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD  CONSTRAINT [FK_ProgresoTramites_Tramite] FOREIGN KEY([id_tramite])
 REFERENCES [dbo].[Tramite] ([id_tramite])
@@ -461,12 +388,6 @@ ON DELETE CASCADE
 GO
 ALTER TABLE [dbo].[UsuarioXGrupo] CHECK CONSTRAINT [FK__UsuarioXG__id_us__619B8048]
 GO
-ALTER TABLE [dbo].[Juego]  WITH CHECK ADD CHECK  (([tipo]='idioma' OR [tipo]='cultura'))
-GO
-ALTER TABLE [dbo].[Nivel]  WITH CHECK ADD CHECK  (([dificultad]='avanzado' OR [dificultad]='intermedio' OR [dificultad]='básico'))
-GO
-ALTER TABLE [dbo].[PreguntaJuego]  WITH CHECK ADD CHECK  (([respuesta_correcta]='D' OR [respuesta_correcta]='C' OR [respuesta_correcta]='B' OR [respuesta_correcta]='A'))
-GO
 ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD CHECK  (([estado]='completado' OR [estado]='en proceso' OR [estado]='pendiente'))
 GO
 ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD CHECK  (([rol]='moderador' OR [rol]='miembro' OR [rol]='admin'))
@@ -476,3 +397,149 @@ GO
 ALTER DATABASE [Culturi] SET  READ_WRITE 
 GO
 
+--- CAMBIOS CLARA 28/11
+CREATE TABLE CartaMemotest (
+    id_carta INT IDENTITY(1,1) PRIMARY KEY,
+    id_nivel INT NOT NULL,
+    id_pais INT NOT NULL,
+    imagen VARCHAR(200) NOT NULL,  -- ruta/archivo de la carta
+    numero_par INT NOT NULL        -- del 1 al 8, para armar los pares
+
+    FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE,
+    FOREIGN KEY (id_pais) REFERENCES Pais(id_pais) ON DELETE CASCADE
+);
+-- las cartas que traes: WHERE id_nivel = X AND id_pais = usuario.id_paisDestino
+-- ¿Dónde cargar las imágenes?
+	-- Las rutas en CartaMemotest.imagen pueden ser:
+	-- /img/memotest/n1/p1a.png
+	-- /img/memotest/n1/p1b.png
+	-- Las guardás a mano con inserts.
+
+CREATE TABLE ProgresoMemotest (
+    id_usuario INT NOT NULL,
+    id_nivel INT NOT NULL,
+    completado BIT NOT NULL DEFAULT 0,
+    fecha_completado DATETIME NULL,
+
+    PRIMARY KEY(id_usuario, id_nivel),
+
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE
+);
+
+CREATE TABLE JuegoNivelPais (
+    id_juego INT NOT NULL,
+    id_nivel INT NOT NULL,
+    id_pais INT NOT NULL,
+    descripcion VARCHAR(255) NULL,
+
+    PRIMARY KEY(id_juego, id_nivel, id_pais),
+
+    FOREIGN KEY(id_juego) REFERENCES Juego(id_juego),
+    FOREIGN KEY(id_nivel) REFERENCES Nivel(id_nivel),
+    FOREIGN KEY(id_pais) REFERENCES Pais(id_pais)
+);
+
+INSERT INTO Juego (nombre, tipo, descripcion)
+VALUES ('Memotest', 'cultura e idioma', 'Juego de memoria y relación, para entender conceptos, situaciones y palabras!');
+SELECT SCOPE_IDENTITY() AS id_memotest;
+DECLARE @idMemotest INT = 1;  -- reemplazar por el real si es distinto
+-- Nivel 1
+INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+VALUES (@idMemotest, 1, 'Nivel 1: ', 'básico');
+
+-- Nivel 2
+INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+VALUES (@idMemotest, 2, 'Nivel 2: ', 'intermedio');
+
+-- Nivel 3
+INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+VALUES (@idMemotest, 3, 'Nivel 3: ', 'avanzado');
+
+SELECT id_nivel, numero_nivel 
+FROM Nivel 
+WHERE id_juego = @idMemotest;
+DECLARE @idNivel1 INT = 10; --cambiar dsp estos ids
+DECLARE @idPais INT = 1;
+
+INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+VALUES
+(@idNivel1, @idPais, '/img/memotest/n1/par1a.png', 1),
+(@idNivel1, @idPais, '/img/memotest/n1/par1b.png', 1),
+
+(@idNivel1, @idPais, '/img/memotest/n1/par2a.png', 2),
+(@idNivel1, @idPais, '/img/memotest/n1/par2b.png', 2),
+
+(@idNivel1, @idPais, '/img/memotest/n1/par3a.png', 3),
+(@idNivel1, @idPais, '/img/memotest/n1/par3b.png', 3),
+
+(@idNivel1, @idPais, '/img/memotest/n1/par4a.png', 4),
+(@idNivel1, @idPais, '/img/memotest/n1/par4b.png', 4),
+
+(@idNivel1, @idPais, '/img/memotest/n1/par5a.png', 5),
+(@idNivel1, @idPais, '/img/memotest/n1/par5b.png', 5),
+
+(@idNivel1, @idPais, '/img/memotest/n1/par6a.png', 6),
+(@idNivel1, @idPais, '/img/memotest/n1/par6b.png', 6),
+
+(@idNivel1, @idPais, '/img/memotest/n1/par7a.png', 7),
+(@idNivel1, @idPais, '/img/memotest/n1/par7b.png', 7),
+
+(@idNivel1, @idPais, '/img/memotest/n1/par8a.png', 8),
+(@idNivel1, @idPais, '/img/memotest/n1/par8b.png', 8);
+
+DECLARE @idNivel2 INT = 11;
+
+INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+VALUES
+(@idNivel2, @idPais, '/img/memotest/n2/par1a.png', 1),
+(@idNivel2, @idPais, '/img/memotest/n2/par1b.png', 1),
+
+(@idNivel2, @idPais, '/img/memotest/n2/par2a.png', 2),
+(@idNivel2, @idPais, '/img/memotest/n2/par2b.png', 2),
+
+(@idNivel2, @idPais, '/img/memotest/n2/par3a.png', 3),
+(@idNivel2, @idPais, '/img/memotest/n2/par3b.png', 3),
+
+(@idNivel2, @idPais, '/img/memotest/n2/par4a.png', 4),
+(@idNivel2, @idPais, '/img/memotest/n2/par4b.png', 4),
+
+(@idNivel2, @idPais, '/img/memotest/n2/par5a.png', 5),
+(@idNivel2, @idPais, '/img/memotest/n2/par5b.png', 5),
+
+(@idNivel2, @idPais, '/img/memotest/n2/par6a.png', 6),
+(@idNivel2, @idPais, '/img/memotest/n2/par6b.png', 6),
+
+(@idNivel2, @idPais, '/img/memotest/n2/par7a.png', 7),
+(@idNivel2, @idPais, '/img/memotest/n2/par7b.png', 7),
+
+(@idNivel2, @idPais, '/img/memotest/n2/par8a.png', 8),
+(@idNivel2, @idPais, '/img/memotest/n2/par8b.png', 8);
+
+DECLARE @idNivel3 INT = 12;
+
+INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+VALUES
+(@idNivel3, @idPais, '/img/memotest/n3/par1a.png', 1),
+(@idNivel3, @idPais, '/img/memotest/n3/par1b.png', 1),
+
+(@idNivel3, @idPais, '/img/memotest/n3/par2a.png', 2),
+(@idNivel3, @idPais, '/img/memotest/n3/par2b.png', 2),
+
+(@idNivel3, @idPais, '/img/memotest/n3/par3a.png', 3),
+(@idNivel3, @idPais, '/img/memotest/n3/par3b.png', 3),
+
+(@idNivel3, @idPais, '/img/memotest/n3/par4a.png', 4),
+(@idNivel3, @idPais, '/img/memotest/n3/par4b.png', 4),
+
+(@idNivel3, @idPais, '/img/memotest/n3/par5a.png', 5),
+(@idNivel3, @idPais, '/img/memotest/n3/par5b.png', 5),
+
+(@idNivel3, @idPais, '/img/memotest/n3/par6a.png', 6),
+(@idNivel3, @idPais, '/img/memotest/n3/par6b.png', 6),
+
+(@idNivel3, @idPais, '/img/memotest/n3/par7a.png', 7),
+(@idNivel3, @idPais, '/img/memotest/n3/par7b.png', 7),
+
+(@idNivel3, @idPais, '/img/memotest/n3/par8a.png', 8),
+(@idNivel3, @idPais, '/img/memotest/n3/par8b.png', 8);
