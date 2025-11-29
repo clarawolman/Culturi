@@ -503,67 +503,68 @@ IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel1)
 BEGIN
     INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
     VALUES
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p1a.png', 1),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p1b.png', 1),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p2a.png', 2),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p2b.png', 2),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p3a.png', 3),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p3b.png', 3),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p4a.png', 4),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p4b.png', 4),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p5a.png', 5),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p5b.png', 5),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p6a.png', 6),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p6b.png', 6),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p7a.png', 7),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p7b.png', 7),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p8a.png', 8),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1/p8b.png', 8);
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p1a.png', 1),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p1b.png', 1),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p2a.png', 2),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p2b.png', 2),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p3a.png', 3),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p3b.png', 3),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p4a.png', 4),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p4b.png', 4),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p5a.png', 5),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p5b.png', 5),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p6a.png', 6),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p6b.png', 6),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p7a.png', 7),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p7b.png', 7),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p8a.png', 8),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p8b.png', 8);
 END
 -- Nivel 2
 IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel2)
 BEGIN
     INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
     VALUES
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p1a.png', 1),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p1b.png', 1),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p2a.png', 2),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p2b.png', 2),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p3a.png', 3),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p3b.png', 3),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p4a.png', 4),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p4b.png', 4),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p5a.png', 5),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p5b.png', 5),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p6a.png', 6),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p6b.png', 6),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p7a.png', 7),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p7b.png', 7),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p8a.png', 8),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2/p8b.png', 8);
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p1a.png', 1),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p1b.png', 1),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p2a.png', 2),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p2b.png', 2),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p3a.png', 3),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p3b.png', 3),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p4a.png', 4),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p4b.png', 4),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p5a.png', 5),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p5b.png', 5),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p6a.png', 6),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p6b.png', 6),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p7a.png', 7),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p7b.png', 7),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p8a.png', 8),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p8b.png', 8);
 END
 -- Nivel 3
 IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel3)
 BEGIN
     INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
     VALUES
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p1a.png', 1),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p1b.png', 1),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p2a.png', 2),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p2b.png', 2),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p3a.png', 3),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p3b.png', 3),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p4a.png', 4),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p4b.png', 4),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p5a.png', 5),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p5b.png', 5),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p6a.png', 6),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p6b.png', 6),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p7a.png', 7),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p7b.png', 7),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p8a.png', 8),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3/p8b.png', 8);
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p1a.png', 1),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p1b.png', 1),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p2a.png', 2),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p2b.png', 2),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p3a.png', 3),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p3b.png', 3),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p4a.png', 4),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p4b.png', 4),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p5a.png', 5),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p5b.png', 5),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p6a.png', 6),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p6b.png', 6),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p7a.png', 7),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p7b.png', 7),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p8a.png', 8),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3_p8b.png', 8);
 END
+
 
 
 
