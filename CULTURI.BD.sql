@@ -520,8 +520,6 @@ BEGIN
     (@Nivel1, @PaisDestino, '/img/memotest/n1/p8a.png', 8),
     (@Nivel1, @PaisDestino, '/img/memotest/n1/p8b.png', 8);
 END
-
-DECLARE @PaisDestino INT = 1; -- Argentina
 -- Nivel 2
 IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel2)
 BEGIN
@@ -544,7 +542,6 @@ BEGIN
     (@Nivel2, @PaisDestino, '/img/memotest/n2/p8a.png', 8),
     (@Nivel2, @PaisDestino, '/img/memotest/n2/p8b.png', 8);
 END
-DECLARE @PaisDestino INT = 1; -- Argentina
 -- Nivel 3
 IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel3)
 BEGIN
@@ -567,5 +564,6 @@ BEGIN
     (@Nivel3, @PaisDestino, '/img/memotest/n3/p8a.png', 8),
     (@Nivel3, @PaisDestino, '/img/memotest/n3/p8b.png', 8);
 END
+
 
 
