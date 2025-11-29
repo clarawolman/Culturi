@@ -398,16 +398,41 @@ ALTER DATABASE [Culturi] SET  READ_WRITE
 GO
 
 --- CAMBIOS CLARA 28/11
-CREATE TABLE CartaMemotest (
-    id_carta INT IDENTITY(1,1) PRIMARY KEY,
-    id_nivel INT NOT NULL,
-    id_pais INT NOT NULL,
-    imagen VARCHAR(200) NOT NULL,  -- ruta/archivo de la carta
-    numero_par INT NOT NULL        -- del 1 al 8, para armar los pares
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'Juego')
+BEGIN
+    CREATE TABLE Juego(
+        id_juego INT IDENTITY(1,1) PRIMARY KEY,
+        nombre VARCHAR(100) NOT NULL,
+        tipo VARCHAR(50) NULL,
+        descripcion TEXT NULL
+    );
+END
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'Nivel')
+BEGIN
+    CREATE TABLE Nivel(
+        id_nivel INT IDENTITY(1,1) PRIMARY KEY,
+        id_juego INT NOT NULL,
+        numero_nivel INT NOT NULL,
+        descripcion TEXT NULL,
+        dificultad VARCHAR(20) NULL,
+        FOREIGN KEY (id_juego) REFERENCES Juego(id_juego)
+    );
+END
+	
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'CartaMemotest')
+BEGIN
+    CREATE TABLE CartaMemotest (
+        id_carta INT IDENTITY(1,1) PRIMARY KEY,
+        id_nivel INT NOT NULL,
+        id_pais INT NOT NULL,
+        imagen VARCHAR(200) NOT NULL,
+        numero_par INT NOT NULL,
 
-    FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE,
-    FOREIGN KEY (id_pais) REFERENCES Pais(id_pais) ON DELETE CASCADE
-);
+        FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE,
+        FOREIGN KEY (id_pais) REFERENCES Pais(id_pais) ON DELETE CASCADE
+    );
+END
+
 -- las cartas que traes: WHERE id_nivel = X AND id_pais = usuario.id_paisDestino
 -- ¿Dónde cargar las imágenes?
 	-- Las rutas en CartaMemotest.imagen pueden ser:
@@ -415,131 +440,132 @@ CREATE TABLE CartaMemotest (
 	-- /img/memotest/n1/p1b.png
 	-- Las guardás a mano con inserts.
 
-CREATE TABLE ProgresoMemotest (
-    id_usuario INT NOT NULL,
-    id_nivel INT NOT NULL,
-    completado BIT NOT NULL DEFAULT 0,
-    fecha_completado DATETIME NULL,
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'ProgresoMemotest')
+BEGIN
+    CREATE TABLE ProgresoMemotest (
+        id_usuario INT NOT NULL,
+        id_nivel INT NOT NULL,
+        completado BIT NOT NULL DEFAULT 0,
+        fecha_completado DATETIME NULL,
 
-    PRIMARY KEY(id_usuario, id_nivel),
+        PRIMARY KEY(id_usuario, id_nivel),
 
-    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE,
-    FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE
-);
+        FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE,
+        FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE
+    );
+END
 
-CREATE TABLE JuegoNivelPais (
-    id_juego INT NOT NULL,
-    id_nivel INT NOT NULL,
-    id_pais INT NOT NULL,
-    descripcion VARCHAR(255) NULL,
+DECLARE @idMemotest INT;
 
-    PRIMARY KEY(id_juego, id_nivel, id_pais),
+SELECT @idMemotest = id_juego
+FROM Juego
+WHERE nombre = 'Memotest';
 
-    FOREIGN KEY(id_juego) REFERENCES Juego(id_juego),
-    FOREIGN KEY(id_nivel) REFERENCES Nivel(id_nivel),
-    FOREIGN KEY(id_pais) REFERENCES Pais(id_pais)
-);
+IF @idMemotest IS NULL
+BEGIN
+    INSERT INTO Juego (nombre, tipo, descripcion)
+    VALUES ('Memotest', 'cultura e idioma', 'Juego de memoria cultural por niveles.');
 
-INSERT INTO Juego (nombre, tipo, descripcion)
-VALUES ('Memotest', 'cultura e idioma', 'Juego de memoria y relación, para entender conceptos, situaciones y palabras!');
-SELECT SCOPE_IDENTITY() AS id_memotest;
-DECLARE @idMemotest INT = 1;  -- reemplazar por el real si es distinto
+    SET @idMemotest = SCOPE_IDENTITY();
+END
+DECLARE @Nivel1 INT, @Nivel2 INT, @Nivel3 INT;
+
 -- Nivel 1
-INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
-VALUES (@idMemotest, 1, 'Nivel 1: ', 'básico');
+IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1)
+BEGIN
+    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+    VALUES (@idMemotest, 1, 'Nivel 1', 'básico');
+END
 
 -- Nivel 2
-INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
-VALUES (@idMemotest, 2, 'Nivel 2: ', 'intermedio');
+IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2)
+BEGIN
+    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+    VALUES (@idMemotest, 2, 'Nivel 2', 'intermedio');
+END
 
 -- Nivel 3
-INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
-VALUES (@idMemotest, 3, 'Nivel 3: ', 'avanzado');
+IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3)
+BEGIN
+    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+    VALUES (@idMemotest, 3, 'Nivel 3', 'avanzado');
+END
 
-SELECT id_nivel, numero_nivel 
-FROM Nivel 
-WHERE id_juego = @idMemotest;
-DECLARE @idNivel1 INT = 10; --cambiar dsp estos ids
-DECLARE @idPais INT = 1;
+-- Obtener los 3 IDs reales
+SELECT 
+    @Nivel1 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1),
+    @Nivel2 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2),
+    @Nivel3 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3);
 
-INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
-VALUES
-(@idNivel1, @idPais, '/img/memotest/n1/par1a.png', 1),
-(@idNivel1, @idPais, '/img/memotest/n1/par1b.png', 1),
+DECLARE @PaisDestino INT = 1; -- Argentina
+-- Nivel 1
+IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel1)
+BEGIN
+    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+    VALUES
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p1a.png', 1),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p1b.png', 1),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p2a.png', 2),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p2b.png', 2),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p3a.png', 3),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p3b.png', 3),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p4a.png', 4),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p4b.png', 4),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p5a.png', 5),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p5b.png', 5),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p6a.png', 6),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p6b.png', 6),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p7a.png', 7),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p7b.png', 7),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p8a.png', 8),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1/p8b.png', 8);
+END
 
-(@idNivel1, @idPais, '/img/memotest/n1/par2a.png', 2),
-(@idNivel1, @idPais, '/img/memotest/n1/par2b.png', 2),
+DECLARE @PaisDestino INT = 1; -- Argentina
+-- Nivel 2
+IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel2)
+BEGIN
+    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+    VALUES
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p1a.png', 1),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p1b.png', 1),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p2a.png', 2),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p2b.png', 2),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p3a.png', 3),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p3b.png', 3),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p4a.png', 4),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p4b.png', 4),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p5a.png', 5),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p5b.png', 5),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p6a.png', 6),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p6b.png', 6),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p7a.png', 7),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p7b.png', 7),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p8a.png', 8),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2/p8b.png', 8);
+END
+DECLARE @PaisDestino INT = 1; -- Argentina
+-- Nivel 3
+IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel3)
+BEGIN
+    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+    VALUES
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p1a.png', 1),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p1b.png', 1),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p2a.png', 2),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p2b.png', 2),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p3a.png', 3),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p3b.png', 3),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p4a.png', 4),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p4b.png', 4),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p5a.png', 5),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p5b.png', 5),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p6a.png', 6),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p6b.png', 6),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p7a.png', 7),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p7b.png', 7),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p8a.png', 8),
+    (@Nivel3, @PaisDestino, '/img/memotest/n3/p8b.png', 8);
+END
 
-(@idNivel1, @idPais, '/img/memotest/n1/par3a.png', 3),
-(@idNivel1, @idPais, '/img/memotest/n1/par3b.png', 3),
 
-(@idNivel1, @idPais, '/img/memotest/n1/par4a.png', 4),
-(@idNivel1, @idPais, '/img/memotest/n1/par4b.png', 4),
-
-(@idNivel1, @idPais, '/img/memotest/n1/par5a.png', 5),
-(@idNivel1, @idPais, '/img/memotest/n1/par5b.png', 5),
-
-(@idNivel1, @idPais, '/img/memotest/n1/par6a.png', 6),
-(@idNivel1, @idPais, '/img/memotest/n1/par6b.png', 6),
-
-(@idNivel1, @idPais, '/img/memotest/n1/par7a.png', 7),
-(@idNivel1, @idPais, '/img/memotest/n1/par7b.png', 7),
-
-(@idNivel1, @idPais, '/img/memotest/n1/par8a.png', 8),
-(@idNivel1, @idPais, '/img/memotest/n1/par8b.png', 8);
-
-DECLARE @idNivel2 INT = 11;
-
-INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
-VALUES
-(@idNivel2, @idPais, '/img/memotest/n2/par1a.png', 1),
-(@idNivel2, @idPais, '/img/memotest/n2/par1b.png', 1),
-
-(@idNivel2, @idPais, '/img/memotest/n2/par2a.png', 2),
-(@idNivel2, @idPais, '/img/memotest/n2/par2b.png', 2),
-
-(@idNivel2, @idPais, '/img/memotest/n2/par3a.png', 3),
-(@idNivel2, @idPais, '/img/memotest/n2/par3b.png', 3),
-
-(@idNivel2, @idPais, '/img/memotest/n2/par4a.png', 4),
-(@idNivel2, @idPais, '/img/memotest/n2/par4b.png', 4),
-
-(@idNivel2, @idPais, '/img/memotest/n2/par5a.png', 5),
-(@idNivel2, @idPais, '/img/memotest/n2/par5b.png', 5),
-
-(@idNivel2, @idPais, '/img/memotest/n2/par6a.png', 6),
-(@idNivel2, @idPais, '/img/memotest/n2/par6b.png', 6),
-
-(@idNivel2, @idPais, '/img/memotest/n2/par7a.png', 7),
-(@idNivel2, @idPais, '/img/memotest/n2/par7b.png', 7),
-
-(@idNivel2, @idPais, '/img/memotest/n2/par8a.png', 8),
-(@idNivel2, @idPais, '/img/memotest/n2/par8b.png', 8);
-
-DECLARE @idNivel3 INT = 12;
-
-INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
-VALUES
-(@idNivel3, @idPais, '/img/memotest/n3/par1a.png', 1),
-(@idNivel3, @idPais, '/img/memotest/n3/par1b.png', 1),
-
-(@idNivel3, @idPais, '/img/memotest/n3/par2a.png', 2),
-(@idNivel3, @idPais, '/img/memotest/n3/par2b.png', 2),
-
-(@idNivel3, @idPais, '/img/memotest/n3/par3a.png', 3),
-(@idNivel3, @idPais, '/img/memotest/n3/par3b.png', 3),
-
-(@idNivel3, @idPais, '/img/memotest/n3/par4a.png', 4),
-(@idNivel3, @idPais, '/img/memotest/n3/par4b.png', 4),
-
-(@idNivel3, @idPais, '/img/memotest/n3/par5a.png', 5),
-(@idNivel3, @idPais, '/img/memotest/n3/par5b.png', 5),
-
-(@idNivel3, @idPais, '/img/memotest/n3/par6a.png', 6),
-(@idNivel3, @idPais, '/img/memotest/n3/par6b.png', 6),
-
-(@idNivel3, @idPais, '/img/memotest/n3/par7a.png', 7),
-(@idNivel3, @idPais, '/img/memotest/n3/par7b.png', 7),
-
-(@idNivel3, @idPais, '/img/memotest/n3/par8a.png', 8),
-(@idNivel3, @idPais, '/img/memotest/n3/par8b.png', 8);
