@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\css\\memotest.css",
+      "PackagePath": "staticwebassets\\css\\memotest.css"
+    },
+    {
       "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -189,6 +193,70 @@
       "PackagePath": "staticwebassets\\img\\memotest\\n1_p8b.png"
     },
     {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p1a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p1a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p1b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p1b.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p2a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p2a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p2b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p2b.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p3a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p3a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p3b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p3b.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p4a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p4a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p4b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p4b.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p5a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p5a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p5b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p5b.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p6a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p6a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p6b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p6b.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p7a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p7a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p7b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p7b.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p8a.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p8a.png"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\memotest\\n2_p8b.png",
+      "PackagePath": "staticwebassets\\img\\memotest\\n2_p8b.png"
+    },
+    {
       "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\noticias\\cruce.jpg",
       "PackagePath": "staticwebassets\\img\\noticias\\cruce.jpg"
     },
@@ -239,6 +307,10 @@
     {
       "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\img\\redes\\instagram.svg",
       "PackagePath": "staticwebassets\\img\\redes\\instagram.svg"
+    },
+    {
+      "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\js\\memotest.js",
+      "PackagePath": "staticwebassets\\js\\memotest.js"
     },
     {
       "Id": "C:\\Users\\49359\\Culturi\\wwwroot\\js\\site.js",

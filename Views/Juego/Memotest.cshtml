@@ -2,16 +2,16 @@
     ViewData["Title"] = "Memotest";
     bool mostrarSeleccion = ViewBag.MostrarSeleccion == true;
     int? nivel = ViewBag.Nivel;
-    
+
     var cartas = new string[0];
-    var volteadas = new List<int>();
     var encontradas = new List<int>();
-    
+
     if (!mostrarSeleccion && nivel.HasValue)
     {
         cartas = Context.Session.GetString("CartasMezcladas")?.Split(',') ?? new string[0];
-        volteadas = Context.Session.GetString("Volteadas")?.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList() ?? new List<int>();
-        encontradas = Context.Session.GetString("Encontradas")?.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList() ?? new List<int>();
+        encontradas = Context.Session.GetString("Encontradas")?
+            .Split(',', StringSplitOptions.RemoveEmptyEntries)
+            .Select(int.Parse).ToList() ?? new List<int>();
     }
 }
 
@@ -22,20 +22,19 @@
             <h2>Memotest</h2>
             <div class="instrucciones">
                 <h3>¿Cómo jugar?</h3>
-                <p>El objetivo del juego es encontrar todos los pares de cartas. Haz clic en dos cartas para voltearlas. Si coinciden, se quedarán descubiertas. Si no coinciden, se darán vuelta nuevamente. ¡Encuentra todos los pares para ganar!</p>
+                <p>
+                    El objetivo del juego es encontrar todos los pares de cartas.
+                    Haz clic en dos cartas para voltearlas. Si coinciden, se quedarán descubiertas.
+                    Si no coinciden, se darán vuelta nuevamente.
+                </p>
             </div>
+
             <div class="niveles-seleccion">
                 <h3>Selecciona un nivel:</h3>
                 <div class="niveles-botones">
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 1 })" class="btn-nivel">
-                        <span>Nivel 1</span>
-                    </a>
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 2 })" class="btn-nivel">
-                        <span>Nivel 2</span>
-                    </a>
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 3 })" class="btn-nivel">
-                        <span>Nivel 3</span>
-                    </a>
+                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 1 })" class="btn-nivel"><span>Nivel 1</span></a>
+                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 2 })" class="btn-nivel"><span>Nivel 2</span></a>
+                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 3 })" class="btn-nivel"><span>Nivel 3</span></a>
                 </div>
             </div>
         </div>
@@ -46,24 +45,17 @@ else
     <div class="memotest-container">
         <div class="memotest-content">
             <h2>Memotest - Nivel @nivel</h2>
+
             <div class="memotest-grid">
-                @{
-                    var hayDosVolteadas = volteadas.Count == 2;
-                    var ambasEncontradas = hayDosVolteadas && encontradas.Contains(volteadas[0]) && encontradas.Contains(volteadas[1]);
-                    var bloquearClicks = hayDosVolteadas && !ambasEncontradas;
-                }
                 @for (int i = 0; i < cartas.Length; i++)
                 {
-                    var mostrarCarta = volteadas.Contains(i) || encontradas.Contains(i);
-                    var imagenMostrar = mostrarCarta ? cartas[i] : "dorso.png";
-                    var estaDeshabilitada = encontradas.Contains(i) || (bloquearClicks && !volteadas.Contains(i));
-                    <div class="card-container @(encontradas.Contains(i) ? "encontrada" : "")">
-                        <form asp-action="TocarCarta" method="post" class="form-carta">
-                            <input type="hidden" name="index" value="@i" />
-                            <button type="submit" class="btn @(estaDeshabilitada ? "disabled" : "")" @(estaDeshabilitada ? "disabled" : "")>
-                                <img src="~/img/memotest/@imagenMostrar" class="carta-memotest" alt="Carta" />
-                            </button>
-                        </form>
+                    bool esEncontrada = encontradas.Contains(i);
+
+                    <div class="carta @(esEncontrada ? "encontrada" : "")" data-index="@i">
+                        <div class="inner">
+                            <img class="cara frente" src="/img/memotest/@cartas[i]" alt="Carta" />
+                            <img class="cara dorso" src="/img/memotest/dorso.png" alt="Dorso" />
+                        </div>
                     </div>
                 }
             </div>
@@ -72,13 +64,18 @@ else
             {
                 <div class="text-center mt-4">
                     <h3>🎉 ¡Felicitaciones! Encontraste todos los pares 🎉</h3>
+                    
                     <form asp-action="ReiniciarMemotest" method="post" style="display:inline;">
                         <button type="submit" class="btn btn-success">Jugar de nuevo</button>
                     </form>
-                    <a href="@Url.Action("Memotest", "Juego")" class="btn btn-primary" style="display:inline;">Volver a selección de nivel</a>
+
+                    <a href="@Url.Action("Memotest", "Juego")"
+                       class="btn btn-primary" style="display:inline;">
+                        Volver a selección de nivel
+                    </a>
                 </div>
             }
-            
+
             <div class="text-center mt-3">
                 <a href="@Url.Action("Memotest", "Juego")" class="btn btn-secondary">Volver a niveles</a>
             </div>
@@ -86,224 +83,7 @@ else
     </div>
 }
 
-<script>
-@if (!mostrarSeleccion)
-{
-    <text>
-    // Variables Razor para estado actual
-    const volteadas = @Html.Raw(Json.Serialize(volteadas));
-    const encontradas = @Html.Raw(Json.Serialize(encontradas));
-
-    let esperando = false;
-
-    // Bloquear clicks y auto-voltear si hay dos cartas no encontradas
-    if (volteadas && volteadas.length === 2) {
-        const card1Encontrada = encontradas && encontradas.includes(volteadas[0]);
-        const card2Encontrada = encontradas && encontradas.includes(volteadas[1]);
-        const pareja = card1Encontrada && card2Encontrada;
-        if (!pareja) {
-            esperando = true;
-            setTimeout(function() {
-                fetch('@Url.Action("LimpiarVolteadas", "Juego")', {
-                    method: 'POST',
-                    headers: {'X-Requested-With': 'XMLHttpRequest'}
-                })
-                .then(() => {
-                    // Actualiza solo el contenido de las cartas sin recargar
-                    // Refetch sólo el grid
-                    fetch(window.location.href, {headers: {'X-Requested-With': 'XMLHttpRequest'}})
-                    .then(resp => resp.text())
-                    .then(html => {
-                        // Verifica que existe memotest-grid en el HTML recibido
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = html;
-                        let nuevaGrid = tempDiv.querySelector('.memotest-grid');
-                        if (nuevaGrid) {
-                            let actualGrid = document.querySelector('.memotest-grid');
-                            if (actualGrid) {
-                                actualGrid.replaceWith(nuevaGrid);
-                            } else {
-                                // Si no existe, recarga todo
-                                window.location.reload();
-                            }
-                        } else {
-                            // Si no pudo encontrar la grilla, recarga toda la página
-                            window.location.reload();
-                        }
-                    });
-                });
-            }, 1800); // Tiempo de espera - puedes ajustar (milisegundos)
-        }
-    }
-
-    // Interceptar el submit de las cartas, usar AJAX para tocarla
-    document.querySelectorAll('.memotest-grid form').forEach(form => {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            if (esperando) return;
-            const formData = new FormData(form);
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: { 'X-Requested-With': 'XMLHttpRequest' }
-            })
-            .then(() => {
-                fetch(window.location.href, {headers: {'X-Requested-With': 'XMLHttpRequest'}})
-                .then(resp => resp.text())
-                .then(html => {
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = html;
-                    let nuevaGrid = tempDiv.querySelector('.memotest-grid');
-                    if(nuevaGrid) {
-                        let actualGrid = document.querySelector('.memotest-grid');
-                        if (actualGrid) {
-                            actualGrid.replaceWith(nuevaGrid);
-                        } else {
-                            window.location.reload();
-                        }
-                    } else {
-                        window.location.reload();
-                    }
-                });
-            });
-        });
-    });
-    </text>
+<link rel="stylesheet" href="/css/memotest.css" />
+@section Scripts {
+    <script src="/js/memotest.js"></script>
 }
-</script>
-
-<style>
-.memotest-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 40px;
-    padding: 20px;
-}
-
-.memotest-content {
-    max-width: 900px;
-    width: 100%;
-}
-
-.instrucciones {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.instrucciones h3 {
-    margin-top: 0;
-    color: #333;
-}
-
-.instrucciones p {
-    margin-bottom: 0;
-    line-height: 1.6;
-}
-
-.niveles-seleccion {
-    text-align: center;
-}
-
-.niveles-seleccion h3 {
-    margin-bottom: 20px;
-}
-
-.niveles-botones {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn-nivel {
-    display: inline-block;
-    padding: 20px 40px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.btn-nivel:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
-    color: white;
-    text-decoration: none;
-}
-
-.memotest-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    justify-items: center;
-    margin: 20px 0;
-}
-
-.card-container {
-    position: relative;
-    width: 100%;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-.form-carta {
-    margin: 0;
-    padding: 0;
-    border: none;
-    display: block;
-    width: 100%;
-}
-
-.btn {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    width: 100%;
-    display: block;
-}
-
-.btn:hover:not(.disabled) {
-    opacity: 0.9;
-}
-
-.btn.disabled {
-    cursor: default;
-}
-
-.carta-memotest {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
-    display: block;
-    object-fit: contain;
-    border: none;
-    padding: 0;
-    margin: 0;
-}
-
-.carta-memotest:hover {
-    opacity: 0.9;
-}
-
-@@media (max-width: 768px) {
-    .memotest-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-    
-    .carta-memotest {
-        max-width: 150px;
-    }
-}
-</style>

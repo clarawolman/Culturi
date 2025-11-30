@@ -66,97 +66,6 @@ namespace Culturi.Controllers
         }
 
         [HttpPost]
-        public IActionResult TocarCarta(int index)
-        {
-            // Obtener el nivel una sola vez
-            int? nivelActual = int.TryParse(HttpContext.Session.GetString("NivelMemotest"), out int nivelNum) ? nivelNum : (int?)null;
-            
-            var cartas = HttpContext.Session.GetString("CartasMezcladas")?.Split(',') ?? new string[0];
-            
-            // Si index es -1, limpiar las cartas volteadas (para el auto-ocultamiento)
-            if (index == -1)
-            {
-                HttpContext.Session.SetString("Volteadas", "");
-                if (nivelActual.HasValue)
-                    return RedirectToAction("Memotest", new { nivel = nivelActual.Value });
-                return RedirectToAction("Memotest");
-            }
-            
-            if (cartas.Length == 0 || index < 0 || index >= cartas.Length)
-            {
-                if (nivelActual.HasValue)
-                    return RedirectToAction("Memotest", new { nivel = nivelActual.Value });
-                return RedirectToAction("Memotest");
-            }
-
-            var volteadas = HttpContext.Session.GetString("Volteadas")
-                ?.Split(',', StringSplitOptions.RemoveEmptyEntries)
-                .Select(int.Parse)
-                .ToList() ?? new List<int>();
-            
-            var encontradas = HttpContext.Session.GetString("Encontradas")
-                ?.Split(',', StringSplitOptions.RemoveEmptyEntries)
-                .Select(int.Parse)
-                .ToList() ?? new List<int>();
-
-            // Si la carta ya está encontrada, no hacer nada
-            if (encontradas.Contains(index))
-            {
-                if (nivelActual.HasValue)
-                    return RedirectToAction("Memotest", new { nivel = nivelActual.Value });
-                return RedirectToAction("Memotest");
-            }
-
-            // Si la carta ya está volteada en este turno, no hacer nada
-            if (volteadas.Contains(index))
-            {
-                if (nivelActual.HasValue)
-                    return RedirectToAction("Memotest", new { nivel = nivelActual.Value });
-                return RedirectToAction("Memotest");
-            }
-
-            // Si ya hay 2 cartas volteadas, limpiarlas primero (no coincidieron y se toca otra carta)
-            if (volteadas.Count == 2)
-            {
-                volteadas.Clear();
-            }
-
-            // Agregar la carta volteada
-            volteadas.Add(index);
-
-            // Si hay 2 cartas volteadas, verificar si son pareja
-            if (volteadas.Count == 2)
-            {
-                if (SonPareja(cartas[volteadas[0]], cartas[volteadas[1]]))
-                {
-                    encontradas.Add(volteadas[0]);
-                    encontradas.Add(volteadas[1]);
-                    volteadas.Clear();
-                }
-            }
-
-            HttpContext.Session.SetString("Volteadas", string.Join(",", volteadas));
-            HttpContext.Session.SetString("Encontradas", string.Join(",", encontradas));
-
-            if (nivelActual.HasValue)
-                return RedirectToAction("Memotest", new { nivel = nivelActual.Value });
-            
-            return RedirectToAction("Memotest");
-        }
-
-        [HttpPost]
-        public IActionResult LimpiarVolteadas()
-        {
-            HttpContext.Session.SetString("Volteadas", "");
-            int? nivel = int.TryParse(HttpContext.Session.GetString("NivelMemotest"), out int n) ? n : (int?)null;
-            
-            if (nivel.HasValue)
-                return RedirectToAction("Memotest", new { nivel = nivel.Value });
-            
-            return RedirectToAction("Memotest");
-        }
-
-        [HttpPost]
         public IActionResult ReiniciarMemotest()
         {
             int? nivel = int.TryParse(HttpContext.Session.GetString("NivelMemotest"), out int n) ? n : (int?)null;
@@ -164,10 +73,38 @@ namespace Culturi.Controllers
             HttpContext.Session.Remove("Volteadas");
             HttpContext.Session.Remove("Encontradas");
             
-            if (nivel.HasValue)
+            if (nivel.HasValue) {
                 return RedirectToAction("Memotest", new { nivel = nivel.Value });
-            
+            }
             return RedirectToAction("Memotest");
         }
+
+        [HttpPost]
+        public JsonResult VerificarPar([FromBody] ParRequest req)
+        {
+            string[] cartas = HttpContext.Session.GetString("CartasMezcladas").Split(',');
+            bool esPar = SonPareja(cartas[req.index1], cartas[req.index2]);
+            if (esPar) 
+            {
+                var encontradas = HttpContext.Session.GetString("Encontradas")
+                .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToList();
+
+                encontradas.Add(req.index1);
+                encontradas.Add(req.index2);
+
+                HttpContext.Session.SetString("Encontradas", string.Join(",", encontradas));
+            }
+            return Json(new { esPar });
+        }
+
+        public class ParRequest
+        {
+            public int index1 { get; set; }
+            public int index2 { get; set; }
+        }
+
+
     }
 }

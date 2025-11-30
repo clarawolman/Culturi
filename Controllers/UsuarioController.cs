@@ -12,35 +12,7 @@ namespace Culturi.Controllers
         {
             return View();
         }
-        /*public IActionResult Login()
-        {
-            // Si ya hay un usuario logueado, lo mando al Home
-            if (HttpContext.Session.GetString("usuarioLogueado") != null)
-                return RedirectToAction("Index", "Home");
 
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Login(string nombre, string contrasena)
-        {
-            Usuario usuario = BD.LevantarUsuario(nombre);
-
-            if (usuario != null && usuario.InicioSesion(contrasena))
-            {
-                // Guardamos el usuario en la sesión
-                string usuarioJson = JsonConvert.SerializeObject(usuario);
-                HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
-
-                // Redirigimos al Home una vez logueado
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                ViewBag.Mensaje = "Usuario o contraseña incorrectos";
-                return View();
-            }
-        }*/
         public IActionResult Login(string nombre, string contrasena)
         {
             if (HttpContext.Session.GetString("usuarioLogueado") != null)
