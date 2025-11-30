@@ -564,7 +564,3 @@ BEGIN
     (@Nivel3, @PaisDestino, '/img/memotest/n3_p8a.png', 8),
     (@Nivel3, @PaisDestino, '/img/memotest/n3_p8b.png', 8);
 END
-
-
-
-

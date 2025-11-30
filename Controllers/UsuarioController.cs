@@ -100,9 +100,18 @@ public IActionResult Registro(
     DateTime fechaMigracion,
     DateTime fechaNacimiento)
 {
+    // Validar que el email no exista
     if (BD.ExisteEmail(email))
     {
         ViewBag.Mensaje = "El email ya está registrado, por favor iniciá sesión.";
+        return View();
+    }
+
+    // Validar que el nombre de usuario no exista
+    Usuario usuarioExistente = BD.LevantarUsuario(nombreUsuarioIngresado);
+    if (usuarioExistente != null)
+    {
+        ViewBag.Mensaje = "El nombre de usuario ya está en uso, por favor elegí otro.";
         return View();
     }
 
