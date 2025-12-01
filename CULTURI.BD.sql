@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [Culturi]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Database [Culturi]    Script Date: 1/12/2025 08:29:19 ******/
 CREATE DATABASE [Culturi]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -79,10 +79,10 @@ ALTER DATABASE [Culturi] SET QUERY_STORE = OFF
 GO
 USE [Culturi]
 GO
-/****** Object:  User [alumno]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  User [alumno]    Script Date: 1/12/2025 08:29:19 ******/
 CREATE USER [alumno] FOR LOGIN [alumno] WITH DEFAULT_SCHEMA=[dbo]
 GO
-/****** Object:  Table [dbo].[ChatPrivado]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[ChatPrivado]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -98,7 +98,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Grupo]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[Grupo]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -114,7 +114,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[MensajeChatPrivado]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[MensajeChatPrivado]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -131,7 +131,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Mensajes]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[Mensajes]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -148,7 +148,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Notificacion]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[Notificacion]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -166,7 +166,7 @@ CREATE TABLE [dbo].[Notificacion](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Pais]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[Pais]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,7 +181,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PasoDelTramite]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[PasoDelTramite]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -192,14 +192,14 @@ CREATE TABLE [dbo].[PasoDelTramite](
 	[numero_orden] [int] NOT NULL,
 	[descripcion] [text] NOT NULL,
 	[documento_requerido] [varchar](255) NULL,
+	[completado] [bit] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[id_paso] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-
-/****** Object:  Table [dbo].[ProgresoTramites]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[ProgresoTramites]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -216,7 +216,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tramite]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[Tramite]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -233,7 +233,7 @@ CREATE TABLE [dbo].[Tramite](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Usuario]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[Usuario]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -256,7 +256,7 @@ CREATE TABLE [dbo].[Usuario](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[UsuarioXGrupo]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Table [dbo].[UsuarioXGrupo]    Script Date: 1/12/2025 08:29:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -282,18 +282,18 @@ SET IDENTITY_INSERT [dbo].[Pais] OFF
 GO
 SET IDENTITY_INSERT [dbo].[PasoDelTramite] ON 
 
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (1, 1, 1, N'hacer algo', N'nose')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (2, 1, 2, N'nhio', N'dbrth')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (3, 2, 1, N'vaer', N'avr')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (4, 2, 2, N'wvr', N'efwe')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (5, 3, 1, N'aergar', N'rga')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (6, 3, 2, N'bt', N'ergae5')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (7, 4, 1, N'w', N'w')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (8, 4, 2, N'e', N'e')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (9, 5, 1, N'd', N'd')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (10, 5, 2, N'd', N'd')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (11, 6, 1, N's', N's')
-INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido]) VALUES (12, 6, 2, N's', N's')
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (1, 1, 1, N'hacer algo', N'nose', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (2, 1, 2, N'nhio', N'dbrth', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (3, 2, 1, N'vaer', N'avr', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (4, 2, 2, N'wvr', N'efwe', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (5, 3, 1, N'aergar', N'rga', 1)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (6, 3, 2, N'bt', N'ergae5', 0)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (7, 4, 1, N'w', N'w', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (8, 4, 2, N'e', N'e', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (9, 5, 1, N'd', N'd', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (10, 5, 2, N'd', N'd', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (11, 6, 1, N's', N's', NULL)
+INSERT [dbo].[PasoDelTramite] ([id_paso], [id_tramite], [numero_orden], [descripcion], [documento_requerido], [completado]) VALUES (12, 6, 2, N's', N's', NULL)
 SET IDENTITY_INSERT [dbo].[PasoDelTramite] OFF
 GO
 SET IDENTITY_INSERT [dbo].[ProgresoTramites] ON 
@@ -302,6 +302,7 @@ INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [est
 INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (12, 2, 3, N'pendiente', CAST(N'2025-11-26T08:43:35.020' AS DateTime))
 INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (13, 2, 3, N'pendiente', CAST(N'2025-11-26T08:43:36.640' AS DateTime))
 INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (14, 1, 3, N'pendiente', CAST(N'2025-11-26T09:03:52.180' AS DateTime))
+INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (16, 4, 3, N'pendiente', CAST(N'2025-12-01T08:18:00.237' AS DateTime))
 SET IDENTITY_INSERT [dbo].[ProgresoTramites] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Tramite] ON 
@@ -318,11 +319,13 @@ SET IDENTITY_INSERT [dbo].[Usuario] ON
 
 INSERT [dbo].[Usuario] ([id_usuario], [nombre], [usuario], [idiomaPreferencia], [email], [contrasena], [id_paisOrigen], [id_paisDestino], [fechaMigracion], [fechaNacimiento], [fotoperfil]) VALUES (1, N'luciana kampel', N'lukampel', N'Español', N'lu@gmail.com', N'lu', 2, 1, CAST(N'2025-11-11' AS Date), CAST(N'2024-05-09' AS Date), NULL)
 INSERT [dbo].[Usuario] ([id_usuario], [nombre], [usuario], [idiomaPreferencia], [email], [contrasena], [id_paisOrigen], [id_paisDestino], [fechaMigracion], [fechaNacimiento], [fotoperfil]) VALUES (2, N'clara', N'claraw', N'Español', N'ceh@kgeo', N'123', 2, 1, CAST(N'2025-11-22' AS Date), CAST(N'2025-11-11' AS Date), NULL)
+INSERT [dbo].[Usuario] ([id_usuario], [nombre], [usuario], [idiomaPreferencia], [email], [contrasena], [id_paisOrigen], [id_paisDestino], [fechaMigracion], [fechaNacimiento], [fotoperfil]) VALUES (3, N'augusto perez', N'augustopr', N'Español', N'augusto@gmail', N'ogi', 2, 1, CAST(N'2025-12-11' AS Date), CAST(N'2025-12-11' AS Date), NULL)
+INSERT [dbo].[Usuario] ([id_usuario], [nombre], [usuario], [idiomaPreferencia], [email], [contrasena], [id_paisOrigen], [id_paisDestino], [fechaMigracion], [fechaNacimiento], [fotoperfil]) VALUES (4, N'clara', N'clara', N'Español', N'augusto@gmail.com', N'12', 2, 1, CAST(N'2025-12-30' AS Date), CAST(N'2025-12-09' AS Date), NULL)
 SET IDENTITY_INSERT [dbo].[Usuario] OFF
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Usuario__AB6E61643C473938]    Script Date: 26/11/2025 09:06:39 ******/
+/****** Object:  Index [UQ__Usuario__AB6E61643C473938]    Script Date: 1/12/2025 08:29:19 ******/
 ALTER TABLE [dbo].[Usuario] ADD  CONSTRAINT [UQ__Usuario__AB6E61643C473938] UNIQUE NONCLUSTERED 
 (
 	[email] ASC
@@ -333,6 +336,8 @@ GO
 ALTER TABLE [dbo].[MensajeChatPrivado] ADD  DEFAULT (getdate()) FOR [fecha_envio]
 GO
 ALTER TABLE [dbo].[Mensajes] ADD  DEFAULT (getdate()) FOR [fecha_envio]
+GO
+ALTER TABLE [dbo].[PasoDelTramite] ADD  DEFAULT ((0)) FOR [completado]
 GO
 ALTER TABLE [dbo].[ProgresoTramites] ADD  DEFAULT (getdate()) FOR [fecha_actualizacion]
 GO
@@ -396,171 +401,3 @@ USE [master]
 GO
 ALTER DATABASE [Culturi] SET  READ_WRITE 
 GO
-
---- CAMBIOS CLARA 28/11
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'Juego')
-BEGIN
-    CREATE TABLE Juego(
-        id_juego INT IDENTITY(1,1) PRIMARY KEY,
-        nombre VARCHAR(100) NOT NULL,
-        tipo VARCHAR(50) NULL,
-        descripcion TEXT NULL
-    );
-END
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'Nivel')
-BEGIN
-    CREATE TABLE Nivel(
-        id_nivel INT IDENTITY(1,1) PRIMARY KEY,
-        id_juego INT NOT NULL,
-        numero_nivel INT NOT NULL,
-        descripcion TEXT NULL,
-        dificultad VARCHAR(20) NULL,
-        FOREIGN KEY (id_juego) REFERENCES Juego(id_juego)
-    );
-END
-	
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'CartaMemotest')
-BEGIN
-    CREATE TABLE CartaMemotest (
-        id_carta INT IDENTITY(1,1) PRIMARY KEY,
-        id_nivel INT NOT NULL,
-        id_pais INT NOT NULL,
-        imagen VARCHAR(200) NOT NULL,
-        numero_par INT NOT NULL,
-
-        FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE,
-        FOREIGN KEY (id_pais) REFERENCES Pais(id_pais) ON DELETE CASCADE
-    );
-END
-
--- las cartas que traes: WHERE id_nivel = X AND id_pais = usuario.id_paisDestino
--- ¿Dónde cargar las imágenes?
-	-- Las rutas en CartaMemotest.imagen pueden ser:
-	-- /img/memotest/n1/p1a.png
-	-- /img/memotest/n1/p1b.png
-	-- Las guardás a mano con inserts.
-
-IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'ProgresoMemotest')
-BEGIN
-    CREATE TABLE ProgresoMemotest (
-        id_usuario INT NOT NULL,
-        id_nivel INT NOT NULL,
-        completado BIT NOT NULL DEFAULT 0,
-        fecha_completado DATETIME NULL,
-
-        PRIMARY KEY(id_usuario, id_nivel),
-
-        FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE,
-        FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE
-    );
-END
-
-DECLARE @idMemotest INT;
-
-SELECT @idMemotest = id_juego
-FROM Juego
-WHERE nombre = 'Memotest';
-
-IF @idMemotest IS NULL
-BEGIN
-    INSERT INTO Juego (nombre, tipo, descripcion)
-    VALUES ('Memotest', 'cultura e idioma', 'Juego de memoria cultural por niveles.');
-
-    SET @idMemotest = SCOPE_IDENTITY();
-END
-DECLARE @Nivel1 INT, @Nivel2 INT, @Nivel3 INT;
-
--- Nivel 1
-IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1)
-BEGIN
-    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
-    VALUES (@idMemotest, 1, 'Nivel 1', 'básico');
-END
-
--- Nivel 2
-IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2)
-BEGIN
-    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
-    VALUES (@idMemotest, 2, 'Nivel 2', 'intermedio');
-END
-
--- Nivel 3
-IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3)
-BEGIN
-    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
-    VALUES (@idMemotest, 3, 'Nivel 3', 'avanzado');
-END
-
--- Obtener los 3 IDs reales
-SELECT 
-    @Nivel1 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1),
-    @Nivel2 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2),
-    @Nivel3 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3);
-
-DECLARE @PaisDestino INT = 1; -- Argentina
--- Nivel 1
-IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel1)
-BEGIN
-    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
-    VALUES
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p1a.png', 1),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p1b.png', 1),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p2a.png', 2),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p2b.png', 2),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p3a.png', 3),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p3b.png', 3),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p4a.png', 4),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p4b.png', 4),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p5a.png', 5),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p5b.png', 5),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p6a.png', 6),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p6b.png', 6),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p7a.png', 7),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p7b.png', 7),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p8a.png', 8),
-    (@Nivel1, @PaisDestino, '/img/memotest/n1_p8b.png', 8);
-END
--- Nivel 2
-IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel2)
-BEGIN
-    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
-    VALUES
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p1a.png', 1),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p1b.png', 1),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p2a.png', 2),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p2b.png', 2),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p3a.png', 3),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p3b.png', 3),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p4a.png', 4),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p4b.png', 4),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p5a.png', 5),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p5b.png', 5),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p6a.png', 6),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p6b.png', 6),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p7a.png', 7),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p7b.png', 7),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p8a.png', 8),
-    (@Nivel2, @PaisDestino, '/img/memotest/n2_p8b.png', 8);
-END
--- Nivel 3
-IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel3)
-BEGIN
-    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
-    VALUES
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p1a.png', 1),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p1b.png', 1),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p2a.png', 2),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p2b.png', 2),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p3a.png', 3),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p3b.png', 3),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p4a.png', 4),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p4b.png', 4),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p5a.png', 5),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p5b.png', 5),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p6a.png', 6),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p6b.png', 6),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p7a.png', 7),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p7b.png', 7),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p8a.png', 8),
-    (@Nivel3, @PaisDestino, '/img/memotest/n3_p8b.png', 8);
-END

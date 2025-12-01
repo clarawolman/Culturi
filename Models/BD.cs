@@ -4,8 +4,7 @@ namespace Culturi;
 public static class BD
 {
 
-    //private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
-    private static string _connectionString = @"Server=COMPUCLARA\SQLEXPRESS01;Database=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
     public static Usuario LevantarUsuario(string nombreUsuario)
     {
         Usuario miUsuario = null;
@@ -107,7 +106,16 @@ public static class BD
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = @"SELECT * FROM PasoDelTramite WHERE id_tramite = @pidTramite ORDER BY numero_orden";
+            string query = @"SELECT 
+                id_paso AS IdPaso,
+                id_tramite AS IdTramite,
+                numero_orden AS NumeroOrden,
+                descripcion AS Descripcion,
+                documento_requerido AS DocumentoRequerido,
+                ISNULL(completado, 0) AS completado
+            FROM PasoDelTramite 
+            WHERE id_tramite = @pidTramite 
+            ORDER BY numero_orden";
             List<PasoDelTramite> lista = connection.Query<PasoDelTramite>(query, new { pidTramite = idTramite }).ToList();
             return lista;
         }
@@ -152,6 +160,18 @@ public static class BD
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = @"UPDATE PasoDelTramite SET completado = 1 WHERE id_paso = @pidPaso";
+            connection.Execute(query, new { pidPaso = idPaso });
+        }
+    }
+
+    public static void TogglePasoCompletado(int idPaso)
+    {
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            // Alterna el valor: si es 1 pasa a 0, si es 0 pasa a 1
+            string query = @"UPDATE PasoDelTramite 
+                           SET completado = CASE WHEN ISNULL(completado, 0) = 1 THEN 0 ELSE 1 END 
+                           WHERE id_paso = @pidPaso";
             connection.Execute(query, new { pidPaso = idPaso });
         }
     }

@@ -102,8 +102,16 @@ public IActionResult Registro(
 
     BD.AgregarUsuario(nuevoUsuario);
 
-    ViewBag.Mensaje = "Usuario creado correctamente";
-    return View("~/Views/Home/Home.cshtml");
+    // Recuperar el usuario recién creado desde la BD (con su ID generado)
+    Usuario usuarioCreado = BD.LevantarUsuario(nombreUsuarioIngresado);
+
+    // Guardar la sesión del usuario (igual que en Login)
+    string usuarioJson = JsonConvert.SerializeObject(usuarioCreado);
+    HttpContext.Session.SetString("usuarioLogueado", usuarioJson);
+    HttpContext.Session.SetInt32("IdUsuario", usuarioCreado.IdUsuario);
+
+    // Redirigir al Home (no solo mostrar la vista)
+    return RedirectToAction("Home", "Home");
 }
 
         private int ObtenerIdPais(string nombrePais)

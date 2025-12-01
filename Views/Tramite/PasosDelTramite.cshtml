@@ -58,47 +58,30 @@
     @foreach (var p in Model)
     {
         <div class="paso-card">
-
-
-            <!-- Estado del paso -->
-            <div class="paso-estado">
-                @if (p.completado)
-                {
-                    <span class="check-green">✔</span>
-                }
-                else
-                {
-                    <span class="check-gray">◻</span>
-                }
-            </div>
-
+            <!-- Checkbox para completar/descompletar -->
+            <form asp-action="TogglePaso" method="post" class="paso-check-form">
+                <input type="hidden" name="idPaso" value="@p.IdPaso" />
+                <input type="checkbox" 
+                       class="paso-checkbox" 
+                       @(p.completado ? "checked" : "") 
+                       onchange="this.form.submit()" />
+            </form>
 
             <!-- Información del paso -->
             <div class="paso-info">
-                <h3>Paso @p.NumeroOrden</h3>
-                <p>@p.Descripcion</p>
-
+                <h3 class="@(p.completado ? "completado" : "")">Paso @p.NumeroOrden</h3>
+                <p class="@(p.completado ? "completado" : "")">@p.Descripcion</p>
 
                 @if (!string.IsNullOrEmpty(p.DocumentoRequerido))
                 {
                     <p><strong>Documento requerido:</strong> @p.DocumentoRequerido</p>
                 }
             </div>
-
-
-            <!-- Botón completar -->
-            <form asp-action="FinalizarPaso" method="post">
-                <input type="hidden" name="idPaso" value="@p.IdPaso" />
-                @if (!p.completado)
-                {
-                    <button type="submit" class="btn-completar">Completar</button>
-                }
-            </form>
         </div>
-
     }
         <a href="/ChatBot/ChatBot" class="floating-bot">
     <img src="/img/Home/ChatBot.png" alt="ChatBot">
     
 </main>
     
+
