@@ -15,10 +15,53 @@
     }
 }
 
+<header class="custom-header">
+    <nav>
+        <ul>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/img/header/noti.png" alt="notificaciones">
+                </a>
+            </li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <div id="sidebar-menu" class="menu-container sidebar-closed">
+        <div class="menu-header">
+            <button class="back-btn" onclick="toggleMenu()">←</button>
+            <h1>MENÚ</h1>
+        </div>
+
+        <div class="menu-links">
+            <a href="@Url.Action("Home", "Home")">Home</a>
+            <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
+            <a href="@Url.Action("Grupos", "Comunidades")">Grupos</a>
+            <a href="@Url.Action("Index", "Tramite")">Tramites</a>
+            <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
+            <a href="@Url.Action("Index", "Juego")">Juegos</a>
+            <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
+        </div>
+    </div>
+</header>
+
 @if (mostrarSeleccion)
 {
     <div class="memotest-container">
         <div class="memotest-content">
+            <a href="@Url.Action("Index", "Juego")" class="volver-link">← Volver a juegos</a>
             <h2>Memotest</h2>
             <div class="instrucciones">
                 <h3>¿Cómo jugar?</h3>
@@ -44,6 +87,7 @@ else
 {
     <div class="memotest-container">
         <div class="memotest-content">
+            <a href="@Url.Action("Memotest", "Juego")" class="volver-link">← Volver a niveles</a>
             <h2>Memotest - Nivel @nivel</h2>
 
             <div class="memotest-grid">
@@ -60,25 +104,6 @@ else
                 }
             </div>
 
-            @if (encontradas.Count == cartas.Length && cartas.Length > 0)
-            {
-                <div class="text-center mt-4">
-                    <h3>🎉 ¡Felicitaciones! Encontraste todos los pares 🎉</h3>
-                    
-                    <form asp-action="ReiniciarMemotest" method="post" style="display:inline;">
-                        <button type="submit" class="btn btn-success">Jugar de nuevo</button>
-                    </form>
-
-                    <a href="@Url.Action("Memotest", "Juego")"
-                       class="btn btn-primary" style="display:inline;">
-                        Volver a selección de nivel
-                    </a>
-                </div>
-            }
-
-            <div class="text-center mt-3">
-                <a href="@Url.Action("Memotest", "Juego")" class="btn btn-secondary">Volver a niveles</a>
-            </div>
         </div>
     </div>
 }
