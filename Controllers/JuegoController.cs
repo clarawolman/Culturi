@@ -55,15 +55,17 @@ namespace Culturi.Controllers
 
         private bool SonPareja(string carta1, string carta2)
         {
-            // Comparar basándose en el prefijo del par
-            // Ejemplo: n1_p1a.png y n1_p1b.png son un par
-            if (carta1.Length < 6 || carta2.Length < 6) return false;
-            
-            var base1 = carta1.Substring(0, carta1.Length - 6); // quitar "a.png" o "b.png"
-            var base2 = carta2.Substring(0, carta2.Length - 6);
-            
-            return base1 == base2 && carta1 != carta2;
+            // ejemplo: n1_p5a.png
+            string base1 = carta1.Split('.')[0]; // n1_p5a
+            string base2 = carta2.Split('.')[0]; // n1_p5b
+    
+            // eliminar última letra (a o b)
+            base1 = base1.Substring(0, base1.Length - 1);
+            base2 = base2.Substring(0, base2.Length - 1);
+
+            return base1 == base2;
         }
+
 
         [HttpPost]
         public IActionResult ReiniciarMemotest()
