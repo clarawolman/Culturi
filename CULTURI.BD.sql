@@ -400,4 +400,20 @@ GO
 USE [master]
 GO
 ALTER DATABASE [Culturi] SET  READ_WRITE 
+
 GO
+CREATE TABLE OracionJuego (
+    id_oracion INT IDENTITY(1,1) PRIMARY KEY,
+    id_pais INT NOT NULL,          -- CLAVE
+    nivel INT NOT NULL,
+    texto NVARCHAR(500) NOT NULL,  -- "Hola, me llamo ___"
+    orden INT NOT NULL,            -- orden dentro del nivel
+    FOREIGN KEY(id_pais) REFERENCES Pais(id_pais)
+);
+CREATE TABLE OracionOpcion (
+    id_opcion INT IDENTITY(1,1) PRIMARY KEY,
+    id_oracion INT NOT NULL,
+    texto NVARCHAR(200) NOT NULL,
+    es_correcta BIT NOT NULL,
+    FOREIGN KEY(id_oracion) REFERENCES OracionJuego(id_oracion)
+);
