@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using PrimerProyecto.Models;
+using Dapper;
+using Microsoft.Data.SqlClient;
+using Culturi.Models;
 using System.Linq;
 
 namespace Culturi.Controllers
@@ -107,7 +111,7 @@ namespace Culturi.Controllers
             public int index1 { get; set; }
             public int index2 { get; set; }
         }
-        /* CAMBIOS PARA NUEVO JUEGO
+
         public IActionResult Oraciones(int? nivel)
         {
             // obtener usuario logueado
@@ -117,11 +121,11 @@ namespace Culturi.Controllers
 
             int idPais = usuario.id_paisDestino;
 
-            // mostrar pantalla de selección si no hay nivel
+            // pantalla de selección
             if (!nivel.HasValue || nivel < 1 || nivel > 3)
             {
                 ViewBag.MostrarSeleccion = true;
-                return View();
+                return View("Oraciones");  // ← importante
             }
 
             ViewBag.MostrarSeleccion = false;
@@ -130,16 +134,18 @@ namespace Culturi.Controllers
             using (var db = BD.GetConnection())
             {
                 var oraciones = db.Query<OracionJuego>(
-                    @"SELECT * FROM OracionJuego 
-              WHERE nivel = @niv AND id_pais = @pais
-              ORDER BY orden",
+                    @"SELECT *
+                      FROM OracionJuego
+                      WHERE nivel = @niv AND id_pais = @pais
+                      ORDER BY orden",
                     new { niv = nivel.Value, pais = idPais }
                 ).ToList();
 
                 var opciones = db.Query<OracionOpcion>(
-                    @"SELECT o.* FROM OracionOpcion o
-              INNER JOIN OracionJuego j ON j.id_oracion = o.id_oracion
-              WHERE j.nivel = @niv AND j.id_pais = @pais",
+                    @"SELECT o.*
+                      FROM OracionOpcion o
+                      INNER JOIN OracionJuego j ON j.id_oracion = o.id_oracion
+                      WHERE j.nivel = @niv AND j.id_pais = @pais",
                     new { niv = nivel.Value, pais = idPais }
                 ).ToList();
 
@@ -147,9 +153,8 @@ namespace Culturi.Controllers
                 ViewBag.Opciones = opciones;
             }
 
-            return View();
-        }*/
-
+            return View("Oraciones");
+        }
 
     }
 }

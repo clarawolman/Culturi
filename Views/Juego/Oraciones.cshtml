@@ -1,0 +1,119 @@
+@using Culturi.Models
+@using PrimerProyecto.Models
+
+@{
+    ViewData["Title"] = "Oraciones";
+
+    bool mostrarSeleccion = ViewBag.MostrarSeleccion == true;
+    int? nivel = ViewBag.Nivel as int?;
+
+    var oraciones = ViewBag.Oraciones as List<OracionJuego> ?? new List<OracionJuego>();
+    var opciones = ViewBag.Opciones as List<OracionOpcion> ?? new List<OracionOpcion>();
+}
+
+<header class="custom-header">
+    <nav>
+        <ul>
+            <li>
+                <a href="/Usuario/Perfil">
+                    <img src="/img/header/perfil.png" alt="perfil">
+                </a>
+            </li>
+            <li>
+                <a href="/Usuario/Noti">
+                    <img src="/img/header/noti.png" alt="notificaciones">
+                </a>
+            </li>
+        </ul>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <div id="sidebar-menu" class="menu-container sidebar-closed">
+        <div class="menu-header">
+            <button class="back-btn" onclick="toggleMenu()">←</button>
+            <h1>MENÚ</h1>
+        </div>
+
+        <div class="menu-links">
+            <a href="@Url.Action("Home", "Home")">Home</a>
+            <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
+            <a href="@Url.Action("Grupos", "Comunidades")">Grupos</a>
+            <a href="@Url.Action("Index", "Tramite")">Tramites</a>
+            <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
+            <a href="@Url.Action("Index", "Juego")">Juegos</a>
+            <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
+        </div>
+    </div>
+</header>
+
+
+@if (mostrarSeleccion)
+{
+    <!-- PANTALLA DE NIVELES -->
+    <div class="oraciones-container">
+        <a href="@Url.Action("Index", "Juego")" class="volver-link">← Volver a juegos</a>
+
+        <h2>Juego de Oraciones</h2>
+        <p>Elegí un nivel para practicar situaciones reales del día a día.</p>
+
+        <div class="niveles-botones">
+            <a href="/Juego/Oraciones?nivel=1">Nivel 1</a>
+            <a href="/Juego/Oraciones?nivel=2">Nivel 2</a>
+            <a href="/Juego/Oraciones?nivel=3">Nivel 3</a>
+        </div>
+    </div>
+}
+else
+{
+    <!-- JUEGO -->
+    <div class="oraciones-container">
+        <a href="@Url.Action("Oraciones", "Juego")" class="volver-link">← Volver a niveles</a>
+
+        <h2 class="titulo">Oraciones – Nivel @nivel</h2>
+
+        <div class="oraciones-juego">
+            @foreach (var o in oraciones)
+            {
+                <div class="oracion" data-id="@o.id_oracion">
+                    @Html.Raw(o.texto.Replace("___", "<span class='dropzone'></span>"))
+                </div>
+            }
+        </div>
+
+        <div class="opciones">
+            @foreach (var op in opciones.OrderBy(x => Guid.NewGuid()))
+            {
+                <div class="opcion"
+                     draggable="true"
+                     data-op="@op.id_opcion"
+                     data-oracion="@op.id_oracion"
+                     data-correcta="@op.es_correcta">
+                    @op.texto
+                </div>
+            }
+        </div>
+
+        <div id="victoria" class="victoria hidden">
+            <h3>¡Nivel completado!</h3>
+
+            @if (nivel < 3)
+            {
+                <a href="/Juego/Oraciones?nivel=@(nivel + 1)" class="btn">Siguiente nivel</a>
+            }
+
+            <a href="/Juego/Oraciones" class="btn">Volver a niveles</a>
+        </div>
+    </div>
+}
+
+<link rel="stylesheet" href="/css/oraciones.css" />
+@section Scripts {
+    <script src="/js/oraciones.js"></script>
+}   

@@ -401,6 +401,153 @@ USE [master]
 GO
 ALTER DATABASE [Culturi] SET  READ_WRITE 
 
+--- CAMBIOS CLARA 28/11
+USE [Culturi]
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'Juego')
+BEGIN
+    CREATE TABLE Juego(
+        id_juego INT IDENTITY(1,1) PRIMARY KEY,
+        nombre VARCHAR(100) NOT NULL,
+        tipo VARCHAR(50) NULL,
+        descripcion TEXT NULL
+    );
+END
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'Nivel')
+BEGIN
+    CREATE TABLE Nivel(
+        id_nivel INT IDENTITY(1,1) PRIMARY KEY,
+        id_juego INT NOT NULL,
+        numero_nivel INT NOT NULL,
+        descripcion TEXT NULL,
+        dificultad VARCHAR(20) NULL,
+        FOREIGN KEY (id_juego) REFERENCES Juego(id_juego)
+    );
+END
+	
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'CartaMemotest')
+BEGIN
+    CREATE TABLE CartaMemotest (
+        id_carta INT IDENTITY(1,1) PRIMARY KEY,
+        id_nivel INT NOT NULL,
+        id_pais INT NOT NULL,
+        imagen VARCHAR(200) NOT NULL,
+        numero_par INT NOT NULL,
+
+        FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE,
+        FOREIGN KEY (id_pais) REFERENCES Pais(id_pais) ON DELETE CASCADE
+    );
+END
+
+-- las cartas que traes: WHERE id_nivel = X AND id_pais = usuario.id_paisDestino
+-- ¿Dónde cargar las imágenes?
+	-- Las rutas en CartaMemotest.imagen pueden ser:
+	-- /img/memotest/n1/p1a.png
+	-- /img/memotest/n1/p1b.png
+	-- Las guardás a mano con inserts.
+
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'ProgresoMemotest')
+BEGIN
+    CREATE TABLE ProgresoMemotest (
+        id_usuario INT NOT NULL,
+        id_nivel INT NOT NULL,
+        completado BIT NOT NULL DEFAULT 0,
+        fecha_completado DATETIME NULL,
+
+        PRIMARY KEY(id_usuario, id_nivel),
+
+        FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE CASCADE,
+        FOREIGN KEY (id_nivel) REFERENCES Nivel(id_nivel) ON DELETE CASCADE
+    );
+END
+
+DECLARE @idMemotest INT;
+
+SELECT @idMemotest = id_juego
+FROM Juego
+WHERE nombre = 'Memotest';
+
+IF @idMemotest IS NULL
+BEGIN
+    INSERT INTO Juego (nombre, tipo, descripcion)
+    VALUES ('Memotest', 'cultura e idioma', 'Juego de memoria cultural por niveles.');
+
+    SET @idMemotest = SCOPE_IDENTITY();
+END
+DECLARE @Nivel1 INT, @Nivel2 INT, @Nivel3 INT;
+
+-- Nivel 1
+IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1)
+BEGIN
+    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+    VALUES (@idMemotest, 1, 'Nivel 1', 'básico');
+END
+
+-- Nivel 2
+IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2)
+BEGIN
+    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+    VALUES (@idMemotest, 2, 'Nivel 2', 'intermedio');
+END
+
+-- Nivel 3
+IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3)
+BEGIN
+    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
+    VALUES (@idMemotest, 3, 'Nivel 3', 'avanzado');
+END
+
+-- Obtener los 3 IDs reales
+SELECT 
+    @Nivel1 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1),
+    @Nivel2 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2),
+    @Nivel3 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3);
+
+DECLARE @PaisDestino INT = 1; -- Argentina
+-- Nivel 1
+IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel1)
+BEGIN
+    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+    VALUES
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p1a.png', 1),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p1b.png', 1),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p2a.png', 2),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p2b.png', 2),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p3a.png', 3),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p3b.png', 3),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p4a.png', 4),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p4b.png', 4),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p5a.png', 5),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p5b.png', 5),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p6a.png', 6),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p6b.png', 6),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p7a.png', 7),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p7b.png', 7),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p8a.png', 8),
+    (@Nivel1, @PaisDestino, '/img/memotest/n1_p8b.png', 8);
+END
+-- Nivel 2
+IF NOT EXISTS (SELECT 1 FROM CartaMemotest WHERE id_nivel = @Nivel2)
+BEGIN
+    INSERT INTO CartaMemotest (id_nivel, id_pais, imagen, numero_par)
+    VALUES
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p1a.png', 1),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p1b.png', 1),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p2a.png', 2),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p2b.png', 2),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p3a.png', 3),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p3b.png', 3),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p4a.png', 4),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p4b.png', 4),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p5a.png', 5),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p5b.png', 5),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p6a.png', 6),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p6b.png', 6),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p7a.png', 7),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p7b.png', 7),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p8a.png', 8),
+    (@Nivel2, @PaisDestino, '/img/memotest/n2_p8b.png', 8);
+END
+
 GO
 CREATE TABLE OracionJuego (
     id_oracion INT IDENTITY(1,1) PRIMARY KEY,
@@ -494,9 +641,9 @@ INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
 
 INSERT INTO OracionJuego (id_pais, nivel, texto, orden) VALUES
 (1, 3, 'Necesito ___ __ ___ en el trámite', 1),
-(1, 3, 'Tengo una entrevista de ___ mañana', 2),
+(1, 3, 'Mi ____ (mamá) se siente mal', 2),
 (1, 3, 'Debo sacar un ___ para hacer este trámite', 3),
-(1, 3, 'Voy a la oficina de ___', 4),
+(1, 3, 'Hoy ___ que ir a la oficina de Migraciones', 4),
 (1, 3, 'Debo pagar el ___ antes de la fecha', 5);
 
 -- 1) Necesito presentar mi ___
@@ -505,24 +652,23 @@ INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
 (11, 'presentar la ropa', 0),
 (11, 'presentar mi DNI', 1);
 
--- HASTA ACA LLEGUE
--- 2) Tengo una entrevista de ___ mañana
+-- 2) Mi ___ se siente mal
 INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
-(12, 'trabajo', 1),
-(12, 'guita', 0),
-(12, 'asado', 0);
+(12, 'boludo', 0),
+(12, 'vieja', 1),
+(12, 'mesa', 0);
 
 -- 3) Debo sacar un ___
 INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
-(13, 'turno', 1),
+(13, 'joda', 0),
 (13, 'che', 0),
-(13, 'joda', 0);
+(13, 'turno', 1);
 
--- 4) Voy a la oficina de ___
+-- 4) Hoy ___ que ir a la oficina de Migraciones
 INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
-(14, 'Migraciones', 1),
-(14, 'bondi', 0),
-(14, 'mate', 0);
+(14, 'suelo', 0),
+(14, 'tengo', 1),
+(14, 'tomo', 0);
 
 -- 5) Debo pagar el ___
 INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES

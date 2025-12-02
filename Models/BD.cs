@@ -1,11 +1,16 @@
 using Microsoft.Data.SqlClient;
 using Dapper;
 namespace Culturi;
+
 public static class BD
 {
 
-    private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
-    //private static string _connectionString = @"Server=COMPUCLARA\SQLEXPRESS01;Database=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    //private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=COMPUCLARA\SQLEXPRESS01;Database=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    public static SqlConnection GetConnection()
+    {
+        return new SqlConnection(_connectionString);
+    }
     public static Usuario LevantarUsuario(string nombreUsuario)
     {
         Usuario miUsuario = null;
@@ -221,7 +226,7 @@ public static class BD
         return ObtenerUsuarioPorId(id.Value);
     }
 
-       public static Usuario ObtenerUsuarioPorId(int idUsuario)
+    public static Usuario ObtenerUsuarioPorId(int idUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
@@ -336,7 +341,7 @@ public static class BD
             connection.Execute(query, new { u = idUsuario, t = idTramite });
         }
     }
-    
+
 
 
 }
