@@ -1,59 +1,86 @@
-/*using Microsoft.AspNetCore.Mvc;
-using Google.AI.Generativelanguage.V1;
-using Google.AI.Generativelanguage.V1BETA;
-using Google.Api.Gax.Grpc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel.ChatCompletion;
+using Microsoft.SemanticKernel.Connectors.Google;
+using Microsoft.Extensions.Configuration;
+using Culturi.Models; // Add this line to import the Models namespace
+using System.Collections.Generic; // Added for List
+using System.Collections.ObjectModel; // Added for IReadOnlyDictionary
+using System.Threading.Tasks; // Added for Task
+using System.Threading; // Added for CancellationToken
 
 namespace Culturi.Controllers
 {
     public class ChatBotController : Controller
     {
-        private readonly string _apiKey;
-        private readonly GenerativeServiceClient _client;
+        private readonly IChatCompletionService _chatService;
+        private readonly ChatHistory _history;
 
         public ChatBotController(IConfiguration config)
         {
-            _apiKey = config["GoogleAI:ApiKey"];
+            string apiKey = config["GoogleAI:ApiKey"];
 
-            var builder = new GenerativeServiceClientBuilder
-            {
-                ApiKey = _apiKey,
-            };
+            var builder = Kernel.CreateBuilder();
 
-            _client = builder.Build();
+            builder.AddGoogleAIGeminiChatCompletion(
+                modelId: "gemini-2.5-flash",
+                apiKey: apiKey
+            );
+
+            var kernel = builder.Build();
+
+            _chatService = kernel.GetRequiredService<IChatCompletionService>();
+
+            _history = new ChatHistory();
+            _history.AddSystemMessage(
+                "Sos un asistente en español. Respondé de forma breve, clara y amable."
+            );
         }
 
+        // GET: ChatBot
         [HttpGet]
         public IActionResult ChatBot()
         {
-            return View();
+            var viewModel = new ChatBotViewModel();
+            foreach (var message in _history)
+            {
+                viewModel.History.Add(new ChatMessage
+                {
+                    Content = message.Content,
+                    IsUserMessage = message.Role == AuthorRole.User
+                });
+            }
+            return View(viewModel);
         }
 
+        // POST: ChatBot
         [HttpPost]
         public async Task<IActionResult> ChatBot(string userMessage)
         {
             if (!string.IsNullOrEmpty(userMessage))
             {
-                var request = new GenerateContentRequest
-                {
-                    Model = "models/gemini-1.5-flash",
-                    Contents =
-                    {
-                        new Content
-                        {
-                            Role = "user",
-                            Parts = { new Part { Text = userMessage } }
-                        }
-                    }
-                };
+                _history.AddUserMessage(userMessage);
 
-                var response = await _client.GenerateContentAsync(request);
+                var reply = await _chatService.GetChatMessageContentAsync(_history);
 
-                var reply = response.Candidates.First().Content.Parts.First().Text;
-
-                ViewBag.Reply = reply;
+                _history.AddAssistantMessage(reply.ToString());
             }
 
-            return View();
+            var viewModel = new ChatBotViewModel();
+            foreach (var message in _history)
+            {
+                viewModel.History.Add(new ChatMessage
+                {
+                    Content = message.Content,
+                    IsUserMessage = message.Role == AuthorRole.User
+                });
+            }
+
+            return View(viewModel);
         }
     }
-} */
+}
+

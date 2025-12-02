@@ -417,3 +417,115 @@ CREATE TABLE OracionOpcion (
     es_correcta BIT NOT NULL,
     FOREIGN KEY(id_oracion) REFERENCES OracionJuego(id_oracion)
 );
+
+INSERT INTO OracionJuego (id_pais, nivel, texto, orden) VALUES
+(1, 1, 'Hola, me llamo ___', 1),
+(1, 1, 'Yo ___ de otro país', 2),
+(1, 1, '¡Un ___ conocerte!', 3),
+(1, 1, 'Tengo 29 ___', 4),
+(1, 1, 'Hablo un poco de ___', 5);
+
+-- 1) Hola, me llamo ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(1, 'Clara', 1),
+(1, 'rojo', 0),
+(1, 'bondi', 0);
+
+-- 2) Soy de ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(2, 'soy', 1),
+(2, 'es', 0),
+(2, 'estoy', 0);
+
+-- 3) ¡Un ___ conocerte!
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(3, 'camino', 1),
+(3, 'placer', 0),
+(3, 'amigo', 0);
+
+-- 4) Tengo 29 ___ 
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(4, 'hora', 1),
+(4, 'estudio', 0),
+(4, 'años', 0);
+
+-- 5) Hablo un poco de ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(5, 'español', 1),
+(5, 'bueno', 0),
+(5, 'laburo', 0);
+
+INSERT INTO OracionJuego (id_pais, nivel, texto, orden) VALUES
+(1, 2, 'Tengo que tomar el ___ para ir a la escuela', 1),
+(1, 2, 'Voy al ___ a comprar comida', 2),
+(1, 2, 'Hace mucho ___ hoy', 3),
+(1, 2, '¿Cuánto sale ___?', 4),
+(1, 2, 'Estoy muy ___, trabajé todo el día', 5);
+
+-- 1) Tengo que tomar el ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(6, 'bondi', 1),
+(6, 'casco', 0),
+(6, 'joda', 0);
+
+-- 2) Voy al ___ a comprar comida
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(7, 'supermercado', 1),
+(7, 'estudio', 0),
+(7, 'comprador', 0);
+
+-- 3) Hace mucho ___ hoy
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(8, 'música', 0),
+(8, 'invierno', 0),
+(8, 'calor', 1);
+
+-- 4) ¿Cuánto sale ___?
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(9, 'casa', 0),
+(9, 'esto', 1),
+(9, 'lugar', 0);
+
+-- 5) Estoy muy ___, trabajé todo el día
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(10, 'estado', 0),
+(10, 'laburo', 0),
+(10, 'cansado', 1);
+
+INSERT INTO OracionJuego (id_pais, nivel, texto, orden) VALUES
+(1, 3, 'Necesito ___ __ ___ en el trámite', 1),
+(1, 3, 'Tengo una entrevista de ___ mañana', 2),
+(1, 3, 'Debo sacar un ___ para hacer este trámite', 3),
+(1, 3, 'Voy a la oficina de ___', 4),
+(1, 3, 'Debo pagar el ___ antes de la fecha', 5);
+
+-- 1) Necesito presentar mi ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(11, 'cargar el futuro', 0),
+(11, 'presentar la ropa', 0),
+(11, 'presentar mi DNI', 1);
+
+-- HASTA ACA LLEGUE
+-- 2) Tengo una entrevista de ___ mañana
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(12, 'trabajo', 1),
+(12, 'guita', 0),
+(12, 'asado', 0);
+
+-- 3) Debo sacar un ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(13, 'turno', 1),
+(13, 'che', 0),
+(13, 'joda', 0);
+
+-- 4) Voy a la oficina de ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(14, 'Migraciones', 1),
+(14, 'bondi', 0),
+(14, 'mate', 0);
+
+-- 5) Debo pagar el ___
+INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
+(15, 'impuesto', 1),
+(15, 'tango', 0),
+(15, 'empanada', 0);
