@@ -36,7 +36,7 @@ html, body {
 
 /* NAV color igual que tu header */
 .custom-nav {
-  background: #1bb3c4;
+  background-color: #4EB2C3;
   padding: 12px 25px;
 }
 .custom-nav .container-fluid {
@@ -83,6 +83,7 @@ html, body {
   color: white;
   cursor: pointer;
   margin-left: 15px;
+
 }
 
 /* MENU LATERAL */
@@ -92,7 +93,7 @@ html, body {
   right: -260px;
   width: 260px;
   height: 100%;
-  background: #1bb3c4;
+  background-color: #4EB2C3;
   color: white;
   padding: 20px;
   box-shadow: -4px 0 10px rgba(0,0,0,0.25);
@@ -170,6 +171,11 @@ html, body {
   z-index: 3000;  /* por encima de todo */
   margin-left: auto !important;
 }
+/* Hace visible el icono hamburguesa */
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 
 
 
@@ -2256,17 +2262,18 @@ input[asp-for]:focus {
 /*        MODO CELULAR           */
 /*      Pantallas < 480px        */
 /* ============================= */
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
 
   /* BOTÓN HAMBURGUESA */
   .menu-btn.fixed-btn {
-      position: absolute;
+      
       right: 15px;
       top: 12px;
       font-size: 26px;
       background: none;
       border: none;
       color: white;
+      justify-content: flex-end;
   }
 
   /* LOGO CENTRAL */
@@ -2395,9 +2402,7 @@ input[asp-for]:focus {
   .logo-header {
       height: 50px;
   }
-  .navbar {
-    display: none !important;
-}
+
 }
 
 

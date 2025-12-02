@@ -30,7 +30,7 @@ namespace Culturi.Controllers
             // Generar lista de cartas según el nivel (n1, n2, n3)
             var cartas = new List<string>();
             string prefijo = $"n{nivel}_p";
-            
+
             // Por ahora solo tenemos nivel 1, pero la estructura será igual para n2 y n3
             for (int i = 1; i <= 8; i++)
             {
@@ -58,7 +58,7 @@ namespace Culturi.Controllers
             // ejemplo: n1_p5a.png
             string base1 = carta1.Split('.')[0]; // n1_p5a
             string base2 = carta2.Split('.')[0]; // n1_p5b
-    
+
             // eliminar última letra (a o b)
             base1 = base1.Substring(0, base1.Length - 1);
             base2 = base2.Substring(0, base2.Length - 1);
@@ -74,8 +74,9 @@ namespace Culturi.Controllers
             HttpContext.Session.Remove("CartasMezcladas");
             HttpContext.Session.Remove("Volteadas");
             HttpContext.Session.Remove("Encontradas");
-            
-            if (nivel.HasValue) {
+
+            if (nivel.HasValue)
+            {
                 return RedirectToAction("Memotest", new { nivel = nivel.Value });
             }
             return RedirectToAction("Memotest");
@@ -86,7 +87,7 @@ namespace Culturi.Controllers
         {
             string[] cartas = HttpContext.Session.GetString("CartasMezcladas").Split(',');
             bool esPar = SonPareja(cartas[req.index1], cartas[req.index2]);
-            if (esPar) 
+            if (esPar)
             {
                 var encontradas = HttpContext.Session.GetString("Encontradas")
                 .Split(',', StringSplitOptions.RemoveEmptyEntries)
@@ -106,6 +107,48 @@ namespace Culturi.Controllers
             public int index1 { get; set; }
             public int index2 { get; set; }
         }
+        /* CAMBIOS PARA NUEVO JUEGO
+        public IActionResult Oraciones(int? nivel)
+        {
+            // obtener usuario logueado
+            var usuario = BD.ObtenerUsuarioPorSession(HttpContext);
+            if (usuario == null)
+                return RedirectToAction("Login", "Usuario");
+
+            int idPais = usuario.id_paisDestino;
+
+            // mostrar pantalla de selección si no hay nivel
+            if (!nivel.HasValue || nivel < 1 || nivel > 3)
+            {
+                ViewBag.MostrarSeleccion = true;
+                return View();
+            }
+
+            ViewBag.MostrarSeleccion = false;
+            ViewBag.Nivel = nivel.Value;
+
+            using (var db = BD.GetConnection())
+            {
+                var oraciones = db.Query<OracionJuego>(
+                    @"SELECT * FROM OracionJuego 
+              WHERE nivel = @niv AND id_pais = @pais
+              ORDER BY orden",
+                    new { niv = nivel.Value, pais = idPais }
+                ).ToList();
+
+                var opciones = db.Query<OracionOpcion>(
+                    @"SELECT o.* FROM OracionOpcion o
+              INNER JOIN OracionJuego j ON j.id_oracion = o.id_oracion
+              WHERE j.nivel = @niv AND j.id_pais = @pais",
+                    new { niv = nivel.Value, pais = idPais }
+                ).ToList();
+
+                ViewBag.Oraciones = oraciones;
+                ViewBag.Opciones = opciones;
+            }
+
+            return View();
+        }*/
 
 
     }
