@@ -3000,246 +3000,269 @@ align-items: center;
         margin: 20px auto 10px auto;
     }
  
-    /*QUERY CHAR*/
-/* =========================================
-   MEDIA QUERY — HEADER + INPUT MÁS GRANDES
-   ========================================= */
-   @media (max-width: 600px) {
+    /*QUERY CHAT*/
+    @media (min-height: 700px) {
 
-    /* HEADER MÁS ALTO */
-    .chat-header {
-        height: 120px;         /* << Aumenté bastante */
-        padding: 0 20px;
-    }
-
-    .group-icon {
-        width: 55px;           /* Ícono más grande */
-        height: 55px;
-    }
-
-    .group-title {
-        font-size: 25px;       /* Texto más grande */
-    }
-
-    .back-btn {
-        font-size: 35px;       /* Flecha más grande */
-    }
-
-    .join-btn {
-        font-size: 18px;
-        padding: 10px 20px;
-        border-radius: 14px;
-    }
-
-    .menu-dots {
-        font-size: 32px;
-    }
-    .input-area {
-        padding: 25px 0;
-        gap: 15px;
-    }
-
-    .input-box {
-        padding: 16px 20px;
-        font-size: 18px;
-        border-radius: 30px;
-        width: 70%;
-    }
-
-    .icon-btn {
-        font-size: 30px;
-    }
-    .chat-container {
-        padding-top: 30px;
-        padding-bottom: 200px; 
-    }
+      /* HEADER OCUPA MÁS ALTURA (15% de pantalla) */
+      .chat-header {
+          height: 15vh;     /* << OCUPA MUCHO MÁS ALTO */
+          padding: 0 20px;
+      }
+  
+      .group-icon {
+          width: 55px;
+          height: 55px;
+      }
+  
+      .group-title {
+          font-size: 24px;
+      }
+  
+      /* INPUT OCUPA MÁS ALTURA (12% de pantalla) */
+      .input-area {
+          height: 12vh;     /* << MÁS ALTO ABAJO */
+          padding: 10px;
+          align-items: center;
+      }
+  
+      .input-box {
+          font-size: 17px;
+          padding: 14px 20px;
+          border-radius: 25px;
+      }
+  
+      /* CONTENEDOR CENTRAL AJUSTADO */
+      .chat-container {
+          padding-top: 20px;
+          padding-bottom: 15vh; /* deja espacio según el tamaño real del input */
+      }
+  }
 }
-/* ============================================
-   🎮 MEMOTEST – ESTILOS GENERALES
-   ============================================ */
 
-   .memotest-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 25px 30px;
-    background: #e0f5f7;
-    border-radius: 20px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+.memotest-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: #e0f5f7;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 .memotest-content h2 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 800;
-    color: #003c3c;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: #003c3c;
 }
 
 .memotest-content .volver-link {
-    display: inline-block;
-    margin-bottom: 12px;
-    text-decoration: none;
-    color: #007b83;
-    font-size: 18px;
-    font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #007b83;
+  font-size: 25px;
+  font-weight: 900;
 }
 
 .memotest-content .volver-link:hover {
-    opacity: .75;
+  opacity: .75;
 }
 
 
 
 /* ============================================
-   🎯 SELECCIÓN DE NIVELES
-   ============================================ */
+ 🎯 SELECCIÓN DE NIVELES
+ ============================================ */
 
 .niveles-seleccion {
-    margin-top: 25px;
-    text-align: center;
+  margin-top: 25px;
+  text-align: center;
 }
 
 .niveles-seleccion h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .niveles-botones {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 /* Estilo base para TODOS los niveles */
 .btn-nivel {
-    display: inline-block;
-    padding: 14px 26px;
-    border-radius: 18px;
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    background: #c9f4f4;            /* color base */
-    border: 3px solid transparent;  /* para poder sobrescribir */
-    color: #003c3c;
-    transition: transform .18s, box-shadow .2s;
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  background: #c9f4f4;            /* color base */
+  border: 3px solid transparent;  /* para poder sobrescribir */
+  color: #003c3c;
+  transition: transform .18s, box-shadow .2s;
 }
 
 .btn-nivel:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
 }
 
 /* ✔ COMPLETADO (clarito) */
 .btn-nivel.completado {
-    background: #e9fffe;
-    color: #005f6b;
-    border-color: #bdf0ee;
-    opacity: 0.85;
+  background: #e9fffe;
+  color: #005f6b;
+  border-color: #bdf0ee;
+  opacity: 0.85;
 }
 
 /* ✨ NIVEL ACTUAL (borde brillante) */
 .btn-nivel.actual {
-    background: #dffdfd;
-    border-color: #00e0ff;
-    box-shadow: 0 0 10px rgba(0,255,255,0.5);
+  background: #dffdfd;
+  border-color: #00e0ff;
+  box-shadow: 0 0 10px rgba(0,255,255,0.5);
 }
 
 /* ⛔ NO JUGADO / BLOQUEADO (más oscuro) */
 .btn-nivel.bloqueado {
-    background: #9ccccc;
-    color: #2d3d3d;
-    opacity: 0.7;
-    cursor: default;
-    pointer-events: none;
+  background: #9ccccc;
+  color: #2d3d3d;
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
 }
 
+/* =============================
+   🃏 CARTAS – DISEÑO ANTERIOR
+   ADAPTADO AL NUEVO HTML
+   ============================= */
 
-
-/* ============================================
-   🃏 GRID DE CARTAS
-   ============================================ */
-
-.memotest-grid {
-    margin-top: 25px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-    gap: 18px;
-    justify-items: center;
-}
-
-/* Contenedor de carta */
+/* TAMAÑO ORIGINAL */
 .carta {
-    width: 100px;
-    height: 100px;
-    perspective: 800px;
-    cursor: pointer;
+  width: 130px;
+  height: 180px;
+  perspective: 900px;
+  cursor: pointer;
 }
 
 .carta .inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform .45s ease;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .45s ease;
 }
 
-/* Cara */
-.cara {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    backface-visibility: hidden;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-}
-
-/* Frente */
-.frente {
-    transform: rotateY(180deg);
-}
-
-/* Dorso */
-.dorso {
-    background: #4EB2C3;
-}
-
-/* Cuando está descubierta */
+/* CUANDO SE VOLTEA */
+.carta.volteada .inner,
 .carta.encontrada .inner {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-/* Carta encontrada efecto */
-.carta.encontrada {
-    filter: brightness(1.1);
-    cursor: default;
+/* CARA TRASERA (dorso) que se ve primero */
+.cara.dorso {
+  transform: rotateY(0deg);
 }
 
+/* CARA FRENTE empieza atrás */
+.cara.frente {
+  transform: rotateY(180deg);
+}
+
+/* IMÁGENES */
+.cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* =============================
+ 🧩 GRID DE CARTAS – DISEÑO ANTERIOR
+ ============================= */
+
+.memotest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-items: center;
+  margin: 25px auto;
+  max-width: 600px;
+}
+
+/* RESPONSIVE – cuando la pantalla es chica */
+@media (max-width: 768px) {
+  .memotest-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+  }
+  
+  .carta {
+      width: 110px;
+      height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .memotest-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+  }
+
+  .carta {
+      width: 95px;
+      height: 135px;
+  }
+}
 
 
 /* ============================================
-   📱 RESPONSIVE – CELULAR
-   ============================================ */
+ 📱 RESPONSIVE – CELULAR
+ ============================================ */
 
 @media (max-width: 480px) {
-    .memotest-container {
-        width: 92%;
-        padding: 18px;
-    }
+  .memotest-container {
+      width: 92%;
+      padding: 18px;
+  }
 
-    .btn-nivel {
-        padding: 12px 20px;
-        font-size: 16px;
-    }
+  .btn-nivel {
+      padding: 12px 20px;
+      font-size: 16px;
+  }
 
-    .memotest-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-    }
+  .memotest-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+  }
 
-    .carta {
-        width: 80px;
-        height: 80px;
-    }
+  .carta {
+      width: 80px;
+      height: 80px;
+  }
+  /* CHAT HEADER – TAMAÑO PARA CELULAR */
+@media (max-width: 480px) {
+
+  .chat-header {
+      height: 110px !important;   /* AUMENTA EL TAMAÑO */
+      padding: 20px !important;   /* MÁS ESPACIO INTERNO */
+      align-items: center;
+  }
+
+  .group-icon {
+      width: 55px !important;
+      height: 55px !important;
+  }
+
+  .group-title {
+      font-size: 22px !important;
+  }
 }
+
 }
