@@ -36,9 +36,9 @@ html, body {
 
 /* NAV color igual que tu header */
 .custom-nav {
-  background-color: #4EB2C3;
-  padding: 12px 25px;
+  background-color: transparent !important;
 }
+
 .custom-nav .container-fluid {
   padding-left: 0 !important;
   margin-left: 0 !important;
@@ -70,7 +70,7 @@ html, body {
 
 /* DROPDOWNS */
 .dropdown-menu {
-  background: #ffffff;
+  background: #18168b;
   border-radius: 10px;
 }
 
@@ -86,6 +86,7 @@ html, body {
 
 }
 
+/* MENU LATERAL */
 /* MENU LATERAL */
 .side-menu {
   position: fixed;
@@ -145,24 +146,7 @@ html, body {
   transition: .2s;
 }
 
-/* OVERLAY */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.35);
-  visibility: hidden;
-  opacity: 0;
-  transition: .3s;
-  z-index: 1500;
-}
 
-.overlay.show {
-  visibility: visible;
-  opacity: 1;
-}
 /* Botón hamburguesa fijo a la derecha de la pantalla */
 .fixed-btn {
   position: fixed;
@@ -658,20 +642,20 @@ html, body {
 .contenedor-linea {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 60px;
+  margin-left: 25.7%;
 }
 
 
 
 
 .item {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
+  padding: 4%;
 }
 
 
@@ -694,9 +678,11 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
-  height: 200px;
+  min-height: 90px;   /* +20px más, suave */
+    padding: 12px 25px; /* un poquito más de aire */  /* header compacto */
+  height: auto;       /* ya NO fuerza altura gigante */
 }
+
 
 
 /* Icono de menú (las tres rayas) */
@@ -971,23 +957,20 @@ border-radius: 23.5px;
 .menu-container {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;                   /* ✔️ Abre desde la derecha */
   width: 70%;
   max-width: 280px;
   height: 100vh;
-  background: #c7e8ff;
-
-
+  background-color: #4EB2C3;
   z-index: 999;
-  transform: translateX(-100%);
+  transform: translateX(100%); /* ✔️ Oculto hacia la derecha */
   transition: transform .3s ease-in-out;
-  box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+  box-shadow: -4px 0 15px rgba(0,0,0,0.15);
 }
-
-
 .menu-open {
-  transform: translateX(0);
+  transform: translateX(0);   /* ✔️ Entra hacia la izquierda desde el costado derecho */
 }
+
 
 
 /* Overlay oscuro atrás */
@@ -1012,7 +995,7 @@ menu-overlay.active {
 .menu-icon {
   position: fixed;
   top: 12px;
-  left: 12px;
+  right: 12px;   /* ✔️ LO MUEVE A LA DERECHA */
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -1021,6 +1004,7 @@ menu-overlay.active {
   z-index: 2000;
   background: transparent;
 }
+
 
 
 .menu-icon span {
@@ -1065,7 +1049,9 @@ menu-overlay.active {
   z-index: 1001;
   position: absolute;
   top: 10px;
-  left: 10px;
+  right: 10px;
+  left: auto;
+
 }
 
 
@@ -1105,8 +1091,11 @@ main > section:first-child img {
 
 
 .logo img {
-  width: 15%;
+  width: 120px;
+  max-width: 40vw;
+  height: auto;
 }
+
 .logo h1 {
   font-family: 'BagelFat';
 }
@@ -1467,6 +1456,18 @@ form input:focus {
   .perfil-principal {
       padding: 35px 22px;
   }
+  
+  .perfil-publicaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    text-align: center;
+}
+
+.btn-vermas {
+    margin: 15px auto 0 auto;   
+    display: block;
+}
 }
 /*FIN PERFIL*/
 /*DETALLE NO TERMINADO*/
@@ -1829,6 +1830,7 @@ form {
   color: #34B7C3;
   margin-bottom: 20px;
   font-size: 1.8rem;
+  margin-top: 5%
 }
 
 
@@ -2177,13 +2179,9 @@ input[asp-for]:focus {
   }
 
   .custom-header::before {
-      content: "←";
-      font-size: 24px;
-      position: absolute;
-      left: 10px;
-      top: 12px;
-      cursor: pointer;
-  }
+    content: "";
+}
+
   .menu-icon {
       display: block;
       position: absolute;
@@ -2265,16 +2263,9 @@ input[asp-for]:focus {
 @media (max-width: 480px) {
 
   /* BOTÓN HAMBURGUESA */
-  .menu-btn.fixed-btn {
-      
-      right: 15px;
-      top: 12px;
-      font-size: 26px;
-      background: none;
-      border: none;
-      color: white;
-      justify-content: flex-end;
-  }
+#menuBtn {
+    z-index: 2500; /* Para que siempre quede arriba cuando está visible */
+}
 
   /* LOGO CENTRAL */
   .logo {
@@ -2393,8 +2384,9 @@ input[asp-for]:focus {
 }
 
 .logo-header {
-  height: 60px;
-  width: 70px;
+  height: 60px;     /* +15px, se nota pero no molesta */
+  width: auto;
+  object-fit: contain;
   margin-right: 15px;
 }
 
@@ -2402,8 +2394,8 @@ input[asp-for]:focus {
   .logo-header {
       height: 50px;
   }
-
 }
+
 
 
 
@@ -2464,7 +2456,7 @@ input[asp-for]:focus {
   #sidebar-menu {
       width: 70%;
       max-width: 260px;
-      background: #ffffff;
+      background-color: #4EB2C3;
       height: 100vh;
       position: fixed;
       top: 0;
@@ -2535,7 +2527,9 @@ input[asp-for]:focus {
   }
 }
 
-.close-menu-btn {
+/* Por defecto la flecha NO se ve */
+#closeBtn {
+  display: none !important;
   background: none;
   border: none;
   font-size: 28px;
@@ -2543,8 +2537,15 @@ input[asp-for]:focus {
   color: white;
   position: absolute;
   top: 15px;
-  right: 15px;
+  left: 20px;
+  z-index: 99999;
 }
+
+/* Cuando el menú está abierto → aparece la flecha */
+#sideMenu.open #closeBtn {
+  display: block !important;
+}
+
 
 /*MEDIA QUERY GRUPOS*/
 @media (max-width: 480px) {
@@ -2885,6 +2886,360 @@ align-items: center;
   background-color: #001f33;
 }
 
+.barra-progreso {
+  height: 8px;
+  background-color: #2fa8b5;
+  border-radius: 5px;
+}
+
+/* HEADER MÁS ALTO */
+.custom-header {
+  background-color: #4EB2C3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 22px;
+  min-height: 90px; /* más alto */
+}
+
+/* LOGO PNG */
+.logo-header {
+  width: 80px;   /* antes 60px */
+  height: auto;
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+  .custom-header {
+      padding: 18px 20px;
+      min-height: 95px;
+  }
+
+  .logo-header {
+      width: 70px; /* más grande en móvil */
+  }
+}
+
+/* BORRAR LA FLECHA (eliminamos el ::before) */
+.custom-header::before {
+  content: none !important;
+}
+/* 🔧 RESETEAR CUALQUIER FLECHA ERRÓNEA */
+.custom-header::before {
+  content: none !important;
+}
+
+/* 🔧 REPARAR BOTÓN DE CERRAR DEL MENÚ */
+.close-menu-btn {
+  background: none !important;
+  border: none !important;
+  font-size: 28px !important;
+  cursor: pointer;
+  color: white !important;
+
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+
+  z-index: 99999 !important; /* queda arriba de TODO */
+}
+
+/* 🔧 Asegurar que el menú pueda tocarse */
+.side-menu {
+  pointer-events: all !important;
+}
+
+/* 🔧 Asegurar que el overlay se active correctamente */
+#overlay,
+#menu-overlay {
+  pointer-events: all !important;
+}
+
+
+/*NOTICIAS QUERY*/
+@media (max-width: 430px) {
+
+    /* CONTENEDOR */
+    .container {
+        padding: 10px 12px;
+    }
+
+    /* BUSCADOR */
+    .search-box {
+        max-width: 100%;
+        width: 100%;
+        font-size: 14px;
+        padding: 9px 12px;
+    }
+
+    /* TÍTULO */
+    h2 {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+
+    /* GRID: UNA SOLA COLUMNA COMO EL DISEÑO */
+    .news-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .news-card img {
+        height: 170px;
+        object-fit: cover;
+    }
+
+    .news-card .title {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* BOT FLOTANTE */
+    .floating-bot img {
+        width: 90px;
+        margin: 20px auto 10px auto;
+    }
+ 
+    /*QUERY CHAR*/
+/* =========================================
+   MEDIA QUERY — HEADER + INPUT MÁS GRANDES
+   ========================================= */
+   @media (max-width: 600px) {
+
+    /* HEADER MÁS ALTO */
+    .chat-header {
+        height: 120px;         /* << Aumenté bastante */
+        padding: 0 20px;
+    }
+
+    .group-icon {
+        width: 55px;           /* Ícono más grande */
+        height: 55px;
+    }
+
+    .group-title {
+        font-size: 25px;       /* Texto más grande */
+    }
+
+    .back-btn {
+        font-size: 35px;       /* Flecha más grande */
+    }
+
+    .join-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 14px;
+    }
+
+    .menu-dots {
+        font-size: 32px;
+    }
+    .input-area {
+        padding: 25px 0;
+        gap: 15px;
+    }
+
+    .input-box {
+        padding: 16px 20px;
+        font-size: 18px;
+        border-radius: 30px;
+        width: 70%;
+    }
+
+    .icon-btn {
+        font-size: 30px;
+    }
+    .chat-container {
+        padding-top: 30px;
+        padding-bottom: 200px; 
+    }
+}
+/* ============================================
+   🎮 MEMOTEST – ESTILOS GENERALES
+   ============================================ */
+
+   .memotest-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px 30px;
+    background: #e0f5f7;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.memotest-content h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    color: #003c3c;
+}
+
+.memotest-content .volver-link {
+    display: inline-block;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: #007b83;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.memotest-content .volver-link:hover {
+    opacity: .75;
+}
 
 
 
+/* ============================================
+   🎯 SELECCIÓN DE NIVELES
+   ============================================ */
+
+.niveles-seleccion {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.niveles-seleccion h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.niveles-botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Estilo base para TODOS los niveles */
+.btn-nivel {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 18px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #c9f4f4;            /* color base */
+    border: 3px solid transparent;  /* para poder sobrescribir */
+    color: #003c3c;
+    transition: transform .18s, box-shadow .2s;
+}
+
+.btn-nivel:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* ✔ COMPLETADO (clarito) */
+.btn-nivel.completado {
+    background: #e9fffe;
+    color: #005f6b;
+    border-color: #bdf0ee;
+    opacity: 0.85;
+}
+
+/* ✨ NIVEL ACTUAL (borde brillante) */
+.btn-nivel.actual {
+    background: #dffdfd;
+    border-color: #00e0ff;
+    box-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
+
+/* ⛔ NO JUGADO / BLOQUEADO (más oscuro) */
+.btn-nivel.bloqueado {
+    background: #9ccccc;
+    color: #2d3d3d;
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+}
+
+
+
+/* ============================================
+   🃏 GRID DE CARTAS
+   ============================================ */
+
+.memotest-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 18px;
+    justify-items: center;
+}
+
+/* Contenedor de carta */
+.carta {
+    width: 100px;
+    height: 100px;
+    perspective: 800px;
+    cursor: pointer;
+}
+
+.carta .inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .45s ease;
+}
+
+/* Cara */
+.cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    backface-visibility: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Frente */
+.frente {
+    transform: rotateY(180deg);
+}
+
+/* Dorso */
+.dorso {
+    background: #4EB2C3;
+}
+
+/* Cuando está descubierta */
+.carta.encontrada .inner {
+    transform: rotateY(180deg);
+}
+
+/* Carta encontrada efecto */
+.carta.encontrada {
+    filter: brightness(1.1);
+    cursor: default;
+}
+
+
+
+/* ============================================
+   📱 RESPONSIVE – CELULAR
+   ============================================ */
+
+@media (max-width: 480px) {
+    .memotest-container {
+        width: 92%;
+        padding: 18px;
+    }
+
+    .btn-nivel {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    .memotest-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .carta {
+        width: 80px;
+        height: 80px;
+    }
+}
+}

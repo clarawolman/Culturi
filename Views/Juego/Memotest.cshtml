@@ -15,69 +15,91 @@
     }
 }
 
-<header class="custom-header">
-    <nav>
-        <ul>
-            <li>
-                <a href="/Usuario/Perfil">
-                    <img src="/img/header/perfil.png" alt="perfil">
-                </a>
-            </li>
-            <li>
-                <a href="/Usuario/Noti">
-                    <img src="/img/header/noti.png" alt="notificaciones">
-                </a>
-            </li>
-        </ul>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<link rel="stylesheet" href="/css/site.css" />
 
-        <div class="menu-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+<header class="custom-header">
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+        <div class="container-fluid">
+
+            <img class="logo-header" src="/img/Home/logoSVG.svg" alt="logo">
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item"><a class="nav-link" href="/Home/Home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Juego/Index">Juego</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Comunidades/Grupos">Grupos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Tramite/">Trámites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Mapa/Index">Mapa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Noticias/Noticias">Noticias</a></li>
+                </ul>
+            </div>
+
+            <button class="menu-btn fixed-btn" id="menuBtn">☰</button>
         </div>
     </nav>
 
-    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+    <div id="sideMenu" class="side-menu">
+        <button id="closeBtn" class="close-menu-btn">←</button>
 
-    <div id="sidebar-menu" class="menu-container sidebar-closed">
-        <div class="menu-header">
-            <button class="back-btn" onclick="toggleMenu()">←</button>
-            <h1>MENÚ</h1>
-        </div>
-
-        <div class="menu-links">
-            <a href="@Url.Action("Home", "Home")">Home</a>
-            <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
-            <a href="@Url.Action("Grupos", "Comunidades")">Grupos</a>
-            <a href="@Url.Action("Index", "Tramite")">Tramites</a>
-            <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
+        <div class="side-menu-links">
+            <a href="/Home/Home">Home</a>
             <a href="@Url.Action("Index", "Juego")">Juegos</a>
-            <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
+            <a href="/Comunidades/Grupos">Grupos</a>
+            <a href="/Tramite/">Trámites</a>
+            <a href="/Mapa/Index">Mapa</a>
+            <a href="/Noticias/Noticias">Noticias</a>
+            <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
+            <a href='@Url.Action("Noti", "Usuario")'>Notificaciones</a>
+            <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
+            <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
         </div>
     </div>
+
 </header>
+
 
 @if (mostrarSeleccion)
 {
     <div class="memotest-container">
         <div class="memotest-content">
             <a href="@Url.Action("Index", "Juego")" class="volver-link">← Volver a juegos</a>
+
             <h2>Memotest</h2>
+
             <div class="instrucciones">
                 <h3>¿Cómo jugar?</h3>
                 <p>
                     El objetivo del juego es encontrar todos los pares de cartas.
-                    Haz clic en dos cartas para voltearlas. Si coinciden, se quedarán descubiertas.
-                    Si no coinciden, se darán vuelta nuevamente.
+                    Al hacer clic en dos cartas podrás ver si coinciden.
                 </p>
             </div>
 
+            <!-- SECCIÓN DE NIVELES -->
             <div class="niveles-seleccion">
-                <h3>Selecciona un nivel:</h3>
+                <h3>Selecciona un nivel</h3>
+
                 <div class="niveles-botones">
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 1 })" class="btn-nivel"><span>Nivel 1</span></a>
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 2 })" class="btn-nivel"><span>Nivel 2</span></a>
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 3 })" class="btn-nivel"><span>Nivel 3</span></a>
+
+                    <!-- Nivel 1 → completado -->
+                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 1 })"
+                       class="btn-nivel completado">
+                        Nivel 1
+                    </a>
+
+                    <!-- Nivel 2 → actual -->
+                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 2 })"
+                       class="btn-nivel actual">
+                        Nivel 2
+                    </a>
+
+                    <!-- Nivel 3 → bloqueado -->
+                    <a class="btn-nivel bloqueado">
+                        Nivel 3
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -87,9 +109,12 @@ else
 {
     <div class="memotest-container">
         <div class="memotest-content">
+
             <a href="@Url.Action("Memotest", "Juego")" class="volver-link">← Volver a niveles</a>
+
             <h2>Memotest - Nivel @nivel</h2>
 
+            <!-- TABLERO DE CARTAS -->
             <div class="memotest-grid">
                 @for (int i = 0; i < cartas.Length; i++)
                 {
@@ -108,7 +133,7 @@ else
     </div>
 }
 
-<link rel="stylesheet" href="/css/memotest.css" />
+
 @section Scripts {
     <script src="/js/memotest.js"></script>
-}   
+}

@@ -100,48 +100,98 @@
 </head>
 
 <body>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<header class="custom-header">
 
-    <nav>
-        <ul>
-            <li>
-                <a href="/Usuario/Perfil">
-                    <img src="/img/header/perfil.png" alt="perfil">
-                </a>
-            </li>
-            <li>
-                <a href="/Usuario/Noti">
-                    <img src="/img/header/noti.png" alt="notificaciones">
-                </a>
-            </li>
-        </ul>
+</head>
+  <header class="custom-header">
 
-        <div class="menu-icon" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+       
+        <div class="container-fluid">
+
+
+            <!-- Logo -->
+      <img class = "logo-header" src="/img/Home/logoSVG.svg" alt="logo">
+
+            <!-- Botón de Bootstrap para responsive (oculta solo el nav normal, NO EL HAMBURGUESA) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- NAV NORMAL -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-3">
+
+                    <!-- HOME -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Home">Home</a>
+                    </li>
+
+                    <!-- JUEGOS -->
+              <li class="nav-item">
+                        <a class="nav-link" href="/Juego/Index">Juego</a>
+                    </li>
+
+
+                    <!-- GRUPOS -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Comunidades/Grupos">Grupos</a>
+                    </li>
+
+                    <!-- TRÁMITES -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Tramite/">Trámites</a>
+                    </li>
+
+          
+                    <!-- MAPA -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Mapa/Index">Mapa</a>
+                    </li>
+
+                    <!-- NOTICIAS -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Noticias/Noticias">Noticias</a>
+                    </li>
+
+                </ul>
+            </div>
+
+
         </div>
     </nav>
 
-    <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
+    <!-- MENU LATERAL HAMBURGUESA -->
+ 
 
-    <div id="sidebar-menu" class="menu-container sidebar-closed">
-        <div class="menu-header">
-            <button class="back-btn" onclick="toggleMenu()">←</button>
-            <h1>MENÚ</h1>
-        </div>
+<div id="sideMenu" class="side-menu">
 
-        <div class="menu-links">
-            <a href='@Url.Action("Home", "Home")'>Home</a>
-            <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
-            <a href='@Url.Action("Grupos", "Comunidades")'>Grupos</a>
-            <a href='@Url.Action("Index", "Tramite")'>Trámites</a>
-            <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
-            <a href='@Url.Action("Index", "Juego")'>Juegos</a>
-            <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
-        </div>
+    <button id="closeBtn" class="close-menu-btn">←</button>
+
+    <div class="side-menu-links">
+         <a href="/Home/Home">Home</a>
+        <a href="@Url.Action("Index", "Juego")">Juegos</a>
+        <a href="/Comunidades/Grupos">Grupos</a>
+        <a href="/Tramite/">Trámites</a>
+        <a href="/Mapa/Index">Mapa</a>
+        <a href="/Noticias/Noticias">Noticias</a>
+        <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
+        <a href='@Url.Action("Noti", "Usuario")'>Notificaciones</a>
+        <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
+        <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
+
+
     </div>
+    
+
+</div>
+            <!-- BOTÓN HAMBURGUESA PERSONALIZADO (A LA DERECHA SIEMPRE) -->
+            <button class="menu-btn fixed-btn" id="menuBtn">☰</button>
+
+
 
 </header>
 
