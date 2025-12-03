@@ -3015,24 +3015,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\48860067\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Toto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48860067\\Culturi\\PrimerProyecto.csproj",
+      "projectUniqueName": "D:\\Toto Usuario\\Escritorio\\AAA\\Culturi\\PrimerProyecto.csproj",
       "projectName": "PrimerProyecto",
-      "projectPath": "C:\\Users\\48860067\\Culturi\\PrimerProyecto.csproj",
-      "packagesPath": "C:\\Users\\48860067\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48860067\\Culturi\\obj\\",
+      "projectPath": "D:\\Toto Usuario\\Escritorio\\AAA\\Culturi\\PrimerProyecto.csproj",
+      "packagesPath": "C:\\Users\\Toto\\.nuget\\packages\\",
+      "outputPath": "D:\\Toto Usuario\\Escritorio\\AAA\\Culturi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\48860067\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Toto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3107,7 +3102,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

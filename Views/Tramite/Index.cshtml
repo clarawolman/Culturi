@@ -100,7 +100,7 @@
 
 
 
-<h1>Guia de Tramite</h1>
+<h1 class="Tramite-h1">Guia de Tramite</h1>
 @model TramitesVM
 <section>
     <h3>Trámites para vos</h3>
@@ -117,13 +117,12 @@
 
 
 
-                <form asp-action="AgregarTramite" method="post" style="display:inline;">
+                <form asp-action="AgregarTramite" method="post" class="form-agregar" style="display:inline;">
                     <input type="hidden" name="IdTramite" value="@t.IdTramite" />
                     <button type="submit" class="btn-circle btn-help">+</button>
                 </form>
             </div>
             <div class="tooltip-container">
-                <button class="btn-circle btn-help">?</button>
                 <div class="tooltip">
                     @{
                         var primerPaso = t.Pasos?.FirstOrDefault();
@@ -154,7 +153,7 @@
 
 
 
-                <form asp-action="EliminarTramite" method="post" style="display:inline;">
+                <form asp-action="EliminarTramite" method="post" class="form-tramite" style="display:inline;">
                     <input type="hidden" name="id" value="@t.IdTramite" />
                     <button type="submit" class="btn-circle btn-red">✖</button>
                 </form>
