@@ -22,7 +22,7 @@ namespace Culturi.Controllers
         public IActionResult Memotest(int? nivel)
         {
             // Si no hay nivel seleccionado, mostrar pantalla de selección
-            if (nivel == null || nivel < 1 || nivel > 3)
+            if (nivel == null || nivel < 1 || nivel > 2)
             {
                 ViewBag.MostrarSeleccion = true;
                 return View();

@@ -2810,82 +2810,161 @@ color: #7ba7b5 !important;
 display: flex !important;
 align-items: center;
 }
+/* CHATBOT*/
+/* ======================================================
+   ESTILO CHAT — Basado en tu captura EXACTA
+   Fondo blanco · header/footer celestes · burbujas suaves
+   ====================================================== */
 
-/*CHATBOT*/
+/* PALETA */
+:root {
+  --celeste: #58c5c7;    /* Header + Footer */
+  --celesteClaro: #e4ffff;
+  --celesteSuave: #98e6e8;
+  --verdeSuave: #c9f7d7;
+  --grisTexto: #333;
+  --grisBorde: #dcdcdc;
+  --fondo: #ffffff;
+}
+
+/* ================================ 
+ CONTENEDOR GENERAL
+ ================================ */
 .chat-container {
-  flex: 1;
-  margin-top: 65px;    /* deja espacio para el header */
-  margin-bottom: 85px; /* deja espacio para la barra de enviar */
-  padding: 15px;
-  overflow-y: auto;    /* scroll solo acá */
+  min-height: calc(100vh - 150px);
+  background: var(--fondo);
+  padding: 90px 0 110px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
 
-/* === MENSAJE DEL BOT === */
+/* ================================ 
+ MENSAJES
+ ================================ */
+.chat-messages {
+  flex: 1;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+/* Scroll discreto */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--celeste);
+  border-radius: 10px;
+}
+
+/* ================================ 
+ BURBUJAS — Estilo EXACTO
+ ================================ */
+.message-user,
+.message-bot {
+  max-width: 60%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 14px;
+  background: var(--celesteClaro);
+  border: 1px solid var(--grisBorde);
+  color: var(--grisTexto);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+/* BOT */
 .message-bot {
   align-self: flex-start;
-  background-color: #e6f5e6;
-  border: 2px solid #092b00;
-  border-radius: 15px 15px 15px 0;
-  padding: 12px 15px;
-  max-width: 75%;
-  font-size: 15px;
+  background: #ffffff;
 }
 
-/* === MENSAJE DEL USUARIO === */
+/* USER (verde como tu captura) */
 .message-user {
   align-self: flex-end;
-  background-color: #b8dce7;
-  border: 2px solid #003049;
-  border-radius: 15px 15px 0 15px;
-  padding: 12px 15px;
-  max-width: 75%;
-  font-size: 15px;
+  background: var(--verdeSuave);
+  border-color: #b8eccc;
 }
 
-/* === BARRA PARA ENVIAR (FIJA ABAJO) === */
+/* ================================ 
+ INPUT ZONE (barra inferior)
+ ================================ */
 .chat-form {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #4BA6B8;
-  padding: 10px 12px;
+  bottom: 0; left: 0; right: 0;
+
+  background: var(--celeste);
+  padding: 10px 20px;
+
   display: flex;
   align-items: center;
-  gap: 10px;
-  border-top: 2px solid white;
+  gap: 12px;
 }
 
-/* === TEXTAREA === */
+/* TEXTAREA — limpio, sin blur, redondeado */
 .input-message {
   flex: 1;
-  padding: 14px;
-  border-radius: 20px;
-  border: none;
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: 1px solid #fff;
+  background: #ffffff;
+  font-size: 15px;
   resize: none;
   outline: none;
-  font-size: 15px;
-  max-height: 80px; /* evita que se expanda demasiado */
 }
 
-/* === BOTÓN ENVIAR === */
+/* ================================ 
+ BOTÓN ENVIAR — igual a tu captura
+ ================================ */
 .send-btn {
-  padding: 10px 18px;
-  background-color: #003049;
-  color: white;
+  width: 42px;
+  height: 42px;
+
+  background: #ffffff;
   border: none;
-  border-radius: 12px;
+  border-radius: 50%;
   cursor: pointer;
+
+  font-size: 18px;
+  color: var(--celeste);
   font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.15s;
 }
 
 .send-btn:hover {
-  background-color: #001f33;
+  background: var(--celesteClaro);
 }
 
+.send-btn:active {
+  transform: scale(0.92);
+}
+
+/* ICONO */
+.send-btn::before {
+  content: "➤";
+}
+
+/* ================================ 
+ RESPONSIVE
+ ================================ */
+@media (max-width: 600px) {
+  .message-user,
+  .message-bot {
+      max-width: 85%;
+  }
+  .chat-messages {
+      padding: 18px;
+  }
+}
+
+
+/*TERMINA*/
 .barra-progreso {
   height: 8px;
   background-color: #2fa8b5;
@@ -2999,44 +3078,6 @@ align-items: center;
         width: 90px;
         margin: 20px auto 10px auto;
     }
- 
-    /*QUERY CHAT*/
-    @media (min-height: 700px) {
-
-      /* HEADER OCUPA MÁS ALTURA (15% de pantalla) */
-      .chat-header {
-          height: 15vh;     /* << OCUPA MUCHO MÁS ALTO */
-          padding: 0 20px;
-      }
-  
-      .group-icon {
-          width: 55px;
-          height: 55px;
-      }
-  
-      .group-title {
-          font-size: 24px;
-      }
-  
-      /* INPUT OCUPA MÁS ALTURA (12% de pantalla) */
-      .input-area {
-          height: 12vh;     /* << MÁS ALTO ABAJO */
-          padding: 10px;
-          align-items: center;
-      }
-  
-      .input-box {
-          font-size: 17px;
-          padding: 14px 20px;
-          border-radius: 25px;
-      }
-  
-      /* CONTENEDOR CENTRAL AJUSTADO */
-      .chat-container {
-          padding-top: 20px;
-          padding-bottom: 15vh; /* deja espacio según el tamaño real del input */
-      }
-  }
 }
 
 .memotest-container {
@@ -3046,13 +3087,17 @@ align-items: center;
   background: #e0f5f7;
   border-radius: 20px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .memotest-content h2 {
   text-align: center;
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 500;
   color: #003c3c;
+  font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .memotest-content .volver-link {
@@ -3067,7 +3112,6 @@ align-items: center;
 .memotest-content .volver-link:hover {
   opacity: .75;
 }
-
 
 
 /* ============================================
@@ -3246,23 +3290,215 @@ align-items: center;
       width: 80px;
       height: 80px;
   }
-  /* CHAT HEADER – TAMAÑO PARA CELULAR */
-@media (max-width: 480px) {
+  
 
-  .chat-header {
-      height: 110px !important;   /* AUMENTA EL TAMAÑO */
-      padding: 20px !important;   /* MÁS ESPACIO INTERNO */
+}/* ================================================
+   CONTENEDOR GENERAL
+   ================================================ */
+
+.oraciones-container {
+  max-width: 900px;
+  margin: 120px auto 40px auto;   /* margen superior por el header */
+  padding: 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.oraciones-container h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.oraciones-container p {
+  font-size: 17px;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.volver-link {
+  display: inline-block;
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #008b8b;
+  font-size: 18px;
+
+  /* NUEVO → manda el volver a la izquierda */
+  text-align: left;
+  margin-right: auto;
+}
+
+
+.volver-link:hover {
+  opacity: 0.7;
+}
+
+/* ================================================
+ PANTALLA DE NIVELES
+ ================================================ */
+
+.niveles-botones {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.niveles-botones a {
+  background: #51acb8;
+  padding: 14px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.niveles-botones a:hover {
+  background: #3c8e97;
+  transform: scale(1.05);
+}
+
+/* ================================================
+ ORACIONES DEL NIVEL
+ ================================================ */
+
+.oraciones-juego {
+  margin-top: 35px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.oracion {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+/* Hueco donde soltar */
+.dropzone {
+  display: inline-block;
+  min-width: 120px;
+  padding: 4px 8px;
+  margin: 0 4px;
+  border-bottom: 3px solid #555;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.dropzone.correcto {
+  border-color: #2ecc71;
+  background-color: #dfffea;
+}
+
+.dropzone.incorrecto {
+  border-color: #e74c3c;
+  background-color: #ffeaea;
+}
+
+/* ================================================
+ OPCIONES DRAGGABLE
+ ================================================ */
+
+.opciones {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.opcion {
+  padding: 10px 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  cursor: grab;
+  user-select: none;
+  font-size: 18px;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.opcion:hover {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.opcion:active {
+  cursor: grabbing;
+}
+
+/* ================================================
+ MENSAJE DE VICTORIA
+ ================================================ */
+
+.victoria {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.victoria h3 {
+  font-size: 28px;
+  margin-bottom: 18px;
+  color: #228b22;
+  font-weight: bold;
+}
+
+.victoria .btn {
+  display: inline-block;
+  background: #51acb8;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 8px;
+  transition: 0.2s;
+}
+
+.victoria .btn:hover {
+  background: #3c8e97;
+  transform: scale(1.05);
+}
+
+.victoria.hidden {
+  display: none;
+}
+
+/* ================================================
+ RESPONSIVE – MOBILE
+ ================================================ */
+
+@media (max-width: 600px) {
+  .oraciones-container {
+      margin-top: 140px;
+      padding: 15px;
+  }
+
+  .niveles-botones {
+      flex-direction: column;
       align-items: center;
   }
 
-  .group-icon {
-      width: 55px !important;
-      height: 55px !important;
+  .niveles-botones a {
+      width: 80%;
   }
 
-  .group-title {
-      font-size: 22px !important;
+  .oracion {
+      font-size: 18px;
   }
-}
 
+  .opcion {
+      font-size: 16px;
+      padding: 8px 12px;
+  }
+
+  .dropzone {
+      min-width: 90px;
+      font-size: 16px;
+  }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o5KpRNQ+3yLqkw6hdnPuVLEdxWm9hogo5UnfApexvN4=",
+  "Hash": "YoWiUpFbPLYNGPa0SL3FGLUUva+eZ+iF03Yy9f3jqsg=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\48860067\\Culturi\\wwwroot\\css\\memotest.css",
-      "SourceId": "PrimerProyecto",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48860067\\Culturi\\wwwroot\\",
-      "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "css/memotest.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\memotest.css"
-    },
-    {
-      "Identity": "C:\\Users\\48860067\\Culturi\\wwwroot\\css\\oraciones.css",
-      "SourceId": "PrimerProyecto",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\48860067\\Culturi\\wwwroot\\",
-      "BasePath": "_content/PrimerProyecto",
-      "RelativePath": "css/oraciones.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\oraciones.css"
-    },
     {
       "Identity": "C:\\Users\\48860067\\Culturi\\wwwroot\\css\\site.css",
       "SourceId": "PrimerProyecto",

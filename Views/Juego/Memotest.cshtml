@@ -56,7 +56,6 @@
             <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
         </div>
     </div>
-
 </header>
 
 
@@ -76,30 +75,27 @@
                 </p>
             </div>
 
-            <!-- SECCIÓN DE NIVELES -->
-            <div class="niveles-seleccion">
-                <h3>Selecciona un nivel</h3>
+            @{
+                var progreso = ViewBag.Progreso as List<int> ?? new List<int>();
+            }
 
-                <div class="niveles-botones">
+            <div class="niveles-botones">
 
-                    <!-- Nivel 1 → completado -->
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 1 })"
-                       class="btn-nivel completado">
-                        Nivel 1
-                    </a>
+                <!-- NIVEL 1 -->
+                <a href="/Juego/Memotest?nivel=1"
+                   class="btn-nivel @(progreso.Contains(1) ? "completado" : "actual")">
+                    Nivel 1
+                </a>
 
-                    <!-- Nivel 2 → actual -->
-                    <a href="@Url.Action("Memotest", "Juego", new { nivel = 2 })"
-                       class="btn-nivel actual">
-                        Nivel 2
-                    </a>
-
-                    <!-- Nivel 3 → bloqueado -->
-                    <a class="btn-nivel bloqueado">
-                        Nivel 3
-                    </a>
-
-                </div>
+                <!-- NIVEL 2 -->
+                <a href="/Juego/Memotest?nivel=2"
+                   class="btn-nivel @(
+                        progreso.Contains(1)
+                            ? (progreso.Contains(2) ? "completado" : "actual")
+                            : "bloqueado"
+                    )">
+                    Nivel 2
+                </a>
             </div>
         </div>
     </div>
@@ -113,7 +109,6 @@ else
 
             <h2>Memotest - Nivel @nivel</h2>
 
-            <!-- TABLERO DE CARTAS -->
             <div class="memotest-grid">
                 @for (int i = 0; i < cartas.Length; i++)
                 {

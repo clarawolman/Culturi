@@ -1,14 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\css\\memotest.css",
-      "PackagePath": "staticwebassets\\css\\memotest.css"
-    },
-    {
-      "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\css\\oraciones.css",
-      "PackagePath": "staticwebassets\\css\\oraciones.css"
-    },
-    {
       "Id": "C:\\Users\\48860067\\Culturi\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

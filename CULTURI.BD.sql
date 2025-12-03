@@ -473,7 +473,7 @@ BEGIN
 
     SET @idMemotest = SCOPE_IDENTITY();
 END
-DECLARE @Nivel1 INT, @Nivel2 INT, @Nivel3 INT;
+DECLARE @Nivel1 INT, @Nivel2 INT;
 
 -- Nivel 1
 IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1)
@@ -489,18 +489,10 @@ BEGIN
     VALUES (@idMemotest, 2, 'Nivel 2', 'intermedio');
 END
 
--- Nivel 3
-IF NOT EXISTS (SELECT 1 FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3)
-BEGIN
-    INSERT INTO Nivel (id_juego, numero_nivel, descripcion, dificultad)
-    VALUES (@idMemotest, 3, 'Nivel 3', 'avanzado');
-END
-
 -- Obtener los 3 IDs reales
 SELECT 
     @Nivel1 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1),
     @Nivel2 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2),
-    @Nivel3 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 3);
 
 DECLARE @PaisDestino INT = 1; -- Argentina
 -- Nivel 1
