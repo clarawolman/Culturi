@@ -586,15 +586,15 @@ INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
 
 -- 3) ¡Un ___ conocerte!
 INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
-(3, 'camino', 1),
-(3, 'placer', 0),
+(3, 'camino', 0),
+(3, 'placer', 1),
 (3, 'amigo', 0);
 
 -- 4) Tengo 29 ___ 
 INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
-(4, 'hora', 1),
+(4, 'hora', 0),
 (4, 'estudio', 0),
-(4, 'años', 0);
+(4, 'años', 1);
 
 -- 5) Hablo un poco de ___
 INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
@@ -640,8 +640,8 @@ INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
 (10, 'cansado', 1);
 
 INSERT INTO OracionJuego (id_pais, nivel, texto, orden) VALUES
-(1, 3, 'Necesito ___ __ ___ en el trámite', 1),
-(1, 3, 'Mi ____ (mamá) se siente mal', 2),
+(1, 3, 'Necesito ___ en el trámite', 1),
+(1, 3, 'Mi ___ (mamá) se siente mal', 2),
 (1, 3, 'Debo sacar un ___ para hacer este trámite', 3),
 (1, 3, 'Hoy ___ que ir a la oficina de Migraciones', 4),
 (1, 3, 'Debo pagar el ___ antes de la fecha', 5);

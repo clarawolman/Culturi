@@ -39,16 +39,21 @@ namespace Culturi.Controllers
             }
         }
          public IActionResult Noti()
-    {
-        string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
-        if (usuarioJson == null)
-            return RedirectToAction("Login");
+{
+    string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
+    if (usuarioJson == null)
+        return RedirectToAction("Login");
 
-        Usuario usuarioSesion = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
-        Usuario usuario = BD.ObtenerUsuarioPorId(usuarioSesion.IdUsuario);
-        
-        return View(usuario);
-    }
+    Usuario usuarioSesion = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
+    Usuario usuario = BD.ObtenerUsuarioPorId(usuarioSesion.IdUsuario);
+
+    // 🔥 Asegurar foto por defecto si no tiene
+    if (string.IsNullOrEmpty(usuario.FotoPerfil))
+        usuario.FotoPerfil = "PERFILdefault.png";
+
+    return View(usuario);
+}
+
 
 
 
@@ -88,17 +93,19 @@ public IActionResult Registro(
     }
 
     Usuario nuevoUsuario = new Usuario
-    {
-        Nombre = nombre,
-        usuario = nombreUsuarioIngresado,
-        Email = email,
-        Contrasena = contrasena,
-        idiomaPreferencia = idioma,
-        id_paisOrigen = id_paisOrigen,
-        id_paisDestino = id_paisDestino,
-        fechaMigracion = fechaMigracion,
-        fechaNacimiento = fechaNacimiento
-    };
+{
+    Nombre = nombre,
+    usuario = nombreUsuarioIngresado,
+    Email = email,
+    Contrasena = contrasena,
+    idiomaPreferencia = idioma,
+    id_paisOrigen = id_paisOrigen,
+    id_paisDestino = id_paisDestino,
+    fechaMigracion = fechaMigracion,
+    fechaNacimiento = fechaNacimiento,
+    FotoPerfil = "PERFILdefault.png"   // 🔥 FOTO POR DEFECTO
+};
+
 
     BD.AgregarUsuario(nuevoUsuario);
 
@@ -127,7 +134,7 @@ public IActionResult Registro(
 
 
 
-     public IActionResult Perfil()
+ public IActionResult Perfil()
 {
     string usuarioJson = HttpContext.Session.GetString("usuarioLogueado");
     if (usuarioJson == null)
@@ -135,14 +142,19 @@ public IActionResult Registro(
 
     Usuario usuarioSesion = JsonConvert.DeserializeObject<Usuario>(usuarioJson);
 
-    // 🔥 Recuperar el usuario REAL desde la BD (este sí tiene IdUsuario)
+    // 🔥 Recuperar el usuario REAL desde la BD
     Usuario usuario = BD.ObtenerUsuarioPorId(usuarioSesion.IdUsuario);
+
+    // 🔥 Asegurar foto de perfil por defecto
+    if (string.IsNullOrEmpty(usuario.FotoPerfil))
+        usuario.FotoPerfil = "PERFILdefault.png";
 
     ViewBag.PaisOrigen = BD.ObtenerNombrePais(usuario.id_paisOrigen);
     ViewBag.PaisDestino = BD.ObtenerNombrePais(usuario.id_paisDestino);
 
     return View(usuario);
 }
+
 [HttpPost("Usuario/EditarPerfil")]
 public IActionResult EditarPerfilPost([Bind("IdUsuario,Nombre,usuario,Email")] Usuario model, IFormFile FotoPerfil)
 {
@@ -152,7 +164,7 @@ public IActionResult EditarPerfilPost([Bind("IdUsuario,Nombre,usuario,Email")] U
     if (original == null)
         return NotFound();
 
-    // 2️⃣ Actualizar solo los campos que modificó
+    // 2️⃣ Actualizar campos
     original.Nombre = model.Nombre;
     original.usuario = model.usuario;
     original.Email = model.Email;
@@ -174,11 +186,16 @@ public IActionResult EditarPerfilPost([Bind("IdUsuario,Nombre,usuario,Email")] U
         original.FotoPerfil = fileName;
     }
 
+    // 🔥 Si NO tenía foto (y no subió una nueva), asignar default
+    if (string.IsNullOrEmpty(original.FotoPerfil))
+        original.FotoPerfil = "PERFILdefault.png";
+
     // 4️⃣ Guardar cambios finales
     BD.ActualizarUsuario(original);
 
     return RedirectToAction("Perfil");
 }
+
 [HttpGet]
 public IActionResult EditarPerfil(int id)
 {

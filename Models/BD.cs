@@ -5,8 +5,8 @@ namespace Culturi;
 public static class BD
 {
 
-    //private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
-    private static string _connectionString = @"Server=COMPUCLARA\SQLEXPRESS01;Database=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    //private static string _connectionString = @"Server=COMPUCLARA\SQLEXPRESS01;Database=Culturi;Integrated Security=True;TrustServerCertificate=True;";
     public static SqlConnection GetConnection()
     {
         return new SqlConnection(_connectionString);

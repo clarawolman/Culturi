@@ -8,7 +8,7 @@
     int? nivel = ViewBag.Nivel as int?;
 
     var oraciones = ViewBag.Oraciones as List<OracionJuego> ?? new List<OracionJuego>();
-    var opciones = ViewBag.Opciones as List<OracionOpcion> ?? new List<OracionOpcion>();
+    var opciones   = ViewBag.Opciones   as List<OracionOpcion> ?? new List<OracionOpcion>();
 }
 
 <header class="custom-header">
@@ -45,14 +45,13 @@
             <a href="@Url.Action("Home", "Home")">Home</a>
             <a href="@Url.Action("Perfil", "Usuario")">Perfil</a>
             <a href="@Url.Action("Grupos", "Comunidades")">Grupos</a>
-            <a href="@Url.Action("Index", "Tramite")">Tramites</a>
+            <a href="@Url.Action("Index", "Tramite")">Trámites</a>
             <a href="@Url.Action("ChatBot", "ChatBot")">ChatBot</a>
             <a href="@Url.Action("Index", "Juego")">Juegos</a>
             <a href="@Url.Action("CerrarSesion", "Usuario")">Cerrar Sesión</a>
         </div>
     </div>
 </header>
-
 
 @if (mostrarSeleccion)
 {
@@ -81,8 +80,14 @@ else
         <div class="oraciones-juego">
             @foreach (var o in oraciones)
             {
+                // Reemplaza EXACTAMENTE "___" por un span dropzone
+                var textoProcesado = (o.texto ?? "").Replace(
+                    "___",
+                    "<span class=\"dropzone\"></span>"
+                );
+
                 <div class="oracion" data-id="@o.id_oracion">
-                    @Html.Raw(o.texto.Replace("___", "<span class='dropzone'></span>"))
+                    @Html.Raw(textoProcesado)
                 </div>
             }
         </div>
@@ -91,10 +96,10 @@ else
             @foreach (var op in opciones.OrderBy(x => Guid.NewGuid()))
             {
                 <div class="opcion"
-                     draggable="true"
-                     data-op="@op.id_opcion"
-                     data-oracion="@op.id_oracion"
-                     data-correcta="@op.es_correcta">
+                    draggable="true"
+                    data-op="@op.id_opcion"
+                    data-oracion="@op.id_oracion"
+                    data-correcta="@op.es_correcta.ToString().ToLower()">
                     @op.texto
                 </div>
             }
@@ -114,6 +119,7 @@ else
 }
 
 <link rel="stylesheet" href="/css/oraciones.css" />
+
 @section Scripts {
     <script src="/js/oraciones.js"></script>
-}   
+}
