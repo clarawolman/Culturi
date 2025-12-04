@@ -3565,53 +3565,28 @@ form button.btn-red {
    ======================= */
 @media (max-width: 768px) {
 
-    /* Buscador más ancho en móvil */
-    .search-box {
-        width: 90%;
-        font-size: 14px;
-        padding: 10px 12px;
-    }
-
     /* Tarjetas más chicas y compactas en móvil */
     .tramite-card {
         width: 90%;
         padding: 10px 12px;
-        flex-direction: column;
-        align-items: flex-start;
+
+        /* 🔥 IMPORTANTE: mantenerlo en fila */
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
         gap: 10px;
     }
 
     .tramite-info {
-        width: 100%;
+        flex: 1;
         gap: 10px;
     }
 
-    /* Texto más chico */
-    .tramite-info span,
-    .tramite-info h6 {
-        font-size: 14px;
-        text-decoration: none; 
-    }
-
-    /* Barra de progreso más angosta para que no rompa el layout */
-    .tramite-progress {
-        width: 100px;
-        height: 8px;
-        margin-right: 20%;
-    }
-
-    .btn-circle,
+    /* Botón de ayuda siempre a la derecha */
     .btn-help {
-        width: 26px !important;
-        height: 26px !important;
-        font-size: 14px !important;
-    }
-
-    /* Tooltip más pequeño */
-    .tooltip {
-        width: 160px;
-        right: 0;
-        font-size: 12px;
+        margin-left: auto;
     }
 }
 
