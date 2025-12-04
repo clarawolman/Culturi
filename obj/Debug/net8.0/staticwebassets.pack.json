@@ -289,6 +289,18 @@
       "PackagePath": "staticwebassets\\img\\perfiles\\PERFILdefault.png"
     },
     {
+      "Id": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\perfiles\\Paisaje2.jpg",
+      "PackagePath": "staticwebassets\\img\\perfiles\\Paisaje2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\perfiles\\Paisaje3.jpg",
+      "PackagePath": "staticwebassets\\img\\perfiles\\Paisaje3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\perfiles\\Paisaje4.jpg",
+      "PackagePath": "staticwebassets\\img\\perfiles\\Paisaje4.jpg"
+    },
+    {
       "Id": "C:\\Users\\49359853\\Culturi\\wwwroot\\img\\redes\\X.png",
       "PackagePath": "staticwebassets\\img\\redes\\X.png"
     },

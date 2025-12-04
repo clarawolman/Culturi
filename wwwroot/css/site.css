@@ -726,41 +726,82 @@ html, body {
 
 
 /* Icono de menú (las tres rayas) */
+/* Estilos base para el ícono hamburguesa */
 .menu-icon {
-  display: flex;
+  display: none; /* oculto en desktop */
+  width: 40px;
+  height: 40px;
   flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
+  justify-content: center;
+  gap: 5px;
   cursor: pointer;
 }
 
+.menu-icon span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: black;
+  border-radius: 3px;
+}
+
+/* EN MOBILE: mostrar icono y mantenerlo DENTRO del header */
+@media (max-width: 768px) {
+
+  /* Header como fila */
+  .custom-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      height: 70px;
+  }
+
+  /* Mostrar hamburguesa en mobile */
+  .menu-icon {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 99999; /* PARA QUE NO QUEDE DETRÁS DE NADA */
+}
 
 .menu-icon span {
-  height: 3px;
-  background-color: black;
-  border-radius: 2px;
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: white !important;  /* AHORA SE VE */
+    border-radius: 3px;
 }
-/* 📱 FORZAR QUE EL MENÚ HAMBURGUESA SE VEA EN MODO MOBILE */
-@media (max-width: 768px) {
-    .menu-icon {
-        display: flex !important;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 9999 !important;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-    }
 
-    .menu-icon span {
-        background: black;
-        height: 3px;
-        width: 28px;
-        border-radius: 4px;
-    }
+
+  /* Título y subtítulo en una sola línea */
+  .header-center {
+      display: flex;
+      flex-direction: column; /* mantiene culturi arriba, quienes somos abajo */
+      text-align: right; /* para que quede alineado al menú */
+      margin-left: auto;
+  }
+
+  .header-center h1 {
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+  }
+
+  .header-center h2 {
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      margin-top: -2px;
+  }
 }
+
+
 
 
 
@@ -1047,29 +1088,7 @@ menu-overlay.active {
 }
 
 
-/*BOTÓN HAMBURGUESA*/
-.menu-icon {
-  position: fixed;
-  top: 12px;
-  right: 12px;   /* ✔️ LO MUEVE A LA DERECHA */
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 8px;
-  z-index: 2000;
-  background: transparent;
-}
 
-
-
-.menu-icon span {
-  width: 28px;
-  height: 3px;
-  background: #000;
-  border-radius: 3px;
-  display: block;
-}
 
 
 /*Para que no bloquee clicks cuando está cerrado*/
@@ -2245,7 +2264,7 @@ input[asp-for]:focus {
   }
 
   .opcionesHome img {
-      width: 55px;
+      width: 70px;
       margin-bottom: 5px;
   }
 
@@ -2259,7 +2278,8 @@ input[asp-for]:focus {
   margin: 25px auto 0 auto;
   position: relative;
   border-radius: 14px;
-  overflow: hidden; /* evita que el texto salga afuera */
+  overflow: hidden;
+  margin-bottom: 4%; /* evita que el texto salga afuera */
 }
 
 .NoticiasHome img {
@@ -2837,53 +2857,107 @@ align-items: center;
 
 @media (max-width: 768px) {
 
-    .chat-container {
-        height: calc(100vh - 70px) !important;
-        width: 100% !important;
-    }
+  /* CONTENEDOR DEL CHAT */
+  .chat-container {
+      width: 100%;
+      max-width: 100%;
+      padding: 0 12px;
+      margin: 0 auto;
 
-    .chat-messages {
-        padding: 15px 20px !important;
-        gap: 18px !important;
-    }
+      display: flex;
+      flex-direction: column;
 
-    .message-user,
-    .message-bot {
-        max-width: 100% !important;
-        font-size: 14px !important;
-        padding: 10px 14px !important;
-    }
+      /* Altura exacta entre header y formulario */
+      height: calc(100vh - 150px);
+      overflow-y: auto;
+      box-sizing: border-box;
+  }
 
-    .chat-form {
-        width: 100% !important;
-        padding: 10px 15px !important;
-        display: flex !important;
-        gap: 10px !important;
-    }
+  /* LISTA DE MENSAJES */
+  .chat-messages {
+      padding: 12px 5px;
+      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 100%;
+      box-sizing: border-box;
+  }
 
-    .input-wrapper {
-        flex: 1 !important;
-        width: 100% !important;
-    }
+  /* BURBUJAS */
+  .message-user,
+  .message-bot {
+      max-width: 85%;
+      padding: 10px 14px;
+      font-size: 15px;
+      line-height: 1.35;
+      box-sizing: border-box;
+  }
 
-    .input-message {
-        width: 100% !important;
-        height: 40px !important;
-        padding: 10px 14px !important;
-        font-size: 14px !important;
-    }
+  .message-user {
+      align-self: flex-end;
+  }
 
-    .form-buttons {
-        gap: 10px !important;
-        font-size: 20px !important;
-    }
+  .message-bot {
+      align-self: flex-start;
+  }
 
-    .send-btn {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 18px !important;
-    }
+  /* FORMULARIO (INPUT + BOTONES) */
+  .chat-form {
+      width: 100%;
+      padding: 10px 12px;
+
+      position: fixed;
+      bottom: 0;
+      left: 0;
+
+      background: #2bb9a9;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      box-sizing: border-box;
+  }
+
+  /* INPUT */
+  .input-wrapper {
+      flex: 1;
+      width: 100%;
+  }
+
+  .input-message {
+      width: 100%;
+      height: 40px;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-size: 15px;
+      box-sizing: border-box;
+      resize: none;
+  }
+
+  /* ICONOS Y BOTÓN DE ENVIAR */
+  .form-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+  .icon-btn {
+      font-size: 20px;
+  }
+
+  .send-btn {
+      width: 38px;
+      height: 38px;
+      font-size: 18px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
 }
+
+
 
 
 
@@ -3475,6 +3549,7 @@ align-items: center;
     font-size: 16px;
     color: #333;
     font-weight: 600;
+    text-decoration: none;
 }
 .btn-circle {
     width: 28px;
@@ -3625,5 +3700,7 @@ margin-right: 10%;
 .volver-link2:hover {
   opacity: 0.7;
 }
+
+
 
 
