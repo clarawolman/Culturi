@@ -4,10 +4,10 @@
     let bloqueado = false;
 
     const cartas = document.querySelectorAll(".carta");
-    if (cartas.length === 0) return; // por si el script se carga en otra view
+    if (cartas.length === 0) return;
 
     const totalCartas = cartas.length;
-    let parejasEncontradas = 0; // cada vez que acierta un par sumamos 1
+    let parejasEncontradas = 0;
 
     const urlParams = new URLSearchParams(window.location.search);
     const nivelActual = parseInt(urlParams.get("nivel") || "1", 10);
@@ -23,33 +23,31 @@
 
         if (nivelActual === 1) {
             cartel.innerHTML = `
-                <h2>¡Muy bien!</h2>
-                <p>Completaste el nivel 1</p>
+                <h2>¡Nivel completado!</h2>
                 <a href="/Juego/Memotest?nivel=2" class="btn-victoria">Siguiente nivel</a>
-                <a href="/Juego/Memotest" class="btn-victoria-secundario">Volver a niveles</a>`;
+                <a href="/Juego/Memotest" class="btn-victoria-secundario">Volver a niveles</a>
+            `;
         } else {
             cartel.innerHTML = `
                 <h2>¡Felicitaciones!</h2>
-                <p>Completaste todos los niveles</p>
-                <a href="/Juego/Memotest" class="btn-victoria">Volver a jugar</a>
-                <a href="/Juego/Index" class="btn-victoria-secundario">Ir a Juegos</a>`;
+                <p>Completaste todos los niveles.</p>
+                <a href="/Juego/Memotest" class="btn-victoria">Volver a niveles</a>
+                <a href="/Juego/Index" class="btn-victoria-secundario">Ir a Juegos</a>
+            `;
         }
 
         overlay.appendChild(cartel);
         document.body.appendChild(overlay);
 
-        // animación
         setTimeout(() => overlay.classList.add("visible"), 20);
     }
 
     function verificarVictoria() {
-        // Cada pareja are 2 cartas, por eso parejasEncontradas * 2
         if (parejasEncontradas * 2 === totalCartas && totalCartas > 0) {
             mostrarCartelVictoria();
         }
     }
 
-    // Por si ya hay cartas marcadas como encontradas al entrar (no es tu caso, pero queda prolijo)
     parejasEncontradas = document.querySelectorAll(".carta.encontrada").length / 2;
     verificarVictoria();
 
@@ -85,12 +83,12 @@
                             c1.classList.add("encontrada");
                             c2.classList.add("encontrada");
 
-                            parejasEncontradas++;        // ✅ sumamos una pareja
+                            parejasEncontradas++;
                             primera = null;
                             segunda = null;
                             bloqueado = false;
 
-                            verificarVictoria();          // ✅ chequeamos si ya ganó
+                            verificarVictoria();
                         } else {
                             setTimeout(() => {
                                 c1.classList.remove("volteada");

@@ -325,83 +325,7 @@ SET IDENTITY_INSERT [dbo].[Usuario] OFF
 GO
 SET ANSI_PADDING ON
 GO
-/****** Object:  Index [UQ__Usuario__AB6E61643C473938]    Script Date: 1/12/2025 08:29:19 ******/
-ALTER TABLE [dbo].[Usuario] ADD  CONSTRAINT [UQ__Usuario__AB6E61643C473938] UNIQUE NONCLUSTERED 
-(
-	[email] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-ALTER TABLE [dbo].[ChatPrivado] ADD  DEFAULT (getdate()) FOR [fecha_creacion]
-GO
-ALTER TABLE [dbo].[MensajeChatPrivado] ADD  DEFAULT (getdate()) FOR [fecha_envio]
-GO
-ALTER TABLE [dbo].[Mensajes] ADD  DEFAULT (getdate()) FOR [fecha_envio]
-GO
-ALTER TABLE [dbo].[PasoDelTramite] ADD  DEFAULT ((0)) FOR [completado]
-GO
-ALTER TABLE [dbo].[ProgresoTramites] ADD  DEFAULT (getdate()) FOR [fecha_actualizacion]
-GO
-ALTER TABLE [dbo].[Usuario] ADD  CONSTRAINT [DF__Usuario__fecha_r__5535A963]  DEFAULT (getdate()) FOR [fechaNacimiento]
-GO
-ALTER TABLE [dbo].[UsuarioXGrupo] ADD  DEFAULT (getdate()) FOR [fecha_union]
-GO
-ALTER TABLE [dbo].[Grupo]  WITH CHECK ADD  CONSTRAINT [FK__Grupo__id_pais__571DF1D5] FOREIGN KEY([id_pais])
-REFERENCES [dbo].[Pais] ([id_pais])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[Grupo] CHECK CONSTRAINT [FK__Grupo__id_pais__571DF1D5]
-GO
-ALTER TABLE [dbo].[MensajeChatPrivado]  WITH CHECK ADD  CONSTRAINT [FK__MensajeCh__id_ch__5812160E] FOREIGN KEY([id_chat])
-REFERENCES [dbo].[ChatPrivado] ([id_chat])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[MensajeChatPrivado] CHECK CONSTRAINT [FK__MensajeCh__id_ch__5812160E]
-GO
-ALTER TABLE [dbo].[Mensajes]  WITH CHECK ADD  CONSTRAINT [FK__Mensajes__id_usu__59FA5E80] FOREIGN KEY([id_usuario])
-REFERENCES [dbo].[Usuario] ([id_usuario])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[Mensajes] CHECK CONSTRAINT [FK__Mensajes__id_usu__59FA5E80]
-GO
-ALTER TABLE [dbo].[PasoDelTramite]  WITH CHECK ADD  CONSTRAINT [FK_PasoDelTramite_Tramite] FOREIGN KEY([id_tramite])
-REFERENCES [dbo].[Tramite] ([id_tramite])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[PasoDelTramite] CHECK CONSTRAINT [FK_PasoDelTramite_Tramite]
-GO
-ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD  CONSTRAINT [FK_ProgresoTramites_Tramite] FOREIGN KEY([id_tramite])
-REFERENCES [dbo].[Tramite] ([id_tramite])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[ProgresoTramites] CHECK CONSTRAINT [FK_ProgresoTramites_Tramite]
-GO
-ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD  CONSTRAINT [FK_ProgresoTramites_Usuario] FOREIGN KEY([id_usuario])
-REFERENCES [dbo].[Usuario] ([id_usuario])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[ProgresoTramites] CHECK CONSTRAINT [FK_ProgresoTramites_Usuario]
-GO
-ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD  CONSTRAINT [FK__UsuarioXG__id_gr__60A75C0F] FOREIGN KEY([id_grupo])
-REFERENCES [dbo].[Grupo] ([id_grupo])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[UsuarioXGrupo] CHECK CONSTRAINT [FK__UsuarioXG__id_gr__60A75C0F]
-GO
-ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD  CONSTRAINT [FK__UsuarioXG__id_us__619B8048] FOREIGN KEY([id_usuario])
-REFERENCES [dbo].[Usuario] ([id_usuario])
-ON DELETE CASCADE
-GO
-ALTER TABLE [dbo].[UsuarioXGrupo] CHECK CONSTRAINT [FK__UsuarioXG__id_us__619B8048]
-GO
-ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD CHECK  (([estado]='completado' OR [estado]='en proceso' OR [estado]='pendiente'))
-GO
-ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD CHECK  (([rol]='moderador' OR [rol]='miembro' OR [rol]='admin'))
-GO
-USE [master]
-GO
-ALTER DATABASE [Culturi] SET  READ_WRITE 
 
---- CAMBIOS CLARA 28/11
 USE [Culturi]
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE name = 'Juego')
 BEGIN
@@ -492,7 +416,7 @@ END
 -- Obtener los 3 IDs reales
 SELECT 
     @Nivel1 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 1),
-    @Nivel2 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2),
+    @Nivel2 = (SELECT id_nivel FROM Nivel WHERE id_juego = @idMemotest AND numero_nivel = 2)
 
 DECLARE @PaisDestino INT = 1; -- Argentina
 -- Nivel 1
@@ -667,3 +591,79 @@ INSERT INTO OracionOpcion (id_oracion, texto, es_correcta) VALUES
 (15, 'impuesto', 1),
 (15, 'tango', 0),
 (15, 'empanada', 0);
+
+/****** Object:  Index [UQ__Usuario__AB6E61643C473938]    Script Date: 1/12/2025 08:29:19 ******/
+ALTER TABLE [dbo].[Usuario] ADD  CONSTRAINT [UQ__Usuario__AB6E61643C473938] UNIQUE NONCLUSTERED 
+(
+	[email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+ALTER TABLE [dbo].[ChatPrivado] ADD  DEFAULT (getdate()) FOR [fecha_creacion]
+GO
+ALTER TABLE [dbo].[MensajeChatPrivado] ADD  DEFAULT (getdate()) FOR [fecha_envio]
+GO
+ALTER TABLE [dbo].[Mensajes] ADD  DEFAULT (getdate()) FOR [fecha_envio]
+GO
+ALTER TABLE [dbo].[PasoDelTramite] ADD  DEFAULT ((0)) FOR [completado]
+GO
+ALTER TABLE [dbo].[ProgresoTramites] ADD  DEFAULT (getdate()) FOR [fecha_actualizacion]
+GO
+ALTER TABLE [dbo].[Usuario] ADD  CONSTRAINT [DF__Usuario__fecha_r__5535A963]  DEFAULT (getdate()) FOR [fechaNacimiento]
+GO
+ALTER TABLE [dbo].[UsuarioXGrupo] ADD  DEFAULT (getdate()) FOR [fecha_union]
+GO
+ALTER TABLE [dbo].[Grupo]  WITH CHECK ADD  CONSTRAINT [FK__Grupo__id_pais__571DF1D5] FOREIGN KEY([id_pais])
+REFERENCES [dbo].[Pais] ([id_pais])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Grupo] CHECK CONSTRAINT [FK__Grupo__id_pais__571DF1D5]
+GO
+ALTER TABLE [dbo].[MensajeChatPrivado]  WITH CHECK ADD  CONSTRAINT [FK__MensajeCh__id_ch__5812160E] FOREIGN KEY([id_chat])
+REFERENCES [dbo].[ChatPrivado] ([id_chat])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[MensajeChatPrivado] CHECK CONSTRAINT [FK__MensajeCh__id_ch__5812160E]
+GO
+ALTER TABLE [dbo].[Mensajes]  WITH CHECK ADD  CONSTRAINT [FK__Mensajes__id_usu__59FA5E80] FOREIGN KEY([id_usuario])
+REFERENCES [dbo].[Usuario] ([id_usuario])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[Mensajes] CHECK CONSTRAINT [FK__Mensajes__id_usu__59FA5E80]
+GO
+ALTER TABLE [dbo].[PasoDelTramite]  WITH CHECK ADD  CONSTRAINT [FK_PasoDelTramite_Tramite] FOREIGN KEY([id_tramite])
+REFERENCES [dbo].[Tramite] ([id_tramite])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[PasoDelTramite] CHECK CONSTRAINT [FK_PasoDelTramite_Tramite]
+GO
+ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD  CONSTRAINT [FK_ProgresoTramites_Tramite] FOREIGN KEY([id_tramite])
+REFERENCES [dbo].[Tramite] ([id_tramite])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[ProgresoTramites] CHECK CONSTRAINT [FK_ProgresoTramites_Tramite]
+GO
+ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD  CONSTRAINT [FK_ProgresoTramites_Usuario] FOREIGN KEY([id_usuario])
+REFERENCES [dbo].[Usuario] ([id_usuario])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[ProgresoTramites] CHECK CONSTRAINT [FK_ProgresoTramites_Usuario]
+GO
+ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD  CONSTRAINT [FK__UsuarioXG__id_gr__60A75C0F] FOREIGN KEY([id_grupo])
+REFERENCES [dbo].[Grupo] ([id_grupo])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UsuarioXGrupo] CHECK CONSTRAINT [FK__UsuarioXG__id_gr__60A75C0F]
+GO
+ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD  CONSTRAINT [FK__UsuarioXG__id_us__619B8048] FOREIGN KEY([id_usuario])
+REFERENCES [dbo].[Usuario] ([id_usuario])
+ON DELETE CASCADE
+GO
+ALTER TABLE [dbo].[UsuarioXGrupo] CHECK CONSTRAINT [FK__UsuarioXG__id_us__619B8048]
+GO
+ALTER TABLE [dbo].[ProgresoTramites]  WITH CHECK ADD CHECK  (([estado]='completado' OR [estado]='en proceso' OR [estado]='pendiente'))
+GO
+ALTER TABLE [dbo].[UsuarioXGrupo]  WITH CHECK ADD CHECK  (([rol]='moderador' OR [rol]='miembro' OR [rol]='admin'))
+GO
+USE [master]
+GO
+ALTER DATABASE [Culturi] SET  READ_WRITE 

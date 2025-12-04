@@ -2781,7 +2781,9 @@ align-items: center;
     box-sizing: border-box;
     height: 180px;
     max-width: 100%;
-    margin: 0
+    margin: 0;
+    position:fixed;
+    margin-top: 33%;
 }
 
 /* El wrapper se estira todo lo que queda */
@@ -2939,7 +2941,7 @@ align-items: center;
 
   position: absolute !important;
   top: 15px !important;
-  right: 15px !important;
+  left: 15px !important;
 
   z-index: 99999 !important; /* queda arriba de TODO */
 }
@@ -3015,10 +3017,14 @@ align-items: center;
 .memotest-content h2 {
   text-align: center;
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 700;
   color: #003c3c;
   font-family: Arial, Helvetica, sans-serif;
 
+}
+.instrucciones h3 {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .memotest-content .volver-link {
@@ -3589,6 +3595,35 @@ form button.btn-red {
     .btn-help {
         margin-left: auto;
     }
+}
+
+/*VOLVER*/
+.volver-link2{
+display: inline-block;
+margin-bottom: 12px;
+text-decoration: none;
+color: #007b83;
+font-size: 25px;
+font-weight: 900;
+margin-right: 10%;
+}
+
+.volver-link2:hover {
+  opacity: .75;
+}
+
+.volver-link2 {
+  display: inline-block;
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #008b8b;
+  font-size: 18px;
+  margin-right: 20%;
+}
+
+.volver-link2:hover {
+  opacity: 0.7;
 }
 
 

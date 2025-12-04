@@ -76,27 +76,15 @@
             </div>
 
             @{
-                var progreso = ViewBag.Progreso as List<int> ?? new List<int>();
-            }
+                List<int> prog = ViewBag.Progreso as List<int> ?? new List<int>();
+                int nivelesTotales = 3;
+            }   
 
             <div class="niveles-botones">
-
-                <!-- NIVEL 1 -->
-                <a href="/Juego/Memotest?nivel=1"
-                   class="btn-nivel @(progreso.Contains(1) ? "completado" : "actual")">
-                    Nivel 1
-                </a>
-
-                <!-- NIVEL 2 -->
-                <a href="/Juego/Memotest?nivel=2"
-                   class="btn-nivel @(
-                        progreso.Contains(1)
-                            ? (progreso.Contains(2) ? "completado" : "actual")
-                            : "bloqueado"
-                    )">
-                    Nivel 2
-                </a>
+                <a href="/Juego/Memotest?nivel=1" class="btn-nivel">Nivel 1</a>
+                <a href="/Juego/Memotest?nivel=2" class="btn-nivel">Nivel 2</a>
             </div>
+
         </div>
     </div>
 }

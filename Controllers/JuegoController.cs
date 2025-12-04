@@ -21,28 +21,32 @@ namespace Culturi.Controllers
 
         public IActionResult Memotest(int? nivel)
         {
-            // Si no hay nivel seleccionado, mostrar pantalla de selección
-            if (nivel == null || nivel < 1 || nivel > 2)
+            // obtener usuario
+            var usuario = BD.ObtenerUsuarioPorSession(HttpContext);
+            if (usuario == null) 
+                return RedirectToAction("Login", "Usuario");
+            
+            // Mostrar pantalla de selección si no eligen nivel
+            if (!nivel.HasValue || nivel < 1 || nivel > 2)
             {
                 ViewBag.MostrarSeleccion = true;
                 return View();
             }
 
-            ViewBag.Nivel = nivel.Value;
             ViewBag.MostrarSeleccion = false;
+            ViewBag.Nivel = nivel.Value;
 
-            // Generar lista de cartas según el nivel (n1, n2, n3)
+            // Generar cartas
             var cartas = new List<string>();
             string prefijo = $"n{nivel}_p";
 
-            // Por ahora solo tenemos nivel 1, pero la estructura será igual para n2 y n3
             for (int i = 1; i <= 8; i++)
             {
                 cartas.Add($"{prefijo}{i}a.png");
                 cartas.Add($"{prefijo}{i}b.png");
             }
 
-            // Mezclamos solo la primera vez o si cambió el nivel
+            // Mezcla
             string nivelSesion = HttpContext.Session.GetString("NivelMemotest");
             if (nivelSesion != nivel.Value.ToString() || HttpContext.Session.GetString("CartasMezcladas") == null)
             {
@@ -56,6 +60,7 @@ namespace Culturi.Controllers
 
             return View();
         }
+
 
         private bool SonPareja(string carta1, string carta2)
         {
@@ -155,6 +160,5 @@ namespace Culturi.Controllers
 
             return View("Oraciones");
         }
-
     }
 }
