@@ -3015,19 +3015,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ramir\\.nuget\\packages\\": {}
+    "C:\\Users\\Toto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\PrimerProyecto.csproj",
+      "projectUniqueName": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\PrimerProyecto.csproj",
       "projectName": "PrimerProyecto",
-      "projectPath": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\PrimerProyecto.csproj",
-      "packagesPath": "C:\\Users\\Ramir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\obj\\",
+      "projectPath": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\PrimerProyecto.csproj",
+      "packagesPath": "C:\\Users\\Toto\\.nuget\\packages\\",
+      "outputPath": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ramir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Toto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3102,7 +3102,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

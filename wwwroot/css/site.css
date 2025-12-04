@@ -1,6 +1,6 @@
 * {
   font-style: none;
-  text-decoration: none;
+  text-decoration: none; 
 }
 @font-face {
   font-family: 'BagelFat';
@@ -2731,9 +2731,7 @@ align-items: center;
 /* ======================================================
    CHATBOT MODERNO
    ====================================================== */
-/* ============================= */
-/*        CONTENEDOR GENERAL     */
-/* ============================= */
+
 .chat-container {
     width: 100%;
     height: 100vh;
@@ -2741,11 +2739,6 @@ align-items: center;
     flex-direction: column;
     background: #f7f9fc;
 }
-
-/* ============================= */
-/*        ÁREA DE MENSAJES       */
-/* ============================= */
-/* Centrado y con los márgenes amplios como en tu screenshot */
 .chat-messages {
     flex: 1;
     padding: 40px 80px; 
@@ -2754,10 +2747,6 @@ align-items: center;
     flex-direction: column;
     gap: 30px;
 }
-
-/* ============================= */
-/*       BURBUJAS DE CHAT        */
-/* ============================= */
 
 /* Usuario → derecha, pero sin pegarse al borde */
 .message-user {
@@ -2781,10 +2770,6 @@ align-items: center;
     font-size: 15px;
 }
 
-/* ============================= */
-/*      FORMULARIO INFERIOR      */
-/* ============================= */
-
 /* Ahora SÍ ocupa TODO el ancho real */
 .chat-form {
     width: 100%;
@@ -2793,6 +2778,9 @@ align-items: center;
     align-items: center;
     gap: 20px;
     box-sizing: border-box;
+    height: 180px;
+    max-width: 100%;
+    margin: 0
 }
 
 /* El wrapper se estira todo lo que queda */
@@ -2813,10 +2801,6 @@ align-items: center;
     resize: none;
     box-sizing: border-box;
 }
-
-/* ============================= */
-/*        ICONOS DERECHA         */
-/* ============================= */
 .form-buttons {
     display: flex;
     align-items: center;
@@ -2834,10 +2818,6 @@ align-items: center;
 .icon-btn:hover {
     opacity: 1;
 }
-
-/* ============================= */
-/*         BOTÓN ENVIAR          */
-/* ============================= */
 .send-btn {
     background: white;
     color: #31a7a4;
@@ -2851,9 +2831,6 @@ align-items: center;
     align-items: center;
     justify-content: center;
 }
-/* ============================= */
-/*     MEDIA QUERY RESPONSIVE    */
-/* ============================= */
 
 @media (max-width: 768px) {
 
@@ -3480,6 +3457,11 @@ align-items: center;
     gap: 12px;
 }
 
+.tremite-info a
+{
+  text-decoration: none !important;
+}
+
 .tramite-info span,
 .tramite-info h6 {
     margin: 0;
@@ -3608,6 +3590,7 @@ form button.btn-red {
     .tramite-info span,
     .tramite-info h6 {
         font-size: 14px;
+        text-decoration: none; 
     }
 
     /* Barra de progreso más angosta para que no rompa el layout */

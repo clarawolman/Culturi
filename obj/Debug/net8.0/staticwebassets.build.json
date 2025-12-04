@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5TN/pVTUXRhHiWJtM3mm8GFfdjZyPT9mXSpZVKVHFKc=",
+  "Hash": "NXwKqlbKSdN1Lwbz/eUq4vRHvp0fI4gN46odAJGXmno=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "PrimerProyecto\\wwwroot",
       "Source": "PrimerProyecto",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\css\\site.css",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\css\\site.css",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\favicon.ico",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\favicon.ico",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\fonts\\BagelFatOne-Regular.ttf",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\fonts\\BagelFatOne-Regular.ttf",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "fonts/BagelFatOne-Regular.ttf",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\BagelFatOne-Regular.ttf"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\grupoIcon.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\grupoIcon.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/grupoIcon.png",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\img\\grupoIcon.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\header\\Boton menu.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\header\\Boton menu.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/header/Boton menu.png",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\img\\header\\Boton menu.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\header\\noti.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\header\\noti.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/header/noti.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\img\\header\\noti.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\ChatBot.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\ChatBot.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/ChatBot.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\ChatBot.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\FOTONOTICIA.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\FOTONOTICIA.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/FOTONOTICIA.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\FOTONOTICIA.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\grupos.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\grupos.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/grupos.png",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\grupos.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\juegos.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\juegos.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/juegos.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\juegos.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\logoSVG.svg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\logoSVG.svg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/logoSVG.svg",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\logoSVG.svg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\Mapa.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/Mapa.png",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\Mapa.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\noti.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\noti.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/noti.png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\noti.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Home\\noticiass.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Home\\noticiass.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Home/noticiass.png",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Home\\noticiass.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\juego\\cabeza.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\juego\\cabeza.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/cabeza.png",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\cabeza.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\juego\\idioma2.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\juego\\idioma2.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/idioma2.png",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\idioma2.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\juego\\libroConLetras.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\juego\\libroConLetras.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/libroConLetras.png",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\libroConLetras.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\juego\\planeta.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\juego\\planeta.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/planeta.png",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\planeta.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\juego\\salaEscape.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\juego\\salaEscape.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/salaEscape.png",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\salaEscape.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\juego\\Valija.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\juego\\Valija.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/juego/Valija.png",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\img\\juego\\Valija.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Landing\\Comunidad.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Landing\\Comunidad.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/Comunidad.png",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\Comunidad.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Landing\\fotogrupo.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/fotogrupo.png",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\fotogrupo.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Landing\\Gratuita.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Landing\\Gratuita.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/Gratuita.png",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\Gratuita.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Landing\\IA.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Landing\\IA.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/IA.png",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\IA.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Landing\\Juegos.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Landing\\Juegos.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/Juegos.png",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\Juegos.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Landing\\Personalizada.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Landing\\Personalizada.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/Personalizada.png",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\Personalizada.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Landing\\Tramites.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Landing\\Tramites.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Landing/Tramites.png",
       "AssetKind": "All",
@@ -530,10 +530,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Landing\\Tramites.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\dorso.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\dorso.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/dorso.png",
       "AssetKind": "All",
@@ -549,10 +549,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\dorso.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p1a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p1a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p1a.png",
       "AssetKind": "All",
@@ -568,10 +568,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p1a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p1b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p1b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p1b.png",
       "AssetKind": "All",
@@ -587,10 +587,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p1b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p2a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p2a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p2a.png",
       "AssetKind": "All",
@@ -606,10 +606,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p2a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p2b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p2b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p2b.png",
       "AssetKind": "All",
@@ -625,10 +625,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p2b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p3a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p3a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p3a.png",
       "AssetKind": "All",
@@ -644,10 +644,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p3a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p3b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p3b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p3b.png",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p3b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p4a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p4a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p4a.png",
       "AssetKind": "All",
@@ -682,10 +682,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p4a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p4b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p4b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p4b.png",
       "AssetKind": "All",
@@ -701,10 +701,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p4b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p5a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p5a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p5a.png",
       "AssetKind": "All",
@@ -720,10 +720,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p5a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p5b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p5b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p5b.png",
       "AssetKind": "All",
@@ -739,10 +739,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p5b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p6a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p6a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p6a.png",
       "AssetKind": "All",
@@ -758,10 +758,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p6a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p6b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p6b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p6b.png",
       "AssetKind": "All",
@@ -777,10 +777,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p6b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p7a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p7a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p7a.png",
       "AssetKind": "All",
@@ -796,10 +796,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p7a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p7b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p7b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p7b.png",
       "AssetKind": "All",
@@ -815,10 +815,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p7b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p8a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p8a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p8a.png",
       "AssetKind": "All",
@@ -834,10 +834,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p8a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n1_p8b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n1_p8b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n1_p8b.png",
       "AssetKind": "All",
@@ -853,10 +853,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n1_p8b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p1a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p1a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p1a.png",
       "AssetKind": "All",
@@ -872,10 +872,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p1a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p1b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p1b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p1b.png",
       "AssetKind": "All",
@@ -891,10 +891,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p1b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p2a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p2a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p2a.png",
       "AssetKind": "All",
@@ -910,10 +910,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p2a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p2b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p2b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p2b.png",
       "AssetKind": "All",
@@ -929,10 +929,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p2b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p3a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p3a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p3a.png",
       "AssetKind": "All",
@@ -948,10 +948,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p3a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p3b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p3b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p3b.png",
       "AssetKind": "All",
@@ -967,10 +967,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p3b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p4a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p4a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p4a.png",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p4a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p4b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p4b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p4b.png",
       "AssetKind": "All",
@@ -1005,10 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p4b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p5a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p5a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p5a.png",
       "AssetKind": "All",
@@ -1024,10 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p5a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p5b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p5b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p5b.png",
       "AssetKind": "All",
@@ -1043,10 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p5b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p6a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p6a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p6a.png",
       "AssetKind": "All",
@@ -1062,10 +1062,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p6a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p6b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p6b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p6b.png",
       "AssetKind": "All",
@@ -1081,10 +1081,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p6b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p7a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p7a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p7a.png",
       "AssetKind": "All",
@@ -1100,10 +1100,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p7a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p7b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p7b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p7b.png",
       "AssetKind": "All",
@@ -1119,10 +1119,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p7b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p8a.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p8a.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p8a.png",
       "AssetKind": "All",
@@ -1138,10 +1138,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p8a.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\memotest\\n2_p8b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\memotest\\n2_p8b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/memotest/n2_p8b.png",
       "AssetKind": "All",
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "wwwroot\\img\\memotest\\n2_p8b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\noticias\\cruce.jpg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\noticias\\cruce.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/noticias/cruce.jpg",
       "AssetKind": "All",
@@ -1176,10 +1176,10 @@
       "OriginalItemSpec": "wwwroot\\img\\noticias\\cruce.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\noticias\\emigrar.jpg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\noticias\\emigrar.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/noticias/emigrar.jpg",
       "AssetKind": "All",
@@ -1195,10 +1195,10 @@
       "OriginalItemSpec": "wwwroot\\img\\noticias\\emigrar.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\noticias\\migrantes.jpg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\noticias\\migrantes.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/noticias/migrantes.jpg",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\img\\noticias\\migrantes.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\noticias\\trabajo.jpg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\noticias\\trabajo.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/noticias/trabajo.jpg",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\img\\noticias\\trabajo.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\noticias\\visa1.jpg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\noticias\\visa1.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/noticias/visa1.jpg",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\img\\noticias\\visa1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\noticias\\visa2.jpg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\noticias\\visa2.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/noticias/visa2.jpg",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\img\\noticias\\visa2.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\noticias\\voluntariado.jpg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\noticias\\voluntariado.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/noticias/voluntariado.jpg",
       "AssetKind": "All",
@@ -1290,10 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\img\\noticias\\voluntariado.jpg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\perfiles\\75c524aa-4f95-4507-add8-146962bd341b.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\perfiles\\75c524aa-4f95-4507-add8-146962bd341b.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/perfiles/75c524aa-4f95-4507-add8-146962bd341b.png",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\img\\perfiles\\75c524aa-4f95-4507-add8-146962bd341b.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\perfiles\\7ba86fea-8d4d-4f68-8e1d-39d62de5e3e9.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\perfiles\\7ba86fea-8d4d-4f68-8e1d-39d62de5e3e9.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/perfiles/7ba86fea-8d4d-4f68-8e1d-39d62de5e3e9.png",
       "AssetKind": "All",
@@ -1328,10 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\img\\perfiles\\7ba86fea-8d4d-4f68-8e1d-39d62de5e3e9.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\perfiles\\PERFILdefault.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\perfiles\\PERFILdefault.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/perfiles/PERFILdefault.png",
       "AssetKind": "All",
@@ -1347,10 +1347,10 @@
       "OriginalItemSpec": "wwwroot\\img\\perfiles\\PERFILdefault.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\redes\\facebook.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\redes\\facebook.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/redes/facebook.png",
       "AssetKind": "All",
@@ -1366,10 +1366,10 @@
       "OriginalItemSpec": "wwwroot\\img\\redes\\facebook.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\redes\\instagram.svg",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\redes\\instagram.svg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/redes/instagram.svg",
       "AssetKind": "All",
@@ -1385,10 +1385,10 @@
       "OriginalItemSpec": "wwwroot\\img\\redes\\instagram.svg"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\redes\\X.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\redes\\X.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/redes/X.png",
       "AssetKind": "All",
@@ -1404,10 +1404,10 @@
       "OriginalItemSpec": "wwwroot\\img\\redes\\X.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\redes\\Youtube_logo.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\redes\\Youtube_logo.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/redes/Youtube_logo.png",
       "AssetKind": "All",
@@ -1423,10 +1423,10 @@
       "OriginalItemSpec": "wwwroot\\img\\redes\\Youtube_logo.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\img\\Valores.png",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\img\\Valores.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "img/Valores.png",
       "AssetKind": "All",
@@ -1442,10 +1442,10 @@
       "OriginalItemSpec": "wwwroot\\img\\Valores.png"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\js\\memotest.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\js\\memotest.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "js/memotest.js",
       "AssetKind": "All",
@@ -1461,10 +1461,10 @@
       "OriginalItemSpec": "wwwroot\\js\\memotest.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\js\\oraciones.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\js\\oraciones.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "js/oraciones.js",
       "AssetKind": "All",
@@ -1480,10 +1480,10 @@
       "OriginalItemSpec": "wwwroot\\js\\oraciones.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\js\\site.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\js\\site.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1499,10 +1499,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1518,10 +1518,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1537,10 +1537,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1556,10 +1556,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1575,10 +1575,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1594,10 +1594,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1613,10 +1613,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1651,10 +1651,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1670,10 +1670,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1689,10 +1689,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1708,10 +1708,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Ramir\\OneDrive\\Documentos\\GitHub\\Culturi\\wwwroot\\",
+      "ContentRoot": "D:\\Toto Usuario\\Escritorio\\A\\Culturi\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
