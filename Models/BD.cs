@@ -5,8 +5,11 @@ namespace Culturi;
 public static class BD
 {
     private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
-    //compu rami private static string _connectionString = @"Server=LAPTOP-5AG0051E\SQLEXPRESS;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
-    //private static string _connectionString = @"Server=COMPUCLARA\SQLEXPRESS01;Database=Culturi;Integrated Security=True;TrustServerCertificate=True;";
+    
+    public static SqlConnection GetConnection()
+    {
+        return new SqlConnection(_connectionString);
+    }
     
     public static Usuario ObtenerUsuario(int? id = null, string nombreUsuario = null, string email = null)
     {
