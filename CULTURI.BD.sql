@@ -299,10 +299,8 @@ GO
 SET IDENTITY_INSERT [dbo].[ProgresoTramites] ON 
 
 INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (11, 2, 3, N'pendiente', CAST(N'2025-11-26T08:43:32.207' AS DateTime))
-INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (12, 2, 3, N'pendiente', CAST(N'2025-11-26T08:43:35.020' AS DateTime))
-INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (13, 2, 3, N'pendiente', CAST(N'2025-11-26T08:43:36.640' AS DateTime))
-INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (14, 1, 3, N'pendiente', CAST(N'2025-11-26T09:03:52.180' AS DateTime))
-INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (16, 4, 3, N'pendiente', CAST(N'2025-12-01T08:18:00.237' AS DateTime))
+INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (14, 1, 2, N'pendiente', CAST(N'2025-11-26T09:03:52.180' AS DateTime))
+INSERT [dbo].[ProgresoTramites] ([id_progreso], [id_usuario], [id_tramite], [estado], [fecha_actualizacion]) VALUES (16, 4, 1, N'pendiente', CAST(N'2025-12-01T08:18:00.237' AS DateTime))
 SET IDENTITY_INSERT [dbo].[ProgresoTramites] OFF
 GO
 SET IDENTITY_INSERT [dbo].[Tramite] ON 

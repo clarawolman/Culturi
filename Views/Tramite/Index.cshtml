@@ -1,3 +1,5 @@
+@using System.Linq
+
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -76,7 +78,7 @@
         <a href="/Mapa/Index">Mapa</a>
         <a href="/Noticias/Noticias">Noticias</a>
         <a href='@Url.Action("Perfil", "Usuario")'>Perfil</a>
-        <a href='@Url.Action("Noti", "Usuario")'>Notificaciones</a>
+        <a href="/Usuario/Noti">Notificaciones</a>
         <a href='@Url.Action("ChatBot", "ChatBot")'>ChatBot</a>
         <a href='@Url.Action("CerrarSesion", "Usuario")'>Cerrar Sesión</a>
 
@@ -134,52 +136,33 @@
 <section>
     <h3>Mis trámites</h3>
 
-
-
-
     @foreach (var t in Model.MisTramites)
     {
         <div class="tramite-card">
             <div class="tramite-info">
                 <button class="btn-circle btn-green">✔</button>
 
-
-
-
                 <form asp-action="EliminarTramite" method="post" class="form-tramite" style="display:inline;">
                     <input type="hidden" name="id" value="@t.IdTramite" />
                     <button type="submit" class="btn-circle btn-red">✖</button>
                 </form>
 
-
-
-
                 <a asp-action="PasosDelTramite" asp-route-id="@t.IdTramite">
                     <h6>@t.Titulo</h6>
                 </a>
 
-
-
-
                 <div class="tramite-progress">
-                    <span style="width: @t.ProgresoPorcentaje%;"></span>
+                    <div class="barra-progreso" style="width: @t.ProgresoPorcentaje%;"></div>
                 </div>
             </div>
-
-
-
 
             <button class="btn-circle btn-help">?</button>
         </div>
     }
 </section>
 
-
     <a href="/ChatBot/ChatBot" class="floating-bot">
     <img src="/img/Home/ChatBot.png" alt="ChatBot">
-
-
-
 
 </section>
 </body>

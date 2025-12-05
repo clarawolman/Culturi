@@ -34,7 +34,7 @@ namespace Culturi.Controllers
                 t.Pasos = BD.ObtenerPasosDelTramite(t.IdTramite);
             }
 
-            // Crear viewmodel (YA CON TODO CORRECTO)
+            // Crear viewmodel
             TramitesVM vm = new TramitesVM
             {
                 TramitesParaVos = sugeridos,
@@ -52,12 +52,12 @@ namespace Culturi.Controllers
             if (tramite == null)
                 return NotFound();
 
-            // Levantar los pasos del trámite
+            // Agarrar los pasos del trámite
             var pasos = BD.ObtenerPasosDelTramite(id);
 
             // Pasar título y pasos
             ViewBag.Titulo = tramite.Titulo;
-            return View(pasos); // la view recibe una lista de pasos
+            return View(pasos); 
         }
 
 

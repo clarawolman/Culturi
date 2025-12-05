@@ -14,7 +14,7 @@ namespace Culturi.Controllers
     {
         public IActionResult Index()
         {
-            // Por ahora devolvemos una lista vacía ya que la vista tiene sus propias opciones
+            // Devolvemos lista vacía, la vista tiene sus propias opciones
             var juegos = new List<Juego>();
             return View(juegos);
         }
@@ -130,7 +130,7 @@ namespace Culturi.Controllers
             if (!nivel.HasValue || nivel < 1 || nivel > 3)
             {
                 ViewBag.MostrarSeleccion = true;
-                return View("Oraciones");  // ← importante
+                return View("Oraciones");  
             }
 
             ViewBag.MostrarSeleccion = false;

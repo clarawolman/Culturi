@@ -44,7 +44,7 @@
 
     function verificarVictoria() {
         if (parejasEncontradas * 2 === totalCartas && totalCartas > 0) {
-            mostrarCartelVictoria();
+            document.getElementById("victoria").classList.remove("hidden");
         }
     }
 

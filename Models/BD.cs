@@ -7,37 +7,54 @@ public static class BD
     private static string _connectionString = @"Server=localhost;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
     //compu rami private static string _connectionString = @"Server=LAPTOP-5AG0051E\SQLEXPRESS;DataBase=Culturi;Integrated Security=True;TrustServerCertificate=True;";
     //private static string _connectionString = @"Server=COMPUCLARA\SQLEXPRESS01;Database=Culturi;Integrated Security=True;TrustServerCertificate=True;";
-    public static SqlConnection GetConnection()
+    
+    public static Usuario ObtenerUsuario(int? id = null, string nombreUsuario = null, string email = null)
     {
-        return new SqlConnection(_connectionString);
-    }
-    public static Usuario LevantarUsuario(string nombreUsuario)
-    {
-        Usuario miUsuario = null;
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = @"SELECT 
-                            id_usuario AS IdUsuario,   -- 👈 usa el nombre real de tu columna
-                            nombre,
-                            usuario,
-                            email,
-                            contrasena,
-                            idiomaPreferencia,
-                            id_paisOrigen,
-                            id_paisDestino,
-                            fechaMigracion,
-                            fechaNacimiento,
-                            fotoPerfil
-                         FROM Usuario 
-                         WHERE usuario = @pnombreUsuario";
+                                id_usuario AS IdUsuario,
+                                nombre,
+                                usuario,
+                                email,
+                                contrasena,
+                                idiomaPreferencia,
+                                id_paisOrigen,
+                                id_paisDestino,
+                                fechaMigracion,
+                                fechaNacimiento,
+                                fotoPerfil
+                            FROM Usuario
+                            WHERE 1 = 1";
 
-            miUsuario = connection.QueryFirstOrDefault<Usuario>(
-                query, new { pnombreUsuario = nombreUsuario });
+            // filtros condicionales
+            if (id != null)
+                query += " AND id_usuario = @id";
+
+            if (nombreUsuario != null)
+                query += " AND usuario = @nombreUsuario";
+
+            if (email != null)
+                query += " AND email = @email";
+
+            return connection.QueryFirstOrDefault<Usuario>(query, new { id, nombreUsuario, email });
         }
-        return miUsuario;
     }
+    public static Usuario LevantarUsuario(string nombreUsuario)
+    {
+        return ObtenerUsuario(nombreUsuario: nombreUsuario);
+    }
+    public static Usuario ObtenerUsuarioPorId(int idUsuario)
+    {
+        return ObtenerUsuario(id: idUsuario);
+    }
+    public static Usuario ObtenerUsuarioPorSession(HttpContext context)
+    {
+        int? id = context.Session.GetInt32("IdUsuario");
+        if (id == null) return null;
 
-
+        return ObtenerUsuario(id: id.Value);
+    }
 
     public static void AgregarUsuario(Usuario usuario)
     {
@@ -65,20 +82,18 @@ public static class BD
         }
     }
 
-
-
     public static List<Tramite> ObtenerTramites()
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = @"
-    SELECT 
-        id_tramite AS IdTramite,
-        titulo,
-        descripcion,
-        id_paisOrigen,
-        id_paisDestino
-    FROM Tramite";
+            SELECT 
+                id_tramite AS IdTramite,
+                titulo,
+                descripcion,
+                id_paisOrigen,
+                id_paisDestino
+            FROM Tramite";
 
             List<Tramite> lista = connection.Query<Tramite>(query).ToList();
             return lista;
@@ -90,14 +105,14 @@ public static class BD
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = @"
-        SELECT 
-            id_tramite AS IdTramite,
-            titulo,
-            descripcion,
-            id_paisOrigen,
-            id_paisDestino
-        FROM Tramite
-        WHERE id_tramite = @pid";
+            SELECT 
+                id_tramite AS IdTramite,
+                titulo,
+                descripcion,
+                id_paisOrigen,
+                id_paisDestino
+            FROM Tramite
+            WHERE id_tramite = @pid";
 
             Tramite tramite = connection.QueryFirstOrDefault<Tramite>(query, new { pid = id });
 
@@ -137,7 +152,7 @@ public static class BD
             {
                 pTitulo = tramite.Titulo,
                 pDescripcion = tramite.Descripcion,
-                pOrigen = tramite.id_paisOrigen,       // propiedad correcta en tu model
+                pOrigen = tramite.id_paisOrigen,       
                 pDestino = tramite.id_paisDestino
             });
         }
@@ -216,39 +231,7 @@ public static class BD
             return connection.QueryFirstOrDefault<string>(query, new { pid = idPais });
         }
     }
-    public static Usuario ObtenerUsuarioPorSession(HttpContext context)
-    {
-        int? id = context.Session.GetInt32("IdUsuario");
-
-        if (id == null)
-            return null;
-
-        return ObtenerUsuarioPorId(id.Value);
-    }
-
-    public static Usuario ObtenerUsuarioPorId(int idUsuario)
-    {
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string query = @"SELECT 
-                            id_usuario AS IdUsuario,
-                            nombre,
-                            usuario,
-                            email,
-                            contrasena,
-                            idiomaPreferencia,
-                            id_paisOrigen,
-                            id_paisDestino,
-                            fechaMigracion,
-                            fechaNacimiento,
-                            fotoPerfil
-                         FROM Usuario 
-                         WHERE id_usuario = @pid";
-
-            return connection.QueryFirstOrDefault<Usuario>(query, new { pid = idUsuario });
-        }
-    }
-
+    
     public static List<Tramite> ObtenerMisTramites(int idUsuario)
     {
         using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -294,13 +277,13 @@ public static class BD
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             string query = @"
-    SELECT 
-        id_tramite AS IdTramite,
-        titulo,
-        descripcion,
-        id_paisOrigen,
-        id_paisDestino
-    FROM Tramite";
+            SELECT 
+                id_tramite AS IdTramite,
+                titulo,
+                descripcion,
+                id_paisOrigen,
+                id_paisDestino
+            FROM Tramite";
 
             return connection.Query<Tramite>(query, new
             {
@@ -340,8 +323,5 @@ public static class BD
 
             connection.Execute(query, new { u = idUsuario, t = idTramite });
         }
-    }
-
-
-
+    }   
 }

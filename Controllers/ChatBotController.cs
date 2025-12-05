@@ -6,11 +6,10 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.Google;
 using Microsoft.Extensions.Configuration;
-using Culturi.Models; // Add this line to import the Models namespace
-using System.Collections.Generic; // Added for List
-using System.Collections.ObjectModel; // Added for IReadOnlyDictionary
-using System.Threading.Tasks; // Added for Task
-using System.Threading; // Added for CancellationToken
+using Culturi.Models; 
+using System.Collections.ObjectModel; 
+using System.Threading.Tasks; 
+using System.Threading; 
 
 namespace Culturi.Controllers
 {

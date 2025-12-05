@@ -47,7 +47,6 @@ public class HomeController : Controller
             t.ProgresoPorcentaje = total == 0 ? 0 : (int)((double)completos / total * 100);
         }
 
-        // Devolver a la vista EXACTAMENTE lo que espera
         return View(misTramites);
     }
 
